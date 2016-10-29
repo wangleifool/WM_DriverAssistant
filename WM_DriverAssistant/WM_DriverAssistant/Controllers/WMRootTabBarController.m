@@ -21,8 +21,7 @@
     if (self = [super init]) {
         
         //设置tabbar 管理的视图控制器们
-        self.viewControllers = [WMpageControllersInfo pageControllers];
-                
+        self.viewControllers = [WMpageControllersInfo pageControllers];        
     }
     
     return self;

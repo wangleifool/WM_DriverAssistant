@@ -10,12 +10,16 @@
 
 @interface WMBasicNavViewController ()
 
+
+
 @end
 
 @implementation WMBasicNavViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     //配置导航栏
     [self configureNavigaitonBar];
@@ -49,7 +53,7 @@
     UIImage *img = [UIImage imageNamed:imageName];
     [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
     
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor darkGrayColor]];  //本行做测试，需要删除
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];  //本行做测试，需要删除
 }
 
 - (void)setNavigationLeftView:(UIView *)customView sel:(SEL)sel

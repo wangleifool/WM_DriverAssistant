@@ -19,7 +19,8 @@
     // Do any additional setup after loading the view from its nib.
     
     //配置导航栏
-    [self configureNavigaitonBar];
+//    [self configureNavigaitonBar];
+    [self setNavigationTitleView:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +30,10 @@
 
 
 #pragma mark - 自定义导航栏
-
+- (void)setNavigationTitleView:(UIView *)customView
+{
+    self.navigationItem.title = @"hello world";
+}
 
 
 @end
