@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>className</key>
+		<string>WMBaomingViewController</string>
+		<key>title</key>
+		<string>报名</string>
+		<key>tabIcon</key>
+		<string></string>
+		<key>selectedTabIcon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>WMJiakaoViewController</string>
+		<key>title</key>
+		<string>驾考</string>
+		<key>tabIcon</key>
+		<string></string>
+		<key>selectedTabIcon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>WMFaxianViewController</string>
+		<key>title</key>
+		<string>发现</string>
+		<key>tabIcon</key>
+		<string></string>
+		<key>selectedTabIcon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>WMMaicheViewController</string>
+		<key>title</key>
+		<string>买车</string>
+		<key>tabIcon</key>
+		<string></string>
+		<key>selectedTabIcon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>WMBaibaoxiangViewController</string>
+		<key>title</key>
+		<string>百宝箱</string>
+		<key>tabIcon</key>
+		<string></string>
+		<key>selectedTabIcon</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

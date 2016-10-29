@@ -1,0 +1,18 @@
+//
+//  driverAssistant-Prefix.pch
+//  WM_DriverAssistant
+//
+//  Created by 王雷 on 2016/10/28.
+//  Copyright © 2016年 王雷. All rights reserved.
+//
+
+#ifndef driverAssistant_Prefix_pch
+#define driverAssistant_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Defines.h"
+#import "WMGlobal.h"
+
+#endif /* driverAssistant_Prefix_pch */
