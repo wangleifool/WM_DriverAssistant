@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WMMyDriverMasterView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_xc_jiaolian" translatesAutoresizingMaskIntoConstraints="NO" id="1g8-UR-BOK">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1g8-UR-BOK" secondAttribute="height" multiplier="1:1" id="RM7-B4-3tE"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教练" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Haz-Uq-hir">
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-KC-2zu">
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next" translatesAutoresizingMaskIntoConstraints="NO" id="isQ-Cb-Fsb">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="nyF-C3-5cA"/>
+                        <constraint firstAttribute="height" constant="32" id="pze-PS-1QE"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mrz-KC-2zu" firstAttribute="bottom" secondItem="1g8-UR-BOK" secondAttribute="bottom" id="1TX-j3-HAc"/>
+                <constraint firstItem="1g8-UR-BOK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8BD-gm-HQd"/>
+                <constraint firstItem="isQ-Cb-Fsb" firstAttribute="leading" secondItem="Haz-Uq-hir" secondAttribute="trailing" constant="8" id="FvK-Mn-ieD"/>
+                <constraint firstAttribute="trailing" secondItem="isQ-Cb-Fsb" secondAttribute="trailing" constant="5" id="Gx4-p6-ik8"/>
+                <constraint firstAttribute="bottom" secondItem="1g8-UR-BOK" secondAttribute="bottom" constant="8" id="N5U-AV-7dg"/>
+                <constraint firstItem="Mrz-KC-2zu" firstAttribute="leading" secondItem="Haz-Uq-hir" secondAttribute="leading" id="T6a-5O-ZDY"/>
+                <constraint firstItem="Mrz-KC-2zu" firstAttribute="trailing" secondItem="Haz-Uq-hir" secondAttribute="trailing" id="VvS-Bu-tdt"/>
+                <constraint firstItem="Haz-Uq-hir" firstAttribute="top" secondItem="1g8-UR-BOK" secondAttribute="top" id="f8G-d0-wnw"/>
+                <constraint firstItem="1g8-UR-BOK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="jVh-Ah-MNW"/>
+                <constraint firstItem="Haz-Uq-hir" firstAttribute="leading" secondItem="1g8-UR-BOK" secondAttribute="trailing" constant="8" id="uWm-Aj-6DF"/>
+                <constraint firstItem="isQ-Cb-Fsb" firstAttribute="centerY" secondItem="1g8-UR-BOK" secondAttribute="centerY" id="zmp-UP-GeU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageViewSulpture" destination="1g8-UR-BOK" id="NMX-m9-dzY"/>
+                <outlet property="labelDescription" destination="Mrz-KC-2zu" id="0ac-Tx-6iz"/>
+                <outlet property="labelTitle" destination="Haz-Uq-hir" id="Ht9-64-4HF"/>
+            </connections>
+            <point key="canvasLocation" x="87" y="-45"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_next" width="12" height="12"/>
+        <image name="icon_xc_jiaolian" width="23" height="23"/>
+    </resources>
+</document>

@@ -22,13 +22,26 @@
 		9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B06504D1DC33C3F00A7ACE3 /* WMBaomingViewController.m */; };
 		9B0650501DC33C3F00A7ACE3 /* WMBaomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */; };
 		9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */; };
-		9B0650551DC33C7800A7ACE3 /* WMJiakaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */; };
 		9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */; };
 		9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */; };
 		9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B06505C1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m */; };
 		9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B06505D1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib */; };
 		9B0650631DC33CE800A7ACE3 /* WMMaicheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0650611DC33CE800A7ACE3 /* WMMaicheViewController.m */; };
 		9B0650641DC33CE800A7ACE3 /* WMMaicheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0650621DC33CE800A7ACE3 /* WMMaicheViewController.xib */; };
+		9B18B8581DD047CA004F6108 /* WMSubjectOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8561DD047CA004F6108 /* WMSubjectOneViewController.m */; };
+		9B18B8591DD047CA004F6108 /* WMSubjectOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8571DD047CA004F6108 /* WMSubjectOneViewController.xib */; };
+		9B18B8941DD05975004F6108 /* WMSubjectTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8921DD05975004F6108 /* WMSubjectTwoViewController.m */; };
+		9B18B8951DD05975004F6108 /* WMSubjectTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8931DD05975004F6108 /* WMSubjectTwoViewController.xib */; };
+		9B18B8991DD059B9004F6108 /* WMSubjectThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8971DD059B9004F6108 /* WMSubjectThreeViewController.m */; };
+		9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8981DD059B9004F6108 /* WMSubjectThreeViewController.xib */; };
+		9B18B89E1DD059F2004F6108 /* WMSubjectFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B89C1DD059F2004F6108 /* WMSubjectFourViewController.m */; };
+		9B18B89F1DD059F2004F6108 /* WMSubjectFourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B89D1DD059F2004F6108 /* WMSubjectFourViewController.xib */; };
+		9B18B8A31DD05A1B004F6108 /* WMGetDiverLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8A11DD05A1B004F6108 /* WMGetDiverLicenseViewController.m */; };
+		9B18B8A41DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8A21DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib */; };
+		9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8AB1DD06CA2004F6108 /* WMMyDriverMasterView.m */; };
+		9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */; };
+		9B3AE90C1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */; };
+		9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */; };
 		9BFF9F291DC34A5F004BCACD /* WMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF9F281DC34A5F004BCACD /* WMGlobal.m */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +91,6 @@
 		9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMBaomingViewController.xib; path = Controllers/WMBaomingViewController.xib; sourceTree = "<group>"; };
 		9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMJiakaoViewController.h; path = Controllers/WMJiakaoViewController.h; sourceTree = "<group>"; };
 		9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMJiakaoViewController.m; path = Controllers/WMJiakaoViewController.m; sourceTree = "<group>"; };
-		9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMJiakaoViewController.xib; path = Controllers/WMJiakaoViewController.xib; sourceTree = "<group>"; };
 		9B0650561DC33CB300A7ACE3 /* WMFaxianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMFaxianViewController.h; path = Controllers/WMFaxianViewController.h; sourceTree = "<group>"; };
 		9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMFaxianViewController.m; path = Controllers/WMFaxianViewController.m; sourceTree = "<group>"; };
 		9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMFaxianViewController.xib; path = Controllers/WMFaxianViewController.xib; sourceTree = "<group>"; };
@@ -88,6 +100,28 @@
 		9B0650601DC33CE800A7ACE3 /* WMMaicheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMMaicheViewController.h; path = Controllers/WMMaicheViewController.h; sourceTree = "<group>"; };
 		9B0650611DC33CE800A7ACE3 /* WMMaicheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMMaicheViewController.m; path = Controllers/WMMaicheViewController.m; sourceTree = "<group>"; };
 		9B0650621DC33CE800A7ACE3 /* WMMaicheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMMaicheViewController.xib; path = Controllers/WMMaicheViewController.xib; sourceTree = "<group>"; };
+		9B18B8551DD047CA004F6108 /* WMSubjectOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSubjectOneViewController.h; path = Controllers/WMSubjectOneViewController.h; sourceTree = "<group>"; };
+		9B18B8561DD047CA004F6108 /* WMSubjectOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSubjectOneViewController.m; path = Controllers/WMSubjectOneViewController.m; sourceTree = "<group>"; };
+		9B18B8571DD047CA004F6108 /* WMSubjectOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSubjectOneViewController.xib; path = Controllers/WMSubjectOneViewController.xib; sourceTree = "<group>"; };
+		9B18B8911DD05975004F6108 /* WMSubjectTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSubjectTwoViewController.h; path = Controllers/WMSubjectTwoViewController.h; sourceTree = "<group>"; };
+		9B18B8921DD05975004F6108 /* WMSubjectTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSubjectTwoViewController.m; path = Controllers/WMSubjectTwoViewController.m; sourceTree = "<group>"; };
+		9B18B8931DD05975004F6108 /* WMSubjectTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSubjectTwoViewController.xib; path = Controllers/WMSubjectTwoViewController.xib; sourceTree = "<group>"; };
+		9B18B8961DD059B9004F6108 /* WMSubjectThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSubjectThreeViewController.h; path = Controllers/WMSubjectThreeViewController.h; sourceTree = "<group>"; };
+		9B18B8971DD059B9004F6108 /* WMSubjectThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSubjectThreeViewController.m; path = Controllers/WMSubjectThreeViewController.m; sourceTree = "<group>"; };
+		9B18B8981DD059B9004F6108 /* WMSubjectThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSubjectThreeViewController.xib; path = Controllers/WMSubjectThreeViewController.xib; sourceTree = "<group>"; };
+		9B18B89B1DD059F2004F6108 /* WMSubjectFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSubjectFourViewController.h; path = Controllers/WMSubjectFourViewController.h; sourceTree = "<group>"; };
+		9B18B89C1DD059F2004F6108 /* WMSubjectFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSubjectFourViewController.m; path = Controllers/WMSubjectFourViewController.m; sourceTree = "<group>"; };
+		9B18B89D1DD059F2004F6108 /* WMSubjectFourViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSubjectFourViewController.xib; path = Controllers/WMSubjectFourViewController.xib; sourceTree = "<group>"; };
+		9B18B8A01DD05A1B004F6108 /* WMGetDiverLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMGetDiverLicenseViewController.h; path = Controllers/WMGetDiverLicenseViewController.h; sourceTree = "<group>"; };
+		9B18B8A11DD05A1B004F6108 /* WMGetDiverLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGetDiverLicenseViewController.m; path = Controllers/WMGetDiverLicenseViewController.m; sourceTree = "<group>"; };
+		9B18B8A21DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMGetDiverLicenseViewController.xib; path = Controllers/WMGetDiverLicenseViewController.xib; sourceTree = "<group>"; };
+		9B18B8AA1DD06CA2004F6108 /* WMMyDriverMasterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMMyDriverMasterView.h; path = Views/WMMyDriverMasterView.h; sourceTree = "<group>"; };
+		9B18B8AB1DD06CA2004F6108 /* WMMyDriverMasterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMMyDriverMasterView.m; path = Views/WMMyDriverMasterView.m; sourceTree = "<group>"; };
+		9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMMyDriverMasterView.xib; path = Views/WMMyDriverMasterView.xib; sourceTree = "<group>"; };
+		9B3AE90A1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAdvertisementPagingScrollView.h; sourceTree = "<group>"; };
+		9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAdvertisementPagingScrollView.m; sourceTree = "<group>"; };
+		9B5AA63B1DC49EA200C2C15C /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
+		9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
 		9BFF9F271DC34A5F004BCACD /* WMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMGlobal.h; path = Others/WMGlobal.h; sourceTree = "<group>"; };
 		9BFF9F281DC34A5F004BCACD /* WMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGlobal.m; path = Others/WMGlobal.m; sourceTree = "<group>"; };
 		9BFF9F2A1DC34B35004BCACD /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
@@ -189,6 +223,7 @@
 		9B064FEC1DC2D5B100A7ACE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9B5AA63A1DC4943300C2C15C /* pageJiakao */,
 				9B06501A1DC2ED6600A7ACE3 /* WMRootTabBarController.h */,
 				9B06501B1DC2ED6600A7ACE3 /* WMRootTabBarController.m */,
 				9B0650431DC3281B00A7ACE3 /* WMBasicNavViewController.h */,
@@ -197,8 +232,6 @@
 				9B0650471DC3285600A7ACE3 /* WMPurchaseNavViewController.m */,
 				9B06504C1DC33C3F00A7ACE3 /* WMBaomingViewController.h */,
 				9B06504D1DC33C3F00A7ACE3 /* WMBaomingViewController.m */,
-				9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */,
-				9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */,
 				9B0650561DC33CB300A7ACE3 /* WMFaxianViewController.h */,
 				9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */,
 				9B06505B1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.h */,
@@ -212,9 +245,9 @@
 		9B064FED1DC2D5BA00A7ACE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B18B8A51DD06A34004F6108 /* pageJiakao */,
 				9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */,
 				9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */,
-				9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */,
 				9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */,
 				9B06505D1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib */,
 				9B0650621DC33CE800A7ACE3 /* WMMaicheViewController.xib */,
@@ -235,6 +268,44 @@
 				9B064FF21DC2E06E00A7ACE3 /* TabbarPages.plist */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		9B18B8A51DD06A34004F6108 /* pageJiakao */ = {
+			isa = PBXGroup;
+			children = (
+				9B18B8AA1DD06CA2004F6108 /* WMMyDriverMasterView.h */,
+				9B18B8AB1DD06CA2004F6108 /* WMMyDriverMasterView.m */,
+				9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */,
+				9B3AE90A1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.h */,
+				9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */,
+			);
+			name = pageJiakao;
+			sourceTree = "<group>";
+		};
+		9B5AA63A1DC4943300C2C15C /* pageJiakao */ = {
+			isa = PBXGroup;
+			children = (
+				9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */,
+				9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */,
+				9B5AA63B1DC49EA200C2C15C /* WMPagesScrollView.h */,
+				9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */,
+				9B18B8551DD047CA004F6108 /* WMSubjectOneViewController.h */,
+				9B18B8561DD047CA004F6108 /* WMSubjectOneViewController.m */,
+				9B18B8571DD047CA004F6108 /* WMSubjectOneViewController.xib */,
+				9B18B8911DD05975004F6108 /* WMSubjectTwoViewController.h */,
+				9B18B8921DD05975004F6108 /* WMSubjectTwoViewController.m */,
+				9B18B8931DD05975004F6108 /* WMSubjectTwoViewController.xib */,
+				9B18B8961DD059B9004F6108 /* WMSubjectThreeViewController.h */,
+				9B18B8971DD059B9004F6108 /* WMSubjectThreeViewController.m */,
+				9B18B8981DD059B9004F6108 /* WMSubjectThreeViewController.xib */,
+				9B18B89B1DD059F2004F6108 /* WMSubjectFourViewController.h */,
+				9B18B89C1DD059F2004F6108 /* WMSubjectFourViewController.m */,
+				9B18B89D1DD059F2004F6108 /* WMSubjectFourViewController.xib */,
+				9B18B8A01DD05A1B004F6108 /* WMGetDiverLicenseViewController.h */,
+				9B18B8A11DD05A1B004F6108 /* WMGetDiverLicenseViewController.m */,
+				9B18B8A21DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib */,
+			);
+			name = pageJiakao;
 			sourceTree = "<group>";
 		};
 		9BFF9F261DC349DE004BCACD /* Global */ = {
@@ -360,11 +431,16 @@
 				9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */,
 				9B064FC81DC1FEC100A7ACE3 /* LaunchScreen.storyboard in Resources */,
 				9B0650641DC33CE800A7ACE3 /* WMMaicheViewController.xib in Resources */,
+				9B18B89F1DD059F2004F6108 /* WMSubjectFourViewController.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
+				9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
+				9B18B8A41DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib in Resources */,
+				9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
-				9B0650551DC33C7800A7ACE3 /* WMJiakaoViewController.xib in Resources */,
+				9B18B8951DD05975004F6108 /* WMSubjectTwoViewController.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
+				9B18B8591DD047CA004F6108 /* WMSubjectOneViewController.xib in Resources */,
 				9B0650501DC33C3F00A7ACE3 /* WMBaomingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,10 +466,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3AE90C1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m in Sources */,
+				9B18B8581DD047CA004F6108 /* WMSubjectOneViewController.m in Sources */,
 				9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */,
 				9B06504B1DC3356800A7ACE3 /* WMpageControllersInfo.m in Sources */,
 				9BFF9F291DC34A5F004BCACD /* WMGlobal.m in Sources */,
+				9B18B8991DD059B9004F6108 /* WMSubjectThreeViewController.m in Sources */,
+				9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */,
+				9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */,
 				9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */,
+				9B18B89E1DD059F2004F6108 /* WMSubjectFourViewController.m in Sources */,
+				9B18B8941DD05975004F6108 /* WMSubjectTwoViewController.m in Sources */,
 				9B0650631DC33CE800A7ACE3 /* WMMaicheViewController.m in Sources */,
 				9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */,
 				9B0650481DC3285600A7ACE3 /* WMPurchaseNavViewController.m in Sources */,
@@ -401,6 +484,7 @@
 				9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */,
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
 				9B0650451DC3281B00A7ACE3 /* WMBasicNavViewController.m in Sources */,
+				9B18B8A31DD05A1B004F6108 /* WMGetDiverLicenseViewController.m in Sources */,
 				9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
