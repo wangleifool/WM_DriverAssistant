@@ -8,6 +8,12 @@
 
 #import "WMAdvertisementPagingScrollView.h"
 
+@interface WMAdvertisementPagingScrollView ()
+{
+    NSTimer *timerScroll;
+}
+@end
+
 @implementation WMAdvertisementPagingScrollView
 
 //- (instancetype)init
@@ -68,6 +74,9 @@
         ADpageControl.numberOfPages = self.advertisementImages.count - 2;  //因为有两个元素是故意添加的。
         [ADpageControl addTarget:self action:@selector(pageControlPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:ADpageControl];
+        
+        
+        [self startTimer];
     }
 }
 
@@ -88,13 +97,51 @@
         ADpageControl.currentPage = 0;
         [ADscrollView setContentOffset:CGPointMake(ADscrollView.bounds.size.width, 0) animated:NO];
     } else {
-        ADpageControl.currentPage = page ;
+        ADpageControl.currentPage = page - 1;
     }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self stopTimer];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self startTimer];
 }
 
 - (void)pageControlPressed:(id)sender
 {
     
+}
+
+#pragma mark - 定时器
+- (void)nextPage
+{
+    NSInteger newPage = ADpageControl.currentPage + 1;
+    [ADscrollView setContentOffset:CGPointMake(ADscrollView.bounds.size.width * (newPage+1), 0) animated:YES]; //newPage 需要加一，因为第一个视图是我们额外添加的视图。他的宽度应该去除
+    [self scrollViewDidEndDecelerating:ADscrollView];
+}
+
+- (void)startTimer
+{
+    dispatch_async(dispatch_queue_create("playStatusTimer", NULL), ^{
+        if (nil == timerScroll) {
+            timerScroll = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:timerScroll forMode:NSDefaultRunLoopMode];
+            [[NSRunLoop currentRunLoop] run];
+        }
+
+    });
+}
+
+- (void)stopTimer
+{
+    if (timerScroll) {
+        [timerScroll invalidate];
+        timerScroll = nil;
+    }
 }
 
 @end
