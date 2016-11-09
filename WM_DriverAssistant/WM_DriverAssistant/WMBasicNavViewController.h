@@ -10,10 +10,18 @@
 
 @interface WMBasicNavViewController : UIViewController
 
+
+@property(nonatomic,strong)IBOutlet UITableView *tableView;
+@property(nonatomic,strong)UIView *UserView;
+@property(nonatomic,strong)NSArray *userColum;
+@property(nonatomic,assign)BOOL  showLeftView;
+
 - (void)configureNavigaitonBar;
 - (void)setNavigationTitleView:(UIView *)customView;
 - (void)setNavigationLeftView:(UIView *)customView sel:(SEL)sel;
 - (void)setNavigationRightView:(UIView *)customView sel:(SEL)sel;
+-(void)setNavigationLeftbutton:(NSString *)title sel:(SEL)selector;
+-(void)setNavigationRightbutton:(NSString *)title sel:(SEL)selector;
 
 - (void)setStatusBarStyle:(UIStatusBarStyle)style;
 

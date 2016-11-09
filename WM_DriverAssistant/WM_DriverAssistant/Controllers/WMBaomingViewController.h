@@ -1,13 +1,18 @@
 //
 //  WMBaomingViewController.h
-//  WM_DriverAssistant
+//  DriverAssistant
 //
-//  Created by 王雷 on 2016/10/28.
-//  Copyright © 2016年 王雷. All rights reserved.
+//  Created by 梅毅 on 16/10/29.
+//  Copyright © 2016年 my. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
+#import "FxButtonHelper.h"
 #import "WMBasicNavViewController.h"
 
-@interface WMBaomingViewController : WMBasicNavViewController
+@interface WMBaomingViewController : WMBasicNavViewController<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,strong)FxButtonHelper *button;
+@property(nonatomic,strong)UIButton *testBtn;
+@property(nonatomic,strong)NSArray *arr;
 
 @end
