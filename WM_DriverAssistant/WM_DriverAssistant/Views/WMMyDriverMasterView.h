@@ -32,8 +32,5 @@
 @property (strong, nonatomic) id modelOfDriverMaster;  //待后期添加教练模型
 @property (assign, nonatomic) BOOL isBindingDriverMaster;
 
-- (instancetype)init;
-- (instancetype)initWithFrame:(CGRect)frame;
-- (void)setMyFrame:(CGRect)frame;
 
 @end

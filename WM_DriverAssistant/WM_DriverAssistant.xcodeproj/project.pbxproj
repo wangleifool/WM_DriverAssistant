@@ -42,6 +42,8 @@
 		9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */; };
 		9B3AE90C1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */; };
 		9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */; };
+		9B64B1821DE41AF80032E20F /* WMTheoryLearnModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */; };
+		9B64B1851DE42A5D0032E20F /* WMTheoryLearnModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */; };
 		9BFF9F291DC34A5F004BCACD /* WMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF9F281DC34A5F004BCACD /* WMGlobal.m */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,9 @@
 		9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAdvertisementPagingScrollView.m; sourceTree = "<group>"; };
 		9B5AA63B1DC49EA200C2C15C /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
+		9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMTheoryLearnModelView.xib; path = Views/WMTheoryLearnModelView.xib; sourceTree = "<group>"; };
+		9B64B1831DE42A5D0032E20F /* WMTheoryLearnModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMTheoryLearnModelView.h; path = Views/WMTheoryLearnModelView.h; sourceTree = "<group>"; };
+		9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMTheoryLearnModelView.m; path = Views/WMTheoryLearnModelView.m; sourceTree = "<group>"; };
 		9BFF9F271DC34A5F004BCACD /* WMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMGlobal.h; path = Others/WMGlobal.h; sourceTree = "<group>"; };
 		9BFF9F281DC34A5F004BCACD /* WMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGlobal.m; path = Others/WMGlobal.m; sourceTree = "<group>"; };
 		9BFF9F2A1DC34B35004BCACD /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
@@ -278,6 +283,9 @@
 				9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */,
 				9B3AE90A1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.h */,
 				9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */,
+				9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */,
+				9B64B1831DE42A5D0032E20F /* WMTheoryLearnModelView.h */,
+				9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */,
 			);
 			name = pageJiakao;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B64B1821DE41AF80032E20F /* WMTheoryLearnModelView.xib in Resources */,
 				9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */,
 				9B064FC81DC1FEC100A7ACE3 /* LaunchScreen.storyboard in Resources */,
 				9B0650641DC33CE800A7ACE3 /* WMMaicheViewController.xib in Resources */,
@@ -484,6 +493,7 @@
 				9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */,
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
 				9B0650451DC3281B00A7ACE3 /* WMBasicNavViewController.m in Sources */,
+				9B64B1851DE42A5D0032E20F /* WMTheoryLearnModelView.m in Sources */,
 				9B18B8A31DD05A1B004F6108 /* WMGetDiverLicenseViewController.m in Sources */,
 				9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */,
 			);

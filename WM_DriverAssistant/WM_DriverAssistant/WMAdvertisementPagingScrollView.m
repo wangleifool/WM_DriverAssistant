@@ -32,6 +32,13 @@
 //    return self;
 //}
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    return self;
+}
+
 - (NSMutableArray *)advertisementImages
 {
     if (nil == _advertisementImages) {
@@ -40,9 +47,11 @@
     return _advertisementImages;
 }
 
+
+
 - (void)layoutSubviews
 {
-    if (0 != self.advertisementImages.count) {
+    if (0 != self.advertisementImages.count && ADscrollView == nil) {
         
         //为了实现无限滚动，我们往资源数组的第一和最后位置分别插入他应该展示的页面。 比如有页面： 1 2 3 4   当我们滑到4，继续滑，我们希望出现1。 类似，我们扩充资源数组. 4 1 2 3 4 1
         [self.advertisementImages insertObject:self.advertisementImages.lastObject atIndex:0];

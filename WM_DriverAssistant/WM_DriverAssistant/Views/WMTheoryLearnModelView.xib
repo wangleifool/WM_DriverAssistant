@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMTheoryLearnModelView">
+            <connections>
+                <outlet property="btAwardTryDrive" destination="7bC-ft-41o" id="mfa-ac-aux"/>
+                <outlet property="btBeforeTest" destination="SV7-tk-gKU" id="Xfs-WK-N12"/>
+                <outlet property="btEarnCoin" destination="LXX-28-dHu" id="t8X-SB-EYb"/>
+                <outlet property="btFavoriteQuestions" destination="bt8-t4-DgF" id="TT4-3o-xg0"/>
+                <outlet property="btHardQuestions" destination="DgE-Um-ft2" id="w0R-Wm-IpF"/>
+                <outlet property="btIconRemember" destination="G0o-WU-fhX" id="pcz-HM-hQ5"/>
+                <outlet property="btLearnLog" destination="vIA-Op-bwO" id="7lr-4w-Ka5"/>
+                <outlet property="btLearnRate" destination="8gR-34-EpZ" id="K0C-nf-kTX"/>
+                <outlet property="btMistakeQuestions" destination="CyV-tH-KpD" id="Z6V-7x-ugf"/>
+                <outlet property="btNoneLearnQuestions" destination="DVy-j0-Uqn" id="Aqz-Wl-t5w"/>
+                <outlet property="btShuffleTraining" destination="yx0-Rq-WKh" id="2Zc-mS-ECH"/>
+                <outlet property="btSimulationTest" destination="uE8-wZ-awD" id="Z36-gz-79d"/>
+                <outlet property="btSortTraining" destination="iZQ-yG-0ez" id="qXm-Yv-rHu"/>
+                <outlet property="btSpecificTraning" destination="33l-NA-lZp" id="G1G-j0-TW5"/>
+                <outlet property="btStudentWelfare" destination="vRl-XA-MDW" id="8dY-z9-rNk"/>
+                <outlet property="btSubjectTech" destination="LHJ-Ha-XxH" id="9A9-6i-AV5"/>
+                <outlet property="btTestDate" destination="aiF-mg-Cty" id="kq0-Fw-iqW"/>
+                <outlet property="btVipPass" destination="52c-4Z-8sh" id="x5r-Y0-rqL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="564"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-Ha-XxH" userLabel="科目技巧">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="科目技巧" image="icon_baomingyouhui_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="NDn-9l-MNH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0o-WU-fhX" userLabel="图标速记">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="图标速记" image="icon_baomingyouhui_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="Xyi-m7-y6s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bC-ft-41o" userLabel="有奖试驾">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="有奖试驾" image="icon_baomingyouhui_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="Php-Pk-fjp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRl-XA-MDW" userLabel="学员福利">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="学员福利" image="baomingfei">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="z00-ia-t69"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyV-tH-KpD" userLabel="我的错题">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="我的错题" image="icon_baomingyouhui_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="Nas-vy-LQ3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bt8-t4-DgF" userLabel="我的收藏">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="我的收藏" image="main_icon_star_0">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="4YV-QG-5xF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIA-Op-bwO" userLabel="学车日记">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="学车日记" image="foot_icon_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="ekr-7w-VPJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXX-28-dHu" userLabel="赚取金币">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="赚取金币" image="icon_baomingyouhui_n">
+                        <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="uZk-a1-EBI"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-eN-fyt">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx0-Rq-WKh" userLabel="随机练习">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="90" id="PJC-WV-GeC"/>
+                            </constraints>
+                            <state key="normal" title="随机练习" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="uTs-cL-Z5n"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33l-NA-lZp" userLabel="专项练习">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="专项练习" image="icon_ditu_dingwei">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="mz8-WL-Kxx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-Um-ft2" userLabel="难题攻克">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="难题攻克" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="ETP-dX-a92"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-j0-Uqn" userLabel="未做题练习">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="90" id="f4D-oV-T7S"/>
+                            </constraints>
+                            <state key="normal" title="未做题练习" image="btn_dianping">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="5SS-ZB-FHL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZQ-yG-0ez" userLabel="顺序联系">
+                            <color key="backgroundColor" red="0.40984799533541488" green="0.70234511419558976" blue="0.87578819513320927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="iZQ-yG-0ez" secondAttribute="height" multiplier="1:1" id="7w1-gO-uEx"/>
+                            </constraints>
+                            <state key="normal" title="顺序练习">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="NnE-8w-Dgc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DVy-j0-Uqn" secondAttribute="trailing" id="2db-lz-daL"/>
+                        <constraint firstItem="DVy-j0-Uqn" firstAttribute="leading" secondItem="DgE-Um-ft2" secondAttribute="trailing" id="40e-Rz-BYA"/>
+                        <constraint firstItem="DgE-Um-ft2" firstAttribute="top" secondItem="yx0-Rq-WKh" secondAttribute="bottom" id="Dm8-2F-Ark"/>
+                        <constraint firstItem="33l-NA-lZp" firstAttribute="leading" secondItem="yx0-Rq-WKh" secondAttribute="trailing" id="MDe-Y9-aNy"/>
+                        <constraint firstItem="DgE-Um-ft2" firstAttribute="leading" secondItem="ZwJ-eN-fyt" secondAttribute="leading" id="Qyd-BO-fka"/>
+                        <constraint firstAttribute="bottom" secondItem="DVy-j0-Uqn" secondAttribute="bottom" id="RiP-Jt-nWa"/>
+                        <constraint firstItem="33l-NA-lZp" firstAttribute="top" secondItem="ZwJ-eN-fyt" secondAttribute="top" id="cRT-EZ-0vd"/>
+                        <constraint firstItem="iZQ-yG-0ez" firstAttribute="height" secondItem="yx0-Rq-WKh" secondAttribute="height" id="eD9-DD-sGn"/>
+                        <constraint firstAttribute="bottom" secondItem="DgE-Um-ft2" secondAttribute="bottom" id="eGo-Bg-wnr"/>
+                        <constraint firstAttribute="trailing" secondItem="33l-NA-lZp" secondAttribute="trailing" id="gbt-HC-Y4H"/>
+                        <constraint firstItem="yx0-Rq-WKh" firstAttribute="leading" secondItem="ZwJ-eN-fyt" secondAttribute="leading" id="gsZ-tN-Uid"/>
+                        <constraint firstItem="iZQ-yG-0ez" firstAttribute="centerX" secondItem="ZwJ-eN-fyt" secondAttribute="centerX" id="h3C-l8-RW4"/>
+                        <constraint firstItem="DVy-j0-Uqn" firstAttribute="top" secondItem="33l-NA-lZp" secondAttribute="bottom" id="hSv-Ny-8iX"/>
+                        <constraint firstItem="33l-NA-lZp" firstAttribute="width" secondItem="yx0-Rq-WKh" secondAttribute="width" id="lU4-IJ-qjn"/>
+                        <constraint firstItem="DVy-j0-Uqn" firstAttribute="width" secondItem="DgE-Um-ft2" secondAttribute="width" id="n5q-D4-8g3"/>
+                        <constraint firstItem="yx0-Rq-WKh" firstAttribute="top" secondItem="ZwJ-eN-fyt" secondAttribute="top" id="oko-Eu-ydN"/>
+                        <constraint firstItem="iZQ-yG-0ez" firstAttribute="centerY" secondItem="ZwJ-eN-fyt" secondAttribute="centerY" id="pE1-ih-29g"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujh-FM-R7A">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV7-tk-gKU" userLabel="考前冲刺">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="考前冲刺" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="D3b-RC-uwr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gR-34-EpZ" userLabel="成绩.排行">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="成绩.排行" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="GtG-0D-E3m"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52c-4Z-8sh" userLabel="VIP保过">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="VIP保过" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="Q1F-vv-Aaf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiF-mg-Cty" userLabel="考试预约">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="考试预约" image="icon_baomingyouhui_n">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="TBD-DJ-pte"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uE8-wZ-awD" userLabel="模拟考试">
+                            <color key="backgroundColor" red="0.64205343964968953" green="0.87578819513320927" blue="0.38179970838877209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="uE8-wZ-awD" secondAttribute="height" multiplier="1:1" id="eMO-HT-Na4"/>
+                            </constraints>
+                            <state key="normal" title="模拟考试">
+                                <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionTouchUpOfOutlet:" destination="-1" eventType="touchUpInside" id="Em8-az-lpS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aiF-mg-Cty" firstAttribute="width" secondItem="52c-4Z-8sh" secondAttribute="width" id="1ta-TY-nvp"/>
+                        <constraint firstItem="uE8-wZ-awD" firstAttribute="height" secondItem="SV7-tk-gKU" secondAttribute="height" id="42P-nG-YN4"/>
+                        <constraint firstItem="SV7-tk-gKU" firstAttribute="top" secondItem="ujh-FM-R7A" secondAttribute="top" id="9ZK-7I-oR3"/>
+                        <constraint firstItem="8gR-34-EpZ" firstAttribute="width" secondItem="SV7-tk-gKU" secondAttribute="width" id="Ayl-mB-MUf"/>
+                        <constraint firstItem="aiF-mg-Cty" firstAttribute="top" secondItem="8gR-34-EpZ" secondAttribute="bottom" id="Cz2-BI-N2P"/>
+                        <constraint firstItem="8gR-34-EpZ" firstAttribute="top" secondItem="ujh-FM-R7A" secondAttribute="top" id="Fex-3C-euI"/>
+                        <constraint firstAttribute="trailing" secondItem="aiF-mg-Cty" secondAttribute="trailing" id="Ooj-ec-F3Y"/>
+                        <constraint firstAttribute="trailing" secondItem="8gR-34-EpZ" secondAttribute="trailing" id="PBJ-6D-ifx"/>
+                        <constraint firstItem="uE8-wZ-awD" firstAttribute="centerY" secondItem="ujh-FM-R7A" secondAttribute="centerY" id="TB3-sw-z7R"/>
+                        <constraint firstAttribute="bottom" secondItem="aiF-mg-Cty" secondAttribute="bottom" id="UxR-oz-8Nk"/>
+                        <constraint firstItem="8gR-34-EpZ" firstAttribute="width" secondItem="SV7-tk-gKU" secondAttribute="width" id="ZoG-6y-CTv"/>
+                        <constraint firstItem="aiF-mg-Cty" firstAttribute="leading" secondItem="52c-4Z-8sh" secondAttribute="trailing" id="gg8-Ap-R0t"/>
+                        <constraint firstItem="52c-4Z-8sh" firstAttribute="top" secondItem="SV7-tk-gKU" secondAttribute="bottom" id="gjj-ng-orC"/>
+                        <constraint firstItem="uE8-wZ-awD" firstAttribute="centerX" secondItem="ujh-FM-R7A" secondAttribute="centerX" id="hXE-To-Qm1"/>
+                        <constraint firstItem="aiF-mg-Cty" firstAttribute="width" secondItem="52c-4Z-8sh" secondAttribute="width" id="hXu-E4-CRd"/>
+                        <constraint firstAttribute="bottom" secondItem="52c-4Z-8sh" secondAttribute="bottom" id="l68-Wj-uEe"/>
+                        <constraint firstItem="aiF-mg-Cty" firstAttribute="height" secondItem="SV7-tk-gKU" secondAttribute="height" id="lJ2-5E-ckR"/>
+                        <constraint firstItem="52c-4Z-8sh" firstAttribute="height" secondItem="SV7-tk-gKU" secondAttribute="height" id="lXI-Z3-Wc2"/>
+                        <constraint firstItem="8gR-34-EpZ" firstAttribute="leading" secondItem="SV7-tk-gKU" secondAttribute="trailing" id="n9A-JY-XEu"/>
+                        <constraint firstItem="52c-4Z-8sh" firstAttribute="leading" secondItem="ujh-FM-R7A" secondAttribute="leading" id="nxg-JR-dF9"/>
+                        <constraint firstItem="SV7-tk-gKU" firstAttribute="leading" secondItem="ujh-FM-R7A" secondAttribute="leading" id="yUu-38-jyR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.87578819513320927" green="0.87578819513320927" blue="0.87578819513320927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bt8-t4-DgF" firstAttribute="leading" secondItem="CyV-tH-KpD" secondAttribute="trailing" id="1db-Cj-gZA"/>
+                <constraint firstAttribute="trailing" secondItem="LXX-28-dHu" secondAttribute="trailing" id="2F2-u6-60q"/>
+                <constraint firstItem="bt8-t4-DgF" firstAttribute="bottom" secondItem="CyV-tH-KpD" secondAttribute="bottom" id="3Py-i5-mot"/>
+                <constraint firstItem="7bC-ft-41o" firstAttribute="leading" secondItem="G0o-WU-fhX" secondAttribute="trailing" id="3Ze-ba-Oqb"/>
+                <constraint firstItem="yx0-Rq-WKh" firstAttribute="height" secondItem="LHJ-Ha-XxH" secondAttribute="height" id="3pR-gO-V9E"/>
+                <constraint firstItem="G0o-WU-fhX" firstAttribute="bottom" secondItem="LHJ-Ha-XxH" secondAttribute="bottom" constant="-1" id="6O8-v0-T2n"/>
+                <constraint firstItem="ujh-FM-R7A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7f5-pL-gzf"/>
+                <constraint firstAttribute="trailing" secondItem="ujh-FM-R7A" secondAttribute="trailing" id="8eZ-dM-CvH"/>
+                <constraint firstItem="G0o-WU-fhX" firstAttribute="leading" secondItem="LHJ-Ha-XxH" secondAttribute="trailing" id="9ux-2d-opC"/>
+                <constraint firstItem="7bC-ft-41o" firstAttribute="bottom" secondItem="LHJ-Ha-XxH" secondAttribute="bottom" id="A1z-RS-3gm"/>
+                <constraint firstItem="vRl-XA-MDW" firstAttribute="bottom" secondItem="LHJ-Ha-XxH" secondAttribute="bottom" id="AFX-Ck-WpP"/>
+                <constraint firstItem="vRl-XA-MDW" firstAttribute="top" secondItem="LHJ-Ha-XxH" secondAttribute="top" id="BJl-co-aKh"/>
+                <constraint firstItem="LXX-28-dHu" firstAttribute="width" secondItem="CyV-tH-KpD" secondAttribute="width" id="Bdw-O5-CIl"/>
+                <constraint firstItem="7bC-ft-41o" firstAttribute="width" secondItem="LHJ-Ha-XxH" secondAttribute="width" id="Gsv-zW-Cne"/>
+                <constraint firstItem="vIA-Op-bwO" firstAttribute="bottom" secondItem="CyV-tH-KpD" secondAttribute="bottom" id="HlQ-PQ-Cja"/>
+                <constraint firstItem="ZwJ-eN-fyt" firstAttribute="top" secondItem="LHJ-Ha-XxH" secondAttribute="bottom" constant="8" id="M02-XH-aJ8"/>
+                <constraint firstItem="LHJ-Ha-XxH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MUt-Te-CRX"/>
+                <constraint firstItem="LHJ-Ha-XxH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N50-eO-hTZ"/>
+                <constraint firstItem="CyV-tH-KpD" firstAttribute="top" secondItem="ujh-FM-R7A" secondAttribute="bottom" constant="8" id="Oxh-54-NBZ"/>
+                <constraint firstAttribute="bottom" secondItem="CyV-tH-KpD" secondAttribute="bottom" id="QnK-1E-dk6"/>
+                <constraint firstAttribute="trailing" secondItem="vRl-XA-MDW" secondAttribute="trailing" id="SOU-Ab-Hhz"/>
+                <constraint firstItem="SV7-tk-gKU" firstAttribute="height" secondItem="LHJ-Ha-XxH" secondAttribute="height" id="Sja-nL-l8e"/>
+                <constraint firstAttribute="trailing" secondItem="ZwJ-eN-fyt" secondAttribute="trailing" id="YeQ-5T-S78"/>
+                <constraint firstItem="LXX-28-dHu" firstAttribute="bottom" secondItem="CyV-tH-KpD" secondAttribute="bottom" id="Yfd-T3-V4M"/>
+                <constraint firstItem="G0o-WU-fhX" firstAttribute="top" secondItem="LHJ-Ha-XxH" secondAttribute="top" id="asN-rs-NYY"/>
+                <constraint firstItem="bt8-t4-DgF" firstAttribute="top" secondItem="CyV-tH-KpD" secondAttribute="top" id="bBw-El-tgk"/>
+                <constraint firstItem="G0o-WU-fhX" firstAttribute="width" secondItem="LHJ-Ha-XxH" secondAttribute="width" id="buO-8c-lXc"/>
+                <constraint firstItem="vIA-Op-bwO" firstAttribute="top" secondItem="CyV-tH-KpD" secondAttribute="top" id="emq-u5-YsX"/>
+                <constraint firstItem="7bC-ft-41o" firstAttribute="top" secondItem="LHJ-Ha-XxH" secondAttribute="top" id="f2E-ln-j9y"/>
+                <constraint firstItem="bt8-t4-DgF" firstAttribute="width" secondItem="CyV-tH-KpD" secondAttribute="width" id="fbj-Oz-M8W"/>
+                <constraint firstItem="CyV-tH-KpD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gg8-de-1PN"/>
+                <constraint firstItem="ZwJ-eN-fyt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gim-DR-g2r"/>
+                <constraint firstItem="vIA-Op-bwO" firstAttribute="leading" secondItem="bt8-t4-DgF" secondAttribute="trailing" id="j69-0d-C5h"/>
+                <constraint firstItem="LXX-28-dHu" firstAttribute="top" secondItem="CyV-tH-KpD" secondAttribute="top" id="n5G-Ds-LCa"/>
+                <constraint firstItem="CyV-tH-KpD" firstAttribute="height" secondItem="LHJ-Ha-XxH" secondAttribute="height" id="o4h-6v-02q"/>
+                <constraint firstItem="vRl-XA-MDW" firstAttribute="leading" secondItem="7bC-ft-41o" secondAttribute="trailing" id="qX3-Gl-yPd"/>
+                <constraint firstItem="LXX-28-dHu" firstAttribute="leading" secondItem="vIA-Op-bwO" secondAttribute="trailing" id="t84-Qr-gCX"/>
+                <constraint firstItem="ujh-FM-R7A" firstAttribute="height" secondItem="ZwJ-eN-fyt" secondAttribute="height" id="ta6-0k-vAW"/>
+                <constraint firstItem="vRl-XA-MDW" firstAttribute="width" secondItem="LHJ-Ha-XxH" secondAttribute="width" id="v6y-Ur-3iy"/>
+                <constraint firstItem="vIA-Op-bwO" firstAttribute="width" secondItem="CyV-tH-KpD" secondAttribute="width" id="z6H-ps-tfC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26" y="-177"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="baomingfei" width="18" height="18"/>
+        <image name="btn_dianping" width="16" height="16"/>
+        <image name="foot_icon_n" width="20" height="20"/>
+        <image name="icon_baomingyouhui_n" width="21" height="21"/>
+        <image name="icon_ditu_dingwei" width="42" height="42"/>
+        <image name="main_icon_star_0" width="11" height="11"/>
+    </resources>
+</document>

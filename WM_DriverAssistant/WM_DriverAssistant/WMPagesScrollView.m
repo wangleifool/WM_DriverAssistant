@@ -129,6 +129,8 @@
 {
     UIButton *btTitle = ((UIButton *)sender);
     [self setCurrentPage:btTitle.tag];
+    CGPoint pageOffset = CGPointMake(btTitle.tag * selfFrame.size.width, 0);
+    [self.mainContentScrollView setContentOffset:pageOffset];
     
     //
     [self updateSelectedPage:btTitle.tag];

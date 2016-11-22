@@ -26,11 +26,11 @@
     }
     
     //添加我的教练视图
-    driverMasterView = [[WMMyDriverMasterView alloc] init];
-    CGRect frame = CGRectMake(0, 50, ScreenWidth, driverMasterView.bounds.size.height);
-    [driverMasterView setMyFrame:frame];
-    driverMasterView.delegate = self;
-    [self.view addSubview:driverMasterView];
+//    driverMasterView = [[WMMyDriverMasterView alloc] init];
+//    CGRect frame = CGRectMake(0, 50, ScreenWidth, driverMasterView.bounds.size.height);
+//    [driverMasterView setMyFrame:frame];
+//    driverMasterView.delegate = self;
+//    [self.view addSubview:driverMasterView];
 }
 
 - (void)didReceiveMemoryWarning {

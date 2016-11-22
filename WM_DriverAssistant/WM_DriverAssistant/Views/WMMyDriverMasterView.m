@@ -10,7 +10,7 @@
 
 @interface WMMyDriverMasterView()
 {
-    CGRect myFrame;
+    
 }
 
 @end
@@ -40,35 +40,27 @@
     }
 }
 
-- (instancetype)init
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    if (self = [super init]) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"WMMyDriverMasterView" owner:nil options:nil] firstObject];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"WMMyDriverMasterView" owner:nil options:nil] firstObject];
-        myFrame = frame;
-    }
-    return self;
-}
-
-- (void)setMyFrame:(CGRect)frame
-{
-    myFrame = frame;
-    [self setNeedsDisplay];
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
+    self = [super initWithCoder:aDecoder];
     
-    self.frame = myFrame;
+    if (nil != self) {
+        UIView * contentView = [[[NSBundle mainBundle] loadNibNamed: NSStringFromClass([self class]) owner:self options:nil] firstObject];
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self addSubview: contentView];
+        
+        [self addConstraint: [NSLayoutConstraint constraintWithItem: contentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem: self attribute:NSLayoutAttributeLeft multiplier: 1.0 constant: 0]];
+        [self addConstraint: [NSLayoutConstraint constraintWithItem: contentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem: self attribute:NSLayoutAttributeRight multiplier: 1.0 constant: 0]];
+        [self addConstraint: [NSLayoutConstraint constraintWithItem: contentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem: self attribute:NSLayoutAttributeTop multiplier: 1.0 constant: 0]];
+        [self addConstraint: [NSLayoutConstraint constraintWithItem: contentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem: self attribute:NSLayoutAttributeBottom multiplier: 1.0 constant: 0]];
+    }
+    
+    return self;
 }
+
 
 #pragma mark - lazy load
 - (void)setModelOfDriverMaster:(id)modelOfDriverMaster
