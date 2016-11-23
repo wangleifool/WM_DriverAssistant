@@ -11,7 +11,7 @@
 #import "WMBBXButtonViewCell.h"
 #import "WM_SecondCollection.h"
 
-@interface WMBaibaoxiangViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface WMBaibaoxiangViewController : WMBasicNavViewController<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic,strong)NSArray *btnTitles;
 @property(nonatomic,strong)NSArray *btnTitles1;

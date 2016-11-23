@@ -27,7 +27,7 @@
     swipL.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipL];
 //    [self.view addGestureRecognizer:gs];
-    _showLeftView = true;
+    showLeftView = true;
     _userColum = @[@"我的题库",@"我的驾校",@"同步数据",@"下载科二、科三视频",@"题库更新",@"我的订单",@"赚取金币",@"设置"];
     [self initBackView:self.view];
 }
@@ -59,7 +59,7 @@
 #pragma mark 初始化用户视图
 -(void)initBackView:(UIView *)view
 {
-    _UserView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 618, 1024)];
+    _UserView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 618, 1024-45)];
     _UserView.backgroundColor = [UIColor orangeColor];
     _UserView.alpha = 0;
     UISwipeGestureRecognizer *gs = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView)];
@@ -111,14 +111,15 @@
 #pragma mark 左边按钮按下
 -(void)addView
 {
+    NSLog(@"ShowLeft");
     [self ShowLeftView];
 }
 #pragma mark 显示左边用户视图
 -(void)ShowLeftView
 {
-    if (_showLeftView)
+    if (showLeftView)
     {
-        _showLeftView = false;
+        showLeftView = false;
         [UIView animateWithDuration:1 animations:^{
             CGRect frame = self.tableView.frame;
             frame.origin.x = 618;
@@ -128,7 +129,7 @@
     }
     else
     {
-        _showLeftView = true;
+        showLeftView = true;
         [UIView animateWithDuration:1 animations:^{
             CGRect frame = self.tableView.frame;
             frame.origin.x = 0;
@@ -141,7 +142,7 @@
 #pragma mark 隐藏左边视图
 -(void)hideLeftView
 {
-    _showLeftView = true;
+    showLeftView = true;
     [UIView animateWithDuration:1 animations:^{
         CGRect frame = self.tableView.frame;
         frame.origin.x = 0;

@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface WMBasicNavViewController : UIViewController
-
+{
+    BOOL  showLeftView;
+}
 
 @property(nonatomic,strong)IBOutlet UITableView *tableView;
 @property(nonatomic,strong)UIView *UserView;
 @property(nonatomic,strong)NSArray *userColum;
-@property(nonatomic,assign)BOOL  showLeftView;
+//@property(nonatomic,assign)BOOL  showLeftView;
 
 - (void)configureNavigaitonBar;
 - (void)setNavigationTitleView:(UIView *)customView;
@@ -24,5 +26,6 @@
 -(void)setNavigationRightbutton:(NSString *)title sel:(SEL)selector;
 
 - (void)setStatusBarStyle:(UIStatusBarStyle)style;
-
+-(void)ShowLeftView;
+-(void)hideLeftView;
 @end

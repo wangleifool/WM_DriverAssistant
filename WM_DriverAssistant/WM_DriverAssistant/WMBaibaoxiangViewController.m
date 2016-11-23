@@ -53,6 +53,31 @@
     [self initCutLine];
     [self addTimer];
 }
+//重写-(void)ShowLeftView
+-(void)ShowLeftView
+{
+    if (showLeftView)
+    {
+        showLeftView = false;
+        [UIView animateWithDuration:1 animations:^{
+            CGRect frame = mainScrollview.frame;
+            frame.origin.x = 618;
+            mainScrollview.frame = frame;
+            self.UserView.alpha = mainScrollview.frame.origin.x/618;
+        }];
+    }
+    else
+    {
+        showLeftView = true;
+        [UIView animateWithDuration:1 animations:^{
+            CGRect frame = mainScrollview.frame;
+            frame.origin.x = 0;
+            mainScrollview.frame = frame;
+            self.UserView.alpha = mainScrollview.frame.origin.x/618;
+        }];
+    }
+}
+
 -(void)initCollectionView
 {
     //初始化layout
@@ -66,7 +91,7 @@
     //设置cell的大小
     layout.itemSize = CGSizeMake(768/4, 180);
     //初始化collectionView1
-    collectionView1 = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 36, 768, 540) collectionViewLayout:layout];
+    collectionView1 = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, 768, 540) collectionViewLayout:layout];
     collectionView1.tag = 10;
     collectionView1.backgroundColor = [UIColor whiteColor];
     collectionView1.delegate = self;
@@ -86,7 +111,7 @@
     //设置cell的大小
     layout2.itemSize = CGSizeMake(768/4, 180);
     //初始化collectionView1
-    collectionView2 = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 796, 768, 540) collectionViewLayout:layout2];
+    collectionView2 = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 860, 768, 540) collectionViewLayout:layout2];
     collectionView2.tag = 11;
     collectionView2.backgroundColor = [UIColor whiteColor];
     collectionView2.delegate = self;
@@ -105,7 +130,7 @@
     for (int i=0; i<4; i++)
     {
         WM_MyButton *myButton = [WM_MyButton buttonWithType:UIButtonTypeCustom];
-        myButton = [[WM_MyButton alloc] initWithFrame:CGRectMake(768/4*i, -64, 768/4, 100)];
+        myButton = [[WM_MyButton alloc] initWithFrame:CGRectMake(768/4*i, 0, 768/4, 100)];
         [myButton setTitle:[_btnTitles objectAtIndex:i] forState:UIControlStateNormal];
         [myButton setImage:[UIImage imageNamed:[_btnImages objectAtIndex:i]] forState:UIControlStateNormal];;
         myButton.backgroundColor = [UIColor blueColor];
@@ -269,7 +294,7 @@
 -(void)initImageScrollView
 {
     
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 576, 768, 190)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 640, 768, 190)];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(768*3, 190);

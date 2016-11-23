@@ -28,10 +28,10 @@
     [super viewDidLoad];
     _arr = @[@"服务保障",@"常见问题",@"报考新规",@"学车流程",@"讨论一下"];
     _icons = @[@"icon_bm_school.png",@"icon_bm_top.png",@"icon_xl_lesson.png",@"icon_km2.png",@"icon_xl_im.png"];
-    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
-    UIApplication *app = [UIApplication sharedApplication];
-    [app registerUserNotificationSettings:setting];
-    app.applicationIconBadgeNumber = 125;
+//    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+//    UIApplication *app = [UIApplication sharedApplication];
+//    [app registerUserNotificationSettings:setting];
+//    app.applicationIconBadgeNumber = 125;
     [self initHeaderView];
     [self initFooterView];
 }
