@@ -43,10 +43,7 @@
     {
         _btnTitles = @[@"大牌车品",@"金银猫理财",@"真心话",@"买车狂欢惠",@"享7亿红包",@"玩转双十一",@"眼力大比评",@"免费约驾",@"测星座福地",@"手机借款",@"办理信用卡",@"更多"];
     }
-//    if (_btnImages == nil)
-//    {
-//        _btnImages = @[@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@""];
-//    }
+
     if (self)
     {
         for (int i=0; i < 12; i++)
@@ -54,14 +51,19 @@
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(768/4*(i%4), 180*(i/4), 768/4, 180);
             btn.tag = i+100;
-            btn.layer.borderColor = [UIColor whiteColor].CGColor;
+            btn.layer.borderColor = [UIColor grayColor].CGColor;
             btn.layer.borderWidth = 0.5;
             [btn setTitle:[_btnTitles objectAtIndex:i] forState:UIControlStateNormal];
-            btn.backgroundColor = [UIColor greenColor];
+            //btn.backgroundColor = [UIColor greenColor];
             btn.titleEdgeInsets = UIEdgeInsetsMake(85, 0, 0, 0);
+            btn.titleLabel.font = [UIFont systemFontOfSize:25];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(CellBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((btn.frame.size.width-70)/2, 35, 70, 70)];
-            imageView.backgroundColor = [UIColor redColor];
+            //imageView.backgroundColor = [UIColor redColor];
+            imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"touxiang%d.png",i+1]];
+            imageView.layer.cornerRadius = 10;
+            imageView.layer.masksToBounds = YES;
             [btn addSubview:imageView];
             [self.contentView addSubview:btn];
         }

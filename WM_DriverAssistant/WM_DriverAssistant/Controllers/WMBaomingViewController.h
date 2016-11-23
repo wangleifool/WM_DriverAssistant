@@ -14,5 +14,6 @@
 @property(nonatomic,strong)FxButtonHelper *button;
 @property(nonatomic,strong)UIButton *testBtn;
 @property(nonatomic,strong)NSArray *arr;
+@property(nonatomic,strong)NSArray *icons;
 
 @end

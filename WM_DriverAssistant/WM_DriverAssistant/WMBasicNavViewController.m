@@ -18,12 +18,15 @@
     [super viewDidLoad];
     
     [self configureNavigaitonBar];
-    UITapGestureRecognizer *gs = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
-    gs.numberOfTapsRequired = 1;
+//    UITapGestureRecognizer *gs = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
+//    gs.numberOfTapsRequired = 1;
     UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView)];
     swip.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swip];
-    [self.view addGestureRecognizer:gs];
+    UISwipeGestureRecognizer *swipL = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
+    swipL.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipL];
+//    [self.view addGestureRecognizer:gs];
     _showLeftView = true;
     _userColum = @[@"我的题库",@"我的驾校",@"同步数据",@"下载科二、科三视频",@"题库更新",@"我的订单",@"赚取金币",@"设置"];
     [self initBackView:self.view];
@@ -42,7 +45,7 @@
     [self setNavigationBarImage:@""];
     
     //自定义左边的tab item
-    [self setNavigationLeftbutton:@"icon_touxiangtianjia_.png" sel:@selector(addView)];
+    [self setNavigationLeftbutton:@"icon_bm_peilian.png" sel:@selector(addView)];
     [self setNavigationRightbutton:nil sel:nil];
     
     //自定义右边的tab item
@@ -183,7 +186,12 @@
     UIBarButtonItem *item = nil;
     if ([title hasSuffix:@"png"])
     {
-        item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:title] style:UIBarButtonItemStylePlain target:self action:selector];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(0, 0, 30, 30);
+        [btn setImage:[UIImage imageNamed:title] forState:UIControlStateNormal];
+        btn.adjustsImageWhenHighlighted = NO;
+        [btn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+        item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
     else
     {

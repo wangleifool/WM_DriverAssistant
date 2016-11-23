@@ -27,7 +27,11 @@
 {
     [super viewDidLoad];
     _arr = @[@"服务保障",@"常见问题",@"报考新规",@"学车流程",@"讨论一下"];
-    
+    _icons = @[@"icon_bm_school.png",@"icon_bm_top.png",@"icon_xl_lesson.png",@"icon_km2.png",@"icon_xl_im.png"];
+    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    UIApplication *app = [UIApplication sharedApplication];
+    [app registerUserNotificationSettings:setting];
+    app.applicationIconBadgeNumber = 125;
     [self initHeaderView];
     [self initFooterView];
 }
@@ -46,18 +50,23 @@
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 200)];
     headView.backgroundColor = [UIColor whiteColor];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, headView.frame.size.width, 120)];
-    imageView.backgroundColor = [UIColor redColor];
+    //imageView.backgroundColor = [UIColor redColor];
+    imageView.image = [UIImage imageNamed:@"renling_banner.png"];
     [headView addSubview:imageView];
     for (int i = 0; i < 5; i++) {
         
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(imageView.frame.size.width/5*i, 120, imageView.frame.size.width/5, 90)];
         btn.tag = i+10;
-        btn.titleLabel.textColor = [UIColor darkGrayColor];
+        //btn.titleLabel.textColor = [UIColor grayColor];
         [btn addTarget:self action:@selector(Cliced:) forControlEvents:UIControlEventTouchUpInside];
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake((btn.frame.size.width - 80)/2, btn.frame.size.height - 35, 80, 20)];
         lab.text = [_arr objectAtIndex:i];
-        UIImageView *btnImg = [[UIImageView alloc] initWithFrame:CGRectMake((btn.frame.size.width - 35)/2, 5, 35, 35)];
-        btnImg.backgroundColor = [UIColor greenColor];
+        lab.textAlignment = NSTextAlignmentCenter;
+        lab.textColor = [UIColor grayColor];
+        lab.font = [UIFont systemFontOfSize:14];
+        UIImageView *btnImg = [[UIImageView alloc] initWithFrame:CGRectMake((btn.frame.size.width - 35)/2, 15, 35, 35)];
+        //btnImg.backgroundColor = [UIColor greenColor];
+        btnImg.image = [UIImage imageNamed:[_icons objectAtIndex:i]];
         [btn addSubview:btnImg];
         [btn addSubview:lab];
         [headView addSubview:btn];
