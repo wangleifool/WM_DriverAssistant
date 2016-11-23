@@ -2,4 +2,86 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WM_DriverAssistant/WMImageAndTwoLineTextView.m"
+            timestampString = "501585983.863043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-initWithCoder:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
+            timestampString = "501587763.100806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-tapGestureAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
+            timestampString = "501587773.469014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WMImageAndTwoLineTextView layoutSubviews]"
+                  moduleName = "WM_DriverAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanglei/360%E4%BA%91%E7%9B%98/%E9%92%A2%E7%90%B4%E8%87%AA%E5%8A%A8%E6%BC%94%E5%A5%8F%E7%B3%BB%E7%BB%9F/GIT%20source/WM_DriverAssistant/WM_DriverAssistant/WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
+                  timestampString = "501587773.696614"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[WMImageAndTwoLineTextView layoutSubviews]_block_invoke"
+                  moduleName = "WM_DriverAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanglei/360%E4%BA%91%E7%9B%98/%E9%92%A2%E7%90%B4%E8%87%AA%E5%8A%A8%E6%BC%94%E5%A5%8F%E7%B3%BB%E7%BB%9F/GIT%20source/WM_DriverAssistant/WM_DriverAssistant/WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
+                  timestampString = "501587773.699211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

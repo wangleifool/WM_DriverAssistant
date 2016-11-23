@@ -44,6 +44,12 @@
 		9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */; };
 		9B64B1821DE41AF80032E20F /* WMTheoryLearnModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */; };
 		9B64B1851DE42A5D0032E20F /* WMTheoryLearnModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */; };
+		9B8FD8621DE5704E001862FA /* WMCircleOfFriendsPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FD8611DE5704E001862FA /* WMCircleOfFriendsPreview.m */; };
+		9B8FD8641DE5706A001862FA /* WMCircleOfFriendsPreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FD8631DE5706A001862FA /* WMCircleOfFriendsPreview.xib */; };
+		9B8FD8691DE58B23001862FA /* WMImageAndTwoLineTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FD8681DE58B23001862FA /* WMImageAndTwoLineTextView.xib */; };
+		9B8FD86C1DE58EE2001862FA /* WMBeginnerBuyCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FD86B1DE58EE2001862FA /* WMBeginnerBuyCarView.m */; };
+		9B8FD86E1DE58F1F001862FA /* WMBeginnerBuyCarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */; };
+		9B8FD8711DE5996D001862FA /* WMImageAndTwoLineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FD86F1DE5996D001862FA /* WMImageAndTwoLineTextView.m */; };
 		9BFF9F291DC34A5F004BCACD /* WMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF9F281DC34A5F004BCACD /* WMGlobal.m */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +133,15 @@
 		9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMTheoryLearnModelView.xib; path = Views/WMTheoryLearnModelView.xib; sourceTree = "<group>"; };
 		9B64B1831DE42A5D0032E20F /* WMTheoryLearnModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMTheoryLearnModelView.h; path = Views/WMTheoryLearnModelView.h; sourceTree = "<group>"; };
 		9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMTheoryLearnModelView.m; path = Views/WMTheoryLearnModelView.m; sourceTree = "<group>"; };
+		9B8FD8601DE5704E001862FA /* WMCircleOfFriendsPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMCircleOfFriendsPreview.h; path = Views/WMCircleOfFriendsPreview.h; sourceTree = "<group>"; };
+		9B8FD8611DE5704E001862FA /* WMCircleOfFriendsPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMCircleOfFriendsPreview.m; path = Views/WMCircleOfFriendsPreview.m; sourceTree = "<group>"; };
+		9B8FD8631DE5706A001862FA /* WMCircleOfFriendsPreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMCircleOfFriendsPreview.xib; path = Views/WMCircleOfFriendsPreview.xib; sourceTree = "<group>"; };
+		9B8FD8681DE58B23001862FA /* WMImageAndTwoLineTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMImageAndTwoLineTextView.xib; path = Views/WMImageAndTwoLineTextView.xib; sourceTree = "<group>"; };
+		9B8FD86A1DE58EE2001862FA /* WMBeginnerBuyCarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMBeginnerBuyCarView.h; path = Views/WMBeginnerBuyCarView.h; sourceTree = "<group>"; };
+		9B8FD86B1DE58EE2001862FA /* WMBeginnerBuyCarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMBeginnerBuyCarView.m; path = Views/WMBeginnerBuyCarView.m; sourceTree = "<group>"; };
+		9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMBeginnerBuyCarView.xib; path = Views/WMBeginnerBuyCarView.xib; sourceTree = "<group>"; };
+		9B8FD86F1DE5996D001862FA /* WMImageAndTwoLineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMImageAndTwoLineTextView.m; path = Views/WMImageAndTwoLineTextView.m; sourceTree = "<group>"; };
+		9B8FD8701DE5996D001862FA /* WMImageAndTwoLineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMImageAndTwoLineTextView.h; path = Views/WMImageAndTwoLineTextView.h; sourceTree = "<group>"; };
 		9BFF9F271DC34A5F004BCACD /* WMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMGlobal.h; path = Others/WMGlobal.h; sourceTree = "<group>"; };
 		9BFF9F281DC34A5F004BCACD /* WMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGlobal.m; path = Others/WMGlobal.m; sourceTree = "<group>"; };
 		9BFF9F2A1DC34B35004BCACD /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
@@ -286,6 +301,15 @@
 				9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */,
 				9B64B1831DE42A5D0032E20F /* WMTheoryLearnModelView.h */,
 				9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */,
+				9B8FD8601DE5704E001862FA /* WMCircleOfFriendsPreview.h */,
+				9B8FD8611DE5704E001862FA /* WMCircleOfFriendsPreview.m */,
+				9B8FD8631DE5706A001862FA /* WMCircleOfFriendsPreview.xib */,
+				9B8FD86F1DE5996D001862FA /* WMImageAndTwoLineTextView.m */,
+				9B8FD8701DE5996D001862FA /* WMImageAndTwoLineTextView.h */,
+				9B8FD8681DE58B23001862FA /* WMImageAndTwoLineTextView.xib */,
+				9B8FD86A1DE58EE2001862FA /* WMBeginnerBuyCarView.h */,
+				9B8FD86B1DE58EE2001862FA /* WMBeginnerBuyCarView.m */,
+				9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */,
 			);
 			name = pageJiakao;
 			sourceTree = "<group>";
@@ -440,7 +464,9 @@
 				9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */,
 				9B064FC81DC1FEC100A7ACE3 /* LaunchScreen.storyboard in Resources */,
 				9B0650641DC33CE800A7ACE3 /* WMMaicheViewController.xib in Resources */,
+				9B8FD86E1DE58F1F001862FA /* WMBeginnerBuyCarView.xib in Resources */,
 				9B18B89F1DD059F2004F6108 /* WMSubjectFourViewController.xib in Resources */,
+				9B8FD8641DE5706A001862FA /* WMCircleOfFriendsPreview.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
@@ -448,6 +474,7 @@
 				9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
 				9B18B8951DD05975004F6108 /* WMSubjectTwoViewController.xib in Resources */,
+				9B8FD8691DE58B23001862FA /* WMImageAndTwoLineTextView.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
 				9B18B8591DD047CA004F6108 /* WMSubjectOneViewController.xib in Resources */,
 				9B0650501DC33C3F00A7ACE3 /* WMBaomingViewController.xib in Resources */,
@@ -475,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8FD86C1DE58EE2001862FA /* WMBeginnerBuyCarView.m in Sources */,
 				9B3AE90C1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m in Sources */,
 				9B18B8581DD047CA004F6108 /* WMSubjectOneViewController.m in Sources */,
 				9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */,
@@ -484,6 +512,7 @@
 				9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */,
 				9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */,
 				9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */,
+				9B8FD8711DE5996D001862FA /* WMImageAndTwoLineTextView.m in Sources */,
 				9B18B89E1DD059F2004F6108 /* WMSubjectFourViewController.m in Sources */,
 				9B18B8941DD05975004F6108 /* WMSubjectTwoViewController.m in Sources */,
 				9B0650631DC33CE800A7ACE3 /* WMMaicheViewController.m in Sources */,
@@ -492,6 +521,7 @@
 				9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */,
 				9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */,
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
+				9B8FD8621DE5704E001862FA /* WMCircleOfFriendsPreview.m in Sources */,
 				9B0650451DC3281B00A7ACE3 /* WMBasicNavViewController.m in Sources */,
 				9B64B1851DE42A5D0032E20F /* WMTheoryLearnModelView.m in Sources */,
 				9B18B8A31DD05A1B004F6108 /* WMGetDiverLicenseViewController.m in Sources */,

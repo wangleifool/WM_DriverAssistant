@@ -10,6 +10,8 @@
 #import "WMMyDriverMasterView.h"
 #import "WMAdvertisementPagingScrollView.h"
 #import "WMTheoryLearnModelView.h"
+#import "WMCircleOfFriendsPreview.h"
+#import "WMBeginnerBuyCarView.h"
 
 @interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate>
 {    
@@ -19,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet WMMyDriverMasterView *driverMasterView;
 @property (weak, nonatomic) IBOutlet WMAdvertisementPagingScrollView *advertisementView;
 @property (weak, nonatomic) IBOutlet WMTheoryLearnModelView *theoryLearnView;
+@property (weak, nonatomic) IBOutlet WMCircleOfFriendsPreview *circleOfFriendsPreview;
+@property (weak, nonatomic) IBOutlet WMBeginnerBuyCarView *beginnerBuyCarView;
 
 @end
 
@@ -54,7 +58,10 @@
 {
     [super viewDidAppear:animated];
     
-    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
+//    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
+    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64; // 计算有问题
+    self.mainScrollView.contentSize = CGSizeMake(0, contentHeight);
+
 }
 
 #pragma mark - 教练视图代理

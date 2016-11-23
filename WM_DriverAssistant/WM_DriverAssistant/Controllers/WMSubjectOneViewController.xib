@@ -9,6 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMSubjectOneViewController">
             <connections>
                 <outlet property="advertisementView" destination="Pia-C5-iJp" id="KH1-zN-2ir"/>
+                <outlet property="beginnerBuyCarView" destination="L8z-EM-s6b" id="0oN-fj-McZ"/>
+                <outlet property="circleOfFriendsPreview" destination="wRr-UH-U9S" id="y0F-XW-gut"/>
                 <outlet property="driverMasterView" destination="5b7-3V-IUc" id="alH-Tb-s1U"/>
                 <outlet property="mainScrollView" destination="UmZ-FB-rLQ" id="tAG-sL-QIC"/>
                 <outlet property="theoryLearnView" destination="Sv0-Jk-67c" id="kvl-ol-TKT"/>
@@ -40,20 +42,25 @@
                                 <constraint firstAttribute="height" constant="564" id="piL-Qe-9lE"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRr-UH-U9S">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRr-UH-U9S" customClass="WMCircleOfFriendsPreview">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="128" id="NIx-u2-bNm"/>
-                                <constraint firstAttribute="height" constant="128" id="YFe-gh-ss1"/>
+                                <constraint firstAttribute="height" constant="189" id="YFe-gh-ss1"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8z-EM-s6b" customClass="WMBeginnerBuyCarView">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="347" id="JTe-QV-r4u"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="5b7-3V-IUc" firstAttribute="top" secondItem="Pia-C5-iJp" secondAttribute="bottom" constant="8" id="2zZ-9S-bIf"/>
-                        <constraint firstAttribute="bottom" secondItem="wRr-UH-U9S" secondAttribute="bottom" constant="17" id="BIX-zR-jmJ"/>
+                        <constraint firstAttribute="bottom" secondItem="L8z-EM-s6b" secondAttribute="bottom" constant="-399" id="99y-Sf-Efi"/>
                         <constraint firstItem="Pia-C5-iJp" firstAttribute="top" secondItem="UmZ-FB-rLQ" secondAttribute="top" id="CN1-1n-IlU"/>
-                        <constraint firstItem="wRr-UH-U9S" firstAttribute="top" secondItem="Sv0-Jk-67c" secondAttribute="bottom" constant="23" id="DC5-Ex-Vai"/>
+                        <constraint firstItem="wRr-UH-U9S" firstAttribute="top" secondItem="Sv0-Jk-67c" secondAttribute="bottom" constant="8" id="DC5-Ex-Vai"/>
                         <constraint firstItem="Sv0-Jk-67c" firstAttribute="width" secondItem="UmZ-FB-rLQ" secondAttribute="width" id="F2j-pE-0kB"/>
                         <constraint firstItem="5b7-3V-IUc" firstAttribute="width" secondItem="UmZ-FB-rLQ" secondAttribute="width" id="FKV-sb-cz1"/>
                         <constraint firstAttribute="trailing" secondItem="5b7-3V-IUc" secondAttribute="trailing" id="NLd-th-1o3"/>
@@ -61,11 +68,14 @@
                         <constraint firstItem="Sv0-Jk-67c" firstAttribute="top" secondItem="5b7-3V-IUc" secondAttribute="bottom" constant="8" id="TDw-Xx-a83"/>
                         <constraint firstItem="wRr-UH-U9S" firstAttribute="leading" secondItem="UmZ-FB-rLQ" secondAttribute="leading" id="Yu7-8M-KFc"/>
                         <constraint firstItem="Pia-C5-iJp" firstAttribute="leading" secondItem="UmZ-FB-rLQ" secondAttribute="leading" id="ZB2-Yq-3QX"/>
+                        <constraint firstAttribute="trailing" secondItem="L8z-EM-s6b" secondAttribute="trailing" id="dqy-H3-tej"/>
                         <constraint firstItem="Sv0-Jk-67c" firstAttribute="leading" secondItem="UmZ-FB-rLQ" secondAttribute="leading" id="im9-Lw-wHZ"/>
+                        <constraint firstItem="L8z-EM-s6b" firstAttribute="top" secondItem="wRr-UH-U9S" secondAttribute="bottom" constant="8" id="lxO-Aq-Mvy"/>
                         <constraint firstAttribute="trailing" secondItem="Pia-C5-iJp" secondAttribute="trailing" id="qIY-Ti-QYe"/>
                         <constraint firstItem="Pia-C5-iJp" firstAttribute="width" secondItem="UmZ-FB-rLQ" secondAttribute="width" id="tFr-ex-7DI"/>
                         <constraint firstAttribute="trailing" secondItem="wRr-UH-U9S" secondAttribute="trailing" id="vq3-uG-vZX"/>
                         <constraint firstAttribute="trailing" secondItem="Sv0-Jk-67c" secondAttribute="trailing" id="ypb-n5-f4W"/>
+                        <constraint firstItem="L8z-EM-s6b" firstAttribute="leading" secondItem="UmZ-FB-rLQ" secondAttribute="leading" id="z2M-XR-850"/>
                     </constraints>
                 </scrollView>
             </subviews>
