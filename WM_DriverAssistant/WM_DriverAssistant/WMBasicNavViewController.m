@@ -111,7 +111,7 @@
 #pragma mark 左边按钮按下
 -(void)addView
 {
-    NSLog(@"ShowLeft");
+    //NSLog(@"ShowLeft");
     [self ShowLeftView];
 }
 #pragma mark 显示左边用户视图

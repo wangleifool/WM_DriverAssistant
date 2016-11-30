@@ -18,11 +18,9 @@
 @property(nonatomic,strong)NSArray *btnTitles2;
 @property(nonatomic,strong)NSArray *btnImages;
 @property(nonatomic,strong)UIScrollView *scrollView;
-@property(nonatomic,strong)UIPageControl *pageControl;
+
 @property(nonatomic,strong)NSTimer *timer;
-@property(nonatomic,strong)UIImageView *leftImageView;
-@property(nonatomic,strong)UIImageView *centerImageView;
-@property(nonatomic,strong)UIImageView *rightImageView;
+
 @property(nonatomic,strong)WM_SecondCollection *secondCollectionView;
 @property(nonatomic,strong)UIView *cutView;
 @end

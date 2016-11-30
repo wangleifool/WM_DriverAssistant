@@ -23,6 +23,11 @@
     UIScrollView     *mainScrollview;
     UICollectionView *collectionView1;
     UICollectionView *collectionView2;
+    
+    UIImageView      *_leftImageView;
+    UIImageView      *_centerImageView;
+    UIImageView      *_rightImageView;
+    UIPageControl    *_pageControl;
     NSInteger        currentPage;
 }
 @end
@@ -50,6 +55,7 @@
     [self createBannerWidget];
     [self initCollectionView];
     [self initImageScrollView];
+    [self initImageView];
     [self initCutLine];
     [self addTimer];
 }
@@ -297,18 +303,18 @@
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 640, 768, 190)];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
-    _scrollView.contentSize = CGSizeMake(768*3, 190);
-    _scrollView.contentOffset = CGPointMake(768, 0);
+    _scrollView.contentSize = CGSizeMake(kScreenWidth*3, 190);
+    _scrollView.contentOffset = CGPointMake(kScreenWidth, 0);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     [mainScrollview addSubview:_scrollView];
     
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((768-40)/2, 716, 40, 37)];
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((768-40)/2, 780, 40, 37)];
     _pageControl.numberOfPages = 3;
     _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
     _pageControl.currentPage = 0;
     [mainScrollview addSubview:_pageControl];
-    [self initImageView];
+    
 }
 
 -(void)initImageView
@@ -339,23 +345,18 @@
     }
 }
 #pragma mark 实现UIScrollViewDelegate
-#pragma mark scrollView正在滚动
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-    //[self nextImage];
-}
+//将要滚动时调用
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.timer invalidate];
 }
+//滚动结束调用
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    [self nextImage];
+    [self reloadImage];
+    
+    [scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:NO];
     [self addTimer];
-    
-    _scrollView.contentOffset = CGPointMake(kScreenWidth, 0);
-    
 }
 
 #pragma mark 添加定时器
@@ -365,8 +366,9 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(autoNext) userInfo:nil repeats:YES];
 }
 #pragma mark 切换scrollView上面的图片
--(void)nextImage
+-(void)reloadImage
 {
+    int leftImageIndex, rightImageIndex;
     CGPoint contentOffset = [_scrollView contentOffset];
     if (contentOffset.x > kScreenWidth)//向左滑动
     {
@@ -377,20 +379,30 @@
         currentPage = (currentPage - 1 + imageCount) % imageCount;
     }
     _centerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)currentPage]];
-    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)((currentPage - 1 + imageCount) % imageCount)]];
-    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)((currentPage + 1) % imageCount)]];
+    leftImageIndex = (currentPage +imageCount-1)%imageCount;
+    rightImageIndex = (currentPage + 1) % imageCount;
+    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)leftImageIndex]];
+    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)rightImageIndex]];
     _pageControl.currentPage = currentPage;
-    NSLog(@"%ld",currentPage);
 
-    
 }
 -(void)autoNext
 {
+    int leftImageIndex,rightImageIndex;
+    [UIView animateWithDuration:1 animations:^{
+        CGFloat scrollX = _scrollView.contentOffset.x;
+        scrollX += kScreenWidth;
+        _scrollView.contentOffset = CGPointMake(scrollX, 0);
+    }];
+    
     currentPage = (currentPage + 1) % imageCount;
     _centerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)currentPage]];
-    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)((currentPage - 1 + imageCount) % imageCount)]];
-    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)((currentPage + 1) % imageCount)]];
+    leftImageIndex = (currentPage +imageCount-1)%imageCount;
+    rightImageIndex = (currentPage + 1) % imageCount;
+    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)leftImageIndex]];
+    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)rightImageIndex]];
     _pageControl.currentPage = currentPage;
+    [_scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
