@@ -37,9 +37,9 @@
     [super viewDidLoad];
 
     //滚动广告
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"touxiang01"]];
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"touxiang02"]];
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"touxiang03"]];
+    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad1"]];
+    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad2"]];
+    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad3"]];
     
     //添加我的教练视图
     self.driverMasterView.delegate = self;
@@ -59,7 +59,7 @@
     [super viewDidAppear:animated];
     
 //    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
-    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64; // 计算有问题
+    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 47; // 计算有问题
     self.mainScrollView.contentSize = CGSizeMake(0, contentHeight);
 
 }

@@ -35,7 +35,7 @@
     [self setNavigationTitleView:nil];
     
     //添加内容视图
-    NSArray *arrayTitles = [NSArray arrayWithObjects:@"科目一",@"科目二",@"科目三",@"科目四",@"拿本", nil];
+    NSArray *arrayTitles = [NSArray arrayWithObjects:@"科一",@"科二",@"科三",@"科四",@"拿本", nil];
     NSArray *arrayControllers = [NSArray arrayWithObjects:@"WMSubjectOneViewController",@"WMSubjectTwoViewController",@"WMSubjectThreeViewController",@"WMSubjectFourViewController",@"WMGetDiverLicenseViewController", nil];
     WMPagesScrollView *WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     

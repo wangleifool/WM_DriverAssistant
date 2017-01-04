@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HDButton">
+            <connections>
+                <outlet property="iconImage" destination="EeA-A0-FTZ" id="3cz-yA-5lI"/>
+                <outlet property="titleLabel" destination="7AG-BY-ktI" id="5T6-XM-RmD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yW0-z0-lWb">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jH2-uk-I0Q">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="100"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="Dqg-8c-Vhn"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-A0-FTZ">
+                    <rect key="frame" x="15" y="10" width="60" height="50"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雷克萨斯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AG-BY-ktI">
+                    <rect key="frame" x="0.0" y="60" width="90" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Lg9-NN-j7X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EeA-A0-FTZ" secondAttribute="trailing" constant="15" id="3z3-bo-5y5"/>
+                <constraint firstItem="EeA-A0-FTZ" firstAttribute="top" secondItem="yW0-z0-lWb" secondAttribute="top" constant="10" id="AIx-3L-iK9"/>
+                <constraint firstItem="jH2-uk-I0Q" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" id="Ewf-9a-D9z"/>
+                <constraint firstItem="EeA-A0-FTZ" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" constant="15" id="IEP-A9-YHy"/>
+                <constraint firstItem="jH2-uk-I0Q" firstAttribute="top" secondItem="yW0-z0-lWb" secondAttribute="top" id="SPC-tz-iXl"/>
+                <constraint firstAttribute="trailing" secondItem="7AG-BY-ktI" secondAttribute="trailing" id="Vbj-gm-659"/>
+                <constraint firstAttribute="trailing" secondItem="jH2-uk-I0Q" secondAttribute="trailing" id="YdK-4W-gem"/>
+                <constraint firstItem="7AG-BY-ktI" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" id="gff-Ln-WcH"/>
+                <constraint firstAttribute="bottom" secondItem="jH2-uk-I0Q" secondAttribute="bottom" id="tDD-FR-wuz"/>
+                <constraint firstItem="7AG-BY-ktI" firstAttribute="top" secondItem="EeA-A0-FTZ" secondAttribute="bottom" id="v1t-kY-Jd9"/>
+                <constraint firstAttribute="bottom" secondItem="7AG-BY-ktI" secondAttribute="bottom" constant="5" id="vx0-VN-hzT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="662" y="487"/>
+        </view>
+    </objects>
+</document>

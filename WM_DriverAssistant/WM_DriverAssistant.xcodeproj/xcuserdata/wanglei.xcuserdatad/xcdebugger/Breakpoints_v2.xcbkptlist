@@ -38,7 +38,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
@@ -51,14 +51,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[WMImageAndTwoLineTextView layoutSubviews]"
                   moduleName = "WM_DriverAssistant"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wanglei/360%E4%BA%91%E7%9B%98/%E9%92%A2%E7%90%B4%E8%87%AA%E5%8A%A8%E6%BC%94%E5%A5%8F%E7%B3%BB%E7%BB%9F/GIT%20source/WM_DriverAssistant/WM_DriverAssistant/WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
-                  timestampString = "501587773.696614"
+                  timestampString = "505114448.69769"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -66,14 +66,14 @@
                   offsetFromSymbolStart = "58">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__43-[WMImageAndTwoLineTextView layoutSubviews]_block_invoke"
                   moduleName = "WM_DriverAssistant"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wanglei/360%E4%BA%91%E7%9B%98/%E9%92%A2%E7%90%B4%E8%87%AA%E5%8A%A8%E6%BC%94%E5%A5%8F%E7%B3%BB%E7%BB%9F/GIT%20source/WM_DriverAssistant/WM_DriverAssistant/WM_DriverAssistant/Views/WMImageAndTwoLineTextView.m"
-                  timestampString = "501587773.699211"
+                  timestampString = "505114448.699744"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"

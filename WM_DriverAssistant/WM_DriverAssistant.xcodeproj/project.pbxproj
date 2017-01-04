@@ -41,6 +41,8 @@
 		9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B18B8AB1DD06CA2004F6108 /* WMMyDriverMasterView.m */; };
 		9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */; };
 		9B3AE90C1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */; };
+		9B45FBE41E1C834F00FF64D0 /* HDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45FBE21E1C834F00FF64D0 /* HDButton.m */; };
+		9B45FBE51E1C834F00FF64D0 /* HDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B45FBE31E1C834F00FF64D0 /* HDButton.xib */; };
 		9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */; };
 		9B64B1821DE41AF80032E20F /* WMTheoryLearnModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */; };
 		9B64B1851DE42A5D0032E20F /* WMTheoryLearnModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B64B1841DE42A5D0032E20F /* WMTheoryLearnModelView.m */; };
@@ -128,6 +130,9 @@
 		9B18B8AD1DD06CC5004F6108 /* WMMyDriverMasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMMyDriverMasterView.xib; path = Views/WMMyDriverMasterView.xib; sourceTree = "<group>"; };
 		9B3AE90A1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAdvertisementPagingScrollView.h; sourceTree = "<group>"; };
 		9B3AE90B1DD1B7BE0070DCA1 /* WMAdvertisementPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAdvertisementPagingScrollView.m; sourceTree = "<group>"; };
+		9B45FBE11E1C834F00FF64D0 /* HDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDButton.h; sourceTree = "<group>"; };
+		9B45FBE21E1C834F00FF64D0 /* HDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDButton.m; sourceTree = "<group>"; };
+		9B45FBE31E1C834F00FF64D0 /* HDButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDButton.xib; sourceTree = "<group>"; };
 		9B5AA63B1DC49EA200C2C15C /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		9B5AA63C1DC49EA200C2C15C /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
 		9B64B1811DE41AF80032E20F /* WMTheoryLearnModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMTheoryLearnModelView.xib; path = Views/WMTheoryLearnModelView.xib; sourceTree = "<group>"; };
@@ -265,6 +270,7 @@
 		9B064FED1DC2D5BA00A7ACE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B45FBE01E1C831F00FF64D0 /* custom view */,
 				9B18B8A51DD06A34004F6108 /* pageJiakao */,
 				9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */,
 				9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */,
@@ -312,6 +318,16 @@
 				9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */,
 			);
 			name = pageJiakao;
+			sourceTree = "<group>";
+		};
+		9B45FBE01E1C831F00FF64D0 /* custom view */ = {
+			isa = PBXGroup;
+			children = (
+				9B45FBE11E1C834F00FF64D0 /* HDButton.h */,
+				9B45FBE21E1C834F00FF64D0 /* HDButton.m */,
+				9B45FBE31E1C834F00FF64D0 /* HDButton.xib */,
+			);
+			name = "custom view";
 			sourceTree = "<group>";
 		};
 		9B5AA63A1DC4943300C2C15C /* pageJiakao */ = {
@@ -469,6 +485,7 @@
 				9B8FD8641DE5706A001862FA /* WMCircleOfFriendsPreview.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */,
+				9B45FBE51E1C834F00FF64D0 /* HDButton.xib in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
 				9B18B8A41DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib in Resources */,
 				9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */,
@@ -520,6 +537,7 @@
 				9B0650481DC3285600A7ACE3 /* WMPurchaseNavViewController.m in Sources */,
 				9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */,
 				9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */,
+				9B45FBE41E1C834F00FF64D0 /* HDButton.m in Sources */,
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
 				9B8FD8621DE5704E001862FA /* WMCircleOfFriendsPreview.m in Sources */,
 				9B0650451DC3281B00A7ACE3 /* WMBasicNavViewController.m in Sources */,
