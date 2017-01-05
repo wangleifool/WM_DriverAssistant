@@ -77,7 +77,7 @@
         
         //添加页面控制
         ADpageControl = [[UIPageControl alloc] init];
-        ADpageControl.frame = CGRectMake(0, self.bounds.size.height - ADpageControl.bounds.size.height, self.bounds.size.width, ADpageControl.bounds.size.height);
+        ADpageControl.frame = CGRectMake(0, self.bounds.size.height - ADpageControl.bounds.size.height - 10, self.bounds.size.width, ADpageControl.bounds.size.height);
         ADpageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
         ADpageControl.currentPageIndicatorTintColor = [UIColor blueColor];
         ADpageControl.numberOfPages = self.advertisementImages.count - 2;  //因为有两个元素是故意添加的。

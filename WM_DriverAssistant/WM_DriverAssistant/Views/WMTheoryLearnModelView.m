@@ -16,6 +16,19 @@
 
 @implementation WMTheoryLearnModelView
 
+#pragma mark - 懒加载
+//- (HDButton *)btSubjectTech
+//{
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        _btSubjectTech.delegate = self;
+//        [_btSubjectTech.iconImage setImage:[UIImage imageNamed:@"foot_icon_s"]]; 
+//        [_btSubjectTech.titleLabel setText:@"科目技巧"];
+//    });
+//    
+//    return _btSubjectTech;
+//}
+
 #pragma mark - 生命周期
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -38,6 +51,62 @@
 
 - (void)layoutSubviews
 {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _btSubjectTech.delegate = self;
+        [_btSubjectTech.iconImage setImage:[UIImage imageNamed:@"foot_icon_s"]];
+        [_btSubjectTech.titleLabel setText:@"科目技巧"];
+        
+        _btIconRemember.delegate = self;
+        [_btIconRemember.titleLabel setText:@"图标速记"];
+        
+        _btAwardTryDrive.delegate = self;
+        [_btAwardTryDrive.titleLabel setText:@"有奖试驾"];
+        [_btAwardTryDrive.iconImage setImage:[UIImage imageNamed:@"xiaoche"]];
+        
+        _btStudentWelfare.delegate = self;
+        [_btStudentWelfare.titleLabel setText:@"学员福利"];
+        
+        _btEarnCoin.delegate = self;
+        [_btEarnCoin.titleLabel setText:@"赚取金币"];
+        
+        _btLearnLog.delegate = self;
+        [_btLearnLog.titleLabel setText:@"学习日志"];
+        [_btLearnLog.iconImage setImage:[UIImage imageNamed:@"icon_zixue"]];
+        
+        _btFavoriteQuestions.delegate = self;
+        [_btFavoriteQuestions.titleLabel setText:@"我的收藏"];
+        
+        _btMistakeQuestions.delegate = self;
+        [_btMistakeQuestions.titleLabel setText:@"我的错题"];
+        
+        _btShuffleTraining.delegate = self;
+        [_btShuffleTraining.titleLabel setText:@"随机训练"];
+        
+        _btSpecificTraning.delegate = self;
+        [_btSpecificTraning.titleLabel setText:@"专项训练"];
+        [_btSpecificTraning.iconImage setImage:[UIImage imageNamed:@"icon_ditu_dingwei"]];
+        
+        _btHardQuestions.delegate = self;
+        [_btHardQuestions.titleLabel setText:@"难题攻克"];
+        
+        _btNoneLearnQuestions.delegate = self;
+        [_btNoneLearnQuestions.titleLabel setText:@"未做题练习"];        
+        
+        _btBeforeTest.delegate = self;
+        [_btBeforeTest.titleLabel setText:@"考前冲刺"];
+        
+        _btLearnRate.delegate = self;
+        [_btLearnRate.titleLabel setText:@"成绩排名"];
+        
+        _btVipPass.delegate = self;
+        [_btVipPass.titleLabel setText:@"VIP保过"];
+        
+        _btTestWeapon.delegate = self;
+        [_btTestWeapon.titleLabel setText:@"报考神器"];
+        
+                
+    });
     
 //    [self.btSubjectTech setImage:[UIImage imageNamed:@"icon_ditu_dingwei"] forState:UIControlStateNormal];
     
@@ -57,51 +126,9 @@
     [_delegate touchUpActionOfTheoryLearnViewOutlet:sender];
 }
 
-//- (IBAction)btSubjectTechPressed:(id)sender {
-//    [_delegate actionOfOutlet:sender];
-//}
-//
-//- (IBAction)btIconRememberPressed:(id)sender {
-//    
-//}
-//- (IBAction)btAwardTryDrivePressed:(id)sender {
-//}
-//- (IBAction)btStudentWlfarePressed:(id)sender {
-//}
-//- (IBAction)btShuffleTraningPressed:(id)sender {
-//}
-//- (IBAction)btSpecificTraining:(id)sender {
-//}
-//- (IBAction)btHardQuestionsPressed:(id)sender {
-//}
-//
-//- (IBAction)btNoneLearnQuestionsPressed:(id)sender {
-//}
-//- (IBAction)btSortTrainingPressed:(id)sender {
-//}
-//- (IBAction)btBeforeTestPressed:(id)sender {
-//}
-//- (IBAction)btLearnRatePressed:(id)sender {
-//}
-//- (IBAction)btVipPassPressed:(id)sender {
-//}
-//- (IBAction)btTestDatePressed:(id)sender {
-//}
-//
-//- (IBAction)btSimulationTestPressed:(id)sender {
-//}
-
-//- (IBAction)btMistakeQuestionsPressed:(id)sender {
-//}
-//
-//- (IBAction)btFavoriteQuestionsPressed:(id)sender {
-//}
-//
-//- (IBAction)btLearnLogPressed:(id)sender {
-//}
-//
-//- (IBAction)btEarnCoinPressed:(id)sender {
-//}
-
+- (void)didTapHDButton:(HDButton *)sender
+{
+    [_delegate touchUpActionOfTheoryLearnViewOutlet:sender];
+}
 
 @end

@@ -97,7 +97,7 @@
         NSLog(@"11");
     } else if ([self.theoryLearnView.btVipPass isEqual:sender]) {
         NSLog(@"12");
-    } else if ([self.theoryLearnView.btTestDate isEqual:sender]) {
+    } else if ([self.theoryLearnView.btTestWeapon isEqual:sender]) {
         NSLog(@"13");
     } else if ([self.theoryLearnView.btSimulationTest isEqual:sender]) {
         NSLog(@"14");

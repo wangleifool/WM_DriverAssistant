@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet WMImageAndTwoLineTextView *viewTryDrive;
 @property (weak, nonatomic) IBOutlet WMImageAndTwoLineTextView *viewSecondHand;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewFlowLayout;
 @end

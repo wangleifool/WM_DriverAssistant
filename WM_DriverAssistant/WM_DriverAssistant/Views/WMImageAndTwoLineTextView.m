@@ -43,5 +43,8 @@
 {
     NSLog(@"xx taped");
 }
+- (IBAction)btClicked:(id)sender {
+    NSLog(@"xx bt taped");
+}
 
 @end

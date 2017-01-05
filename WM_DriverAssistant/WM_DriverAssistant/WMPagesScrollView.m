@@ -49,7 +49,7 @@
         _topTitleScrollView.frame = CGRectMake(0, topSpace, widthPerTitleItem*arrayOfTitles.count, topTitleScrollViewHeight);
         _topTitleScrollView.contentSize = CGSizeMake(widthPerTitleItem*arrayOfTitles.count, 0);
         _topTitleScrollView.showsHorizontalScrollIndicator = NO;
-        [_topTitleScrollView setBackgroundColor:BACKGROUND_COLOR];
+        [_topTitleScrollView setBackgroundColor:[UIColor whiteColor]];
         
         //设置顶部滑动视图上的标题按钮
         arrayOfTitleButtons = [NSMutableArray array];

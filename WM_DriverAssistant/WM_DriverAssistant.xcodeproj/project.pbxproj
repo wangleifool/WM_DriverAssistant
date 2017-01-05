@@ -52,6 +52,8 @@
 		9B8FD86C1DE58EE2001862FA /* WMBeginnerBuyCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FD86B1DE58EE2001862FA /* WMBeginnerBuyCarView.m */; };
 		9B8FD86E1DE58F1F001862FA /* WMBeginnerBuyCarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */; };
 		9B8FD8711DE5996D001862FA /* WMImageAndTwoLineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FD86F1DE5996D001862FA /* WMImageAndTwoLineTextView.m */; };
+		9BD5C83F1E1E35960004BCDD /* WMImgTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5C83D1E1E35960004BCDD /* WMImgTextCollectionViewCell.m */; };
+		9BD5C8401E1E35960004BCDD /* WMImgTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD5C83E1E1E35960004BCDD /* WMImgTextCollectionViewCell.xib */; };
 		9BFF9F291DC34A5F004BCACD /* WMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF9F281DC34A5F004BCACD /* WMGlobal.m */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,9 @@
 		9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMBeginnerBuyCarView.xib; path = Views/WMBeginnerBuyCarView.xib; sourceTree = "<group>"; };
 		9B8FD86F1DE5996D001862FA /* WMImageAndTwoLineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMImageAndTwoLineTextView.m; path = Views/WMImageAndTwoLineTextView.m; sourceTree = "<group>"; };
 		9B8FD8701DE5996D001862FA /* WMImageAndTwoLineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMImageAndTwoLineTextView.h; path = Views/WMImageAndTwoLineTextView.h; sourceTree = "<group>"; };
+		9BD5C83C1E1E35960004BCDD /* WMImgTextCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMImgTextCollectionViewCell.h; path = Views/WMImgTextCollectionViewCell.h; sourceTree = "<group>"; };
+		9BD5C83D1E1E35960004BCDD /* WMImgTextCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMImgTextCollectionViewCell.m; path = Views/WMImgTextCollectionViewCell.m; sourceTree = "<group>"; };
+		9BD5C83E1E1E35960004BCDD /* WMImgTextCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMImgTextCollectionViewCell.xib; path = Views/WMImgTextCollectionViewCell.xib; sourceTree = "<group>"; };
 		9BFF9F271DC34A5F004BCACD /* WMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMGlobal.h; path = Others/WMGlobal.h; sourceTree = "<group>"; };
 		9BFF9F281DC34A5F004BCACD /* WMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGlobal.m; path = Others/WMGlobal.m; sourceTree = "<group>"; };
 		9BFF9F2A1DC34B35004BCACD /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
@@ -316,6 +321,9 @@
 				9B8FD86A1DE58EE2001862FA /* WMBeginnerBuyCarView.h */,
 				9B8FD86B1DE58EE2001862FA /* WMBeginnerBuyCarView.m */,
 				9B8FD86D1DE58F1F001862FA /* WMBeginnerBuyCarView.xib */,
+				9BD5C83C1E1E35960004BCDD /* WMImgTextCollectionViewCell.h */,
+				9BD5C83D1E1E35960004BCDD /* WMImgTextCollectionViewCell.m */,
+				9BD5C83E1E1E35960004BCDD /* WMImgTextCollectionViewCell.xib */,
 			);
 			name = pageJiakao;
 			sourceTree = "<group>";
@@ -485,6 +493,7 @@
 				9B8FD8641DE5706A001862FA /* WMCircleOfFriendsPreview.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */,
+				9BD5C8401E1E35960004BCDD /* WMImgTextCollectionViewCell.xib in Resources */,
 				9B45FBE51E1C834F00FF64D0 /* HDButton.xib in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
 				9B18B8A41DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib in Resources */,
@@ -528,6 +537,7 @@
 				9B18B8991DD059B9004F6108 /* WMSubjectThreeViewController.m in Sources */,
 				9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */,
 				9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */,
+				9BD5C83F1E1E35960004BCDD /* WMImgTextCollectionViewCell.m in Sources */,
 				9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */,
 				9B8FD8711DE5996D001862FA /* WMImageAndTwoLineTextView.m in Sources */,
 				9B18B89E1DD059F2004F6108 /* WMSubjectFourViewController.m in Sources */,

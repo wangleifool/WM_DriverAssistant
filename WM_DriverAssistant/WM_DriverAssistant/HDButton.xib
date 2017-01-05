@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,7 +31,11 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-A0-FTZ">
-                    <rect key="frame" x="15" y="10" width="60" height="50"/>
+                    <rect key="frame" x="20" y="10" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="CSU-zV-7q0"/>
+                        <constraint firstAttribute="width" secondItem="EeA-A0-FTZ" secondAttribute="height" multiplier="1:1" id="TlT-Oz-EZi"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雷克萨斯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AG-BY-ktI">
                     <rect key="frame" x="0.0" y="60" width="90" height="35"/>
@@ -43,11 +48,10 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="EeA-A0-FTZ" secondAttribute="trailing" constant="15" id="3z3-bo-5y5"/>
                 <constraint firstItem="EeA-A0-FTZ" firstAttribute="top" secondItem="yW0-z0-lWb" secondAttribute="top" constant="10" id="AIx-3L-iK9"/>
                 <constraint firstItem="jH2-uk-I0Q" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" id="Ewf-9a-D9z"/>
-                <constraint firstItem="EeA-A0-FTZ" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" constant="15" id="IEP-A9-YHy"/>
                 <constraint firstItem="jH2-uk-I0Q" firstAttribute="top" secondItem="yW0-z0-lWb" secondAttribute="top" id="SPC-tz-iXl"/>
+                <constraint firstItem="EeA-A0-FTZ" firstAttribute="centerX" secondItem="yW0-z0-lWb" secondAttribute="centerX" id="VKn-Mw-rQX"/>
                 <constraint firstAttribute="trailing" secondItem="7AG-BY-ktI" secondAttribute="trailing" id="Vbj-gm-659"/>
                 <constraint firstAttribute="trailing" secondItem="jH2-uk-I0Q" secondAttribute="trailing" id="YdK-4W-gem"/>
                 <constraint firstItem="7AG-BY-ktI" firstAttribute="leading" secondItem="yW0-z0-lWb" secondAttribute="leading" id="gff-Ln-WcH"/>
