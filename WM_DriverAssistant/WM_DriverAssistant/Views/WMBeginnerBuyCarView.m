@@ -114,8 +114,6 @@ static NSString* cellID = @"collectViewCell";
 
     cell.delegate = self;
     
-    [cell setBackgroundColor:[UIColor darkGrayColor]];
-    
     return cell;
 }
 

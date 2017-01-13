@@ -12,6 +12,7 @@
 #import "WMTheoryLearnModelView.h"
 #import "WMCircleOfFriendsPreview.h"
 #import "WMBeginnerBuyCarView.h"
+#import "MJChiBaoZiHeader.h"
 
 @interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate>
 {    
@@ -24,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet WMCircleOfFriendsPreview *circleOfFriendsPreview;
 @property (weak, nonatomic) IBOutlet WMBeginnerBuyCarView *beginnerBuyCarView;
 
+@property (strong,nonatomic) UIRefreshControl *refresh;
+@property (strong,nonatomic) MJChiBaoZiHeader *customRefresh;
+
 @end
 
 @implementation WMSubjectOneViewController
@@ -35,7 +39,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+//    self.refresh = [[UIRefreshControl alloc] init];
+//    self.refresh.tintColor = [UIColor blueColor];//控制菊花的颜色
+//    NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"刷刷刷"];
+//    self.refresh.attributedTitle = string;//菊花下面的文字，可利用NSAttributedString设置各种文字属性
+//    [self.refresh addTarget:self action:@selector(start1) forControlEvents:(UIControlEventValueChanged)];//刷新方法
+//    [self.mainScrollView addSubview:self.refresh];
+    
+    self.customRefresh = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(start1)];
+    [self.customRefresh beginRefreshing];
+    [self.mainScrollView addSubview:self.customRefresh];
+    
     //滚动广告
     [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad1"]];
     [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad2"]];
@@ -110,6 +125,21 @@
     } else if ([self.theoryLearnView.btEarnCoin isEqual:sender]) {
         NSLog(@"18");
     }
+}
+
+#pragma mark - refresh
+- (void)start1
+{
+//    [self.refresh beginRefreshing];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.refresh endRefreshing];
+//    });
+    
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.customRefresh endRefreshing];
+    });
+
 }
 
 @end
