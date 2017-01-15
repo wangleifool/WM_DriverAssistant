@@ -13,14 +13,4 @@
 
 @interface WMBaibaoxiangViewController : WMBasicNavViewController<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
 
-@property(nonatomic,strong)NSArray *btnTitles;
-@property(nonatomic,strong)NSArray *btnTitles1;
-@property(nonatomic,strong)NSArray *btnTitles2;
-@property(nonatomic,strong)NSArray *btnImages;
-@property(nonatomic,strong)UIScrollView *scrollView;
-
-@property(nonatomic,strong)NSTimer *timer;
-
-@property(nonatomic,strong)WM_SecondCollection *secondCollectionView;
-@property(nonatomic,strong)UIView *cutView;
 @end

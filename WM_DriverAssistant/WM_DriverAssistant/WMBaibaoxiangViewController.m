@@ -20,44 +20,151 @@
 @interface WMBaibaoxiangViewController ()
 {
     UIView           *backView;
-    UIScrollView     *mainScrollview;
+    
     UICollectionView *collectionView1;
     UICollectionView *collectionView2;
     
-    UIImageView      *_leftImageView;
-    UIImageView      *_centerImageView;
-    UIImageView      *_rightImageView;
-    UIPageControl    *_pageControl;
     NSInteger        currentPage;
 }
+@property(nonatomic,strong)NSArray *btnTitles;
+@property(nonatomic,strong)NSArray *btnTitles1;
+@property(nonatomic,strong)NSArray *btnTitles2;
+@property(nonatomic,strong)NSArray *btnImages;
+@property(nonatomic,strong)UIScrollView *scrollView;
+
+
+@property(nonatomic,strong)NSTimer *timer;
+
+@property(nonatomic,strong)WM_SecondCollection *secondCollectionView;
+@property(nonatomic,strong)UIView *cutView;
+
+@property(nonatomic,strong)UIImageView      *ADImageView;
+@property(nonatomic,strong)UIPageControl    *pageControl;
+@property(nonatomic,strong)UIScrollView     *mainScrollview;
+@property(nonatomic,strong)CATransition     *transition;
+
 @end
 
 
 
 @implementation WMBaibaoxiangViewController
 
+#pragma mark - 属性的getter方法
+-(UIImageView *)ADImageView
+{
+    if (!_ADImageView) {
+        _ADImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 640, 768, 190)];
+        _ADImageView.image = [UIImage imageNamed:@"0.jpg"];
+        UISwipeGestureRecognizer *leftSwipGS = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwip:)];
+        leftSwipGS.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self.view addGestureRecognizer:leftSwipGS];
+        UISwipeGestureRecognizer *rightSwipGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwip:)];
+        rightSwipGes.direction = UISwipeGestureRecognizerDirectionRight;
+        [self.view addGestureRecognizer:rightSwipGes];
+        
+    }
+    return _ADImageView;
+}
+-(UIPageControl *)pageControl
+{
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((768-40)/2, 780, 40, 37)];
+        _pageControl.numberOfPages = 3;
+        _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+        _pageControl.currentPage = 0;
+    }
+    return _pageControl;
+}
+-(UIScrollView *)mainScrollview
+{
+    if (!_mainScrollview) {
+        _mainScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 768, 1024-64)];
+        _mainScrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        _mainScrollview.scrollEnabled = YES;
+        _mainScrollview.showsVerticalScrollIndicator = NO;
+        
+    }
+    return _mainScrollview;
+}
+-(CATransition *)transition
+{
+    if (!_transition) {
+        _transition = [[CATransition alloc] init];
+    }
+    return _transition;
+}
 
+#pragma mark - 轮播图片的手势操作
+-(void)leftSwip:(UISwipeGestureRecognizer *)gesture
+{
+    [self transationAnimation:YES];
+}
+-(void)rightSwip:(UISwipeGestureRecognizer *)gesture
+{
+    [self transationAnimation:NO];
+}
+-(void)transationAnimation:(BOOL)isNext
+{
+    self.transition.type = kCATransitionPush;
+    self.transition.duration = 1;
+    if (isNext) {
+        self.transition.subtype = kCATransitionFromRight;
+    }
+    else
+    {
+        self.transition.subtype = kCATransitionFromLeft;
+    }
 
+    self.ADImageView.image = [self getImage:isNext];
+    [_ADImageView.layer addAnimation:self.transition forKey:@"KCTransitionAnimation"];
+}
+#pragma mark - 自动轮播
+-(void)autoNextImage
+{
+    [self transationAnimation:YES];
+}
+-(UIImage *)getImage:(BOOL)isNext
+{
+    if (isNext)
+    {
+        currentPage = (currentPage+1)%imageCount;
+    }
+    else
+    {
+        currentPage = (currentPage-1+imageCount)%imageCount;
+    }
+    self.pageControl.currentPage = currentPage;
+    NSString *imageName = [NSString stringWithFormat:@"%ld.jpg",(long)currentPage];
+    return [UIImage imageNamed:imageName];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [_timer invalidate];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self initData];
+    [self initUI];
+    [self createBannerWidget];
+    [self initCollectionView];
+    [self initCutLine];
+    [self addTimer];
+}
+-(void)initUI
+{
+    [self.view addSubview:self.mainScrollview];
+    [self.mainScrollview addSubview:self.ADImageView];
+    [self.mainScrollview addSubview:self.pageControl];
+}
+#pragma mark - 初始化数据
+-(void)initData
+{
     _btnTitles = @[@"精品二手车",@"短期理财",@"我要贷款",@"办信用卡"];
     _btnImages = @[@"xiaoche.png",@"icon_bm_school.png",@"icon_bm_top.png",@"icon_bm_zixue.png"];
     _btnTitles1 = @[@"大牌车品",@"金银猫理财",@"真心话",@"买车狂欢惠",@"享7亿红包",@"玩转双十一",@"眼力大比评",@"免费约驾",@"测星座福地",@"手机借款",@"办理信用卡"];
     _btnTitles2 = @[@"测星座福地",@"砸金蛋",@"解锁星座",@"手机借款",@"办理信用卡",@"车险资讯",@"汽车头条",@"免费测保费",@"二手车",@"聊聊学车",@"帮选车",@"更多"];
-
-    mainScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 768, 1024-64)];
-    mainScrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    mainScrollview.scrollEnabled = YES;
-    mainScrollview.showsVerticalScrollIndicator = NO;
-    [self.view addSubview:mainScrollview];
-    [self createBannerWidget];
-    [self initCollectionView];
-    [self initImageScrollView];
-    [self initImageView];
-    [self initCutLine];
-    [self addTimer];
 }
 //重写-(void)ShowLeftView
 -(void)ShowLeftView
@@ -66,20 +173,20 @@
     {
         showLeftView = false;
         [UIView animateWithDuration:1 animations:^{
-            CGRect frame = mainScrollview.frame;
+            CGRect frame = _mainScrollview.frame;
             frame.origin.x = 618;
-            mainScrollview.frame = frame;
-            self.UserView.alpha = mainScrollview.frame.origin.x/618;
+            _mainScrollview.frame = frame;
+            self.UserView.alpha = _mainScrollview.frame.origin.x/618;
         }];
     }
     else
     {
         showLeftView = true;
         [UIView animateWithDuration:1 animations:^{
-            CGRect frame = mainScrollview.frame;
+            CGRect frame = _mainScrollview.frame;
             frame.origin.x = 0;
-            mainScrollview.frame = frame;
-            self.UserView.alpha = mainScrollview.frame.origin.x/618;
+            _mainScrollview.frame = frame;
+            self.UserView.alpha = _mainScrollview.frame.origin.x/618;
         }];
     }
 }
@@ -104,7 +211,7 @@
     collectionView1.dataSource = self;
     collectionView1.scrollEnabled = NO;
     [collectionView1 registerClass:[WM_CollectionViewCell class] forCellWithReuseIdentifier:@"collection1Cell"];
-    [mainScrollview addSubview:collectionView1];
+    [_mainScrollview addSubview:collectionView1];
     
     //初始化layout
     UICollectionViewFlowLayout *layout2 = [[UICollectionViewFlowLayout alloc] init];
@@ -125,10 +232,10 @@
     collectionView2.scrollEnabled = NO;
     [collectionView2 registerClass:[WM_CollectionViewCell class] forCellWithReuseIdentifier:@"collection1Cell"];
     
-    if (collectionView2.frame.origin.y+collectionView2.frame.size.height > mainScrollview.contentSize.height) {
-        mainScrollview.contentSize = CGSizeMake(kScreenWidth, collectionView2.frame.origin.y+collectionView2.frame.size.height);
+    if (collectionView2.frame.origin.y+collectionView2.frame.size.height > _mainScrollview.contentSize.height) {
+        _mainScrollview.contentSize = CGSizeMake(kScreenWidth, collectionView2.frame.origin.y+collectionView2.frame.size.height);
     }
-    [mainScrollview addSubview:collectionView2];
+    [_mainScrollview addSubview:collectionView2];
     
 }
 -(void)createBannerWidget
@@ -143,7 +250,7 @@
         myButton.tag = 100+i;
         [myButton addTarget:self action:@selector(banerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
-        [mainScrollview addSubview:myButton];
+        [_mainScrollview addSubview:myButton];
     }
 }
 
@@ -171,7 +278,7 @@
 {
     _cutView = [[UIView alloc] initWithFrame:CGRectMake(0, _scrollView.frame.origin.y+_scrollView.frame.size.height, kScreenWidth, 30)];
     _cutView.backgroundColor = [UIColor whiteColor];
-    [mainScrollview addSubview:_cutView];
+    [_mainScrollview addSubview:_cutView];
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake((_cutView.frame.size.width-60)/2, 0, 60, 30)];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.textColor = [UIColor redColor];
@@ -296,46 +403,7 @@
     
     
 }
-#pragma mark 创建Image的ScrollView视图
--(void)initImageScrollView
-{
-    
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 640, 768, 190)];
-    _scrollView.pagingEnabled = YES;
-    _scrollView.delegate = self;
-    _scrollView.contentSize = CGSizeMake(kScreenWidth*3, 190);
-    _scrollView.contentOffset = CGPointMake(kScreenWidth, 0);
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.showsVerticalScrollIndicator = NO;
-    [mainScrollview addSubview:_scrollView];
-    
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((768-40)/2, 780, 40, 37)];
-    _pageControl.numberOfPages = 3;
-    _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
-    _pageControl.currentPage = 0;
-    [mainScrollview addSubview:_pageControl];
-    
-}
 
--(void)initImageView
-{
-    //添加左边视图
-    _leftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 190)];
-    _leftImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _leftImageView.image = [UIImage imageNamed:@"2.jpg"];
-    [_scrollView addSubview:_leftImageView];
-    //添加中间视图
-    _centerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, 190)];
-    _centerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"0.jpg"]];
-    _centerImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [_scrollView addSubview:_centerImageView];
-    
-    //添加右边视图
-    _rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth*2, 0, kScreenWidth, 190)];
-    _rightImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _rightImageView.image = [UIImage imageNamed:@"1.jpg"];
-    [_scrollView addSubview:_rightImageView];
-}
 
 -(void)buttonClicked:(WM_BanerView *)view
 {
@@ -344,66 +412,15 @@
         NSLog(@"精品二手车%@",view.titleLab.text);
     }
 }
-#pragma mark 实现UIScrollViewDelegate
-//将要滚动时调用
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [self.timer invalidate];
-}
-//滚动结束调用
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [self reloadImage];
-    
-    [scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:NO];
-    [self addTimer];
-}
+
 
 #pragma mark 添加定时器
 -(void)addTimer
 {
-    //currentPage = currentPage++;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(autoNext) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoNextImage) userInfo:nil repeats:YES];
 }
-#pragma mark 切换scrollView上面的图片
--(void)reloadImage
-{
-    int leftImageIndex, rightImageIndex;
-    CGPoint contentOffset = [_scrollView contentOffset];
-    if (contentOffset.x > kScreenWidth)//向左滑动
-    {
-        currentPage = (currentPage + 1) % imageCount;
-    }
-    else if(contentOffset.x < kScreenWidth)//向右滑动
-    {
-        currentPage = (currentPage - 1 + imageCount) % imageCount;
-    }
-    _centerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)currentPage]];
-    leftImageIndex = (currentPage +imageCount-1)%imageCount;
-    rightImageIndex = (currentPage + 1) % imageCount;
-    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)leftImageIndex]];
-    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)rightImageIndex]];
-    _pageControl.currentPage = currentPage;
 
-}
--(void)autoNext
-{
-    int leftImageIndex,rightImageIndex;
-    [UIView animateWithDuration:1 animations:^{
-        CGFloat scrollX = _scrollView.contentOffset.x;
-        scrollX += kScreenWidth;
-        _scrollView.contentOffset = CGPointMake(scrollX, 0);
-    }];
-    
-    currentPage = (currentPage + 1) % imageCount;
-    _centerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)currentPage]];
-    leftImageIndex = (currentPage +imageCount-1)%imageCount;
-    rightImageIndex = (currentPage + 1) % imageCount;
-    _leftImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)leftImageIndex]];
-    _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)rightImageIndex]];
-    _pageControl.currentPage = currentPage;
-    [_scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:NO];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
