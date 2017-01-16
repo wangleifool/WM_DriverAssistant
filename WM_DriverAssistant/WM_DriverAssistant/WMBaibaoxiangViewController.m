@@ -90,6 +90,8 @@
 {
     if (!_transition) {
         _transition = [[CATransition alloc] init];
+        _transition.type = kCATransitionPush;
+        _transition.duration = 1;
     }
     return _transition;
 }
@@ -97,16 +99,17 @@
 #pragma mark - 轮播图片的手势操作
 -(void)leftSwip:(UISwipeGestureRecognizer *)gesture
 {
+    
     [self transationAnimation:YES];
+    
 }
 -(void)rightSwip:(UISwipeGestureRecognizer *)gesture
 {
     [self transationAnimation:NO];
+    
 }
 -(void)transationAnimation:(BOOL)isNext
 {
-    self.transition.type = kCATransitionPush;
-    self.transition.duration = 1;
     if (isNext) {
         self.transition.subtype = kCATransitionFromRight;
     }
