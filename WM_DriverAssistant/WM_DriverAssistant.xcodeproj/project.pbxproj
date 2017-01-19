@@ -77,6 +77,7 @@
 		3B4693F11E309E90008BE3B0 /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693EB1E309E90008BE3B0 /* MJDIYHeader.m */; };
 		3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */; };
 		3B4693F71E309EA7008BE3B0 /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */; };
+		3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4693F81E30AAC9008BE3B0 /* Reveal.framework */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
@@ -91,7 +92,6 @@
 		9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B06504D1DC33C3F00A7ACE3 /* WMBaomingViewController.m */; };
 		9B0650501DC33C3F00A7ACE3 /* WMBaomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */; };
 		9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */; };
-		9B0650551DC33C7800A7ACE3 /* WMJiakaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */; };
 		9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */; };
 		9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */; };
 		9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B06505C1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m */; };
@@ -240,6 +240,7 @@
 		3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAdvertisementPagingScrollView.m; sourceTree = "<group>"; };
 		3B4693F41E309EA7008BE3B0 /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
+		3B4693F81E30AAC9008BE3B0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -266,7 +267,6 @@
 		9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMBaomingViewController.xib; path = Controllers/WMBaomingViewController.xib; sourceTree = "<group>"; };
 		9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMJiakaoViewController.h; path = Controllers/WMJiakaoViewController.h; sourceTree = "<group>"; };
 		9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMJiakaoViewController.m; path = Controllers/WMJiakaoViewController.m; sourceTree = "<group>"; };
-		9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMJiakaoViewController.xib; path = Controllers/WMJiakaoViewController.xib; sourceTree = "<group>"; };
 		9B0650561DC33CB300A7ACE3 /* WMFaxianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMFaxianViewController.h; path = Controllers/WMFaxianViewController.h; sourceTree = "<group>"; };
 		9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMFaxianViewController.m; path = Controllers/WMFaxianViewController.m; sourceTree = "<group>"; };
 		9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMFaxianViewController.xib; path = Controllers/WMFaxianViewController.xib; sourceTree = "<group>"; };
@@ -287,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +313,6 @@
 			children = (
 				9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */,
 				9B06504E1DC33C3F00A7ACE3 /* WMBaomingViewController.xib */,
-				9B0650531DC33C7800A7ACE3 /* WMJiakaoViewController.xib */,
 				9B0650581DC33CB300A7ACE3 /* WMFaxianViewController.xib */,
 				9B06505D1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib */,
 				9B0650621DC33CE800A7ACE3 /* WMMaicheViewController.xib */,
@@ -493,6 +493,11 @@
 		3B4693851E309DE8008BE3B0 /* pageJiaKao */ = {
 			isa = PBXGroup;
 			children = (
+				9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */,
+				9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */,
+				3B46938F1E309E0B008BE3B0 /* WMSubjectOneViewController.h */,
+				3B4693901E309E0B008BE3B0 /* WMSubjectOneViewController.m */,
+				3B4693911E309E0B008BE3B0 /* WMSubjectOneViewController.xib */,
 				3B4693861E309E0B008BE3B0 /* WMGetDiverLicenseViewController.h */,
 				3B4693871E309E0B008BE3B0 /* WMGetDiverLicenseViewController.m */,
 				3B4693881E309E0B008BE3B0 /* WMGetDiverLicenseViewController.xib */,
@@ -502,9 +507,6 @@
 				3B46938C1E309E0B008BE3B0 /* WMSubjectFourViewController.h */,
 				3B46938D1E309E0B008BE3B0 /* WMSubjectFourViewController.m */,
 				3B46938E1E309E0B008BE3B0 /* WMSubjectFourViewController.xib */,
-				3B46938F1E309E0B008BE3B0 /* WMSubjectOneViewController.h */,
-				3B4693901E309E0B008BE3B0 /* WMSubjectOneViewController.m */,
-				3B4693911E309E0B008BE3B0 /* WMSubjectOneViewController.xib */,
 				3B4693921E309E0B008BE3B0 /* WMSubjectThreeViewController.h */,
 				3B4693931E309E0B008BE3B0 /* WMSubjectThreeViewController.m */,
 				3B4693941E309E0B008BE3B0 /* WMSubjectThreeViewController.xib */,
@@ -522,6 +524,7 @@
 				9B064FD11DC1FEC200A7ACE3 /* WM_DriverAssistantTests */,
 				9B064FDC1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests */,
 				9B064FB61DC1FEC100A7ACE3 /* Products */,
+				3B4693F81E30AAC9008BE3B0 /* Reveal.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -599,8 +602,6 @@
 				9B0650471DC3285600A7ACE3 /* WMPurchaseNavViewController.m */,
 				9B06504C1DC33C3F00A7ACE3 /* WMBaomingViewController.h */,
 				9B06504D1DC33C3F00A7ACE3 /* WMBaomingViewController.m */,
-				9B0650511DC33C7800A7ACE3 /* WMJiakaoViewController.h */,
-				9B0650521DC33C7800A7ACE3 /* WMJiakaoViewController.m */,
 				9B0650561DC33CB300A7ACE3 /* WMFaxianViewController.h */,
 				9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */,
 				9B0650601DC33CE800A7ACE3 /* WMMaicheViewController.h */,
@@ -778,7 +779,6 @@
 				3B4693991E309E0B008BE3B0 /* WMGetDiverLicenseViewController.xib in Resources */,
 				3B46939B1E309E0B008BE3B0 /* WMShowAdvertiseContentViewController.xib in Resources */,
 				0F0872561DD31AF600DDE159 /* ClassCell.xib in Resources */,
-				9B0650551DC33C7800A7ACE3 /* WMJiakaoViewController.xib in Resources */,
 				3B46939D1E309E0B008BE3B0 /* WMSubjectFourViewController.xib in Resources */,
 				3B4693A31E309E0B008BE3B0 /* WMSubjectTwoViewController.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
@@ -1024,10 +1024,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1039,6 +1049,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

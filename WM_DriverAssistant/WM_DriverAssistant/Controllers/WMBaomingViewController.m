@@ -19,14 +19,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     _button = [[FxButtonHelper alloc] init];
-    
-    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self initBannerData];
     [self initHeaderView];
     [self initFooterView];

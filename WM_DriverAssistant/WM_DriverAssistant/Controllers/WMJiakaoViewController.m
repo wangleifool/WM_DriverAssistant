@@ -25,6 +25,7 @@
 @interface WMJiakaoViewController ()
 {
     AppDelegate *appDelegate;
+    WMPagesScrollView *WMscrollView;
 }
 
 @end
@@ -42,11 +43,23 @@
     //添加内容视图
     NSArray *arrayTitles = [NSArray arrayWithObjects:@"科一",@"科二",@"科三",@"科四",@"拿本", nil];
     NSArray *arrayControllers = [NSArray arrayWithObjects:@"WMSubjectOneViewController",@"WMSubjectTwoViewController",@"WMSubjectThreeViewController",@"WMSubjectFourViewController",@"WMGetDiverLicenseViewController", nil];
-    WMPagesScrollView *WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
+    WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     
     [self.view addSubview:WMscrollView];
+    [self.view setBackgroundColor:[UIColor lightGrayColor]];
+//    UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight)];
+//    [bt setBackgroundColor:[UIColor redColor]];
+//    [self.view addSubview:bt];
     
     appDelegate.jiakaoViewController = self;
+    
+    
+    [self addNotification];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"page jia kao show");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,11 +67,64 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    [self removeNotification];
+}
+
+- (void)addNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLeftViewInPageJiakao:) name:@"showLeftViewInPageJiakao" object:nil];
+}
+
+- (void)removeNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showLeftViewInPageJiakao" object:nil];
+}
+
+
+
 #pragma mark - 自定义导航栏
 - (void)setNavigationTitleView:(UIView *)customView
 {
     NSLog(@"setNavigationTitleView in WMJiakaoViewController");
-    self.navigationItem.title = @"jiakaoTest";
+    self.navigationItem.title = @"驾考";
 }
 
+-(void)ShowLeftView
+{
+    if (showLeftView)
+    {
+        showLeftView = false;
+        [UIView animateWithDuration:0.5 animations:^{
+            CGRect frame = WMscrollView.frame;
+            
+            if (IsiPad) {
+                frame.origin.x = ScreenWidth - 200;
+            } else {
+                frame.origin.x = ScreenWidth - 100;
+            }
+            
+            WMscrollView.frame = frame;
+            self.UserView.alpha = 1;
+        }];
+    }
+    else
+    {
+        showLeftView = true;
+        [UIView animateWithDuration:0.5 animations:^{
+            CGRect frame = WMscrollView.frame;
+            frame.origin.x = 0;
+            WMscrollView.frame = frame;
+            self.UserView.alpha = 0;
+        }];
+    }
+    
+}
+
+#pragma mark - Notification
+- (void)showLeftViewInPageJiakao:(NSNotification *)notification
+{
+    [self ShowLeftView];
+}
 @end

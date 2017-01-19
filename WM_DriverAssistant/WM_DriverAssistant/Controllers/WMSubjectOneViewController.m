@@ -79,7 +79,7 @@
     [super viewDidAppear:animated];
     
 //    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
-    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 47; // 计算有问题
+    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 20; // 计算有问题
     self.mainScrollView.contentSize = CGSizeMake(0, contentHeight);
 
 }

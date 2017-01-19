@@ -158,10 +158,21 @@
 #pragma mark - main scrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    //最左侧，弹出左侧视图
+    static BOOL showOncePerTime = YES;
+    if (scrollView.contentOffset.x < 0 && showOncePerTime) {
+        showOncePerTime = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"showLeftViewInPageJiakao" object:nil];
+    } else if (scrollView.contentOffset.x >= 0){
+        showOncePerTime = YES;
+    }
+    
     //不需要处理的位置信息
     if (scrollView.contentOffset.x < 0 || scrollView.contentOffset.x > selfFrame.size.width * arrayOfTitles.count)
         return ;
-    
+    else {
+        
+    }
     
     //实时计算标题下划线的位置
     _topTitleBottomLine.center = CGPointMake([self getBottomLineOffsetWithMainScrollOffset:scrollView.contentOffset.x] + widthPerTitleItem/2, _topTitleBottomLine.center.y);
