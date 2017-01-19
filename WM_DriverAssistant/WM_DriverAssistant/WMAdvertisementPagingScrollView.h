@@ -8,12 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class WMAdvertisementPagingScrollView;
+
+@protocol WMAdvertisementPagingScrollViewDelegate <NSObject>
+
+- (void)advertiseTouchEventWithNeedWebURL:(NSString *)url;
+
+@end
+
 @interface WMAdvertisementPagingScrollView : UIView <UIScrollViewDelegate>
 {
     UIPageControl *ADpageControl;
     UIScrollView  *ADscrollView;
 }
 
+@property (strong, nonatomic) id <WMAdvertisementPagingScrollViewDelegate> delegate;
 @property (copy, nonatomic) NSMutableArray *advertisementImages;
+@property (copy, nonatomic) NSMutableArray *modelOfAdvertisements;
 
 @end

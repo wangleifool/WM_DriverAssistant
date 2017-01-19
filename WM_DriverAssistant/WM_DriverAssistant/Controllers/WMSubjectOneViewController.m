@@ -13,10 +13,12 @@
 #import "WMCircleOfFriendsPreview.h"
 #import "WMBeginnerBuyCarView.h"
 #import "MJChiBaoZiHeader.h"
+#import "WMShowAdvertiseContentViewController.h"
+#import "AppDelegate.h"
 
-@interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate>
+@interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate,WMAdvertisementPagingScrollViewDelegate>
 {    
-    
+    AppDelegate *appDelegate;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet WMMyDriverMasterView *driverMasterView;
@@ -40,6 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
 //    self.refresh = [[UIRefreshControl alloc] init];
 //    self.refresh.tintColor = [UIColor blueColor];//控制菊花的颜色
 //    NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"刷刷刷"];
@@ -48,13 +52,14 @@
 //    [self.mainScrollView addSubview:self.refresh];
     
     self.customRefresh = [MJChiBaoZiHeader headerWithRefreshingTarget:self refreshingAction:@selector(start1)];
-    [self.customRefresh beginRefreshing];
+//    [self.customRefresh beginRefreshing];
     [self.mainScrollView addSubview:self.customRefresh];
     
     //滚动广告
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad1"]];
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad2"]];
-    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad3"]];
+    self.advertisementView.delegate = self;
+//    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad1"]];
+//    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad2"]];
+//    [self.advertisementView.advertisementImages addObject:[UIImage imageNamed:@"ad3"]];
     
     //添加我的教练视图
     self.driverMasterView.delegate = self;
@@ -125,6 +130,14 @@
     } else if ([self.theoryLearnView.btEarnCoin isEqual:sender]) {
         NSLog(@"18");
     }
+}
+
+
+#pragma mark - 广告视图代理
+- (void)advertiseTouchEventWithNeedWebURL:(NSString *)url
+{
+    WMShowAdvertiseContentViewController *vc = [[WMShowAdvertiseContentViewController alloc] initWithWebURL:url];
+    [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - refresh

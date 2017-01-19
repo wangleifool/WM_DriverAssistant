@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B46930E1E2F4005008BE3B0 /* WMModelOfAdvertisement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B46930D1E2F4005008BE3B0 /* WMModelOfAdvertisement.m */; };
+		3B4693101E2F42FC008BE3B0 /* dataOfAdvertisement.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B46930F1E2F42FC008BE3B0 /* dataOfAdvertisement.plist */; };
+		3B4693531E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693511E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.m */; };
+		3B4693541E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4693521E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.xib */; };
+		3B4693561E2F5558008BE3B0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4693551E2F5558008BE3B0 /* Reveal.framework */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
@@ -101,6 +106,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B46930C1E2F4005008BE3B0 /* WMModelOfAdvertisement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfAdvertisement.h; path = Models/WMModelOfAdvertisement.h; sourceTree = "<group>"; };
+		3B46930D1E2F4005008BE3B0 /* WMModelOfAdvertisement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfAdvertisement.m; path = Models/WMModelOfAdvertisement.m; sourceTree = "<group>"; };
+		3B46930F1E2F42FC008BE3B0 /* dataOfAdvertisement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = dataOfAdvertisement.plist; path = Models/dataOfAdvertisement.plist; sourceTree = "<group>"; };
+		3B4693501E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMShowAdvertiseContentViewController.h; path = Controllers/WMShowAdvertiseContentViewController.h; sourceTree = "<group>"; };
+		3B4693511E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMShowAdvertiseContentViewController.m; path = Controllers/WMShowAdvertiseContentViewController.m; sourceTree = "<group>"; };
+		3B4693521E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMShowAdvertiseContentViewController.xib; path = Controllers/WMShowAdvertiseContentViewController.xib; sourceTree = "<group>"; };
+		3B4693551E2F5558008BE3B0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4693561E2F5558008BE3B0 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +274,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B46930B1E2F3FAF008BE3B0 /* pageJiakao */ = {
+			isa = PBXGroup;
+			children = (
+				3B46930C1E2F4005008BE3B0 /* WMModelOfAdvertisement.h */,
+				3B46930D1E2F4005008BE3B0 /* WMModelOfAdvertisement.m */,
+				3B46930F1E2F42FC008BE3B0 /* dataOfAdvertisement.plist */,
+			);
+			name = pageJiakao;
+			sourceTree = "<group>";
+		};
 		9B064FAC1DC1FEC000A7ACE3 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +291,7 @@
 				9B064FD11DC1FEC200A7ACE3 /* WM_DriverAssistantTests */,
 				9B064FDC1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests */,
 				9B064FB61DC1FEC100A7ACE3 /* Products */,
+				3B4693551E2F5558008BE3B0 /* Reveal.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,6 +346,7 @@
 		9B064FEB1DC2D5A700A7ACE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B46930B1E2F3FAF008BE3B0 /* pageJiakao */,
 				9B0650491DC3356800A7ACE3 /* WMpageControllersInfo.h */,
 				9B06504A1DC3356800A7ACE3 /* WMpageControllersInfo.m */,
 			);
@@ -439,6 +464,9 @@
 				9B18B8A01DD05A1B004F6108 /* WMGetDiverLicenseViewController.h */,
 				9B18B8A11DD05A1B004F6108 /* WMGetDiverLicenseViewController.m */,
 				9B18B8A21DD05A1B004F6108 /* WMGetDiverLicenseViewController.xib */,
+				3B4693501E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.h */,
+				3B4693511E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.m */,
+				3B4693521E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.xib */,
 			);
 			name = pageJiakao;
 			sourceTree = "<group>";
@@ -678,6 +706,7 @@
 				9B8FD86E1DE58F1F001862FA /* WMBeginnerBuyCarView.xib in Resources */,
 				9B18B89F1DD059F2004F6108 /* WMSubjectFourViewController.xib in Resources */,
 				9B8FD8641DE5706A001862FA /* WMCircleOfFriendsPreview.xib in Resources */,
+				3B4693541E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				9B18B89A1DD059B9004F6108 /* WMSubjectThreeViewController.xib in Resources */,
 				9BD5C8401E1E35960004BCDD /* WMImgTextCollectionViewCell.xib in Resources */,
@@ -687,6 +716,7 @@
 				9B18B8AE1DD06CC5004F6108 /* WMMyDriverMasterView.xib in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
 				9B18B8951DD05975004F6108 /* WMSubjectTwoViewController.xib in Resources */,
+				3B4693101E2F42FC008BE3B0 /* dataOfAdvertisement.plist in Resources */,
 				9B8FD8691DE58B23001862FA /* WMImageAndTwoLineTextView.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
 				9B18B8591DD047CA004F6108 /* WMSubjectOneViewController.xib in Resources */,
@@ -731,6 +761,7 @@
 				9B695F661E1F45CB0089A26F /* MJRefreshComponent.m in Sources */,
 				9B5AA63D1DC49EA200C2C15C /* WMPagesScrollView.m in Sources */,
 				9B18B8AC1DD06CA2004F6108 /* WMMyDriverMasterView.m in Sources */,
+				3B4693531E2F512E008BE3B0 /* WMShowAdvertiseContentViewController.m in Sources */,
 				9B695F681E1F45CB0089A26F /* MJRefreshHeader.m in Sources */,
 				9B695F781E1F45FB0089A26F /* MJRefreshAutoNormalFooter.m in Sources */,
 				9BD5C83F1E1E35960004BCDD /* WMImgTextCollectionViewCell.m in Sources */,
@@ -739,6 +770,7 @@
 				9B8FD8711DE5996D001862FA /* WMImageAndTwoLineTextView.m in Sources */,
 				9B18B89E1DD059F2004F6108 /* WMSubjectFourViewController.m in Sources */,
 				9B18B8941DD05975004F6108 /* WMSubjectTwoViewController.m in Sources */,
+				3B46930E1E2F4005008BE3B0 /* WMModelOfAdvertisement.m in Sources */,
 				9B695F651E1F45CB0089A26F /* MJRefreshBackFooter.m in Sources */,
 				9B695FA81E1F46470089A26F /* MJChiBaoZiHeader.m in Sources */,
 				9B695F791E1F45FB0089A26F /* MJRefreshAutoStateFooter.m in Sources */,
@@ -916,10 +948,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -931,6 +973,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

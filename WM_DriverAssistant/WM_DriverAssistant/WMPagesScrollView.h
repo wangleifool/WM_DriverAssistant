@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 #define MIN_SPACE 10
 #define TOP_SPACE 0
 #define TOP_SCROLL_VIEW_HEIGHT 40
@@ -19,7 +20,6 @@
 
 
 @interface WMPagesScrollView : UIScrollView
-
 
 //通过指定frame，每个page的title和每个page对应的视图控制器
 - (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)vcs;

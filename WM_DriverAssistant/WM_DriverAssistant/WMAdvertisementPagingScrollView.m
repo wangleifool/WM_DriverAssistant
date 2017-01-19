@@ -7,6 +7,7 @@
 //
 
 #import "WMAdvertisementPagingScrollView.h"
+#import "WMModelOfAdvertisement.h"
 
 @interface WMAdvertisementPagingScrollView ()
 {
@@ -43,6 +44,10 @@
 {
     if (nil == _advertisementImages) {
         _advertisementImages = [NSMutableArray array];
+        self.modelOfAdvertisements = [WMModelOfAdvertisement advertisementOnPage:0];
+        for (WMModelOfAdvertisement *model in self.modelOfAdvertisements) {
+            [_advertisementImages addObject:[UIImage imageNamed:model.imgUrl]];
+        }
     }
     return _advertisementImages;
 }
@@ -68,10 +73,13 @@
         //加载滚动视图的内容视图
         for (NSInteger i = 0; i < self.advertisementImages.count; i++) {
             CGRect frame = CGRectMake(i*ADscrollView.bounds.size.width, 0, ADscrollView.bounds.size.width, ADscrollView.bounds.size.height);
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-            [imageView setImage:self.advertisementImages[i]];
+            UIButton *btView = [[UIButton alloc] initWithFrame:frame];
+            [btView setBackgroundImage:self.advertisementImages[i] forState:UIControlStateNormal];
+            btView.tag = i;
             
-            [ADscrollView addSubview:imageView];
+            [btView addTarget:self action:@selector(actionOfAdvertisementClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [ADscrollView addSubview:btView];
         }
         [ADscrollView setContentOffset:CGPointMake(ADscrollView.bounds.size.width, 0) animated:NO];
         
@@ -151,6 +159,22 @@
         [timerScroll invalidate];
         timerScroll = nil;
     }
+}
+
+#pragma mark action of click
+- (void)actionOfAdvertisementClick:(id)sender
+{
+    UIButton *bt = (UIButton *)sender;
+    WMModelOfAdvertisement *model = nil;
+    if (bt.tag == 0) {
+        model = [self.modelOfAdvertisements lastObject];
+    } else if (bt.tag == self.advertisementImages.count-1) {
+        model = [self.modelOfAdvertisements firstObject];        
+    } else{
+        model = self.modelOfAdvertisements[bt.tag - 1];
+    }
+    
+    [_delegate advertiseTouchEventWithNeedWebURL:model.adTransitionUrl];
 }
 
 @end

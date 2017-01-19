@@ -205,8 +205,7 @@
                     UIViewController *VC = [[NSClassFromString(className) alloc] init];
                     CGRect frame = CGRectMake(selfFrame.size.width * i, 0, selfFrame.size.width, self.mainContentScrollView.bounds.size.height);
                     VC.view.frame = frame;
-                    
-                    
+                                    
                     //该label和需要实现的功能无关，只是测试。
 //                    UILabel *labelTest = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 300, 30)];
 //                    [labelTest setText:[NSString stringWithFormat:@"This is %dst viewController",i+1]];

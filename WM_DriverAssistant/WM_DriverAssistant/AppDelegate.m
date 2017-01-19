@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "WMRootTabBarController.h"
 
+
 @interface AppDelegate ()
+{
+    
+}
 
 @end
 
@@ -53,6 +57,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//#pragma mark - 保留tabbar各个根视图控制器
+//- (void)setJiakaoViewController:(WMJiakaoViewController *)vc
+//{
+//    jiakaoViewController = vc;
+//}
+//
+//- (WMJiakaoViewController *)jiakaoViewController
+//{
+//    return jiakaoViewController;
+//}
 
 
 @end

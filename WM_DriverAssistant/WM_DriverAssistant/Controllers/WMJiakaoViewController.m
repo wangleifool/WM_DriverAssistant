@@ -15,6 +15,7 @@
 
 #import "WMJiakaoViewController.h"
 #import "WMPagesScrollView.h"
+#import "AppDelegate.h"
 //#import "WMSubjectOneViewController.h"
 //#import "WMSubjectTwoViewController.h"
 //#import "WMSubjectThreeViewController.h"
@@ -22,7 +23,9 @@
 //#import "WMSubjectGetDriverLicenseViewController.h"
 
 @interface WMJiakaoViewController ()
-
+{
+    AppDelegate *appDelegate;
+}
 
 @end
 
@@ -30,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     //自定义导航栏
     [self setNavigationTitleView:nil];
@@ -40,6 +45,8 @@
     WMPagesScrollView *WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     
     [self.view addSubview:WMscrollView];
+    
+    appDelegate.jiakaoViewController = self;
 }
 
 - (void)didReceiveMemoryWarning {
