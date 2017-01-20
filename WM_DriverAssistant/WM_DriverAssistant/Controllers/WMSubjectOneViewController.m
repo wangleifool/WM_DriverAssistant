@@ -137,6 +137,10 @@
 - (void)advertiseTouchEventWithNeedWebURL:(NSString *)url
 {
     WMShowAdvertiseContentViewController *vc = [[WMShowAdvertiseContentViewController alloc] initWithWebURL:url];
+//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+//    [self addTransitionAnimationWithType:nil subType:nil];
+//    [self presentViewController:nvc animated:YES completion:nil];
+    
     [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
 }
 
@@ -153,6 +157,44 @@
         [self.customRefresh endRefreshing];
     });
 
+}
+
+#pragma mark - 视图控制器过渡动画
+- (void)addTransitionAnimationWithType:(NSString *)type subType:(NSString *)subType
+{
+    CATransition * animation = [CATransition animation];
+    
+    animation.duration = 1;    //  时间
+    
+    /**  type：动画类型
+     *  pageCurl       向上翻一页
+     *  pageUnCurl     向下翻一页
+     *  rippleEffect   水滴
+     *  suckEffect     收缩
+     *  cube           方块
+     *  oglFlip        上下翻转
+     */
+//    animation.type = @"pageCurl";
+    
+    /**  type：页面转换类型
+     *  kCATransitionFade       淡出
+     *  kCATransitionMoveIn     覆盖
+     *  kCATransitionReveal     底部显示
+     *  kCATransitionPush       推出
+     */
+    animation.type = kCATransitionPush;
+    
+    //PS：type 更多效果请 搜索： CATransition
+    
+    /**  subtype：出现的方向
+     *  kCATransitionFromRight       右
+     *  kCATransitionFromLeft        左
+     *  kCATransitionFromTop         上
+     *  kCATransitionFromBottom      下
+     */
+    animation.subtype = kCATransitionFromRight;
+    
+    [self.view.window.layer addAnimation:animation forKey:nil];
 }
 
 @end
