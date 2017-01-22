@@ -78,6 +78,8 @@
 		3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */; };
 		3B4693F71E309EA7008BE3B0 /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */; };
 		3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4693F81E30AAC9008BE3B0 /* Reveal.framework */; };
+		3B6AB2071E349C960030725D /* WMExamPracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */; };
+		3B6AB20A1E349D0A0030725D /* WMexamPracticeToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
@@ -241,6 +243,10 @@
 		3B4693F41E309EA7008BE3B0 /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
 		3B4693F81E30AAC9008BE3B0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		3B6AB2051E349C960030725D /* WMExamPracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMExamPracticeViewController.h; path = "Controllers/page jiakao/WMExamPracticeViewController.h"; sourceTree = "<group>"; };
+		3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMExamPracticeViewController.m; path = "Controllers/page jiakao/WMExamPracticeViewController.m"; sourceTree = "<group>"; };
+		3B6AB2081E349D0A0030725D /* WMexamPracticeToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMexamPracticeToolBarView.h; path = "Views/page jiakao/WMexamPracticeToolBarView.h"; sourceTree = "<group>"; };
+		3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMexamPracticeToolBarView.m; path = "Views/page jiakao/WMexamPracticeToolBarView.m"; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -401,6 +407,8 @@
 				3B4693701E309CCA008BE3B0 /* WMTheoryLearnModelView.h */,
 				3B4693711E309CCA008BE3B0 /* WMTheoryLearnModelView.m */,
 				3B4693721E309CCA008BE3B0 /* WMTheoryLearnModelView.xib */,
+				3B6AB2081E349D0A0030725D /* WMexamPracticeToolBarView.h */,
+				3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */,
 			);
 			name = "page jiaokao";
 			sourceTree = "<group>";
@@ -513,6 +521,8 @@
 				3B4693951E309E0B008BE3B0 /* WMSubjectTwoViewController.h */,
 				3B4693961E309E0B008BE3B0 /* WMSubjectTwoViewController.m */,
 				3B4693971E309E0B008BE3B0 /* WMSubjectTwoViewController.xib */,
+				3B6AB2051E349C960030725D /* WMExamPracticeViewController.h */,
+				3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */,
 			);
 			name = pageJiaKao;
 			sourceTree = "<group>";
@@ -813,6 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6AB2071E349C960030725D /* WMExamPracticeViewController.m in Sources */,
 				3B4693EF1E309E90008BE3B0 /* MJDIYAutoFooter.m in Sources */,
 				3B4693F01E309E90008BE3B0 /* MJDIYBackFooter.m in Sources */,
 				3B46937D1E309CCA008BE3B0 /* WMTheoryLearnModelView.m in Sources */,
@@ -823,6 +834,7 @@
 				9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */,
 				9B06504B1DC3356800A7ACE3 /* WMpageControllersInfo.m in Sources */,
 				3B46935B1E309C3F008BE3B0 /* HDButton.m in Sources */,
+				3B6AB20A1E349D0A0030725D /* WMexamPracticeToolBarView.m in Sources */,
 				3B4693DE1E309E7C008BE3B0 /* UIScrollView+MJRefresh.m in Sources */,
 				0F485E861DE56722005EB240 /* WM_SecondCollection.m in Sources */,
 				3B4693ED1E309E90008BE3B0 /* MJChiBaoZiFooter2.m in Sources */,

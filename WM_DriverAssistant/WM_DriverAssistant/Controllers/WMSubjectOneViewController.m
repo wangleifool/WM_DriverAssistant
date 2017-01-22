@@ -15,6 +15,7 @@
 #import "MJChiBaoZiHeader.h"
 #import "WMShowAdvertiseContentViewController.h"
 #import "AppDelegate.h"
+#import "WMExamPracticeViewController.h"
 
 @interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate,WMAdvertisementPagingScrollViewDelegate>
 {    
@@ -130,6 +131,11 @@
     } else if ([self.theoryLearnView.btEarnCoin isEqual:sender]) {
         NSLog(@"18");
     }
+    
+    WMExamPracticeViewController *vc = [[WMExamPracticeViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+//    [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
 }
 
 
