@@ -133,3 +133,7 @@
 #define LoginCheckTip       @"用户名或密码不能为空"
 #define LoginTitle          @"登录驾考宝典"
 #define WeatherSuffix       @"市市辖区"
+
+// page question practice
+#define HEIGHT_OF_PRACTICE_TOP_TOOLBAR 48
+#define HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR 256

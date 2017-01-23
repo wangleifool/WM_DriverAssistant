@@ -9,8 +9,10 @@
 #import "WMExamPracticeViewController.h"
 #import "WMexamPracticeToolBarView.h"
 
-@interface WMExamPracticeViewController ()
-
+@interface WMExamPracticeViewController () <WMexamPracticeToolBarViewDelegate>
+{
+    WMexamPracticeToolBarView *bottomIndicateToolBar;
+}
 @end
 
 @implementation WMExamPracticeViewController
@@ -21,10 +23,11 @@
     
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
     
-    CGRect frameOfToolBar = CGRectMake(0, ScreenHeight - 64, self.view.frame.size.width, 64);
-    WMexamPracticeToolBarView *toolBar = [[WMexamPracticeToolBarView alloc] initWithFrame:frameOfToolBar];
-    [self.view addSubview:toolBar];
-    
+    //toolbar视图分为上下两部分，初始只显示上面的部分。
+    CGRect frameOfToolBar = CGRectMake(0, ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR, self.view.frame.size.width, HEIGHT_OF_PRACTICE_TOP_TOOLBAR+HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR);
+    bottomIndicateToolBar = [[WMexamPracticeToolBarView alloc] initWithFrame:frameOfToolBar];
+    [self.view addSubview:bottomIndicateToolBar];
+    bottomIndicateToolBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,14 +35,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - WMexamPracticeToolBarViewDelegate
+- (void)touchUpInsideOfToolBar:(WMexamPracticeToolBarView *)toolBar
+{
+//    CGRect frame = bottomIndicateToolBar.frame;
+//    frame.origin.y -= HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
+//    frame.size.height += HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
+//    bottomIndicateToolBar.frame = frame;
+    
 }
-*/
+
+- (void)touchUpInsideOfCollect:(WMexamPracticeToolBarView *)toolBar
+{
+    
+}
 
 @end

@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WM_DriverAssistant/Views/page jiakao/WMexamPracticeToolBarView.m"
-            timestampString = "506769476.714947"
+            filePath = "WM_DriverAssistant/Controllers/page jiakao/WMExamPracticeViewController.m"
+            timestampString = "506829832.809454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-layoutSubviews"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-touchUpInsideOfToolBar:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

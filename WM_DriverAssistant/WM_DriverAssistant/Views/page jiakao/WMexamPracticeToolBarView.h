@@ -11,11 +11,20 @@
 #define DISTANCE_PER_CONTROL 16
 #define WIDTH_OF_CONTROL   ((ScreenWidth - 5 * DISTANCE_PER_CONTROL)/4)
 
+@class WMexamPracticeToolBarView;
+@protocol WMexamPracticeToolBarViewDelegate <NSObject>
+
+- (void)touchUpInsideOfToolBar:(WMexamPracticeToolBarView *)toolBar;
+- (void)touchUpInsideOfCollect:(WMexamPracticeToolBarView *)toolBar;
+
+@end
+
 @interface WMexamPracticeToolBarView : UIView
 
 @property (strong, nonatomic) UIButton *btCollect;
 @property (strong, nonatomic) UILabel  *labelNumOfErrorQuestion;
 @property (strong, nonatomic) UILabel  *labelNumOfRightQuestion;
 @property (strong, nonatomic) UILabel  *labelCurQuestionIndex;
+@property (strong, nonatomic) id <WMexamPracticeToolBarViewDelegate> delegate;
 
 @end
