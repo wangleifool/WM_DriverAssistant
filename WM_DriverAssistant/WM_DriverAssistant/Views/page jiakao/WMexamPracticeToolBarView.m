@@ -8,16 +8,16 @@
 
 #import "WMexamPracticeToolBarView.h"
 
-@interface WMexamPracticeToolBarView ()
+@interface WMexamPracticeToolBarView () <UICollectionViewDelegate,UICollectionViewDataSource>
 {
     UIButton *backgroundButton;
     UIProgressView *progressOfWholeQuestion;
-    UIButton *tempBottomView;
+    UICollectionView *allQuestionIndexCollectionView;
     
     //
     CGPoint startPanPoint;
     CGPoint previousPanPoint;
-    
+    CGRect  frameBeforePan;
 }
 
 @end
@@ -51,7 +51,7 @@
         
         //添加拖动手势
         UIPanGestureRecognizer *panGestureRecog = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveToolBar:)];
-        [self addGestureRecognizer:panGestureRecog];
+        [backgroundButton addGestureRecognizer:panGestureRecog];
         
         [self addSubview:backgroundButton];
     }
@@ -121,18 +121,49 @@
         [self addSubview:self.labelCurQuestionIndex];
     }
     
-    if (nil == tempBottomView) {
+    if (nil == allQuestionIndexCollectionView) {
         CGRect frameOfBottomCollectionView;
         frameOfBottomCollectionView.origin.x = 0;
         frameOfBottomCollectionView.size.width = self.frame.size.width;
         frameOfBottomCollectionView.size.height = HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
         frameOfBottomCollectionView.origin.y = HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
         
-        tempBottomView = [[UIButton alloc] initWithFrame:frameOfBottomCollectionView];
-        [tempBottomView setBackgroundColor:[UIColor greenColor]];
+        //collect view 布局
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(32, 32);
+        layout.minimumLineSpacing = 2;
+        layout.minimumInteritemSpacing = 10;
         
-        [self addSubview:tempBottomView];
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        
+        allQuestionIndexCollectionView = [[UICollectionView alloc] initWithFrame:frameOfBottomCollectionView collectionViewLayout:layout];
+        
+        allQuestionIndexCollectionView.delegate = self;
+        allQuestionIndexCollectionView.dataSource = self;
+        [allQuestionIndexCollectionView registerNib:[UINib nibWithNibName:@"WMquestionIndexCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"QuestionIndexCell"];
+        [allQuestionIndexCollectionView setBackgroundColor:[UIColor lightGrayColor]];
+        
+        [self addSubview:allQuestionIndexCollectionView];
     }
+}
+
+#pragma mark - question index collection
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 16;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"QuestionIndexCell" forIndexPath:indexPath];
+//    [cell setBackgroundColor:[UIColor redColor]];
+    
+    return cell;
 }
 
 #pragma mark - acion of outlet
@@ -167,6 +198,7 @@
         {
             startPanPoint = point;
             previousPanPoint = point;
+            frameBeforePan = self.frame;
             NSLog(@"begin point: %@",NSStringFromCGPoint(point));
         }
             break;
@@ -181,33 +213,19 @@
         case UIGestureRecognizerStateEnded:
         {
             CGFloat locationY = point.y - startPanPoint.y;
-            if (locationY < 0) { //向上拉
-                if (fabs(locationY) >= self.frame.size.height / 2) { //改变frame
-                    [UIView animateWithDuration:0.5 animations:^{
-                        CGRect frame = self.frame;
-                        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
-                        self.frame = frame;
-                    }];
-                } else { //复原frame
-                    [UIView animateWithDuration:0.5 animations:^{
-                        CGRect frame = self.frame;
-                        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
-                        self.frame = frame;
-                    }];
+            
+            //滑动之前已经是弹出状态
+            if (frameBeforePan.origin.y <= ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR) {
+                if (locationY > 0 && fabs(locationY) >= self.frame.size.height / 3) { //向下拉
+                    [self popDownToolBar];
+                } else {
+                    [self popUpToolBar];
                 }
-            } else { //向下拉
-                if (fabs(locationY) >= self.frame.size.height / 4) { //改变frame
-                    [UIView animateWithDuration:0.5 animations:^{
-                        CGRect frame = self.frame;
-                        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
-                        self.frame = frame;
-                    }];
-                } else { //复原frame
-                    [UIView animateWithDuration:0.5 animations:^{
-                        CGRect frame = self.frame;
-                        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
-                        self.frame = frame;
-                    }];
+            } else { //闭合状态
+                if (locationY < 0 && fabs(locationY) >= self.frame.size.height / 4) { //向上拉
+                    [self popUpToolBar];
+                } else {
+                    [self popDownToolBar];
                 }
             }
         }
@@ -216,6 +234,24 @@
             break;
     }
 
+}
+
+- (void)popUpToolBar
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect frame = self.frame;
+        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
+        self.frame = frame;
+    }];
+}
+
+- (void)popDownToolBar
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect frame = self.frame;
+        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
+        self.frame = frame;
+    }];
 }
 
 @end
