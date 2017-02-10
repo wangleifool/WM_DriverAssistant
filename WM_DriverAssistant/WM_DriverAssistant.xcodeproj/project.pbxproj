@@ -22,6 +22,10 @@
 		0F485E7E1DE53CD5005EB240 /* WM_MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F485E7D1DE53CD5005EB240 /* WM_MyButton.m */; };
 		0F485E861DE56722005EB240 /* WM_SecondCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F485E851DE56722005EB240 /* WM_SecondCollection.m */; };
 		3B1236421E4B197000C397BC /* UIView+DMYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236411E4B197000C397BC /* UIView+DMYExtension.m */; };
+		3B1236451E4C430600C397BC /* WMModelOfQuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */; };
+		3B1236481E4C456700C397BC /* WMModelOfUserComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236471E4C456700C397BC /* WMModelOfUserComment.m */; };
+		3B1236911E4D487B00C397BC /* WMAutoBreakLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236901E4D487B00C397BC /* WMAutoBreakLineLabel.m */; };
+		3B1236941E4D4B0600C397BC /* WMexamPracticeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */; };
 		3B46935B1E309C3F008BE3B0 /* HDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693591E309C3F008BE3B0 /* HDButton.m */; };
 		3B46935C1E309C3F008BE3B0 /* HDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B46935A1E309C3F008BE3B0 /* HDButton.xib */; };
 		3B4693731E309CCA008BE3B0 /* WMBeginnerBuyCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693621E309CCA008BE3B0 /* WMBeginnerBuyCarView.m */; };
@@ -149,6 +153,14 @@
 		0F485E851DE56722005EB240 /* WM_SecondCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WM_SecondCollection.m; sourceTree = "<group>"; };
 		3B1236401E4B197000C397BC /* UIView+DMYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DMYExtension.h"; sourceTree = "<group>"; };
 		3B1236411E4B197000C397BC /* UIView+DMYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DMYExtension.m"; sourceTree = "<group>"; };
+		3B1236431E4C430600C397BC /* WMModelOfQuestionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfQuestionItem.h; path = Models/WMModelOfQuestionItem.h; sourceTree = "<group>"; };
+		3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfQuestionItem.m; path = Models/WMModelOfQuestionItem.m; sourceTree = "<group>"; };
+		3B1236461E4C456700C397BC /* WMModelOfUserComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfUserComment.h; path = Models/WMModelOfUserComment.h; sourceTree = "<group>"; };
+		3B1236471E4C456700C397BC /* WMModelOfUserComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfUserComment.m; path = Models/WMModelOfUserComment.m; sourceTree = "<group>"; };
+		3B12368F1E4D487B00C397BC /* WMAutoBreakLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAutoBreakLineLabel.h; sourceTree = "<group>"; };
+		3B1236901E4D487B00C397BC /* WMAutoBreakLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAutoBreakLineLabel.m; sourceTree = "<group>"; };
+		3B1236921E4D4B0600C397BC /* WMexamPracticeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMexamPracticeContentView.h; path = Views/WMexamPracticeContentView.h; sourceTree = "<group>"; };
+		3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMexamPracticeContentView.m; path = Views/WMexamPracticeContentView.m; sourceTree = "<group>"; };
 		3B4693581E309C3F008BE3B0 /* HDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDButton.h; sourceTree = "<group>"; };
 		3B4693591E309C3F008BE3B0 /* HDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDButton.m; sourceTree = "<group>"; };
 		3B46935A1E309C3F008BE3B0 /* HDButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDButton.xib; sourceTree = "<group>"; };
@@ -379,6 +391,22 @@
 			name = BBXView;
 			sourceTree = "<group>";
 		};
+		3B12368E1E4D486100C397BC /* practice page */ = {
+			isa = PBXGroup;
+			children = (
+				3B12368F1E4D487B00C397BC /* WMAutoBreakLineLabel.h */,
+				3B1236901E4D487B00C397BC /* WMAutoBreakLineLabel.m */,
+				3B6AB2081E349D0A0030725D /* WMexamPracticeToolBarView.h */,
+				3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */,
+				3B9101A51E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.h */,
+				3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */,
+				3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */,
+				3B1236921E4D4B0600C397BC /* WMexamPracticeContentView.h */,
+				3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */,
+			);
+			name = "practice page";
+			sourceTree = "<group>";
+		};
 		3B4693571E309C29008BE3B0 /* custom view */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +420,7 @@
 		3B46935D1E309C4E008BE3B0 /* page jiaokao */ = {
 			isa = PBXGroup;
 			children = (
+				3B12368E1E4D486100C397BC /* practice page */,
 				3B46935E1E309C65008BE3B0 /* refresh animation */,
 				3B1236401E4B197000C397BC /* UIView+DMYExtension.h */,
 				3B1236411E4B197000C397BC /* UIView+DMYExtension.m */,
@@ -417,11 +446,6 @@
 				3B4693701E309CCA008BE3B0 /* WMTheoryLearnModelView.h */,
 				3B4693711E309CCA008BE3B0 /* WMTheoryLearnModelView.m */,
 				3B4693721E309CCA008BE3B0 /* WMTheoryLearnModelView.xib */,
-				3B6AB2081E349D0A0030725D /* WMexamPracticeToolBarView.h */,
-				3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */,
-				3B9101A51E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.h */,
-				3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */,
-				3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */,
 			);
 			name = "page jiaokao";
 			sourceTree = "<group>";
@@ -507,6 +531,10 @@
 				3B4693801E309D7F008BE3B0 /* dataOfAdvertisement.plist */,
 				3B4693811E309D7F008BE3B0 /* WMModelOfAdvertisement.h */,
 				3B4693821E309D7F008BE3B0 /* WMModelOfAdvertisement.m */,
+				3B1236431E4C430600C397BC /* WMModelOfQuestionItem.h */,
+				3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */,
+				3B1236461E4C456700C397BC /* WMModelOfUserComment.h */,
+				3B1236471E4C456700C397BC /* WMModelOfUserComment.m */,
 			);
 			name = pageJiaKao;
 			sourceTree = "<group>";
@@ -843,6 +871,7 @@
 				3B4693F01E309E90008BE3B0 /* MJDIYBackFooter.m in Sources */,
 				3B46937D1E309CCA008BE3B0 /* WMTheoryLearnModelView.m in Sources */,
 				3B4693D91E309E7C008BE3B0 /* MJRefreshHeader.m in Sources */,
+				3B1236941E4D4B0600C397BC /* WMexamPracticeContentView.m in Sources */,
 				3B46939A1E309E0B008BE3B0 /* WMShowAdvertiseContentViewController.m in Sources */,
 				3B4693DD1E309E7C008BE3B0 /* UIScrollView+MJExtension.m in Sources */,
 				0F0872601DD31B3800DDE159 /* ClassCell.m in Sources */,
@@ -872,6 +901,7 @@
 				3B4693791E309CCA008BE3B0 /* WMImgTextCollectionViewCell.m in Sources */,
 				9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */,
 				3B4693D41E309E7C008BE3B0 /* MJRefreshBackStateFooter.m in Sources */,
+				3B1236911E4D487B00C397BC /* WMAutoBreakLineLabel.m in Sources */,
 				9B0650481DC3285600A7ACE3 /* WMPurchaseNavViewController.m in Sources */,
 				3B4693EE1E309E90008BE3B0 /* MJChiBaoZiHeader.m in Sources */,
 				3B4693CE1E309E7C008BE3B0 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -892,6 +922,7 @@
 				3B4693981E309E0B008BE3B0 /* WMGetDiverLicenseViewController.m in Sources */,
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
 				9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */,
+				3B1236481E4C456700C397BC /* WMModelOfUserComment.m in Sources */,
 				0F0872531DD31A8C00DDE159 /* FxButtonHelper.m in Sources */,
 				3B46939C1E309E0B008BE3B0 /* WMSubjectFourViewController.m in Sources */,
 				3B4693DA1E309E7C008BE3B0 /* MJRefreshNormalHeader.m in Sources */,
@@ -900,6 +931,7 @@
 				3B4693D01E309E7C008BE3B0 /* MJRefreshAutoStateFooter.m in Sources */,
 				0F0872651DD31B7700DDE159 /* WMBasicNavViewController.m in Sources */,
 				3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */,
+				3B1236451E4C430600C397BC /* WMModelOfQuestionItem.m in Sources */,
 				0F331FC21DE42B3E0004CDBB /* WM_BanerView.m in Sources */,
 				3B4693751E309CCA008BE3B0 /* WMCircleOfFriendsPreview.m in Sources */,
 			);
