@@ -22,10 +22,21 @@
 		0F485E7E1DE53CD5005EB240 /* WM_MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F485E7D1DE53CD5005EB240 /* WM_MyButton.m */; };
 		0F485E861DE56722005EB240 /* WM_SecondCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F485E851DE56722005EB240 /* WM_SecondCollection.m */; };
 		3B1236421E4B197000C397BC /* UIView+DMYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236411E4B197000C397BC /* UIView+DMYExtension.m */; };
-		3B1236451E4C430600C397BC /* WMModelOfQuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */; };
 		3B1236481E4C456700C397BC /* WMModelOfUserComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236471E4C456700C397BC /* WMModelOfUserComment.m */; };
 		3B1236911E4D487B00C397BC /* WMAutoBreakLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236901E4D487B00C397BC /* WMAutoBreakLineLabel.m */; };
 		3B1236941E4D4B0600C397BC /* WMexamPracticeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */; };
+		3B2E82AA1E5FDB8D00BC5B59 /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3B2E82A91E5FDB8D00BC5B59 /* data.sqlite */; };
+		3B2E82BE1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82BC1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.m */; };
+		3B2E82BF1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2E82BD1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.xib */; };
+		3B2E82DF1E5FFC3A00BC5B59 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82DA1E5FFC3A00BC5B59 /* FMDatabase.m */; };
+		3B2E82E01E5FFC3A00BC5B59 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82DB1E5FFC3A00BC5B59 /* FMDatabaseAdditions.m */; };
+		3B2E82E11E5FFC3A00BC5B59 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82DC1E5FFC3A00BC5B59 /* FMDatabasePool.m */; };
+		3B2E82E21E5FFC3A00BC5B59 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82DD1E5FFC3A00BC5B59 /* FMDatabaseQueue.m */; };
+		3B2E82E31E5FFC3A00BC5B59 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82DE1E5FFC3A00BC5B59 /* FMResultSet.m */; };
+		3B2E82E61E5FFD1500BC5B59 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2E82E51E5FFD1500BC5B59 /* libsqlite3.tbd */; };
+		3B2E82E91E60002200BC5B59 /* WMappDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82E81E60002200BC5B59 /* WMappDatabase.m */; };
+		3B2E82EC1E6000BE00BC5B59 /* WMmodelOfExamQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82EB1E6000BE00BC5B59 /* WMmodelOfExamQuestion.m */; };
+		3B2E82F21E600A8E00BC5B59 /* WMTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2E82F11E600A8E00BC5B59 /* WMTools.m */; };
 		3B46935B1E309C3F008BE3B0 /* HDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693591E309C3F008BE3B0 /* HDButton.m */; };
 		3B46935C1E309C3F008BE3B0 /* HDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B46935A1E309C3F008BE3B0 /* HDButton.xib */; };
 		3B4693731E309CCA008BE3B0 /* WMBeginnerBuyCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693621E309CCA008BE3B0 /* WMBeginnerBuyCarView.m */; };
@@ -153,14 +164,34 @@
 		0F485E851DE56722005EB240 /* WM_SecondCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WM_SecondCollection.m; sourceTree = "<group>"; };
 		3B1236401E4B197000C397BC /* UIView+DMYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DMYExtension.h"; sourceTree = "<group>"; };
 		3B1236411E4B197000C397BC /* UIView+DMYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DMYExtension.m"; sourceTree = "<group>"; };
-		3B1236431E4C430600C397BC /* WMModelOfQuestionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfQuestionItem.h; path = Models/WMModelOfQuestionItem.h; sourceTree = "<group>"; };
-		3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfQuestionItem.m; path = Models/WMModelOfQuestionItem.m; sourceTree = "<group>"; };
 		3B1236461E4C456700C397BC /* WMModelOfUserComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfUserComment.h; path = Models/WMModelOfUserComment.h; sourceTree = "<group>"; };
 		3B1236471E4C456700C397BC /* WMModelOfUserComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfUserComment.m; path = Models/WMModelOfUserComment.m; sourceTree = "<group>"; };
 		3B12368F1E4D487B00C397BC /* WMAutoBreakLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAutoBreakLineLabel.h; sourceTree = "<group>"; };
 		3B1236901E4D487B00C397BC /* WMAutoBreakLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAutoBreakLineLabel.m; sourceTree = "<group>"; };
 		3B1236921E4D4B0600C397BC /* WMexamPracticeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMexamPracticeContentView.h; path = Views/WMexamPracticeContentView.h; sourceTree = "<group>"; };
 		3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMexamPracticeContentView.m; path = Views/WMexamPracticeContentView.m; sourceTree = "<group>"; };
+		3B2E82A91E5FDB8D00BC5B59 /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
+		3B2E82BB1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMexamAnswerCellTableViewCell.h; path = "Views/page jiakao/WMexamAnswerCellTableViewCell.h"; sourceTree = "<group>"; };
+		3B2E82BC1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMexamAnswerCellTableViewCell.m; path = "Views/page jiakao/WMexamAnswerCellTableViewCell.m"; sourceTree = "<group>"; };
+		3B2E82BD1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMexamAnswerCellTableViewCell.xib; path = "Views/page jiakao/WMexamAnswerCellTableViewCell.xib"; sourceTree = "<group>"; };
+		3B2E82D41E5FFC3A00BC5B59 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3B2E82D51E5FFC3A00BC5B59 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3B2E82D61E5FFC3A00BC5B59 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3B2E82D71E5FFC3A00BC5B59 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3B2E82D81E5FFC3A00BC5B59 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3B2E82D91E5FFC3A00BC5B59 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3B2E82DA1E5FFC3A00BC5B59 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3B2E82DB1E5FFC3A00BC5B59 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3B2E82DC1E5FFC3A00BC5B59 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3B2E82DD1E5FFC3A00BC5B59 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3B2E82DE1E5FFC3A00BC5B59 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3B2E82E51E5FFD1500BC5B59 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3B2E82E71E60002200BC5B59 /* WMappDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMappDatabase.h; path = Models/WMappDatabase.h; sourceTree = "<group>"; };
+		3B2E82E81E60002200BC5B59 /* WMappDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMappDatabase.m; path = Models/WMappDatabase.m; sourceTree = "<group>"; };
+		3B2E82EA1E6000BE00BC5B59 /* WMmodelOfExamQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMmodelOfExamQuestion.h; path = Models/WMmodelOfExamQuestion.h; sourceTree = "<group>"; };
+		3B2E82EB1E6000BE00BC5B59 /* WMmodelOfExamQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMmodelOfExamQuestion.m; path = Models/WMmodelOfExamQuestion.m; sourceTree = "<group>"; };
+		3B2E82F01E600A8E00BC5B59 /* WMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMTools.h; path = Models/WMTools.h; sourceTree = "<group>"; };
+		3B2E82F11E600A8E00BC5B59 /* WMTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMTools.m; path = Models/WMTools.m; sourceTree = "<group>"; };
 		3B4693581E309C3F008BE3B0 /* HDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDButton.h; sourceTree = "<group>"; };
 		3B4693591E309C3F008BE3B0 /* HDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDButton.m; sourceTree = "<group>"; };
 		3B46935A1E309C3F008BE3B0 /* HDButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDButton.xib; sourceTree = "<group>"; };
@@ -313,6 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2E82E61E5FFD1500BC5B59 /* libsqlite3.tbd in Frameworks */,
 				3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,8 +435,45 @@
 				3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */,
 				3B1236921E4D4B0600C397BC /* WMexamPracticeContentView.h */,
 				3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */,
+				3B2E82BB1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.h */,
+				3B2E82BC1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.m */,
+				3B2E82BD1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.xib */,
 			);
 			name = "practice page";
+			sourceTree = "<group>";
+		};
+		3B2E82A81E5FDB7800BC5B59 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				3B2E82A91E5FDB8D00BC5B59 /* data.sqlite */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		3B2E82D31E5FFC1C00BC5B59 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3B2E82D41E5FFC3A00BC5B59 /* FMDatabase.h */,
+				3B2E82D51E5FFC3A00BC5B59 /* FMDatabaseAdditions.h */,
+				3B2E82D61E5FFC3A00BC5B59 /* FMDatabasePool.h */,
+				3B2E82D71E5FFC3A00BC5B59 /* FMDatabaseQueue.h */,
+				3B2E82D81E5FFC3A00BC5B59 /* FMDB.h */,
+				3B2E82D91E5FFC3A00BC5B59 /* FMResultSet.h */,
+				3B2E82DA1E5FFC3A00BC5B59 /* FMDatabase.m */,
+				3B2E82DB1E5FFC3A00BC5B59 /* FMDatabaseAdditions.m */,
+				3B2E82DC1E5FFC3A00BC5B59 /* FMDatabasePool.m */,
+				3B2E82DD1E5FFC3A00BC5B59 /* FMDatabaseQueue.m */,
+				3B2E82DE1E5FFC3A00BC5B59 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		3B2E82E41E5FFD1500BC5B59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B2E82E51E5FFD1500BC5B59 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3B4693571E309C29008BE3B0 /* custom view */ = {
@@ -531,10 +600,10 @@
 				3B4693801E309D7F008BE3B0 /* dataOfAdvertisement.plist */,
 				3B4693811E309D7F008BE3B0 /* WMModelOfAdvertisement.h */,
 				3B4693821E309D7F008BE3B0 /* WMModelOfAdvertisement.m */,
-				3B1236431E4C430600C397BC /* WMModelOfQuestionItem.h */,
-				3B1236441E4C430600C397BC /* WMModelOfQuestionItem.m */,
 				3B1236461E4C456700C397BC /* WMModelOfUserComment.h */,
 				3B1236471E4C456700C397BC /* WMModelOfUserComment.m */,
+				3B2E82EA1E6000BE00BC5B59 /* WMmodelOfExamQuestion.h */,
+				3B2E82EB1E6000BE00BC5B59 /* WMmodelOfExamQuestion.m */,
 			);
 			name = pageJiaKao;
 			sourceTree = "<group>";
@@ -576,6 +645,7 @@
 				9B064FDC1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests */,
 				9B064FB61DC1FEC100A7ACE3 /* Products */,
 				3B4693F81E30AAC9008BE3B0 /* Reveal.framework */,
+				3B2E82E41E5FFD1500BC5B59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -631,9 +701,14 @@
 		9B064FEB1DC2D5A700A7ACE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B2E82D31E5FFC1C00BC5B59 /* fmdb */,
 				3B46937F1E309D63008BE3B0 /* pageJiaKao */,
 				9B0650491DC3356800A7ACE3 /* WMpageControllersInfo.h */,
 				9B06504A1DC3356800A7ACE3 /* WMpageControllersInfo.m */,
+				3B2E82E71E60002200BC5B59 /* WMappDatabase.h */,
+				3B2E82E81E60002200BC5B59 /* WMappDatabase.m */,
+				3B2E82F01E600A8E00BC5B59 /* WMTools.h */,
+				3B2E82F11E600A8E00BC5B59 /* WMTools.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -681,6 +756,7 @@
 		9B064FEE1DC2D5C100A7ACE3 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				3B2E82A81E5FDB7800BC5B59 /* DB */,
 				9BFF9F261DC349DE004BCACD /* Global */,
 				9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */,
 				9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */,
@@ -824,6 +900,7 @@
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				3B4693A11E309E0B008BE3B0 /* WMSubjectThreeViewController.xib in Resources */,
 				3B4693741E309CCA008BE3B0 /* WMBeginnerBuyCarView.xib in Resources */,
+				3B2E82BF1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.xib in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
 				3B4693781E309CCA008BE3B0 /* WMImageAndTwoLineTextView.xib in Resources */,
@@ -831,6 +908,7 @@
 				3B46939B1E309E0B008BE3B0 /* WMShowAdvertiseContentViewController.xib in Resources */,
 				0F0872561DD31AF600DDE159 /* ClassCell.xib in Resources */,
 				3B46939D1E309E0B008BE3B0 /* WMSubjectFourViewController.xib in Resources */,
+				3B2E82AA1E5FDB8D00BC5B59 /* data.sqlite in Resources */,
 				3B4693A31E309E0B008BE3B0 /* WMSubjectTwoViewController.xib in Resources */,
 				3B9101A91E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
@@ -867,9 +945,11 @@
 			files = (
 				3B6AB2071E349C960030725D /* WMExamPracticeViewController.m in Sources */,
 				3B9101A81E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m in Sources */,
+				3B2E82EC1E6000BE00BC5B59 /* WMmodelOfExamQuestion.m in Sources */,
 				3B4693EF1E309E90008BE3B0 /* MJDIYAutoFooter.m in Sources */,
 				3B4693F01E309E90008BE3B0 /* MJDIYBackFooter.m in Sources */,
 				3B46937D1E309CCA008BE3B0 /* WMTheoryLearnModelView.m in Sources */,
+				3B2E82E11E5FFC3A00BC5B59 /* FMDatabasePool.m in Sources */,
 				3B4693D91E309E7C008BE3B0 /* MJRefreshHeader.m in Sources */,
 				3B1236941E4D4B0600C397BC /* WMexamPracticeContentView.m in Sources */,
 				3B46939A1E309E0B008BE3B0 /* WMShowAdvertiseContentViewController.m in Sources */,
@@ -888,6 +968,7 @@
 				9B06505E1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.m in Sources */,
 				9B0650631DC33CE800A7ACE3 /* WMMaicheViewController.m in Sources */,
 				3B4693DC1E309E7C008BE3B0 /* NSBundle+MJRefresh.m in Sources */,
+				3B2E82E01E5FFC3A00BC5B59 /* FMDatabaseAdditions.m in Sources */,
 				0F08725F1DD31B3800DDE159 /* JiaXiaoCell.m in Sources */,
 				0F0872611DD31B3800DDE159 /* WMBBXButtonViewCell.m in Sources */,
 				3B4693A01E309E0B008BE3B0 /* WMSubjectThreeViewController.m in Sources */,
@@ -901,6 +982,7 @@
 				3B4693791E309CCA008BE3B0 /* WMImgTextCollectionViewCell.m in Sources */,
 				9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */,
 				3B4693D41E309E7C008BE3B0 /* MJRefreshBackStateFooter.m in Sources */,
+				3B2E82F21E600A8E00BC5B59 /* WMTools.m in Sources */,
 				3B1236911E4D487B00C397BC /* WMAutoBreakLineLabel.m in Sources */,
 				9B0650481DC3285600A7ACE3 /* WMPurchaseNavViewController.m in Sources */,
 				3B4693EE1E309E90008BE3B0 /* MJChiBaoZiHeader.m in Sources */,
@@ -911,10 +993,14 @@
 				0F485E7E1DE53CD5005EB240 /* WM_MyButton.m in Sources */,
 				3B4693DF1E309E7C008BE3B0 /* UIView+MJExtension.m in Sources */,
 				3B4693EC1E309E90008BE3B0 /* MJChiBaoZiFooter.m in Sources */,
+				3B2E82E91E60002200BC5B59 /* WMappDatabase.m in Sources */,
 				3B4693D21E309E7C008BE3B0 /* MJRefreshBackGifFooter.m in Sources */,
+				3B2E82E21E5FFC3A00BC5B59 /* FMDatabaseQueue.m in Sources */,
+				3B2E82BE1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.m in Sources */,
 				3B4693D51E309E7C008BE3B0 /* MJRefreshComponent.m in Sources */,
 				0F331FC51DE432110004CDBB /* WM_CollectionViewCell.m in Sources */,
 				3B4693731E309CCA008BE3B0 /* WMBeginnerBuyCarView.m in Sources */,
+				3B2E82DF1E5FFC3A00BC5B59 /* FMDatabase.m in Sources */,
 				9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */,
 				9B0650541DC33C7800A7ACE3 /* WMJiakaoViewController.m in Sources */,
 				3B4693D11E309E7C008BE3B0 /* MJRefreshBackFooter.m in Sources */,
@@ -929,9 +1015,9 @@
 				3B4693F71E309EA7008BE3B0 /* WMPagesScrollView.m in Sources */,
 				3B46937B1E309CCA008BE3B0 /* WMMyDriverMasterView.m in Sources */,
 				3B4693D01E309E7C008BE3B0 /* MJRefreshAutoStateFooter.m in Sources */,
+				3B2E82E31E5FFC3A00BC5B59 /* FMResultSet.m in Sources */,
 				0F0872651DD31B7700DDE159 /* WMBasicNavViewController.m in Sources */,
 				3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */,
-				3B1236451E4C430600C397BC /* WMModelOfQuestionItem.m in Sources */,
 				0F331FC21DE42B3E0004CDBB /* WM_BanerView.m in Sources */,
 				3B4693751E309CCA008BE3B0 /* WMCircleOfFriendsPreview.m in Sources */,
 			);
@@ -1090,7 +1176,7 @@
 				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1115,7 +1201,7 @@
 				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";

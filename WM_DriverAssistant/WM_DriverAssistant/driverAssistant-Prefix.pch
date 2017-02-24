@@ -14,5 +14,5 @@
 
 #import "Defines.h"
 #import "WMGlobal.h"
-
+#import "WMTools.h"
 #endif /* driverAssistant_Prefix_pch */

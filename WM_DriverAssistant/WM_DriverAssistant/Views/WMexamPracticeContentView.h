@@ -10,4 +10,10 @@
 
 @interface WMexamPracticeContentView : UIView
 
+@property (nonatomic, assign) NSInteger currentQuestionIndex;
+@property (nonatomic, copy)   NSArray   *dataArray;  //question and user comment
+
+
+- (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)allQuestionArray;
+
 @end

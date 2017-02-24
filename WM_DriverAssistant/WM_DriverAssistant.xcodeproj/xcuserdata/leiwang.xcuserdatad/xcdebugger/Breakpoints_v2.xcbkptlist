@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WM_DriverAssistant/Controllers/page jiakao/WMExamPracticeViewController.m"
-            timestampString = "508312531.882828"
+            timestampString = "509618513.235591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-touchUpInsideOfToolBar:"
             landmarkType = "7">
          </BreakpointContent>
@@ -32,6 +32,38 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-awakeFromNib"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WM_DriverAssistant/Views/WMexamPracticeContentView.m"
+            timestampString = "509620864.480674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WM_DriverAssistant/WMAutoBreakLineLabel.m"
+            timestampString = "509619165.31847"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-setText:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

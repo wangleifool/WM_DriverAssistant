@@ -103,6 +103,20 @@
 #define NavBarHeight7       64
 #define LocationDistance    100
 
+//database row name
+#define tableAllQuestion @"leaflevel"
+#define rowID   @"mid"
+#define rowQuestion @"mquestion"
+#define rowDesc     @"mdesc"
+#define rowAnswer   @"manswer"
+#define rowImage    @"mimage"
+#define rowSectionID @"pid"
+#define rowSectionName @"pname"
+#define rowType        @"mtype"
+
+#define IsChoiceQuestion 1
+#define IsTrueOrFalseQuestion 2
+
 // 消息通知Key
 #define NofifyNewsIcon      @"NewsIcon"
 
