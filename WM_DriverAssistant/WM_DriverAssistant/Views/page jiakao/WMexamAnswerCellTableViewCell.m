@@ -10,7 +10,7 @@
 
 @interface WMexamAnswerCellTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIButton *btAnswerIndex;
+@property (weak, nonatomic) IBOutlet UIImageView *imageAnswerIndex;
 
 @end
 
@@ -51,13 +51,22 @@
 {
     _isRightAnswer = isRightAnswer;
     
-    self.btAnswerIndex.hidden = NO;
-    
+    self.imageAnswerIndex.hidden = NO;
+    self.labelAnserIndex.hidden = YES;
+    UIImage *img = nil;
     if (_isRightAnswer) {
-        [self.btAnswerIndex setImage:[UIImage imageNamed:@"anserRight"] forState:UIControlStateNormal];
+        img = [UIImage imageNamed:@"anserRight"];
     } else {
-        [self.btAnswerIndex setImage:[UIImage imageNamed:@"answerWrong"] forState:UIControlStateNormal];
+        img = [UIImage imageNamed:@"answerWrong"];
     }
+    [self.imageAnswerIndex setImage:img];
+}
+
+- (void)updateLabelAnswerIndexText:(NSString *)text
+{
+    [self.labelAnserIndex setText:text];
+    self.imageAnswerIndex.hidden = YES;
+    self.labelAnserIndex.hidden  = NO;
 }
 
 @end

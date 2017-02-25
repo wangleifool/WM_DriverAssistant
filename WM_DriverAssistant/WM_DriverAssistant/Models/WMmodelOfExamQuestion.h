@@ -24,6 +24,8 @@
 
 @property (nonatomic, assign) NSInteger mType; // 选择题和判断题
 
+@property (nonatomic, copy) NSString *mUserSelectAnswer;
+
 
 + (instancetype)examQuestionModelWithFMResultSet:(FMResultSet *)rs;
 

@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelAnswerContent;
 
 + (instancetype)answerCellWithTableView:(UITableView *)tableview;
+- (void)updateLabelAnswerIndexText:(NSString *)text;
 
 @end

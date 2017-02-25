@@ -14,5 +14,7 @@
 + (NSMutableArray *)getAnswerFromQuestionString:(NSString *)str;
 
 + (CGSize)getSizeWithLabelText:(NSString *)text;
++ (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize;
++ (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize withLabelWidth:(CGFloat)width;
 
 @end

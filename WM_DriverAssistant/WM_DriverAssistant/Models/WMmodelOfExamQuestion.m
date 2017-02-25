@@ -25,6 +25,7 @@
             self.mChoiceOfAnswer = [array copy];
         } else {
             self.mQuestion = strQuestion;
+            self.mChoiceOfAnswer = @[@"对",@"错"];
         }
         
         

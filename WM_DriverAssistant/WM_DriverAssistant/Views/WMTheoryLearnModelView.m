@@ -88,7 +88,7 @@
         [_btSpecificTraning.iconImage setImage:[UIImage imageNamed:@"icon_ditu_dingwei"]];
         
         _btHardQuestions.delegate = self;
-        [_btHardQuestions.titleLabel setText:@"难题攻克"];
+        [_btHardQuestions.titleLabel setText:@"难题攻克"];        
         
         _btNoneLearnQuestions.delegate = self;
         [_btNoneLearnQuestions.titleLabel setText:@"未做题练习"];        

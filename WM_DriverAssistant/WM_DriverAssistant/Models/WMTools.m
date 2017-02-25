@@ -25,9 +25,19 @@
 
 + (CGSize)getSizeWithLabelText:(NSString *)text
 {
+    return [self getSizeWithLabelText:text withFontSize:17.0];
+}
+
++ (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize
+{
+    return [self getSizeWithLabelText:text withFontSize:fontSize withLabelWidth:200];
+}
+
++ (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize withLabelWidth:(CGFloat)width
+{
     //获取字符串的尺寸，200是我们人为限定的宽度，高度动态计算，下面label的高度就用下面的高度
-    NSDictionary *attribute =@{NSFontAttributeName: [UIFont systemFontOfSize:17]};
-    CGSize labelSize = [text boundingRectWithSize:CGSizeMake(200,0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+    NSDictionary *attribute =@{NSFontAttributeName: [UIFont systemFontOfSize:fontSize]};
+    CGSize labelSize = [text boundingRectWithSize:CGSizeMake(width,0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
     
     return labelSize;
 }
