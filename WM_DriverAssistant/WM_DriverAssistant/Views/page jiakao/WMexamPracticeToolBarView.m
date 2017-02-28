@@ -7,8 +7,10 @@
 //
 
 #import "WMexamPracticeToolBarView.h"
+#import "WMHeaderCollectionReusableView.h"
+#import "WMquestionIndexCollectionViewCell.h"
 
-@interface WMexamPracticeToolBarView () <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface WMexamPracticeToolBarView () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
     UIButton *backgroundButton;
     UIProgressView *progressOfWholeQuestion;
@@ -41,7 +43,7 @@
 {
     [super layoutSubviews];
     
-    [self setBackgroundColor:[UIColor darkGrayColor]];
+    [self setBackgroundColor:[UIColor lightGrayColor]];
     
     
     if (nil == backgroundButton) {
@@ -131,17 +133,16 @@
         //collect view 布局
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(32, 32);
-        layout.minimumLineSpacing = 2;
-        layout.minimumInteritemSpacing = 10;
-        
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        layout.headerReferenceSize = CGSizeMake(frameOfBottomCollectionView.size.width, 20);
         
         allQuestionIndexCollectionView = [[UICollectionView alloc] initWithFrame:frameOfBottomCollectionView collectionViewLayout:layout];
         
         allQuestionIndexCollectionView.delegate = self;
         allQuestionIndexCollectionView.dataSource = self;
+        [allQuestionIndexCollectionView registerNib:[UINib nibWithNibName:@"WMHeaderCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER_VIEW"];
         [allQuestionIndexCollectionView registerNib:[UINib nibWithNibName:@"WMquestionIndexCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"QuestionIndexCell"];
-        [allQuestionIndexCollectionView setBackgroundColor:[UIColor lightGrayColor]];
+        [allQuestionIndexCollectionView setBackgroundColor:[UIColor whiteColor]];
         
         [self addSubview:allQuestionIndexCollectionView];
     }
@@ -150,20 +151,62 @@
 #pragma mark - question index collection
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return [self.sectionInfos count];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 16;
+    NSDictionary *dic = [self.sectionInfos objectAtIndex:section];
+    NSInteger num = ((NSNumber *)[dic objectForKey:@"sectionNum"]).integerValue;
+    return num;
 }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"QuestionIndexCell" forIndexPath:indexPath];
-//    [cell setBackgroundColor:[UIColor redColor]];
+    WMquestionIndexCollectionViewCell *cell = (WMquestionIndexCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"QuestionIndexCell" forIndexPath:indexPath];
+    
+    NSString *title = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    [cell.labelQuestionIndex setText:title];
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *view = nil;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        WMHeaderCollectionReusableView *header = (WMHeaderCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER_VIEW" forIndexPath:indexPath];
+        
+        NSString *sectionTitle = [self.sectionInfos[indexPath.section] objectForKey:@"sectionName"];
+        sectionTitle = [NSString stringWithFormat:@"%ld. %@",indexPath.section+1,sectionTitle];
+        [header.labelSectionTitle setText:sectionTitle];
+        
+        view = header;
+    }
+    return view;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 10, 10, 5);
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    NSInteger index = 0;
+    for (int i = 0; i < indexPath.section; i++) {
+        NSNumber *sectionNum = (NSNumber *)[self.sectionInfos[i] objectForKey:@"sectionNum"];
+        index += sectionNum.integerValue;
+    }
+    index += indexPath.row;
+    
+    [_delegate chooseQuestionIndex:index];
+    
+    [self popDownToolBar];
 }
 
 #pragma mark - acion of outlet
@@ -172,9 +215,11 @@
 //    [_delegate touchUpInsideOfToolBar:self];
     
     CGRect frame = self.frame;
-    if (frame.origin.y == ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR) {
+    CGRect frameOfSuperView = self.superview.frame;
+    
+    if (frame.origin.y == frameOfSuperView.size.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR) {
         frame.origin.y -= HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
-    } else if (frame.origin.y == ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR){
+    } else if (frame.origin.y == frameOfSuperView.size.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR){
         frame.origin.y += HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
     }
     
@@ -213,9 +258,10 @@
         case UIGestureRecognizerStateEnded:
         {
             CGFloat locationY = point.y - startPanPoint.y;
+            CGRect frameOfSuperView = self.superview.frame;
             
             //滑动之前已经是弹出状态
-            if (frameBeforePan.origin.y <= ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR) {
+            if (frameBeforePan.origin.y <= frameOfSuperView.size.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR) {
                 if (locationY > 0 && fabs(locationY) >= self.frame.size.height / 3) { //向下拉
                     [self popDownToolBar];
                 } else {
@@ -240,7 +286,8 @@
 {
     [UIView animateWithDuration:0.5 animations:^{
         CGRect frame = self.frame;
-        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
+        CGRect frameOfSuperView = self.superview.frame;
+        frame.origin.y = frameOfSuperView.size.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR - HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
         self.frame = frame;
     }];
 }
@@ -249,7 +296,8 @@
 {
     [UIView animateWithDuration:0.5 animations:^{
         CGRect frame = self.frame;
-        frame.origin.y = ScreenHeight - HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
+        CGRect frameOfSuperView = self.superview.frame;
+        frame.origin.y = frameOfSuperView.size.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR;
         self.frame = frame;
     }];
 }

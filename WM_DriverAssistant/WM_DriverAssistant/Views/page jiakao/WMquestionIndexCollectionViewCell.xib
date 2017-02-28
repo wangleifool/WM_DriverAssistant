@@ -19,24 +19,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ7-dY-xMX" userLabel="question index">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inB-70-UYc">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="QQ7-dY-xMX" secondAttribute="height" multiplier="1:1" id="XLt-vj-7HS"/>
+                            <constraint firstAttribute="width" secondItem="inB-70-UYc" secondAttribute="height" multiplier="1:1" id="D93-V9-fMN"/>
                         </constraints>
-                        <state key="normal" title="1"/>
-                    </button>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="QQ7-dY-xMX" secondAttribute="bottom" id="7Q5-vG-3dY"/>
-                <constraint firstAttribute="trailing" secondItem="QQ7-dY-xMX" secondAttribute="trailing" id="AVA-BD-oVQ"/>
-                <constraint firstItem="QQ7-dY-xMX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FxX-Qu-tHB"/>
-                <constraint firstItem="QQ7-dY-xMX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yce-8F-p7w"/>
+                <constraint firstItem="inB-70-UYc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CVO-a2-SaH"/>
+                <constraint firstAttribute="bottom" secondItem="inB-70-UYc" secondAttribute="bottom" id="Rkr-oY-tHP"/>
+                <constraint firstItem="inB-70-UYc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cr7-Iu-FkZ"/>
+                <constraint firstAttribute="trailing" secondItem="inB-70-UYc" secondAttribute="trailing" id="nOX-Us-Jb6"/>
             </constraints>
             <connections>
-                <outlet property="btQuestionIndex" destination="QQ7-dY-xMX" id="ALG-n0-mUY"/>
+                <outlet property="labelQuestionIndex" destination="inB-70-UYc" id="eu4-sw-epo"/>
             </connections>
             <point key="canvasLocation" x="-63" y="19"/>
         </collectionViewCell>

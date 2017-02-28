@@ -14,8 +14,10 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.btQuestionIndex.layer.cornerRadius  = 16;
-    self.btQuestionIndex.layer.masksToBounds = YES;
+    self.labelQuestionIndex.layer.cornerRadius  = 16;
+    self.labelQuestionIndex.layer.masksToBounds = YES;
+    self.labelQuestionIndex.layer.borderWidth = 0.5;
+    self.labelQuestionIndex.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 @end

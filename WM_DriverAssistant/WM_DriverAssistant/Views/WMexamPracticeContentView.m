@@ -11,22 +11,26 @@
 #import "UIView+DMYExtension.h"
 #import "WMexamAnswerCellTableViewCell.h"
 #import "WMmodelOfExamQuestion.h"
+#import "WMexamPracticeToolBarView.h"
 
 #define SelfSize self.frame.size
 
-@interface WMexamPracticeContentView () <UITableViewDelegate,UITableViewDataSource>
+@interface WMexamPracticeContentView () <UITableViewDelegate,UITableViewDataSource,WMexamPracticeToolBarViewDelegate>
 {
     UITableView *_leftTableView;
     UITableView *_centerTableView;
     UITableView *_rightTableView;
     
+    WMexamPracticeToolBarView *bottomIndicateToolBar;
+    
     NSArray *_allQuestionsModel;
+    NSInteger numOfWrongQuestion;
+    NSInteger numOfCorrectQuestion;
     
     UIView  *centerViewOfFooter;
 }
 
-@property(nonatomic,assign)CGPoint   start;
-
+@property(nonatomic,assign) CGPoint   start;
 @property(nonatomic,assign) BOOL isLeftViewShadow;
 @property(nonatomic,assign) BOOL isCenterViewShadow;
 
@@ -42,34 +46,107 @@
         self.currentQuestionIndex = 0;
         _allQuestionsModel = allQuestionArray;
         
-        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(-SelfSize.width, 0, SelfSize.width, SelfSize.height) style:UITableViewStyleGrouped];
-        _centerTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SelfSize.width, SelfSize.height) style:UITableViewStyleGrouped];
-        _rightTableView  = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SelfSize.width, SelfSize.height) style:UITableViewStyleGrouped];
+        [self initialMainContentView];
+        [self initialToolBarView];
         
-        _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _centerTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
-        _leftTableView.dataSource = self;
-        _leftTableView.delegate = self;
-        _centerTableView.delegate = self;
-        _centerTableView.dataSource = self;
-        _rightTableView.delegate =self;
-        _rightTableView.dataSource = self;
-        
-        [self addSubview:_leftTableView];
-        [self addSubview:_centerTableView];
-        [self addSubview:_rightTableView];
-        
-        [self sendSubviewToBack:_rightTableView];
-        [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveView:)]];
-        
-        
+        [self bringSubviewToFront:bottomIndicateToolBar];
     }
     
     return self;
 }
 
+- (void)initialMainContentView
+{
+    _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(-SelfSize.width, 0, SelfSize.width, SelfSize.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR) style:UITableViewStyleGrouped];
+    _centerTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SelfSize.width, SelfSize.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR) style:UITableViewStyleGrouped];
+    _rightTableView  = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SelfSize.width, SelfSize.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR) style:UITableViewStyleGrouped];
+    
+    _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _centerTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
+    [_leftTableView setBackgroundColor:[UIColor whiteColor]];
+    [_centerTableView setBackgroundColor:[UIColor whiteColor]];
+    [_rightTableView setBackgroundColor:[UIColor whiteColor]];
+    
+    _leftTableView.dataSource = self;
+    _leftTableView.delegate = self;
+    _centerTableView.delegate = self;
+    _centerTableView.dataSource = self;
+    _rightTableView.delegate =self;
+    _rightTableView.dataSource = self;
+    
+    [self addSubview:_leftTableView];
+    [self addSubview:_centerTableView];
+    [self addSubview:_rightTableView];
+    
+    [self sendSubviewToBack:_rightTableView];
+    [self bringSubviewToFront:_leftTableView];
+    [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveView:)]];
+}
+
+- (void)initialToolBarView
+{
+    
+    //toolbar视图分为上下两部分，初始只显示上面的部分。
+    CGRect frameOfToolBar = CGRectMake(0, SelfSize.height - HEIGHT_OF_PRACTICE_TOP_TOOLBAR, SelfSize.width, HEIGHT_OF_PRACTICE_TOP_TOOLBAR+HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR);
+    bottomIndicateToolBar = [[WMexamPracticeToolBarView alloc] initWithFrame:frameOfToolBar];
+    [self addSubview:bottomIndicateToolBar];
+    bottomIndicateToolBar.delegate = self;
+    
+    //分析数据
+    NSMutableArray *sectionInfo = [NSMutableArray array];
+    NSInteger lastSectionID = -1;
+    NSInteger lastSectionNum = 0;
+    NSString *lastSectionName = nil;
+    for (WMmodelOfExamQuestion *model in _allQuestionsModel) {
+        
+        if (lastSectionID != model.mSectionID) {
+            if (-1 != lastSectionID) {
+                NSDictionary *dic = @{@"sectionNum":[NSNumber numberWithInteger:lastSectionNum],@"sectionName":lastSectionName};
+                [sectionInfo addObject:dic];
+            }
+            
+            lastSectionID = model.mSectionID;
+            lastSectionName = model.mSectionName;
+            lastSectionNum = 0;
+        }
+        lastSectionNum++;
+    }
+    
+    bottomIndicateToolBar.sectionInfos = [sectionInfo copy];
+}
+
+- (void)nextPage
+{
+    if (self.currentQuestionIndex == _allQuestionsModel.count-1) {
+        NSLog(@"最后一页啦！");
+    }
+    
+    [self addCenterViewShadowEffect];
+    [self removeLeftViewShadowEffect];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        _centerTableView.dmy_x = -SelfSize.width;
+    } completion:^(BOOL finished) {
+        self.currentQuestionIndex += 1;
+        
+        [self removeCenterViewShadowEffect];
+        
+        //三个视图互换位置
+        UITableView * view = _rightTableView;
+        _rightTableView = _leftTableView;
+        _leftTableView = _centerTableView;
+        _centerTableView = view;
+        
+        //微调
+        [self sendSubviewToBack:_rightTableView];
+        _rightTableView.dmy_x = 0;
+        
+        [self reloadData];
+    }];
+}
 
 -(void)moveView:(UIPanGestureRecognizer *)pan{
     
@@ -83,7 +160,7 @@
             break;
         case UIGestureRecognizerStateChanged:{
             CGFloat lenth = point.x - self.start.x;
-            NSLog(@"changing :%f",lenth);
+//            NSLog(@"changing :%f",lenth);
             if (lenth > 0) {
                 if (self.currentQuestionIndex == 0) {
                     return;
@@ -128,6 +205,7 @@
                         
                         [self sendSubviewToBack:_rightTableView];
                         [self bringSubviewToFront:_leftTableView];
+                        [self bringSubviewToFront:bottomIndicateToolBar];
                         
                         [self reloadData];
                     }];
@@ -420,7 +498,33 @@
         }
         
         [_centerTableView reloadData];
+        
+        if ([model.mUserSelectAnswer isEqualToString:model.mAnswer]) {
+            numOfCorrectQuestion++;
+            [self performSelector:@selector(nextPage) withObject:nil afterDelay:0.5];
+        } else
+            numOfWrongQuestion++;
+        
     }
     
+}
+
+#pragma mark - tool bar
+- (void)touchUpInsideOfToolBar:(WMexamPracticeToolBarView *)toolBar
+{
+
+}
+
+- (void)touchUpInsideOfCollect:(WMexamPracticeToolBarView *)toolBar
+{
+
+}
+
+- (void)chooseQuestionIndex:(NSInteger)index
+{
+    self.currentQuestionIndex = index;
+    [_leftTableView reloadData];
+    [_centerTableView reloadData];
+    [_rightTableView reloadData];
 }
 @end

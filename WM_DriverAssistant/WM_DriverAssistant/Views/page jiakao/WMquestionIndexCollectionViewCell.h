@@ -10,6 +10,6 @@
 
 @interface WMquestionIndexCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *btQuestionIndex;
+@property (weak, nonatomic) IBOutlet UILabel *labelQuestionIndex;
 
 @end

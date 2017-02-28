@@ -94,6 +94,8 @@
 		3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */; };
 		3B4693F71E309EA7008BE3B0 /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */; };
 		3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4693F81E30AAC9008BE3B0 /* Reveal.framework */; };
+		3B61515A1E65108600B8353F /* WMHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6151581E65108600B8353F /* WMHeaderCollectionReusableView.m */; };
+		3B61515B1E65108600B8353F /* WMHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6151591E65108600B8353F /* WMHeaderCollectionReusableView.xib */; };
 		3B6AB2071E349C960030725D /* WMExamPracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */; };
 		3B6AB20A1E349D0A0030725D /* WMexamPracticeToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */; };
 		3B9101A81E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */; };
@@ -291,6 +293,9 @@
 		3B4693F41E309EA7008BE3B0 /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
 		3B4693F81E30AAC9008BE3B0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		3B6151571E65108600B8353F /* WMHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMHeaderCollectionReusableView.h; path = "Views/page jiakao/WMHeaderCollectionReusableView.h"; sourceTree = "<group>"; };
+		3B6151581E65108600B8353F /* WMHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMHeaderCollectionReusableView.m; path = "Views/page jiakao/WMHeaderCollectionReusableView.m"; sourceTree = "<group>"; };
+		3B6151591E65108600B8353F /* WMHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMHeaderCollectionReusableView.xib; path = "Views/page jiakao/WMHeaderCollectionReusableView.xib"; sourceTree = "<group>"; };
 		3B6AB2051E349C960030725D /* WMExamPracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMExamPracticeViewController.h; path = "Controllers/page jiakao/WMExamPracticeViewController.h"; sourceTree = "<group>"; };
 		3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMExamPracticeViewController.m; path = "Controllers/page jiakao/WMExamPracticeViewController.m"; sourceTree = "<group>"; };
 		3B6AB2081E349D0A0030725D /* WMexamPracticeToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMexamPracticeToolBarView.h; path = "Views/page jiakao/WMexamPracticeToolBarView.h"; sourceTree = "<group>"; };
@@ -433,6 +438,9 @@
 				3B9101A51E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.h */,
 				3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */,
 				3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */,
+				3B6151571E65108600B8353F /* WMHeaderCollectionReusableView.h */,
+				3B6151581E65108600B8353F /* WMHeaderCollectionReusableView.m */,
+				3B6151591E65108600B8353F /* WMHeaderCollectionReusableView.xib */,
 				3B1236921E4D4B0600C397BC /* WMexamPracticeContentView.h */,
 				3B1236931E4D4B0600C397BC /* WMexamPracticeContentView.m */,
 				3B2E82BB1E5FDC0E00BC5B59 /* WMexamAnswerCellTableViewCell.h */,
@@ -890,6 +898,7 @@
 			files = (
 				0F08726B1DD31DA200DDE159 /* 0.jpg in Resources */,
 				0F08726C1DD31DA200DDE159 /* 1.jpg in Resources */,
+				3B61515B1E65108600B8353F /* WMHeaderCollectionReusableView.xib in Resources */,
 				3B4693761E309CCA008BE3B0 /* WMCircleOfFriendsPreview.xib in Resources */,
 				0F08726D1DD31DA200DDE159 /* 2.jpg in Resources */,
 				9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */,
@@ -951,6 +960,7 @@
 				3B46937D1E309CCA008BE3B0 /* WMTheoryLearnModelView.m in Sources */,
 				3B2E82E11E5FFC3A00BC5B59 /* FMDatabasePool.m in Sources */,
 				3B4693D91E309E7C008BE3B0 /* MJRefreshHeader.m in Sources */,
+				3B61515A1E65108600B8353F /* WMHeaderCollectionReusableView.m in Sources */,
 				3B1236941E4D4B0600C397BC /* WMexamPracticeContentView.m in Sources */,
 				3B46939A1E309E0B008BE3B0 /* WMShowAdvertiseContentViewController.m in Sources */,
 				3B4693DD1E309E7C008BE3B0 /* UIScrollView+MJExtension.m in Sources */,

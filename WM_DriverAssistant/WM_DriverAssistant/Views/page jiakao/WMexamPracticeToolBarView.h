@@ -16,6 +16,7 @@
 
 - (void)touchUpInsideOfToolBar:(WMexamPracticeToolBarView *)toolBar;
 - (void)touchUpInsideOfCollect:(WMexamPracticeToolBarView *)toolBar;
+- (void)chooseQuestionIndex:(NSInteger)index;
 
 @end
 
@@ -25,6 +26,9 @@
 @property (strong, nonatomic) UILabel  *labelNumOfErrorQuestion;
 @property (strong, nonatomic) UILabel  *labelNumOfRightQuestion;
 @property (strong, nonatomic) UILabel  *labelCurQuestionIndex;
+
+@property (strong, nonatomic) NSArray  *sectionInfos;
+
 @property (strong, nonatomic) id <WMexamPracticeToolBarViewDelegate> delegate;
 
 @end
