@@ -23,11 +23,16 @@
 @interface WMexamPracticeToolBarView : UIView
 
 @property (strong, nonatomic) UIButton *btCollect;
-@property (strong, nonatomic) UILabel  *labelNumOfErrorQuestion;
-@property (strong, nonatomic) UILabel  *labelNumOfRightQuestion;
+@property (strong, nonatomic) UIButton  *btNumOfErrorQuestion;
+@property (strong, nonatomic) UIButton  *btNumOfRightQuestion;
 @property (strong, nonatomic) UILabel  *labelCurQuestionIndex;
 
 @property (strong, nonatomic) NSArray  *sectionInfos;
+
+@property (assign, nonatomic) NSInteger numOfWrongAnswer;
+@property (assign, nonatomic) NSInteger numOfCorrectAnswer;
+@property (assign, nonatomic) NSInteger currentQuestionIndex;
+@property (assign, nonatomic) NSInteger totalQuestionNum;
 
 @property (strong, nonatomic) id <WMexamPracticeToolBarViewDelegate> delegate;
 

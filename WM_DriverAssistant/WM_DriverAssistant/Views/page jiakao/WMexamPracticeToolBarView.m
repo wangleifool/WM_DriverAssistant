@@ -27,6 +27,24 @@
 
 @implementation WMexamPracticeToolBarView
 
+#pragma mark - lazy load
+- (void)setCurrentQuestionIndex:(NSInteger)currentQuestionIndex
+{
+    _currentQuestionIndex = currentQuestionIndex;
+    [self.labelCurQuestionIndex setText:[NSString stringWithFormat:@"%ld/%ld",_currentQuestionIndex+1,self.totalQuestionNum]];
+}
+
+- (void)setNumOfWrongAnswer:(NSInteger)numOfWrongAnswer
+{
+    _numOfWrongAnswer = numOfWrongAnswer;
+    [self.btNumOfErrorQuestion setTitle:[NSString stringWithFormat:@"%ld",_numOfWrongAnswer] forState:UIControlStateNormal];
+}
+
+- (void)setNumOfCorrectAnswer:(NSInteger)numOfCorrectAnswer
+{
+    _numOfCorrectAnswer = numOfCorrectAnswer;
+    [self.btNumOfRightQuestion setTitle:[NSString stringWithFormat:@"%ld",_numOfCorrectAnswer] forState:UIControlStateNormal];
+}
 
 #pragma mark - 初始化
 - (instancetype)initWithFrame:(CGRect)frame
@@ -71,48 +89,58 @@
     
     if (nil == self.btCollect) {
         CGRect frameOfBt;
-        frameOfBt.origin.x = DISTANCE_PER_CONTROL;
-        frameOfBt.size.width = WIDTH_OF_CONTROL;
+        frameOfBt.origin.x = DISTANCE_PER_CONTROL-10;
+        frameOfBt.size.width = WIDTH_OF_CONTROL+10;
         frameOfBt.size.height = 32;
         frameOfBt.origin.y = HEIGHT_OF_PRACTICE_TOP_TOOLBAR/2 - frameOfBt.size.height/2; //由center决定控件的y坐标
         
         self.btCollect = [[UIButton alloc] initWithFrame:frameOfBt];
         [self.btCollect setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self.btCollect setTitle:@"收藏" forState:UIControlStateNormal];
+        self.btCollect.titleLabel.font = [UIFont systemFontOfSize:13.0];
+        self.btCollect.tag = 0; // 0 未收藏 1已经收藏
+        if (0 == self.btCollect.tag)
+        {
+            [self.btCollect setImage:[UIImage imageNamed:@"starEmpty"] forState:UIControlStateNormal];
+            [self.btCollect setTitle:@"   收藏" forState:UIControlStateNormal];
+        }
         [self.btCollect addTarget:self action:@selector(touchUpInsideOfCollect:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:self.btCollect];
     }
     
-    if (nil == self.labelNumOfErrorQuestion) {
+    if (nil == self.btNumOfErrorQuestion) {
         CGRect frameOfLabel;
         frameOfLabel.origin.x = DISTANCE_PER_CONTROL + self.btCollect.frame.origin.x + self.btCollect.frame.size.width;
         frameOfLabel.size.width = WIDTH_OF_CONTROL;
         frameOfLabel.size.height = 32;
         frameOfLabel.origin.y = HEIGHT_OF_PRACTICE_TOP_TOOLBAR/2 - frameOfLabel.size.height/2; //由center决定控件的y坐标
         
-        self.labelNumOfErrorQuestion = [[UILabel alloc] initWithFrame:frameOfLabel];
-        [self.labelNumOfErrorQuestion setText:@"0"];
+        self.btNumOfErrorQuestion = [[UIButton alloc] initWithFrame:frameOfLabel];
+        [self.btNumOfErrorQuestion setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.btNumOfErrorQuestion setImage:[UIImage imageNamed:@"wrongIndex"] forState:UIControlStateNormal];
+        self.btNumOfErrorQuestion.userInteractionEnabled = NO;
         
-        [self addSubview:self.labelNumOfErrorQuestion];
+        [self addSubview:self.btNumOfErrorQuestion];
     }
     
-    if (nil == self.labelNumOfRightQuestion) {
+    if (nil == self.btNumOfRightQuestion) {
         CGRect frameOfLabel;
-        frameOfLabel.origin.x = DISTANCE_PER_CONTROL + self.labelNumOfErrorQuestion.frame.origin.x + self.labelNumOfErrorQuestion.frame.size.width;
+        frameOfLabel.origin.x = DISTANCE_PER_CONTROL + self.btNumOfErrorQuestion.frame.origin.x + self.btNumOfErrorQuestion.frame.size.width;
         frameOfLabel.size.width = WIDTH_OF_CONTROL;
         frameOfLabel.size.height = 32;
         frameOfLabel.origin.y = HEIGHT_OF_PRACTICE_TOP_TOOLBAR/2 - frameOfLabel.size.height/2; //由center决定控件的y坐标
         
-        self.labelNumOfRightQuestion = [[UILabel alloc] initWithFrame:frameOfLabel];
-        [self.labelNumOfRightQuestion setText:@"0"];
+        self.btNumOfRightQuestion = [[UIButton alloc] initWithFrame:frameOfLabel];
+        [self.btNumOfRightQuestion setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.btNumOfRightQuestion setImage:[UIImage imageNamed:@"correctIndex"] forState:UIControlStateNormal];
+        self.btNumOfRightQuestion.userInteractionEnabled = NO;
         
-        [self addSubview:self.labelNumOfRightQuestion];
+        [self addSubview:self.btNumOfRightQuestion];
     }
     
     if (nil == self.labelCurQuestionIndex) {
         CGRect frameOfLabel;
-        frameOfLabel.origin.x = DISTANCE_PER_CONTROL + self.labelNumOfRightQuestion.frame.origin.x + self.labelNumOfRightQuestion.frame.size.width;
+        frameOfLabel.origin.x = DISTANCE_PER_CONTROL + self.btNumOfRightQuestion.frame.origin.x + self.btNumOfRightQuestion.frame.size.width;
         frameOfLabel.size.width = WIDTH_OF_CONTROL;
         frameOfLabel.size.height = 32;
         frameOfLabel.origin.y = HEIGHT_OF_PRACTICE_TOP_TOOLBAR/2 - frameOfLabel.size.height/2; //由center决定控件的y坐标
@@ -146,6 +174,10 @@
         
         [self addSubview:allQuestionIndexCollectionView];
     }
+    
+    [self.labelCurQuestionIndex setText:[NSString stringWithFormat:@"%ld/%ld",self.currentQuestionIndex+1,self.totalQuestionNum]];
+    [self.btNumOfErrorQuestion setTitle:[NSString stringWithFormat:@"%ld",self.numOfWrongAnswer] forState:UIControlStateNormal];
+    [self.btNumOfRightQuestion setTitle:[NSString stringWithFormat:@"%ld",self.numOfCorrectAnswer] forState:UIControlStateNormal];
 }
 
 #pragma mark - question index collection
@@ -231,8 +263,19 @@
 
 - (void)touchUpInsideOfCollect:(id)sender
 {
-    
+    UIButton *bt = (UIButton *)sender;
+    if (bt.tag == 0) {
+        bt.tag = 1;
+        [bt setImage:[UIImage imageNamed:@"starFill"] forState:UIControlStateNormal];
+        [bt setTitle:@"已收藏" forState:UIControlStateNormal];
+    } else {
+        bt.tag = 0;
+        [bt setImage:[UIImage imageNamed:@"starEmpty"] forState:UIControlStateNormal];
+        [bt setTitle:@"   收藏" forState:UIControlStateNormal];
+    }
 }
+
+
 
 #pragma mark - pan gesture
 - (void)moveToolBar:(UIPanGestureRecognizer *)pan

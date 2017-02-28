@@ -38,16 +38,25 @@
 
 @implementation WMexamPracticeContentView
 
+- (void)setCurrentQuestionIndex:(NSInteger)currentQuestionIndex
+{
+    _currentQuestionIndex = currentQuestionIndex;
+    if (bottomIndicateToolBar) {
+        bottomIndicateToolBar.currentQuestionIndex = currentQuestionIndex;
+    }
+}
+
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)allQuestionArray
 {
     if (self = [super initWithFrame:frame]) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
-        self.currentQuestionIndex = 0;
         _allQuestionsModel = allQuestionArray;
         
         [self initialMainContentView];
         [self initialToolBarView];
+        
+        self.currentQuestionIndex = 0;
         
         [self bringSubviewToFront:bottomIndicateToolBar];
     }
@@ -116,6 +125,8 @@
     }
     
     bottomIndicateToolBar.sectionInfos = [sectionInfo copy];
+    
+    bottomIndicateToolBar.totalQuestionNum = _allQuestionsModel.count;
 }
 
 - (void)nextPage
@@ -501,9 +512,12 @@
         
         if ([model.mUserSelectAnswer isEqualToString:model.mAnswer]) {
             numOfCorrectQuestion++;
+            bottomIndicateToolBar.numOfCorrectAnswer = numOfCorrectQuestion;
             [self performSelector:@selector(nextPage) withObject:nil afterDelay:0.5];
-        } else
+        } else {
             numOfWrongQuestion++;
+            bottomIndicateToolBar.numOfWrongAnswer = numOfWrongQuestion;
+        }
         
     }
     
@@ -517,7 +531,7 @@
 
 - (void)touchUpInsideOfCollect:(WMexamPracticeToolBarView *)toolBar
 {
-
+    
 }
 
 - (void)chooseQuestionIndex:(NSInteger)index

@@ -2,16 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Star_25.750759878419px_1198769_easyicon.net.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "s_pyq@2x.png",
+      "filename" : "Star_51.501519756839px_1198769_easyicon.net.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "s_pyq@3x.png",
       "scale" : "3x"
     }
   ],
