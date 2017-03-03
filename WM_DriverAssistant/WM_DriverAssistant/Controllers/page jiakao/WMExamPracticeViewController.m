@@ -17,42 +17,10 @@
     WMexamPracticeContentView *topMainContentView;
 }
 
-//内容视图相关属性
-/**  */
-@property(nonatomic,strong)UIView *leftView;
-/**  */
-@property(nonatomic,strong)UIView *centerView;
-/**  */
-@property(nonatomic,strong)UIView *rightView;
-
-@property(nonatomic,assign)CGPoint   start;
-@property(nonatomic,assign)NSInteger questionIndex;
-
-@property(nonatomic,assign) BOOL isLeftViewShadow;
-@property(nonatomic,assign) BOOL isCenterViewShadow;
 
 @end
 
 @implementation WMExamPracticeViewController
-
--(UIView *)leftView{
-    if (!_leftView) {
-        _leftView = [[UIView alloc] init];
-    }
-    return _leftView;
-}
--(UIView *)centerView{
-    if (!_centerView) {
-        _centerView = [[UIView alloc] init];
-    }
-    return _centerView;
-}
--(UIView *)rightView{
-    if (!_rightView) {
-        _rightView = [[UIView alloc] init];
-    }
-    return _rightView;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,12 +41,47 @@
     [self.view addSubview:topMainContentView];
     [self.view sendSubviewToBack:topMainContentView];
     
+    [self configureNavigationBar];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)configureNavigationBar
+{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor lightGrayColor]];
+    [self configureNavigationBarLeftView];
+    [self configureNavigationCenterView];
+}
+
+- (void)configureNavigationBarLeftView
+{
+//    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonPressed:)];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backArrow"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonPressed:)];
+    
+    UIBarButtonItem *fixedButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedButton.width = -15;
+    
+    self.navigationItem.leftBarButtonItems = @[fixedButton,leftBarButton];
+}
+
+- (void)leftBarButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)configureNavigationCenterView
+{
+    UISegmentedControl *segMent = [[UISegmentedControl alloc] initWithItems:@[@"答题模式",@"背题模式"]];
+    segMent.selectedSegmentIndex = 0;
+    [segMent addTarget:topMainContentView action:@selector(practiceModeChange:) forControlEvents:UIControlEventValueChanged];
+    
+    self.navigationItem.titleView = segMent;
 }
 
 

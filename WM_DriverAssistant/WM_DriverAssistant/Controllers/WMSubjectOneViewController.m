@@ -67,20 +67,25 @@
    
     //理论学习模块
     self.theoryLearnView.delegate = self;
+    
+    appDelegate.pubSubjectOneVC = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    self.view.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]; //不知道什么原因，从其他控制器dismiss回来，根视图的frame的y值总要变化。
+    self.view.hidden = NO;
+    
 //    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
-    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 20; // 计算有问题
+    CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 30; // 计算有问题
     self.mainScrollView.contentSize = CGSizeMake(0, contentHeight);
 
 }

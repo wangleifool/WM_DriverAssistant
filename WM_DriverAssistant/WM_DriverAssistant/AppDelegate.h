@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WMJiakaoViewController.h"
+#import "WMSubjectOneViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) WMJiakaoViewController *jiakaoViewController;
-
+@property (strong, nonatomic) WMSubjectOneViewController *pubSubjectOneVC;
 @end
 

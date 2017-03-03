@@ -32,18 +32,22 @@
 {
     _currentQuestionIndex = currentQuestionIndex;
     [self.labelCurQuestionIndex setText:[NSString stringWithFormat:@"%ld/%ld",_currentQuestionIndex+1,self.totalQuestionNum]];
+    [allQuestionIndexCollectionView reloadData];
 }
 
 - (void)setNumOfWrongAnswer:(NSInteger)numOfWrongAnswer
 {
     _numOfWrongAnswer = numOfWrongAnswer;
     [self.btNumOfErrorQuestion setTitle:[NSString stringWithFormat:@"%ld",_numOfWrongAnswer] forState:UIControlStateNormal];
+    
+    progressOfWholeQuestion.progress = (_numOfWrongAnswer + self.numOfCorrectAnswer)/(float)self.totalQuestionNum;
 }
 
 - (void)setNumOfCorrectAnswer:(NSInteger)numOfCorrectAnswer
 {
     _numOfCorrectAnswer = numOfCorrectAnswer;
     [self.btNumOfRightQuestion setTitle:[NSString stringWithFormat:@"%ld",_numOfCorrectAnswer] forState:UIControlStateNormal];
+    progressOfWholeQuestion.progress = (self.numOfWrongAnswer + _numOfCorrectAnswer)/(float)self.totalQuestionNum;
 }
 
 #pragma mark - 初始化
@@ -82,7 +86,7 @@
         frameOfProgress.origin.y = 0;
         progressOfWholeQuestion = [[UIProgressView alloc] initWithFrame:frameOfProgress];
         [progressOfWholeQuestion setTintColor:[UIColor blueColor]];
-        progressOfWholeQuestion.progress = 0.5;
+        progressOfWholeQuestion.progress = 0;
         
         [self addSubview:progressOfWholeQuestion];
     }
@@ -200,6 +204,18 @@
     
     NSString *title = [NSString stringWithFormat:@"%ld",indexPath.row+1];
     [cell.labelQuestionIndex setText:title];
+    
+    
+    NSInteger num = 0;
+    for (NSInteger i = 0; i < indexPath.section; i++) {
+        NSDictionary *dic = [self.sectionInfos objectAtIndex:i];
+        num += ((NSNumber *)[dic objectForKey:@"sectionNum"]).integerValue;
+    }
+    
+    if (indexPath.row + num == self.currentQuestionIndex) {
+        cell.isSelected = YES;
+    } else
+        cell.isSelected = NO;
     
     return cell;
 }

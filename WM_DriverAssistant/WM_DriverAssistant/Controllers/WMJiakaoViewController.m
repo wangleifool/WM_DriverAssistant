@@ -60,6 +60,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"page jia kao show");
+    if (appDelegate.pubSubjectOneVC) {
+        [appDelegate.pubSubjectOneVC viewWillAppear:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

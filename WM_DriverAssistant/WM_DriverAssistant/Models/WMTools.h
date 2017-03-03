@@ -16,5 +16,5 @@
 + (CGSize)getSizeWithLabelText:(NSString *)text;
 + (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize;
 + (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize withLabelWidth:(CGFloat)width;
-
++ (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
 @end

@@ -28,6 +28,8 @@
     NSInteger numOfCorrectQuestion;
     
     UIView  *centerViewOfFooter;
+    
+    BOOL isReciteMode;
 }
 
 @property(nonatomic,assign) CGPoint   start;
@@ -355,7 +357,17 @@
                 cell.isRightAnswer = NO;
             }
         }
-        
+    }
+    
+    if (isReciteMode) {
+        if (model.mType == IsChoiceQuestion ) {            
+            if ([arrayIndex indexOfObject:model.mAnswer] == indexPath.row) {
+                cell.isRightAnswer = YES;
+            }
+        } else {
+            if ([model.mChoiceOfAnswer indexOfObject:model.mAnswer] == indexPath.row)
+                cell.isRightAnswer = YES;
+        }
     }
     
     return cell;
@@ -369,7 +381,8 @@
         NSString *text = [NSString stringWithFormat:@"%ld: %@",model.mID,model.mQuestion];
         CGFloat height = [WMTools getSizeWithLabelText:text withFontSize:17.0 withLabelWidth:tableView.frame.size.width-20].height;
         if (model.mImage && ![model.mImage isEqualToString:@""]) {
-            return height+10+100; //100 imageview高度
+            UIImage *image = [UIImage imageNamed:[model.mImage stringByDeletingPathExtension]];
+            return height+10+image.size.height; //100 imageview高度
         }
         return height+10;
     }
@@ -398,11 +411,19 @@
         [view addSubview:labelQuestion];
         
         
-        CGRect frameOfImage = CGRectMake((tableView.frame.size.width - 100)/2, frameOfLabel.size.height + frameOfLabel.origin.y, 100, 0);
+        CGRect frameOfImage = CGRectMake(0, frameOfLabel.size.height + frameOfLabel.origin.y, 0, 0);
         if (model.mImage && ![model.mImage isEqualToString:@""]) {
-            frameOfImage.size.height = 100;
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:frameOfImage];
-            [imgView setImage:[UIImage imageNamed:[model.mImage stringByDeletingPathExtension]]];
+
+            UIImageView *imgView = [[UIImageView alloc] init];
+            
+            UIImage *image = [UIImage imageNamed:[model.mImage stringByDeletingPathExtension]];
+            
+            frameOfImage.size.height = image.size.height;
+            frameOfImage.size.width  = image.size.width;
+            frameOfImage.origin.x    = (tableView.frame.size.width - frameOfImage.size.width)/2;
+            
+            [imgView setFrame:frameOfImage];
+            [imgView setImage:image];
             [view addSubview:imgView];
         }
         
@@ -537,6 +558,21 @@
 - (void)chooseQuestionIndex:(NSInteger)index
 {
     self.currentQuestionIndex = index;
+    [_leftTableView reloadData];
+    [_centerTableView reloadData];
+    [_rightTableView reloadData];
+}
+
+#pragma mark - UIcontroller selector
+- (void)practiceModeChange:(id)sender
+{
+    UISegmentedControl *segMent = (UISegmentedControl *)sender;
+    if (0 == segMent.selectedSegmentIndex) {
+        isReciteMode = NO;
+    } else {
+        isReciteMode = YES;
+    }
+    
     [_leftTableView reloadData];
     [_centerTableView reloadData];
     [_rightTableView reloadData];

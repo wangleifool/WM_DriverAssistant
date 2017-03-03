@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmZ-FB-rLQ">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pia-C5-iJp" customClass="WMAdvertisementPagingScrollView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -98,7 +98,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="L8z-EM-s6b" secondAttribute="bottom" constant="-619" id="99y-Sf-Efi"/>
+                        <constraint firstAttribute="bottom" secondItem="L8z-EM-s6b" secondAttribute="bottom" constant="-710" id="99y-Sf-Efi"/>
                         <constraint firstItem="wRr-UH-U9S" firstAttribute="top" secondItem="5b7-3V-IUc" secondAttribute="bottom" constant="8" id="Al6-Da-xm5"/>
                         <constraint firstItem="Pia-C5-iJp" firstAttribute="top" secondItem="UmZ-FB-rLQ" secondAttribute="top" id="CN1-1n-IlU"/>
                         <constraint firstItem="Sv0-Jk-67c" firstAttribute="width" secondItem="UmZ-FB-rLQ" secondAttribute="width" id="F2j-pE-0kB"/>
@@ -123,7 +123,7 @@
             <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="UmZ-FB-rLQ" firstAttribute="leading" secondItem="iaa-2f-ySe" secondAttribute="leading" id="7Tm-8h-CcE"/>
-                <constraint firstAttribute="bottom" secondItem="UmZ-FB-rLQ" secondAttribute="bottom" id="JNK-pU-DMF"/>
+                <constraint firstAttribute="bottom" secondItem="UmZ-FB-rLQ" secondAttribute="bottom" constant="49" id="JNK-pU-DMF"/>
                 <constraint firstAttribute="trailing" secondItem="UmZ-FB-rLQ" secondAttribute="trailing" id="V8S-S4-zGR"/>
                 <constraint firstItem="UmZ-FB-rLQ" firstAttribute="top" secondItem="iaa-2f-ySe" secondAttribute="top" id="uN8-LC-dj6"/>
             </constraints>

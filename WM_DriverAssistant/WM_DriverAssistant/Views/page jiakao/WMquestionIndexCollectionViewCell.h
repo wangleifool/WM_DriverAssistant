@@ -11,5 +11,7 @@
 @interface WMquestionIndexCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *labelQuestionIndex;
+@property (assign, nonatomic) BOOL isSelected;
+
 
 @end

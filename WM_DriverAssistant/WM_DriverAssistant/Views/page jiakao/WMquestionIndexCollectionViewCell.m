@@ -20,4 +20,14 @@
     self.labelQuestionIndex.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
+- (void)setIsSelected:(BOOL)isSelected
+{
+    _isSelected = isSelected;
+    if (_isSelected) {
+        [self.labelQuestionIndex setBackgroundColor:[UIColor lightGrayColor]];
+    } else {
+        [self.labelQuestionIndex setBackgroundColor:[UIColor clearColor]];
+    }
+}
+
 @end

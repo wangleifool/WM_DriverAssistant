@@ -93,13 +93,13 @@
 		3B4693F11E309E90008BE3B0 /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693EB1E309E90008BE3B0 /* MJDIYHeader.m */; };
 		3B4693F61E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */; };
 		3B4693F71E309EA7008BE3B0 /* WMPagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */; };
-		3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4693F81E30AAC9008BE3B0 /* Reveal.framework */; };
 		3B61515A1E65108600B8353F /* WMHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6151581E65108600B8353F /* WMHeaderCollectionReusableView.m */; };
 		3B61515B1E65108600B8353F /* WMHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6151591E65108600B8353F /* WMHeaderCollectionReusableView.xib */; };
 		3B6AB2071E349C960030725D /* WMExamPracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2061E349C960030725D /* WMExamPracticeViewController.m */; };
 		3B6AB20A1E349D0A0030725D /* WMexamPracticeToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6AB2091E349D0A0030725D /* WMexamPracticeToolBarView.m */; };
 		3B9101A81E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */; };
 		3B9101A91E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */; };
+		3BB5DE871E68F348006A4D2B /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB5DE861E68F348006A4D2B /* RevealServer.framework */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
@@ -292,7 +292,6 @@
 		3B4693F31E309EA7008BE3B0 /* WMAdvertisementPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAdvertisementPagingScrollView.m; sourceTree = "<group>"; };
 		3B4693F41E309EA7008BE3B0 /* WMPagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPagesScrollView.h; sourceTree = "<group>"; };
 		3B4693F51E309EA7008BE3B0 /* WMPagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPagesScrollView.m; sourceTree = "<group>"; };
-		3B4693F81E30AAC9008BE3B0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		3B6151571E65108600B8353F /* WMHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMHeaderCollectionReusableView.h; path = "Views/page jiakao/WMHeaderCollectionReusableView.h"; sourceTree = "<group>"; };
 		3B6151581E65108600B8353F /* WMHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMHeaderCollectionReusableView.m; path = "Views/page jiakao/WMHeaderCollectionReusableView.m"; sourceTree = "<group>"; };
 		3B6151591E65108600B8353F /* WMHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMHeaderCollectionReusableView.xib; path = "Views/page jiakao/WMHeaderCollectionReusableView.xib"; sourceTree = "<group>"; };
@@ -303,6 +302,7 @@
 		3B9101A51E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMquestionIndexCollectionViewCell.h; path = "Views/page jiakao/WMquestionIndexCollectionViewCell.h"; sourceTree = "<group>"; };
 		3B9101A61E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMquestionIndexCollectionViewCell.m; path = "Views/page jiakao/WMquestionIndexCollectionViewCell.m"; sourceTree = "<group>"; };
 		3B9101A71E35F7AC00B219B0 /* WMquestionIndexCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMquestionIndexCollectionViewCell.xib; path = "Views/page jiakao/WMquestionIndexCollectionViewCell.xib"; sourceTree = "<group>"; };
+		3BB5DE861E68F348006A4D2B /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -349,8 +349,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB5DE871E68F348006A4D2B /* RevealServer.framework in Frameworks */,
 				3B2E82E61E5FFD1500BC5B59 /* libsqlite3.tbd in Frameworks */,
-				3B4693F91E30AAC9008BE3B0 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +479,7 @@
 		3B2E82E41E5FFD1500BC5B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BB5DE861E68F348006A4D2B /* RevealServer.framework */,
 				3B2E82E51E5FFD1500BC5B59 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -652,7 +653,6 @@
 				9B064FD11DC1FEC200A7ACE3 /* WM_DriverAssistantTests */,
 				9B064FDC1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests */,
 				9B064FB61DC1FEC100A7ACE3 /* Products */,
-				3B4693F81E30AAC9008BE3B0 /* Reveal.framework */,
 				3B2E82E41E5FFD1500BC5B59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -796,6 +796,7 @@
 				9B064FB11DC1FEC100A7ACE3 /* Sources */,
 				9B064FB21DC1FEC100A7ACE3 /* Frameworks */,
 				9B064FB31DC1FEC100A7ACE3 /* Resources */,
+				3BB5DE881E68F418006A4D2B /* Integrate Reveal Server */,
 			);
 			buildRules = (
 			);
@@ -946,6 +947,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BB5DE881E68F418006A4D2B /* Integrate Reveal Server */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal Server";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Reveal Server not loaded: RevealServer.framework could not be found.\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B064FB11DC1FEC100A7ACE3 /* Sources */ = {
@@ -1182,7 +1200,7 @@
 				DEVELOPMENT_TEAM = CG4F88GY6X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
 				);
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
@@ -1190,9 +1208,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
+					"-weak_framework",
+					RevealServer,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
