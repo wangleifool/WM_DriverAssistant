@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     //配置导航栏
-    [self configureNavigaitonBar];
+    //[self configureNavigaitonBar];
     
 }
 

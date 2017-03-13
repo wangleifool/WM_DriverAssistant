@@ -76,7 +76,8 @@
 {
     if (!_mainScrollview) {
         _mainScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64-49)];
-        _mainScrollview.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        _mainScrollview.backgroundColor = [UIColor whiteColor];
+        _mainScrollview.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-64);
         _mainScrollview.scrollEnabled = YES;
         _mainScrollview.showsVerticalScrollIndicator = NO;
         
@@ -145,6 +146,8 @@
 {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.navView.title.text = @"百宝箱";
     [self initData];
     [self initUI];
@@ -209,10 +212,10 @@
     collectionView2.scrollEnabled = NO;
     [collectionView2 registerClass:[WM_CollectionViewCell class] forCellWithReuseIdentifier:@"collection1Cell"];
     
-    if (collectionView2.frame.origin.y+collectionView2.frame.size.height > _mainScrollview.contentSize.height) {
-        _mainScrollview.contentSize = CGSizeMake(kScreenWidth, collectionView2.frame.origin.y+collectionView2.frame.size.height);
+    if (collectionView2.frame.origin.y+collectionView2.frame.size.height > self.mainScrollview.contentSize.height) {
+        self.mainScrollview.contentSize = CGSizeMake(kScreenWidth, collectionView2.frame.origin.y+collectionView2.frame.size.height);
     }
-    [_mainScrollview addSubview:collectionView2];
+    [self.mainScrollview addSubview:collectionView2];
     
 }
 -(void)createBannerWidget

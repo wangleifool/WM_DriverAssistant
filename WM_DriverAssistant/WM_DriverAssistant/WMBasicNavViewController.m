@@ -43,7 +43,7 @@
 -(WMLeftView *)leftView
 {
     if (!_leftView) {
-        _leftView = [[WMLeftView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth*0.8, kScreenHeight-49) style:UITableViewStylePlain];
+        _leftView = [[WMLeftView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-49) style:UITableViewStylePlain];
         _leftView.delegate = self;
         _leftView.dataSource = self;
     }
@@ -102,6 +102,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.frame = [UIScreen mainScreen].bounds;
+    self.tableView.hidden = YES;
     [self location];
     _userColum = @[@"我的题库",@"我的驾校",@"同步数据",@"下载科二、科三视频",@"题库更新",@"我的订单",@"赚取金币",@"设置"];
     self.leftView.tableHeaderView = self.headerView;
@@ -238,11 +240,11 @@
         [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             if (transation.x < kScreenWidth*0.8*0.5) {
                 showLeftView = YES;
-                self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.2+5, self.contentView.center.y);
+                self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
             }
             else
             {
-                self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth, self.contentView.center.y);
+                self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.8, self.contentView.center.y);
                 showLeftView = NO;
             }
         } completion:nil];
@@ -256,7 +258,7 @@
 {
     showLeftView = YES;
     [UIView animateWithDuration:0.5 animations:^{
-        self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.2+5, self.contentView.center.y);
+        self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
         self.UserView.alpha = self.contentView.frame.origin.x/kScreenWidth*0.8;
     }];
     //self.contentView.userInteractionEnabled = YES;
