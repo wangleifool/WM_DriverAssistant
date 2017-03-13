@@ -40,6 +40,7 @@
     CGFloat systemVer = [[device systemVersion] floatValue];
     if (systemVer - IOSBaseVersion7 < -0.001) {
         return YES;
+        
     }
     
     return NO;

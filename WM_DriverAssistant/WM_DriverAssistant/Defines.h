@@ -133,3 +133,5 @@
 #define LoginCheckTip       @"用户名或密码不能为空"
 #define LoginTitle          @"登录驾考宝典"
 #define WeatherSuffix       @"市市辖区"
+#define kScreenWidth        ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight       ([UIScreen mainScreen].bounds.size.height)

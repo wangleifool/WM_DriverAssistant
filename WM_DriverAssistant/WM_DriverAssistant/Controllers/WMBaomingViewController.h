@@ -9,7 +9,7 @@
 #import "FxButtonHelper.h"
 #import "WMBasicNavViewController.h"
 
-@interface WMBaomingViewController : WMBasicNavViewController<UITableViewDelegate,UITableViewDataSource>
+@interface WMBaomingViewController : WMBasicNavViewController
 
 @property(nonatomic,strong)FxButtonHelper *button;
 @property(nonatomic,strong)UIButton *testBtn;
