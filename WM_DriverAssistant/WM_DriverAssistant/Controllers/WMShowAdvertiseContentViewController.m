@@ -62,9 +62,9 @@
 - (void)leftBarButtonPressed:(id)sender
 {
 //    [self addTransitionAnimationWithType:nil subType:nil];
-//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

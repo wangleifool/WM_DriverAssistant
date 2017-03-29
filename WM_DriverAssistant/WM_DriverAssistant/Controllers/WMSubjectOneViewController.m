@@ -75,6 +75,8 @@
 {
     [super viewWillAppear:animated];
     self.view.hidden = YES;
+    
+    [self performSelector:@selector(viewDidAppear:) withObject:nil afterDelay:0.01];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -148,11 +150,11 @@
 - (void)advertiseTouchEventWithNeedWebURL:(NSString *)url
 {
     WMShowAdvertiseContentViewController *vc = [[WMShowAdvertiseContentViewController alloc] initWithWebURL:url];
-//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
 //    [self addTransitionAnimationWithType:nil subType:nil];
-//    [self presentViewController:nvc animated:YES completion:nil];
+    [self presentViewController:nvc animated:YES completion:nil];
     
-    [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
+//    [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - refresh
@@ -175,7 +177,7 @@
 {
     CATransition * animation = [CATransition animation];
     
-    animation.duration = 1;    //  时间
+    animation.duration = 0.4;    //  时间
     
     /**  type：动画类型
      *  pageCurl       向上翻一页

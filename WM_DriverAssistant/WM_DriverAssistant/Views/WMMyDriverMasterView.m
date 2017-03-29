@@ -18,6 +18,14 @@
 @implementation WMMyDriverMasterView
 
 #pragma mark - 初始化
+- (void)awakeFromNib
+{
+    self.labelTitle.adjustsFontSizeToFitWidth = YES;
+    self.labelTitle.minimumScaleFactor = 0.6;
+    self.labelDescription.adjustsFontSizeToFitWidth = YES;
+    self.labelDescription.minimumScaleFactor = 0.6;
+}
+
 - (void)layoutSubviews
 {
     //添加点击手势

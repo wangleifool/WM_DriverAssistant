@@ -25,10 +25,10 @@ static NSString* cellID = @"collectViewCell";
 - (NSArray *)collectViewData
 {
     if (nil == _collectViewData) {
-        _collectViewData = @[@{@"imgName":@"xx1",@"mainText":@"练手好车",@"subText":@"新手不容错过"},
-                             @{@"imgName":@"xx2",@"mainText":@"马上试驾",@"subText":@"买车之前试一下"},
-                             @{@"imgName":@"xx3",@"mainText":@"精选SUV",@"subText":@"最喜最爱的SUV"},
-                             @{@"imgName":@"xx4",@"mainText":@"超值二手车",@"subText":@"十万就能买大奔"}];
+        _collectViewData = @[@{@"imgName":@"car1",@"mainText":@"练手好车",@"subText":@"新手不容错过"},
+                             @{@"imgName":@"car2",@"mainText":@"马上试驾",@"subText":@"买车之前试一下"},
+                             @{@"imgName":@"car3",@"mainText":@"精选SUV",@"subText":@"最喜最爱的SUV"},
+                             @{@"imgName":@"car4",@"mainText":@"超值二手车",@"subText":@"十万就能买大奔"}];
     }
     
     return _collectViewData;
@@ -64,6 +64,7 @@ static NSString* cellID = @"collectViewCell";
         self.collectionViewFlowLayout.itemSize = CGSizeMake(self.frame.size.width/2 - 6, self.collectionView.frame.size.height/(self.collectViewData.count / 2));
         self.collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
+        self.collectionView.scrollEnabled = NO;
     }
     
     return self;
@@ -108,7 +109,7 @@ static NSString* cellID = @"collectViewCell";
 {
     WMImgTextCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     
-    [cell.image setImage:[UIImage imageNamed:[self.collectViewData[indexPath.row] objectForKey:@"imgName"]] forState:UIControlStateNormal];
+//    [cell.image setImage:[UIImage imageNamed:[self.collectViewData[indexPath.row] objectForKey:@"imgName"]] forState:UIControlStateNormal];
     [cell.labelMainText setText:[self.collectViewData[indexPath.row] objectForKey:@"mainText"]];
     [cell.labelDesc setText:[self.collectViewData[indexPath.row] objectForKey:@"subText"]];
 

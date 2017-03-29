@@ -46,7 +46,8 @@
     WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     
     [self.view addSubview:WMscrollView];
-    [self.view setBackgroundColor:[UIColor lightGrayColor]];
+    [WMscrollView setBackgroundColor:[UIColor lightGrayColor]];
+    
 //    UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight)];
 //    [bt setBackgroundColor:[UIColor redColor]];
 //    [self.view addSubview:bt];

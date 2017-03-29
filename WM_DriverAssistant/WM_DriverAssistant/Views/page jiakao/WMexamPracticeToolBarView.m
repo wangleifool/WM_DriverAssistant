@@ -151,6 +151,8 @@
         
         self.labelCurQuestionIndex = [[UILabel alloc] initWithFrame:frameOfLabel];
         [self.labelCurQuestionIndex setText:@"0/0"];
+        self.labelCurQuestionIndex.adjustsFontSizeToFitWidth = YES;
+        self.labelCurQuestionIndex.minimumScaleFactor = 0.8;
         
         [self addSubview:self.labelCurQuestionIndex];
     }

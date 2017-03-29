@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,31 +59,31 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang07" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-uK-BuI">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang7" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-uK-BuI">
                             <rect key="frame" x="401" y="48" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="8A8-CX-zKO"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang08" translatesAutoresizingMaskIntoConstraints="NO" id="uAL-PO-hME">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang8" translatesAutoresizingMaskIntoConstraints="NO" id="uAL-PO-hME">
                             <rect key="frame" x="522" y="48" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="ddJ-g8-4fG"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang05" translatesAutoresizingMaskIntoConstraints="NO" id="svc-2w-8Yd">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang2" translatesAutoresizingMaskIntoConstraints="NO" id="svc-2w-8Yd">
                             <rect key="frame" x="281" y="48" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="AGi-lQ-8vR"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang02" translatesAutoresizingMaskIntoConstraints="NO" id="BoD-Vs-n1X">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang1" translatesAutoresizingMaskIntoConstraints="NO" id="BoD-Vs-n1X">
                             <rect key="frame" x="161" y="48" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="pfb-D5-R1a"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang04" translatesAutoresizingMaskIntoConstraints="NO" id="rOS-la-PAt">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang5" translatesAutoresizingMaskIntoConstraints="NO" id="rOS-la-PAt">
                             <rect key="frame" x="41" y="48" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="DMa-IK-xQY"/>
@@ -98,7 +98,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang09" translatesAutoresizingMaskIntoConstraints="NO" id="iXd-6T-Ew6">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang3" translatesAutoresizingMaskIntoConstraints="NO" id="iXd-6T-Ew6">
                             <rect key="frame" x="647" y="48" width="80" height="80"/>
                         </imageView>
                     </subviews>
@@ -140,7 +140,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tch-Sh-jDD">
                             <rect key="frame" x="8" y="0.0" width="680" height="52"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <state key="normal" title="🏀精品">
+                            <state key="normal" title="🏀精品：  地球最强考友圈">
                                 <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -219,7 +219,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </variation>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang07" translatesAutoresizingMaskIntoConstraints="NO" id="y45-hs-hlz">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang7" translatesAutoresizingMaskIntoConstraints="NO" id="y45-hs-hlz">
                             <rect key="frame" x="168" y="47" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="oOO-mJ-6lK"/>
@@ -235,23 +235,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang08" translatesAutoresizingMaskIntoConstraints="NO" id="vvj-th-838">
-                            <rect key="frame" x="218" y="47" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="32" id="h8w-jn-ReR"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="h8w-jn-ReR"/>
-                                </mask>
-                            </variation>
-                            <variation key="widthClass=compact">
-                                <mask key="constraints">
-                                    <include reference="h8w-jn-ReR"/>
-                                </mask>
-                            </variation>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang05" translatesAutoresizingMaskIntoConstraints="NO" id="GyM-cF-ZiA">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang5" translatesAutoresizingMaskIntoConstraints="NO" id="GyM-cF-ZiA">
                             <rect key="frame" x="118" y="47" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="6ND-We-KHz"/>
@@ -267,7 +251,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang02" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-mF-u0e">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang2" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-mF-u0e">
                             <rect key="frame" x="68" y="47" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="oyM-na-lRO"/>
@@ -283,7 +267,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang04" translatesAutoresizingMaskIntoConstraints="NO" id="Cu4-Od-2SH">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang4" translatesAutoresizingMaskIntoConstraints="NO" id="Cu4-Od-2SH">
                             <rect key="frame" x="18" y="47" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="WhA-co-GrC"/>
@@ -308,7 +292,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             </variation>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang09" translatesAutoresizingMaskIntoConstraints="NO" id="V04-fw-zkh">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang3" translatesAutoresizingMaskIntoConstraints="NO" id="V04-fw-zkh">
                             <rect key="frame" x="268" y="47" width="32" height="32"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN8-K7-vMX">
@@ -444,6 +428,22 @@
                                 </mask>
                             </variation>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang8" translatesAutoresizingMaskIntoConstraints="NO" id="vvj-th-838">
+                            <rect key="frame" x="218" y="47" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="h8w-jn-ReR"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="h8w-jn-ReR"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="h8w-jn-ReR"/>
+                                </mask>
+                            </variation>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -616,7 +616,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-Rh-FhZ">
                             <rect key="frame" x="8" y="0.0" width="284" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <state key="normal" title="🏀精品">
+                            <state key="normal" title="🏀精品: 地表最强考友圈">
                                 <color key="titleColor" red="0.014539930560000001" green="0.0021655819850000002" blue="0.0017447356919999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <variation key="widthClass=compact">
@@ -702,11 +702,12 @@
     </objects>
     <resources>
         <image name="ic_next" width="12" height="12"/>
-        <image name="touxiang02" width="93" height="93"/>
-        <image name="touxiang04" width="93" height="93"/>
-        <image name="touxiang05" width="93" height="93"/>
-        <image name="touxiang07" width="93" height="93"/>
-        <image name="touxiang08" width="93" height="93"/>
-        <image name="touxiang09" width="93" height="93"/>
+        <image name="touxiang1" width="93" height="93"/>
+        <image name="touxiang2" width="93" height="93"/>
+        <image name="touxiang3" width="93" height="93"/>
+        <image name="touxiang4" width="93" height="93"/>
+        <image name="touxiang5" width="93" height="93"/>
+        <image name="touxiang7" width="93" height="93"/>
+        <image name="touxiang8" width="93" height="93"/>
     </resources>
 </document>
