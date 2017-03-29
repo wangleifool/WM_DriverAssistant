@@ -7,29 +7,126 @@
 //
 
 #import "WMBasicNavViewController.h"
+#import "WMNavigationView.h"
+#import "WMLeftView.h"
+#import "WMCitySelectController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface WMBasicNavViewController ()
+@interface WMBasicNavViewController ()<UITableViewDelegate,UITableViewDataSource,WMNavigationBarDelegate,CLLocationManagerDelegate>
+
+@property (nonatomic,strong)NSMutableArray      *items;
+
+@property (nonatomic,strong)WMLeftView          *leftView;
+@property (nonatomic,strong)UIView              *headerView;
+@property (nonatomic,strong)CLLocationManager   *locationMg;
+@property (nonatomic,strong)NSString            *cityName;
+
 
 @end
 
 @implementation WMBasicNavViewController
 
+#pragma mark - 懒加载
+-(NSMutableArray *)items
+{
+    if (!_items) {
+        YCXMenuItem *item1 = [YCXMenuItem menuItem:@"消息" image:nil tag:100 userInfo:nil];
+        YCXMenuItem *item2 = [YCXMenuItem menuItem:@"驾考大作战" image:nil tag:101 userInfo:nil];
+        YCXMenuItem *item3 = [YCXMenuItem menuItem:@"学车签到" image:nil tag:102 userInfo:nil];
+        item1.foreColor = [UIColor blackColor];
+        item2.foreColor = [UIColor blackColor];
+        item3.foreColor = [UIColor blackColor];
+        _items = [@[item1,item2,item3] mutableCopy];
+    }
+    return _items;
+}
+-(WMLeftView *)leftView
+{
+    if (!_leftView) {
+        _leftView = [[WMLeftView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-49) style:UITableViewStylePlain];
+        _leftView.delegate = self;
+        _leftView.dataSource = self;
+    }
+    return _leftView;
+}
+-(WMNavigationView *)navView
+{
+    if (!_navView) {
+        _navView = (WMNavigationView *)[WMNavigationView WMNavagationBar];
+        _navView.frame = CGRectMake(0, 0, kScreenWidth, _navView.bounds.size.height);
+        _navView.delegate = self;
+    }
+    return _navView;
+}
+-(UIView *)contentView
+{
+    if (!_contentView) {
+        _contentView = [[UIView alloc] initWithFrame:self.view.frame];
+        _contentView.backgroundColor = [UIColor whiteColor];
+        [_contentView addSubview:self.navView];
+    }
+    return _contentView;
+}
+-(UIView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+        _headerView.backgroundColor = [UIColor whiteColor];
+        UILabel *loginL = [[UILabel alloc] initWithFrame:CGRectMake(60, 30, 80, 30)];
+        loginL.textColor = [UIColor blueColor];
+        loginL.text = @"立即登陆";
+        [_headerView addSubview:loginL];
+    }
+
+    return _headerView;
+}
+-(CLLocationManager *)locationMg
+{
+    if (!_locationMg) {
+        _locationMg = [[CLLocationManager alloc] init];
+        _locationMg.delegate = self;
+        _locationMg.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationMg.distanceFilter = 10;
+    }
+    return _locationMg;
+}
+-(void)location
+{
+    if ([self.locationMg respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationMg requestAlwaysAuthorization];
+    }
+    [self.locationMg startUpdatingLocation];
+}
+
+#pragma mark - 视图加载
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configureNavigaitonBar];
-//    UITapGestureRecognizer *gs = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
-//    gs.numberOfTapsRequired = 1;
-    UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView)];
-    swip.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:swip];
-    UISwipeGestureRecognizer *swipL = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
-    swipL.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipL];
+    self.view.frame = [UIScreen mainScreen].bounds;
+    self.tableView.hidden = YES;
+    [self location];
+    _userColum = @[@"我的题库",@"我的驾校",@"同步数据",@"下载科二、科三视频",@"题库更新",@"我的订单",@"赚取金币",@"设置"];
+    self.leftView.tableHeaderView = self.headerView;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationController.navigationBarHidden = YES;
+    [self.view addSubview:self.leftView];
+    [self.view addSubview:self.contentView];
+    //[self configureNavigaitonBar];
+    UIPanGestureRecognizer *swip = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView:)];
+    //swip.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.contentView addGestureRecognizer:swip];
+    UITapGestureRecognizer *swipL = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
+    //swipL.numberOfTouches = 1;
+    //swipL.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.contentView addGestureRecognizer:swipL];
 //    [self.view addGestureRecognizer:gs];
     showLeftView = true;
-    _userColum = @[@"我的题库",@"我的驾校",@"同步数据",@"下载科二、科三视频",@"题库更新",@"我的订单",@"赚取金币",@"设置"];
-    [self initBackView:self.view];
+    
+    self.navView.userBtn.layer.cornerRadius = 23;
+    self.navView.userBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.navView.userBtn.layer.borderWidth = 2;
+    self.navView.userBtn.layer.masksToBounds = YES;
+    self.navView.locationBtn.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +134,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+#pragma mark - CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    CLLocation *location = [locations lastObject];
+    [self reverseGeogecode:location];
+    [self.locationMg stopUpdatingLocation];
+}
+#pragma mark - 反地理编码
+-(void)reverseGeogecode:(CLLocation *)location
+{
+    CLGeocoder *geocode = [[CLGeocoder alloc] init];
+    [geocode reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error){
+        CLPlacemark *firstPlaceMark = [placemarks firstObject];
+        [self.navView.locationBtn setTitle:firstPlaceMark.locality forState:UIControlStateNormal];
+    }];
+}
 #pragma mark - 自定义导航栏
 - (void)configureNavigaitonBar
 {
@@ -45,8 +157,8 @@
     [self setNavigationBarImage:@""];
     
     //自定义左边的tab item
-    [self setNavigationLeftbutton:@"icon_bm_peilian.png" sel:@selector(addView)];
-    [self setNavigationRightbutton:nil sel:nil];
+    //[self setNavigationLeftbutton:@"icon_bm_peilian.png" sel:@selector(addView)];
+    //[self setNavigationRightbutton:nil sel:@selector(popView:)];
     
     //自定义右边的tab item
     //[self setNavigationRightView:nil sel:nil];
@@ -55,100 +167,101 @@
     //[self setNavigationTitleView:nil];
     
 }
-
-#pragma mark 初始化用户视图
--(void)initBackView:(UIView *)view
+-(void)popView:(id)sender
 {
-    _UserView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, 618, 1024-45)];
-    _UserView.backgroundColor = [UIColor orangeColor];
-    _UserView.alpha = 0;
-    UISwipeGestureRecognizer *gs = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView)];
-    gs.direction = UISwipeGestureRecognizerDirectionLeft;
-    [_UserView addGestureRecognizer:gs];
-    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 618, 200)];
-    loginBtn.backgroundColor = [UIColor whiteColor];
-    [loginBtn addTarget:self action:@selector(UserBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [_UserView addSubview:loginBtn];
-    
-    UIImageView *iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, (loginBtn.frame.size.height-80)/2, 80, 80)];
-    iconImage.backgroundColor = [UIColor greenColor];
-    [loginBtn addSubview:iconImage];
-    UILabel *logLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImage.frame.origin.x+85, iconImage.frame.origin.y, 100, 30)];
-    logLab.text = @"立即登陆";
-    logLab.textColor = [UIColor blueColor];
-    logLab.font = [UIFont systemFontOfSize:15];
-    [loginBtn addSubview:logLab];
-    for (int i = 0; i <= 7; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        if (i != 7) {
-            btn.frame = CGRectMake(0, 200+(824-400)/7*i, 618, (824-400)/7);
+    if (sender != self.navigationItem.rightBarButtonItem) {
+        [YCXMenu setTintColor:[UIColor lightGrayColor]];
+        [YCXMenu setSelectedColor:[UIColor blueColor]];
+        if ([YCXMenu isShow]) {
+            [YCXMenu dismissMenu];
         }
         else
         {
-            btn.frame = CGRectMake(0, _UserView.frame.size.height-70-(824-400)/7, 618, (824-400)/7);
+            [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width-60, 64, 50, 0) menuItems:self.items selected:^(NSInteger index, YCXMenuItem *item){
+                switch (item.tag) {
+                    case 100:
+                        NSLog(@"News!");
+                        break;
+                    case 101:
+                        NSLog(@"驾考！");
+                        break;
+                    case 102:
+                        NSLog(@"签到!");
+                        break;
+                    default:
+                        break;
+                }
+            }];
         }
-        btn.tag = i+100;
-        [btn addTarget:self action:@selector(UserBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        btn.backgroundColor = [UIColor redColor];
-        [_UserView addSubview:btn];
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(50, (btn.frame.size.height-30)/2, 160, 30)];
-        lab.textColor = [UIColor whiteColor];
-        lab.text = [_userColum objectAtIndex:i];
-        [btn addSubview:lab];
-        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(10, lab.frame.origin.y, 30, 30)];
-        image.backgroundColor = [UIColor whiteColor];
-        [btn addSubview:image];
     }
-    [view addSubview:_UserView];
-    [view sendSubviewToBack:_UserView];
 }
-#pragma mark 用户界面有按钮被按下
--(void)UserBtnClicked:(UIButton *)button
+#pragma mark - WMNavigationBarDelegate
+-(void)WMNavigationBar:(WMNavigationView *)navigationView showLeftViewWith:(UIButton *)button
 {
-    NSLog(@"登陆");
+    [self openLeftView];
+}
+-(void)WMNavigationBar:(WMNavigationView *)navigationView messageWith:(UIButton *)button
+{
+    [self popView:button];
+}
+-(void)WMNavigationBar:(WMNavigationView *)navigationView locationWith:(UIButton *)button
+{
+    WMCitySelectController *citySelectVC = [[WMCitySelectController alloc] init];
+    citySelectVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:citySelectVC animated:YES];
 }
 #pragma mark 左边按钮按下
--(void)addView
-{
-    //NSLog(@"ShowLeft");
-    [self ShowLeftView];
-}
-#pragma mark 显示左边用户视图
--(void)ShowLeftView
+-(void)openLeftView
 {
     if (showLeftView)
     {
         showLeftView = false;
-        [UIView animateWithDuration:1 animations:^{
-            CGRect frame = self.tableView.frame;
-            frame.origin.x = 618;
-            self.tableView.frame = frame;
-            self.UserView.alpha = self.tableView.frame.origin.x/618;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.contentView.center = CGPointMake(self.contentView.center.x+kScreenWidth*0.8, self.contentView.center.y);
+            self.UserView.alpha = self.contentView.frame.origin.x/kScreenWidth*0.8;
         }];
     }
     else
     {
-        showLeftView = true;
-        [UIView animateWithDuration:1 animations:^{
-            CGRect frame = self.tableView.frame;
-            frame.origin.x = 0;
-            self.tableView.frame = frame;
-            self.UserView.alpha = self.tableView.frame.origin.x/618;
-        }];
+        [self hideLeftView];
+    }
+}
+#pragma mark 显示左边用户视图
+-(void)ShowLeftView:(UIPanGestureRecognizer *)panGesture
+{
+    CGPoint transation = [panGesture translationInView:self.view];
+    if (transation.x > 0) {
+        self.contentView.center = CGPointMake(self.view.center.x+transation.x, self.contentView.center.y);
+        self.UserView.alpha = self.contentView.center.x/kScreenWidth*0.8;
+    }
+    if (panGesture.state == UIGestureRecognizerStateEnded)
+    {
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            if (transation.x < kScreenWidth*0.8*0.5) {
+                showLeftView = YES;
+                self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
+            }
+            else
+            {
+                self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.8, self.contentView.center.y);
+                showLeftView = NO;
+            }
+        } completion:nil];
+        
+        
     }
     
 }
 #pragma mark 隐藏左边视图
 -(void)hideLeftView
 {
-    showLeftView = true;
-    [UIView animateWithDuration:1 animations:^{
-        CGRect frame = self.tableView.frame;
-        frame.origin.x = 0;
-        self.tableView.frame = frame;
-        self.UserView.alpha = self.tableView.frame.origin.x/618;
+    showLeftView = YES;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
+        self.UserView.alpha = self.contentView.frame.origin.x/kScreenWidth*0.8;
     }];
+    //self.contentView.userInteractionEnabled = YES;
 }
 - (void)setNavigationBarImage:(NSString *)imageName
 {
@@ -217,5 +330,36 @@
     }
     //item.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = item;
+}
+#pragma mark - UITableViewHeaderView
+
+#pragma mark - UITableViewDelegate && UITableViewDatasource
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _userColum.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"CellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.backgroundColor = [UIColor blueColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.text = [self.userColum objectAtIndex:indexPath.row];
+    return cell;
+}
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 @end

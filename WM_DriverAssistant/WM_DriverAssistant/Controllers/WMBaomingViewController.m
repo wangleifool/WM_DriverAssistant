@@ -7,232 +7,191 @@
 //
 
 #import "WMBaomingViewController.h"
+#import "WM_BaoMingView.h"
 #import "JiaXiaoCell.h"
 #import "ClassCell.h"
+#import "WMScrollView.h"
 
-@interface WMBaomingViewController ()
+#define MyScreenWidth  ([UIScreen mainScreen].bounds.size.width)
+
+@interface WMBaomingViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
+
+@property(nonatomic,strong)WMScrollView *mainScrollView;
+@property(nonatomic,strong)WM_BaoMingView  *leftTableView;
+@property(nonatomic,strong)WM_BaoMingView  *centerTableView;
+@property(nonatomic,strong)WM_BaoMingView  *rightTableView;
+
+
+@property(nonatomic,strong)NSArray *buttonTitle;
+@property(nonatomic,strong)UIView  *bottomView;
+@property(nonatomic,strong)NSArray *titles;
 
 @end
 
 @implementation WMBaomingViewController
-
--(void)viewWillAppear:(BOOL)animated
+#pragma mark - 懒加载
+-(UIScrollView *)mainScrollView
 {
-    _button = [[FxButtonHelper alloc] init];
+    if (!_mainScrollView) {
+        _mainScrollView = [[WMScrollView alloc] initWithFrame:CGRectMake(0, 114, kScreenWidth, kScreenHeight-114-49)];
+        _mainScrollView.backgroundColor = [UIColor redColor];
+        _mainScrollView.showsVerticalScrollIndicator = NO;
+        _mainScrollView.showsHorizontalScrollIndicator = NO;
+        _mainScrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
+        _mainScrollView.pagingEnabled = YES;
+        _mainScrollView.bounces = NO;
+        _mainScrollView.delegate = self;
+        _mainScrollView.contentSize = CGSizeMake(kScreenWidth*3, kScreenHeight-114-49);
+        [_mainScrollView addSubview:self.leftTableView];
+        [_mainScrollView addSubview:self.centerTableView];
+        [_mainScrollView addSubview:self.rightTableView];
+
+//        UIPanGestureRecognizer *swip = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView:)];
+//        [_mainScrollView addGestureRecognizer:swip];
+    }
+    return _mainScrollView;
+}
+-(WM_BaoMingView *)leftTableView
+{
+    if (!_leftTableView) {
+        _leftTableView = [[WM_BaoMingView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-114-49)];
+    }
+    return _leftTableView;
+    
+}
+-(WM_BaoMingView *)centerTableView
+{
+    if (!_centerTableView) {
+        _centerTableView = [[WM_BaoMingView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight-163)];
+    }
+    return _centerTableView;
+}
+-(WM_BaoMingView *)rightTableView
+{
+    if (!_rightTableView) {
+        _rightTableView = [[WM_BaoMingView alloc] initWithFrame:CGRectMake(kScreenWidth*2, 0, kScreenWidth, kScreenHeight-163)];
+    }
+    return _rightTableView;
+}
+-(UIView *)bottomView
+{
+    if (!_bottomView) {
+        _bottomView = [[UIView alloc] initWithFrame:CGRectMake(45, self.mainScrollView.frame.origin.y-2, kScreenWidth/3-90, 2)];
+        _bottomView.backgroundColor = [UIColor darkGrayColor];
+    }
+    return _bottomView;
 }
 
+#pragma mark - viewDidLoad
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self initBannerData];
-    [self initHeaderView];
-    [self initFooterView];
+    
+    self.navView.locationBtn.hidden = NO;
+    self.navView.title.text = @"报名";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    [sessionManager GET:@"https://jiaxiao.kakamobi.cn/api/open/v3/jiaxiao/list-contact-baoming.htm?_a=09495AxAV6330Vz7y0V6xyAV97060wz7w2z9&_appName=jiakaobaodianxingui&_appUser=e877af15e7011600433f7e2e29019c56&_cityCode=510100&_cityName=%E6%88%90%E9%83%BD%E5%B8%82&_device=%E6%A2%85%E6%AF%85%E7%9A%84%20iPhone&_firstTime=2017-02-23%2010%3A07%3A42&_gpsCity=510100&_gpsType=baidu&_html5=false&_imei=959fffbd46099186b511ec3c0d644112dbffd22a&_j=1.0&_jail=false&_latitude=30.673382703993&_launch=24&_longitude=103.7909242079&_mac=959fffbd46099186b511ec3c0d644112dbffd22a&_manufacturer=Apple&_network=wifi&_operator=C&_pkgName=cn.mucang.ios.jiakaobaodianPromise&_platform=iphone&_product=%E9%A9%BE%E8%80%83%E5%AE%9D%E5%85%B8%E6%96%B0%E8%A7%84&_productCategory=jiakaobaodian&_r=6a3fc285eec6d8fc2e56e495aa06769b&_renyuan=mucang&_screenDip=3&_screenHeight=2208&_screenWidth=1242&_system=iOS&_systemVersion=10.1.1&_u=v9z2A166V0918Vz193V683vVv8w6402y92vx&_userCity=510100&_vendor=appstore&_version=6.6.4&_webviewVersion=4.7&cityCode=510100&latitude=30.679572&limit=10&longitude=103.797482&onlyNotContractor=1&page=1&schoolCode=510100240&schoolName=%E5%A4%A9%E6%AC%A3%E9%A9%BE%E6%A0%A1&sortType=10&sign=142ddee17d002c09f681811966bd2c2c01" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject){
+//        //NSDictionary *dict = [responseObject objectForKey:@"data"];
+//        //self.dataArray = [GoodsModel arrayFromDict:dict];
+//        //self.Categorys = [NSMutableArray arrayWithArray:arr];
+//        
+//        NSLog(@"%@",responseObject);
+//        
+//    } failure:^(NSURLSessionDataTask *task, NSError *error){
+//        NSLog(@"%@",error);
+//    }];
+    
+    _buttonTitle = @[@"找驾校",@"找教练",@"找陪练"];
+    [self initBannerButton];
+    [self.contentView addSubview:self.mainScrollView];
 }
--(void)LoginClicked
+#pragma mark - 初始化顶部Banner
+-(void)initBannerButton
 {
+    for (int i = 0; i < 3; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(kScreenWidth/3*i, 64, kScreenWidth/3, 50);
+        btn.backgroundColor = [UIColor whiteColor];
+        btn.tag = 50+i;
+        [btn setTitle:[_buttonTitle objectAtIndex:i] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [btn addTarget:self action:@selector(bannerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:btn];
+    }
+    [self.contentView addSubview:self.bottomView];
+    UIButton *button = [self.view viewWithTag:50];
+    [self bannerButtonClicked:button];
+}
+#pragma mark - 顶部banner按钮点击
+-(void)bannerButtonClicked:(UIButton *)button
+{
+    UIButton *btn = nil;
+    NSInteger index = button.tag-50;
+    for (int i = 0; i < 3; i++) {
+        
+        btn = [self.view viewWithTag:i+50];
+        if (i == index) {
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        else
+        {
+            [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        }
+    }
+    CGFloat x = button.frame.origin.x;
+    x = x + 45;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bottomView.frame = CGRectMake(x, self.mainScrollView.frame.origin.y-2, kScreenWidth/3-90, 2);
+        self.mainScrollView.contentOffset = CGPointMake(kScreenWidth*index, 0);
+    }];
+}
+#pragma mark - UIScrollViewDelegate
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    //NSLog(@"test");
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    CGFloat hun = 0;
+//    if (scrollView == self.mainScrollView) {
+//        hun = ((int)(scrollView.contentOffset.x)%(int)kScreenWidth)/kScreenWidth;
+//        NSLog(@"%f",hun);
+//        CGFloat originX = self.bottomView.frame.origin.x;
+//        self.bottomView.frame = CGRectMake(originX+90*hun, self.mainScrollView.frame.origin.y-2, kScreenWidth/3-90, 2);
+//        NSLog(@"%f",self.bottomView.frame.origin.x);
+//    }
     
 }
--(void)initBannerData
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    _arr = @[@"服务保障",@"常见问题",@"报考新规",@"学车流程",@"讨论一下"];
-    _icons = @[@"icon_bm_school.png",@"icon_bm_top.png",@"icon_xl_lesson.png",@"icon_km2.png",@"icon_xl_im.png"];
+    UIButton *btn = nil;
+    if (scrollView == _mainScrollView) {
+        NSInteger index = scrollView.contentOffset.x/kScreenWidth;
+        btn = [self.view viewWithTag:index+50];
+        [self bannerButtonClicked:btn];
+    }
 }
 -(void)Setting
 {
     NSLog(@"hello, world!");
 }
 
-#pragma mark 初始化TableView的头视图
--(void)initHeaderView
-{
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 200)];
-    headView.backgroundColor = [UIColor whiteColor];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, headView.frame.size.width, 120)];
-    //imageView.backgroundColor = [UIColor redColor];
-    imageView.image = [UIImage imageNamed:@"renling_banner.png"];
-    [headView addSubview:imageView];
-    for (int i = 0; i < 5; i++) {
-        
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(imageView.frame.size.width/5*i, 120, imageView.frame.size.width/5, 90)];
-        btn.tag = i+10;
-        //btn.titleLabel.textColor = [UIColor grayColor];
-        [btn addTarget:self action:@selector(Cliced:) forControlEvents:UIControlEventTouchUpInside];
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake((btn.frame.size.width - 80)/2, btn.frame.size.height - 35, 80, 20)];
-        lab.text = [_arr objectAtIndex:i];
-        lab.textAlignment = NSTextAlignmentCenter;
-        lab.textColor = [UIColor grayColor];
-        lab.font = [UIFont systemFontOfSize:14];
-        UIImageView *btnImg = [[UIImageView alloc] initWithFrame:CGRectMake((btn.frame.size.width - 35)/2, 15, 35, 35)];
-        //btnImg.backgroundColor = [UIColor greenColor];
-        btnImg.image = [UIImage imageNamed:[_icons objectAtIndex:i]];
-        [btn addSubview:btnImg];
-        [btn addSubview:lab];
-        [headView addSubview:btn];
-    }
-    self.tableView.tableHeaderView = headView;
-}
-#pragma mark 初始化TableView的底部视图
--(void)initFooterView
-{
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-160, 768, 180)];
-    footerView.backgroundColor = [UIColor lightGrayColor];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, footerView.frame.size.width, 80);
-    [btn setTitle:@"查看更多驾校消息" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:15];
-    
-    btn.backgroundColor = [UIColor whiteColor];
-    [btn addTarget:self action:@selector(CheckMore:) forControlEvents:UIControlEventTouchUpInside];
-    btn.highlighted = YES;
-    [footerView addSubview:btn];
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake((footerView.frame.size.width-150)/2, 130, 150, 25)];
-    lab.text = @"是个考驾照 九个用宝典";
-    lab.font = [UIFont systemFontOfSize:13];
-    lab.textColor = [UIColor grayColor];
-    [footerView addSubview:lab];
-    self.tableView.tableFooterView = footerView;
-}
-#pragma mark 查看更多驾校按钮按下
--(void)CheckMore:(UIButton *)sender
-{
-    NSLog(@"Check More!");
-}
 -(void)Cliced:(UIButton *)sender
 {
     NSLog(@"button cliced!");
 }
--(void)BtnClicked:(UIButton *)sender
-{
-    [_button setButton:sender normalColor:[UIColor blackColor] selectedColor:[UIColor redColor]];
-}
-#pragma mark TableViewDelegate/TableViewDatasource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 7;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (section == 1)
-    {
-        return 4;
-    }
-    
-    else if (section == 3 || section == 4)
-    {
-        return 3;
-    }
-    
-    return 2;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    static NSString *identifier = @"identifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
-    }
-    else
-    {
-        while ([cell.contentView.subviews lastObject] != nil) {
-            [[cell.contentView.subviews lastObject] removeFromSuperview];
-        }
-    }
-    if (indexPath.section == 0)
-    {
-        if (indexPath.row == 0)
-        {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            UILabel *start = [[UILabel alloc] initWithFrame:CGRectMake(5, (cell.frame.size.height - 20)/2, 60, 20)];
-            start.text = @"出发地:";
-            start.font = [UIFont systemFontOfSize:13];
-            [cell.contentView addSubview:start];
-            UILabel *intro = [[UILabel alloc] initWithFrame:CGRectMake(65, start.frame.origin.y, 150, 20)];
-            intro.text = @"请点击选择您的具体位置";
-            intro.font = [UIFont systemFontOfSize:13];
-            intro.textColor = [UIColor grayColor];
-            [cell.contentView addSubview:intro];
-            
-            return cell;
-        }
-    }
-    if (indexPath.section == 1)
-    {
-        if (indexPath.row == 0)
-        {
-            _testBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            _testBtn.frame = CGRectMake(100, 0, 80, 40);
-            [_testBtn setTitle:@"教练" forState:UIControlStateNormal];
-            [_testBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            _testBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-            [_testBtn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(400, 0, 80, 40)];
-            [btn setTitle:@"驾校" forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            btn.titleLabel.font = [UIFont systemFontOfSize:16];
-            [btn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.contentView addSubview:_testBtn];
-            [cell.contentView addSubview:btn];
-            
-            return cell;
-        }
-        else if(indexPath.row == 1)
-        {
-            JiaXiaoCell *cell = [JiaXiaoCell cellWithTableview:tableView];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            return cell;
-        }
-        
-    }
-    if ((indexPath.row == 0)&&(indexPath.section != 0)&&(indexPath.section != 1))
-    {
-        JiaXiaoCell *cell = [JiaXiaoCell cellWithTableview:tableView];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        return cell;
-    }
-    if ((indexPath.section != 0)&&(indexPath.row != 0)) {
-        ClassCell *cell = [ClassCell cellWithTableview:tableView];
-        return cell;
-    }
-    
-    return cell;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 1)
-    {
-        if (indexPath.row == 0)
-        {
-            return 44;
-        }
-        else
-        {
-            return 100;
-        }
-    }
-    else if(indexPath.section == 0)
-    {
-        return 44;
-    }
-    else
-    {
-        return 100;
-    }
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 10;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.001;
-}
+//-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//    if ([otherGestureRecognize]&&self.mainScrollView.contentOffset.x=0) {
+//        return NO;
+//    }
+//    return NO;
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

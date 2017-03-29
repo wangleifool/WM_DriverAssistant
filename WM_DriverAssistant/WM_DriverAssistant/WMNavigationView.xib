@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WMNavigationView">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-i9-eIL">
+                    <rect key="frame" x="7" y="16" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="2BS-Jf-Dht"/>
+                        <constraint firstAttribute="width" constant="46" id="U4R-Lo-Qqb"/>
+                    </constraints>
+                    <state key="normal" image="person">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="leftButtonCliked:" destination="iN0-l3-epB" eventType="touchUpInside" id="u0Q-Zc-ZGl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avz-EJ-aAQ">
+                    <rect key="frame" x="378" y="18" width="46" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="WJy-EP-Sgp"/>
+                    </constraints>
+                    <state key="normal" title="消息"/>
+                    <connections>
+                        <action selector="rightButtonCliked:" destination="iN0-l3-epB" eventType="touchUpInside" id="iTF-4h-XkL"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn1-rZ-7MO">
+                    <rect key="frame" x="183" y="25" width="58" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="58" id="agH-z7-drg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wow-7q-AIQ">
+                    <rect key="frame" x="242" y="32" width="30" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="成都"/>
+                    <connections>
+                        <action selector="locationButtonCliked:" destination="iN0-l3-epB" eventType="touchUpInside" id="vSe-Hd-9rp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.73333333329999995" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Wow-7q-AIQ" firstAttribute="leading" secondItem="Wn1-rZ-7MO" secondAttribute="trailing" constant="1" id="40P-j3-u8t"/>
+                <constraint firstAttribute="trailing" secondItem="avz-EJ-aAQ" secondAttribute="trailing" id="9lB-hM-Mn4"/>
+                <constraint firstItem="avz-EJ-aAQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="18" id="A1V-Vw-o5J"/>
+                <constraint firstItem="Wn1-rZ-7MO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="RD5-Z1-t3O"/>
+                <constraint firstAttribute="bottom" secondItem="Wn1-rZ-7MO" secondAttribute="bottom" constant="1" id="RfS-7d-etp"/>
+                <constraint firstItem="Wn1-rZ-7MO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S6Z-4v-ZTt"/>
+                <constraint firstAttribute="bottom" secondItem="jzG-i9-eIL" secondAttribute="bottom" constant="2" id="aiP-fD-Jcr"/>
+                <constraint firstItem="Wow-7q-AIQ" firstAttribute="centerY" secondItem="Wn1-rZ-7MO" secondAttribute="centerY" id="lXD-RM-yMR"/>
+                <constraint firstItem="jzG-i9-eIL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="rXq-wz-3eb"/>
+                <constraint firstItem="avz-EJ-aAQ" firstAttribute="bottom" secondItem="jzG-i9-eIL" secondAttribute="bottom" id="zMt-fS-oNi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="locationBtn" destination="Wow-7q-AIQ" id="ubW-CQ-Ofn"/>
+                <outlet property="title" destination="Wn1-rZ-7MO" id="tK7-rJ-yFW"/>
+                <outlet property="userBtn" destination="jzG-i9-eIL" id="DOT-sS-33b"/>
+            </connections>
+            <point key="canvasLocation" x="49" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person" width="84" height="101"/>
+    </resources>
+</document>

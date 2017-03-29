@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WMNavigationView.h"
 
 @interface WMBasicNavViewController : UIViewController
 {
@@ -16,6 +17,8 @@
 @property(nonatomic,strong)IBOutlet UITableView *tableView;
 @property(nonatomic,strong)UIView *UserView;
 @property(nonatomic,strong)NSArray *userColum;
+@property (nonatomic,strong)UIView          *contentView;
+@property (nonatomic,strong)WMNavigationView    *navView;
 //@property(nonatomic,assign)BOOL  showLeftView;
 
 - (void)configureNavigaitonBar;
@@ -26,6 +29,6 @@
 -(void)setNavigationRightbutton:(NSString *)title sel:(SEL)selector;
 
 - (void)setStatusBarStyle:(UIStatusBarStyle)style;
--(void)ShowLeftView;
+-(void)ShowLeftView:(UIPanGestureRecognizer *)panGesture;
 -(void)hideLeftView;
 @end
