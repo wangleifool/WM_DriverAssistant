@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMBeginnerBuyCarView">
+            <connections>
+                <outlet property="collectionView" destination="dWg-uc-O43" id="mLU-dy-ui4"/>
+                <outlet property="collectionViewFlowLayout" destination="HXh-h0-RaW" id="cfQ-Uu-58m"/>
+                <outlet property="viewBeginerCar" destination="U6s-IE-ckT" id="Xk6-ub-0ft"/>
+                <outlet property="viewSUV" destination="iYQ-lp-X8t" id="Lft-Hu-jQ2"/>
+                <outlet property="viewSecondHand" destination="foB-XL-K9i" id="27W-P8-25b"/>
+                <outlet property="viewTryDrive" destination="Yc1-Fc-pqg" id="z4q-bw-fFx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="347"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRG-gp-XSZ">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="48"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新手选车" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceg-o1-10x">
+                            <rect key="frame" x="8" y="8" width="376" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拿本买车一步到位" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oma-SJ-dkE">
+                            <rect key="frame" x="384" y="13" width="376" height="22"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.460078125" green="0.460078125" blue="0.460078125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oma-SJ-dkE" firstAttribute="width" secondItem="Ceg-o1-10x" secondAttribute="width" id="Dho-aN-T46"/>
+                        <constraint firstItem="oma-SJ-dkE" firstAttribute="top" secondItem="BRG-gp-XSZ" secondAttribute="top" constant="13" id="NTt-t9-PWQ"/>
+                        <constraint firstAttribute="trailing" secondItem="oma-SJ-dkE" secondAttribute="trailing" constant="8" id="Ob3-Pk-Zzj"/>
+                        <constraint firstItem="oma-SJ-dkE" firstAttribute="leading" secondItem="Ceg-o1-10x" secondAttribute="trailing" id="QS8-KL-xXZ"/>
+                        <constraint firstAttribute="bottom" secondItem="oma-SJ-dkE" secondAttribute="bottom" constant="13" id="XnV-CY-sfC"/>
+                        <constraint firstItem="Ceg-o1-10x" firstAttribute="top" secondItem="BRG-gp-XSZ" secondAttribute="top" constant="8" id="rLY-my-QXm"/>
+                        <constraint firstItem="Ceg-o1-10x" firstAttribute="leading" secondItem="BRG-gp-XSZ" secondAttribute="leading" constant="8" id="t97-Eh-qaG"/>
+                        <constraint firstAttribute="bottom" secondItem="Ceg-o1-10x" secondAttribute="bottom" constant="8" id="v9M-3F-Ly6"/>
+                        <constraint firstAttribute="height" constant="48" id="xpb-Oh-IYv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJ2-G9-g9I">
+                    <rect key="frame" x="0.0" y="49" width="383" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6s-IE-ckT" userLabel="View1" customClass="WMImageAndTwoLineTextView">
+                            <rect key="frame" x="116" y="0.0" width="151" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="U6s-IE-ckT" firstAttribute="leading" secondItem="vJ2-G9-g9I" secondAttribute="leading" constant="116" id="5Hm-Vh-qiH"/>
+                        <constraint firstItem="U6s-IE-ckT" firstAttribute="centerY" secondItem="vJ2-G9-g9I" secondAttribute="centerY" id="gMG-r7-hrc"/>
+                        <constraint firstItem="U6s-IE-ckT" firstAttribute="centerX" secondItem="vJ2-G9-g9I" secondAttribute="centerX" id="mpc-fP-lTM"/>
+                        <constraint firstAttribute="bottom" secondItem="U6s-IE-ckT" secondAttribute="bottom" id="n4L-eu-Fkr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9s-gI-Dd6">
+                    <rect key="frame" x="0.0" y="178" width="383" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYQ-lp-X8t" userLabel="View3" customClass="WMImageAndTwoLineTextView">
+                            <rect key="frame" x="116" y="0.0" width="151" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="iYQ-lp-X8t" firstAttribute="top" secondItem="s9s-gI-Dd6" secondAttribute="top" id="1d7-NF-xH0"/>
+                        <constraint firstItem="iYQ-lp-X8t" firstAttribute="centerY" secondItem="s9s-gI-Dd6" secondAttribute="centerY" id="Niu-d3-Mz3"/>
+                        <constraint firstItem="iYQ-lp-X8t" firstAttribute="centerX" secondItem="s9s-gI-Dd6" secondAttribute="centerX" id="Wcu-rc-q8C"/>
+                        <constraint firstItem="iYQ-lp-X8t" firstAttribute="leading" secondItem="s9s-gI-Dd6" secondAttribute="leading" constant="116" id="rbr-IF-YMO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAi-0o-GJW">
+                    <rect key="frame" x="385" y="49" width="383" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc1-Fc-pqg" userLabel="View2" customClass="WMImageAndTwoLineTextView">
+                            <rect key="frame" x="116" y="0.0" width="151" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Yc1-Fc-pqg" firstAttribute="top" secondItem="eAi-0o-GJW" secondAttribute="top" id="23j-oh-dHH"/>
+                        <constraint firstItem="Yc1-Fc-pqg" firstAttribute="centerY" secondItem="eAi-0o-GJW" secondAttribute="centerY" id="4gn-Mh-nHB"/>
+                        <constraint firstItem="Yc1-Fc-pqg" firstAttribute="centerX" secondItem="eAi-0o-GJW" secondAttribute="centerX" id="NoA-rf-Lgz"/>
+                        <constraint firstItem="Yc1-Fc-pqg" firstAttribute="leading" secondItem="eAi-0o-GJW" secondAttribute="leading" constant="116" id="bPt-Qm-XEm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhP-P2-8VD">
+                    <rect key="frame" x="385" y="178" width="383" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foB-XL-K9i" userLabel="View4" customClass="WMImageAndTwoLineTextView">
+                            <rect key="frame" x="116" y="0.0" width="151" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="foB-XL-K9i" firstAttribute="leading" secondItem="DhP-P2-8VD" secondAttribute="leading" constant="116" id="Iae-gE-CEv"/>
+                        <constraint firstItem="foB-XL-K9i" firstAttribute="centerX" secondItem="DhP-P2-8VD" secondAttribute="centerX" id="LaX-IK-M7d"/>
+                        <constraint firstItem="foB-XL-K9i" firstAttribute="centerY" secondItem="DhP-P2-8VD" secondAttribute="centerY" id="Vmo-Hj-brG"/>
+                        <constraint firstItem="foB-XL-K9i" firstAttribute="top" secondItem="DhP-P2-8VD" secondAttribute="top" id="qp2-LZ-eqc"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="十个考驾照，九个用宝典！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moK-lF-lDo">
+                    <rect key="frame" x="0.0" y="307" width="768" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DuE-VR-A8Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.45646484374999996" green="0.45646484374999996" blue="0.45646484374999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BRG-gp-XSZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3oP-Hw-XO4"/>
+                <constraint firstItem="s9s-gI-Dd6" firstAttribute="width" secondItem="vJ2-G9-g9I" secondAttribute="width" id="7b6-2C-46x"/>
+                <constraint firstItem="s9s-gI-Dd6" firstAttribute="height" secondItem="vJ2-G9-g9I" secondAttribute="height" id="9Uk-Z8-fxC"/>
+                <constraint firstItem="DhP-P2-8VD" firstAttribute="leading" secondItem="s9s-gI-Dd6" secondAttribute="trailing" constant="2" id="ASw-Ya-PNy"/>
+                <constraint firstItem="DhP-P2-8VD" firstAttribute="top" secondItem="eAi-0o-GJW" secondAttribute="bottom" constant="1" id="I12-45-Mpr"/>
+                <constraint firstItem="eAi-0o-GJW" firstAttribute="width" secondItem="vJ2-G9-g9I" secondAttribute="width" id="JhR-f6-jqJ"/>
+                <constraint firstAttribute="trailing" secondItem="BRG-gp-XSZ" secondAttribute="trailing" id="NBE-if-8OV"/>
+                <constraint firstItem="eAi-0o-GJW" firstAttribute="height" secondItem="vJ2-G9-g9I" secondAttribute="height" id="NJ8-vb-9g3"/>
+                <constraint firstItem="DhP-P2-8VD" firstAttribute="width" secondItem="vJ2-G9-g9I" secondAttribute="width" id="ROm-ZZ-Wql"/>
+                <constraint firstItem="moK-lF-lDo" firstAttribute="top" secondItem="s9s-gI-Dd6" secondAttribute="bottom" constant="1" id="SPn-xm-5QX"/>
+                <constraint firstItem="eAi-0o-GJW" firstAttribute="top" secondItem="BRG-gp-XSZ" secondAttribute="bottom" constant="1" id="Wel-yJ-H03"/>
+                <constraint firstAttribute="bottom" secondItem="moK-lF-lDo" secondAttribute="bottom" id="bmi-Mg-j2r"/>
+                <constraint firstItem="moK-lF-lDo" firstAttribute="top" secondItem="DhP-P2-8VD" secondAttribute="bottom" constant="1" id="cWq-bL-jHt"/>
+                <constraint firstItem="vJ2-G9-g9I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e3l-Gb-LDM"/>
+                <constraint firstAttribute="trailing" secondItem="moK-lF-lDo" secondAttribute="trailing" id="eHq-Wd-r8j"/>
+                <constraint firstItem="BRG-gp-XSZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fc1-Wc-3uI"/>
+                <constraint firstItem="eAi-0o-GJW" firstAttribute="top" secondItem="BRG-gp-XSZ" secondAttribute="bottom" constant="1" id="fmd-i6-JQ7"/>
+                <constraint firstItem="s9s-gI-Dd6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nnN-mU-3db"/>
+                <constraint firstAttribute="trailing" secondItem="eAi-0o-GJW" secondAttribute="trailing" id="pLz-Ag-ZiJ"/>
+                <constraint firstItem="s9s-gI-Dd6" firstAttribute="top" secondItem="vJ2-G9-g9I" secondAttribute="bottom" constant="1" id="pVN-AV-E8R"/>
+                <constraint firstItem="eAi-0o-GJW" firstAttribute="leading" secondItem="vJ2-G9-g9I" secondAttribute="trailing" constant="2" id="vTL-cH-1l4"/>
+                <constraint firstItem="DhP-P2-8VD" firstAttribute="height" secondItem="vJ2-G9-g9I" secondAttribute="height" id="wVi-Tm-u6s"/>
+                <constraint firstItem="moK-lF-lDo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wgq-OB-HkS"/>
+                <constraint firstAttribute="trailing" secondItem="DhP-P2-8VD" secondAttribute="trailing" id="wmK-qW-3wX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24" y="-177.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="dfW-5s-deu" userLabel="View iPhone">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="347"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yxc-z4-OAZ">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新手选车" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcW-fJ-R5C">
+                            <rect key="frame" x="8" y="8" width="376" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="拿本买车一步到位" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFe-zb-beg">
+                            <rect key="frame" x="159" y="13" width="157" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.460078125" green="0.460078125" blue="0.460078125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="十个考驾照，九个用宝典！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRa-mu-jzr">
+                    <rect key="frame" x="0.0" y="307" width="320" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.45646484370000001" green="0.45646484370000001" blue="0.45646484370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-uc-O43">
+                    <rect key="frame" x="0.0" y="47" width="320" height="259"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HXh-h0-RaW">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-200" y="231.5"/>
+        </view>
+    </objects>
+</document>
