@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet WMTheoryLearnModelView *theoryLearnView;
 @property (weak, nonatomic) IBOutlet WMCircleOfFriendsPreview *circleOfFriendsPreview;
 @property (weak, nonatomic) IBOutlet WMBeginnerBuyCarView *beginnerBuyCarView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityOfViewAppear;
 
 @property (strong,nonatomic) UIRefreshControl *refresh;
 @property (strong,nonatomic) MJChiBaoZiHeader *customRefresh;
@@ -74,9 +75,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.view.hidden = YES;
+    self.mainScrollView.hidden = YES;
+    self.activityOfViewAppear.hidden = NO;
+    [self.activityOfViewAppear startAnimating];
     
-    [self performSelector:@selector(viewDidAppear:) withObject:nil afterDelay:0.01];
+    [self performSelector:@selector(viewDidAppear:) withObject:nil afterDelay:0.8];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -84,7 +87,9 @@
     [super viewDidAppear:animated];
     
     [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]; //不知道什么原因，从其他控制器dismiss回来，根视图的frame的y值总要变化。
-    self.view.hidden = NO;
+    self.mainScrollView.hidden = NO;
+    self.activityOfViewAppear.hidden = YES;
+    [self.activityOfViewAppear stopAnimating];
     
 //    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
     CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height + 64 + 30; // 计算有问题

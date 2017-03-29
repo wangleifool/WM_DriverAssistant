@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMSubjectOneViewController">
             <connections>
+                <outlet property="activityOfViewAppear" destination="6Lx-eP-0FS" id="cY0-iu-GB8"/>
                 <outlet property="advertisementView" destination="Pia-C5-iJp" id="KH1-zN-2ir"/>
                 <outlet property="beginnerBuyCarView" destination="L8z-EM-s6b" id="0oN-fj-McZ"/>
                 <outlet property="circleOfFriendsPreview" destination="wRr-UH-U9S" id="y0F-XW-gut"/>
@@ -25,6 +26,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Lx-eP-0FS">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                </activityIndicatorView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmZ-FB-rLQ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                     <subviews>
@@ -125,7 +129,9 @@
                 <constraint firstItem="UmZ-FB-rLQ" firstAttribute="leading" secondItem="iaa-2f-ySe" secondAttribute="leading" id="7Tm-8h-CcE"/>
                 <constraint firstAttribute="bottom" secondItem="UmZ-FB-rLQ" secondAttribute="bottom" constant="49" id="JNK-pU-DMF"/>
                 <constraint firstAttribute="trailing" secondItem="UmZ-FB-rLQ" secondAttribute="trailing" id="V8S-S4-zGR"/>
+                <constraint firstItem="6Lx-eP-0FS" firstAttribute="centerY" secondItem="iaa-2f-ySe" secondAttribute="centerY" id="VSw-9V-fix"/>
                 <constraint firstItem="UmZ-FB-rLQ" firstAttribute="top" secondItem="iaa-2f-ySe" secondAttribute="top" id="uN8-LC-dj6"/>
+                <constraint firstItem="6Lx-eP-0FS" firstAttribute="centerX" secondItem="iaa-2f-ySe" secondAttribute="centerX" id="zaw-JH-Gh9"/>
             </constraints>
             <point key="canvasLocation" x="-1164" y="26"/>
         </view>
