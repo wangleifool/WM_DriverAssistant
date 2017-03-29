@@ -123,6 +123,13 @@
 		3B5232BC1E8B955300E2E016 /* WMGetDiverLicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5232B71E8B955300E2E016 /* WMGetDiverLicenseViewController.xib */; };
 		3B5232BD1E8B955300E2E016 /* WMShowAdvertiseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232B91E8B955300E2E016 /* WMShowAdvertiseContentViewController.m */; };
 		3B5232BE1E8B955300E2E016 /* WMShowAdvertiseContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5232BA1E8B955300E2E016 /* WMShowAdvertiseContentViewController.xib */; };
+		3B5232CB1E8B9A1F00E2E016 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232C11E8B9A1E00E2E016 /* FMDatabase.m */; };
+		3B5232CC1E8B9A1F00E2E016 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232C31E8B9A1F00E2E016 /* FMDatabaseAdditions.m */; };
+		3B5232CD1E8B9A1F00E2E016 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232C51E8B9A1F00E2E016 /* FMDatabasePool.m */; };
+		3B5232CE1E8B9A1F00E2E016 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232C71E8B9A1F00E2E016 /* FMDatabaseQueue.m */; };
+		3B5232CF1E8B9A1F00E2E016 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232CA1E8B9A1F00E2E016 /* FMResultSet.m */; };
+		3B5232D31E8B9A5100E2E016 /* HDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232D11E8B9A5100E2E016 /* HDButton.m */; };
+		3B5232D41E8B9A5100E2E016 /* HDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5232D21E8B9A5100E2E016 /* HDButton.xib */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
@@ -371,6 +378,20 @@
 		3B5232B81E8B955300E2E016 /* WMShowAdvertiseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMShowAdvertiseContentViewController.h; path = "Controllers/page jiakao/WMShowAdvertiseContentViewController.h"; sourceTree = "<group>"; };
 		3B5232B91E8B955300E2E016 /* WMShowAdvertiseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMShowAdvertiseContentViewController.m; path = "Controllers/page jiakao/WMShowAdvertiseContentViewController.m"; sourceTree = "<group>"; };
 		3B5232BA1E8B955300E2E016 /* WMShowAdvertiseContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMShowAdvertiseContentViewController.xib; path = "Controllers/page jiakao/WMShowAdvertiseContentViewController.xib"; sourceTree = "<group>"; };
+		3B5232C01E8B9A1E00E2E016 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3B5232C11E8B9A1E00E2E016 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3B5232C21E8B9A1E00E2E016 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3B5232C31E8B9A1F00E2E016 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3B5232C41E8B9A1F00E2E016 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3B5232C51E8B9A1F00E2E016 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3B5232C61E8B9A1F00E2E016 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3B5232C71E8B9A1F00E2E016 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3B5232C81E8B9A1F00E2E016 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3B5232C91E8B9A1F00E2E016 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3B5232CA1E8B9A1F00E2E016 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3B5232D01E8B9A5100E2E016 /* HDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HDButton.h; path = "Views/page jiakao/HDButton.h"; sourceTree = "<group>"; };
+		3B5232D11E8B9A5100E2E016 /* HDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HDButton.m; path = "Views/page jiakao/HDButton.m"; sourceTree = "<group>"; };
+		3B5232D21E8B9A5100E2E016 /* HDButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HDButton.xib; path = "Views/page jiakao/HDButton.xib"; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -618,6 +639,9 @@
 		3B5232121E8B90B300E2E016 /* pageJiaKao */ = {
 			isa = PBXGroup;
 			children = (
+				3B5232D01E8B9A5100E2E016 /* HDButton.h */,
+				3B5232D11E8B9A5100E2E016 /* HDButton.m */,
+				3B5232D21E8B9A5100E2E016 /* HDButton.xib */,
 				3B5232B51E8B955300E2E016 /* WMGetDiverLicenseViewController.h */,
 				3B5232B61E8B955300E2E016 /* WMGetDiverLicenseViewController.m */,
 				3B5232B71E8B955300E2E016 /* WMGetDiverLicenseViewController.xib */,
@@ -745,6 +769,24 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
+		3B5232BF1E8B9A1E00E2E016 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3B5232C01E8B9A1E00E2E016 /* FMDatabase.h */,
+				3B5232C11E8B9A1E00E2E016 /* FMDatabase.m */,
+				3B5232C21E8B9A1E00E2E016 /* FMDatabaseAdditions.h */,
+				3B5232C31E8B9A1F00E2E016 /* FMDatabaseAdditions.m */,
+				3B5232C41E8B9A1F00E2E016 /* FMDatabasePool.h */,
+				3B5232C51E8B9A1F00E2E016 /* FMDatabasePool.m */,
+				3B5232C61E8B9A1F00E2E016 /* FMDatabaseQueue.h */,
+				3B5232C71E8B9A1F00E2E016 /* FMDatabaseQueue.m */,
+				3B5232C81E8B9A1F00E2E016 /* FMDB.h */,
+				3B5232C91E8B9A1F00E2E016 /* FMResultSet.h */,
+				3B5232CA1E8B9A1F00E2E016 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		9B064FAC1DC1FEC000A7ACE3 = {
 			isa = PBXGroup;
 			children = (
@@ -809,6 +851,7 @@
 		9B064FEB1DC2D5A700A7ACE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B5232BF1E8B9A1E00E2E016 /* fmdb */,
 				3B52324F1E8B910D00E2E016 /* pageOfJiaKao */,
 				9B0650491DC3356800A7ACE3 /* WMpageControllersInfo.h */,
 				9B06504A1DC3356800A7ACE3 /* WMpageControllersInfo.m */,
@@ -1038,6 +1081,7 @@
 				3B5232101E8B8F0A00E2E016 /* WMJiakaoViewController.xib in Resources */,
 				3B52323E1E8B90D400E2E016 /* WMMyDriverMasterView.xib in Resources */,
 				0F0872571DD31AF600DDE159 /* JiaXiaoCell.xib in Resources */,
+				3B5232D41E8B9A5100E2E016 /* HDButton.xib in Resources */,
 				3B5232BC1E8B955300E2E016 /* WMGetDiverLicenseViewController.xib in Resources */,
 				3B52323C1E8B90D400E2E016 /* WMImageAndTwoLineTextView.xib in Resources */,
 				3B52329E1E8B91B400E2E016 /* MJRefresh.bundle in Resources */,
@@ -1077,6 +1121,7 @@
 				3B5232A31E8B91B400E2E016 /* MJRefreshBackFooter.m in Sources */,
 				9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */,
 				3B52329C1E8B91B400E2E016 /* MJDIYBackFooter.m in Sources */,
+				3B5232CF1E8B9A1F00E2E016 /* FMResultSet.m in Sources */,
 				3B5232451E8B90D400E2E016 /* WMexamAnswerCellTableViewCell.m in Sources */,
 				3B5231F01E8B8DCC00E2E016 /* UIButton+AFNetworking.m in Sources */,
 				9B06504B1DC3356800A7ACE3 /* WMpageControllersInfo.m in Sources */,
@@ -1112,6 +1157,7 @@
 				3B5232B01E8B91B400E2E016 /* UIScrollView+MJRefresh.m in Sources */,
 				3B52324C1E8B90D400E2E016 /* WMPagesScrollView.m in Sources */,
 				3B52325D1E8B911E00E2E016 /* WMmodelOfExamQuestion.m in Sources */,
+				3B5232D31E8B9A5100E2E016 /* HDButton.m in Sources */,
 				3B52320C1E8B8E8B00E2E016 /* WMSubjectTwoViewController.m in Sources */,
 				3B5232981E8B91B400E2E016 /* MJChiBaoZiFooter.m in Sources */,
 				0F08725F1DD31B3800DDE159 /* JiaXiaoCell.m in Sources */,
@@ -1133,6 +1179,7 @@
 				3B5232AF1E8B91B400E2E016 /* UIScrollView+MJExtension.m in Sources */,
 				3B5232BD1E8B955300E2E016 /* WMShowAdvertiseContentViewController.m in Sources */,
 				3B5231F11E8B8DCC00E2E016 /* UIImageView+AFNetworking.m in Sources */,
+				3B5232CE1E8B9A1F00E2E016 /* FMDatabaseQueue.m in Sources */,
 				3B5232A21E8B91B400E2E016 /* MJRefreshAutoStateFooter.m in Sources */,
 				3B5231F21E8B8DCC00E2E016 /* UIProgressView+AFNetworking.m in Sources */,
 				0F750CC21E6128F4008F5445 /* WMCoachModel.m in Sources */,
@@ -1143,9 +1190,12 @@
 				3B5232431E8B90D400E2E016 /* WMBeginnerBuyCarView.m in Sources */,
 				9B0650481DC3285600A7ACE3 /* WMPurchaseNavViewController.m in Sources */,
 				0F52C4521E763A4700674B16 /* WMCitySelectController.m in Sources */,
+				3B5232CB1E8B9A1F00E2E016 /* FMDatabase.m in Sources */,
 				0F485E7E1DE53CD5005EB240 /* WM_MyButton.m in Sources */,
 				3B5231E61E8B8DCC00E2E016 /* AFHTTPSessionManager.m in Sources */,
 				3B5231F31E8B8DCC00E2E016 /* UIRefreshControl+AFNetworking.m in Sources */,
+				3B5232CD1E8B9A1F00E2E016 /* FMDatabasePool.m in Sources */,
+				3B5232CC1E8B9A1F00E2E016 /* FMDatabaseAdditions.m in Sources */,
 				0F331FC51DE432110004CDBB /* WM_CollectionViewCell.m in Sources */,
 				3B5232471E8B90D400E2E016 /* WMexamPracticeToolBarView.m in Sources */,
 				3B5231ED1E8B8DCC00E2E016 /* AFImageDownloader.m in Sources */,

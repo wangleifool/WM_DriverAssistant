@@ -135,3 +135,22 @@
 #define WeatherSuffix       @"市市辖区"
 #define kScreenWidth        ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight       ([UIScreen mainScreen].bounds.size.height)
+
+
+//database row name
+#define tableAllQuestion @"leaflevel"
+#define rowID   @"mid"
+#define rowQuestion @"mquestion"
+#define rowDesc     @"mdesc"
+#define rowAnswer   @"manswer"
+#define rowImage    @"mimage"
+#define rowSectionID @"pid"
+#define rowSectionName @"pname"
+#define rowType        @"mtype"
+
+#define IsChoiceQuestion 1
+#define IsTrueOrFalseQuestion 2
+
+// page question practice
+#define HEIGHT_OF_PRACTICE_TOP_TOOLBAR 48
+#define HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR 256
