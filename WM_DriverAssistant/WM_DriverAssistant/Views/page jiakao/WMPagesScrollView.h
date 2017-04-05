@@ -21,6 +21,8 @@
 
 @interface WMPagesScrollView : UIScrollView
 
+@property (strong,nonatomic) UIViewController *rootVC;
+
 //通过指定frame，每个page的title和每个page对应的视图控制器
 - (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)vcs;
 

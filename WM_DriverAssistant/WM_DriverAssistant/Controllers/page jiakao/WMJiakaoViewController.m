@@ -45,6 +45,7 @@
     NSArray *arrayControllers = [NSArray arrayWithObjects:@"WMSubjectOneViewController",@"WMSubjectTwoViewController",@"WMSubjectThreeViewController",@"WMSubjectFourViewController",@"WMGetDiverLicenseViewController", nil];
     WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     
+    WMscrollView.rootVC = self;
     [self.view addSubview:WMscrollView];
     [WMscrollView setBackgroundColor:[UIColor lightGrayColor]];
     

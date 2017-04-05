@@ -10,6 +10,7 @@
 
 @interface WMSubjectThreeViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 
 @implementation WMSubjectThreeViewController
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [_label setText:@"test content"];
 }
 
 - (void)didReceiveMemoryWarning {

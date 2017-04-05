@@ -223,6 +223,7 @@
 //                    [VC.view addSubview:labelTest];
                     
                     [self.mainContentScrollView addSubview:VC.view];
+                    [_rootVC addChildViewController:VC];
                     arrayOfViewControllers[i] = @"VC_Already_Created";
                 }
             }

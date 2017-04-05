@@ -21,5 +21,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (nonatomic, assign)id<HDButtonDelegate> delegate;
+@property (nonatomic, assign) id<HDButtonDelegate> delegate;
 @end
