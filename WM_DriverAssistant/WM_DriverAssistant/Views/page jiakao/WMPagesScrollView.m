@@ -214,7 +214,7 @@
                     }
                     
                     UIViewController *VC = [[NSClassFromString(className) alloc] init];
-                    CGRect frame = CGRectMake(selfFrame.size.width * i, 0, selfFrame.size.width, self.mainContentScrollView.bounds.size.height);
+                    CGRect frame = CGRectMake(selfFrame.size.width * i, 0, selfFrame.size.width, self.mainContentScrollView.bounds.size.height - 49 - 64 - topTitleScrollViewHeight);
                     VC.view.frame = frame;
                                     
                     //该label和需要实现的功能无关，只是测试。

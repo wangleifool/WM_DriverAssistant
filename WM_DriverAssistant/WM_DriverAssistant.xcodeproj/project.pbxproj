@@ -41,6 +41,9 @@
 		3B0F8BF61E94EA2700093EB8 /* WMMySchool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF51E94EA2700093EB8 /* WMMySchool.m */; };
 		3B0F8BFA1E94EB5000093EB8 /* WMMySchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF81E94EB5000093EB8 /* WMMySchoolTableViewCell.m */; };
 		3B0F8BFB1E94EB5000093EB8 /* WMMySchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF91E94EB5000093EB8 /* WMMySchoolTableViewCell.xib */; };
+		3B0F8BFF1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8BFD1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.m */; };
+		3B0F8C001E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8BFE1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.xib */; };
+		3B0F8C031E95EB8400093EB8 /* WMModelOfExamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8C021E95EB8400093EB8 /* WMModelOfExamItem.m */; };
 		3B5231E61E8B8DCC00E2E016 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5231C51E8B8DCC00E2E016 /* AFHTTPSessionManager.m */; };
 		3B5231E71E8B8DCC00E2E016 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5231C81E8B8DCC00E2E016 /* AFNetworkReachabilityManager.m */; };
 		3B5231E81E8B8DCC00E2E016 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5231CA1E8B8DCC00E2E016 /* AFSecurityPolicy.m */; };
@@ -244,6 +247,11 @@
 		3B0F8BF71E94EB5000093EB8 /* WMMySchoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMMySchoolTableViewCell.h; path = "Views/page jiakao/WMMySchoolTableViewCell.h"; sourceTree = "<group>"; };
 		3B0F8BF81E94EB5000093EB8 /* WMMySchoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMMySchoolTableViewCell.m; path = "Views/page jiakao/WMMySchoolTableViewCell.m"; sourceTree = "<group>"; };
 		3B0F8BF91E94EB5000093EB8 /* WMMySchoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMMySchoolTableViewCell.xib; path = "Views/page jiakao/WMMySchoolTableViewCell.xib"; sourceTree = "<group>"; };
+		3B0F8BFC1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSubjectTwoThreeExamItemTableViewCell.h; path = "Views/page jiakao/WMSubjectTwoThreeExamItemTableViewCell.h"; sourceTree = "<group>"; };
+		3B0F8BFD1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSubjectTwoThreeExamItemTableViewCell.m; path = "Views/page jiakao/WMSubjectTwoThreeExamItemTableViewCell.m"; sourceTree = "<group>"; };
+		3B0F8BFE1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSubjectTwoThreeExamItemTableViewCell.xib; path = "Views/page jiakao/WMSubjectTwoThreeExamItemTableViewCell.xib"; sourceTree = "<group>"; };
+		3B0F8C011E95EB8400093EB8 /* WMModelOfExamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMModelOfExamItem.h; path = Models/WMModelOfExamItem.h; sourceTree = "<group>"; };
+		3B0F8C021E95EB8400093EB8 /* WMModelOfExamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMModelOfExamItem.m; path = Models/WMModelOfExamItem.m; sourceTree = "<group>"; };
 		3B5231C41E8B8DCC00E2E016 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		3B5231C51E8B8DCC00E2E016 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		3B5231C61E8B8DCC00E2E016 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -625,6 +633,9 @@
 				3B0F8BF71E94EB5000093EB8 /* WMMySchoolTableViewCell.h */,
 				3B0F8BF81E94EB5000093EB8 /* WMMySchoolTableViewCell.m */,
 				3B0F8BF91E94EB5000093EB8 /* WMMySchoolTableViewCell.xib */,
+				3B0F8BFC1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.h */,
+				3B0F8BFD1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.m */,
+				3B0F8BFE1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.xib */,
 			);
 			name = "subject 2";
 			sourceTree = "<group>";
@@ -681,8 +692,8 @@
 		3B5231F51E8B8DF300E2E016 /* pageJiaKao */ = {
 			isa = PBXGroup;
 			children = (
-				3B52320F1E8B8F0A00E2E016 /* WMJiakaoViewController.m */,
 				3B52320D1E8B8F0A00E2E016 /* WMJiakaoViewController.h */,
+				3B52320F1E8B8F0A00E2E016 /* WMJiakaoViewController.m */,
 				3B5231F91E8B8E8B00E2E016 /* WMSubjectFourViewController.h */,
 				3B5231FA1E8B8E8B00E2E016 /* WMSubjectOneViewController.h */,
 				3B5232021E8B8E8B00E2E016 /* WMSubjectOneViewController.m */,
@@ -774,6 +785,8 @@
 				3B52325A1E8B911E00E2E016 /* dataOfAdvertisement.plist */,
 				3B0F8BF41E94EA2700093EB8 /* WMMySchool.h */,
 				3B0F8BF51E94EA2700093EB8 /* WMMySchool.m */,
+				3B0F8C011E95EB8400093EB8 /* WMModelOfExamItem.h */,
+				3B0F8C021E95EB8400093EB8 /* WMModelOfExamItem.m */,
 			);
 			name = pageOfJiaKao;
 			sourceTree = "<group>";
@@ -1163,6 +1176,7 @@
 				3B5232061E8B8E8B00E2E016 /* WMSubjectOneViewController.xib in Resources */,
 				0F52C4531E763A4700674B16 /* WMCitySelectController.xib in Resources */,
 				3B5232081E8B8E8B00E2E016 /* WMSubjectTwoViewController.xib in Resources */,
+				3B0F8C001E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.xib in Resources */,
 				9B06505F1DC33CC700A7ACE3 /* WMBaibaoxiangViewController.xib in Resources */,
 				3B5232BE1E8B955300E2E016 /* WMShowAdvertiseContentViewController.xib in Resources */,
 				0F1B0B271E72865B00A161F8 /* WMNavigationView.xib in Resources */,
@@ -1277,6 +1291,7 @@
 				3B52324B1E8B90D400E2E016 /* WMMyDriverMasterView.m in Sources */,
 				3B5232B01E8B91B400E2E016 /* UIScrollView+MJRefresh.m in Sources */,
 				3B52324C1E8B90D400E2E016 /* WMPagesScrollView.m in Sources */,
+				3B0F8C031E95EB8400093EB8 /* WMModelOfExamItem.m in Sources */,
 				3B52325D1E8B911E00E2E016 /* WMmodelOfExamQuestion.m in Sources */,
 				3B5232D31E8B9A5100E2E016 /* HDButton.m in Sources */,
 				3B52320C1E8B8E8B00E2E016 /* WMSubjectTwoViewController.m in Sources */,
@@ -1299,6 +1314,7 @@
 				0F1B0B251E72863300A161F8 /* WMNavigationView.m in Sources */,
 				3B0F8BFA1E94EB5000093EB8 /* WMMySchoolTableViewCell.m in Sources */,
 				3B5232441E8B90D400E2E016 /* WMCircleOfFriendsPreview.m in Sources */,
+				3B0F8BFF1E95D15E00093EB8 /* WMSubjectTwoThreeExamItemTableViewCell.m in Sources */,
 				3B5232AB1E8B91B400E2E016 /* MJRefreshHeader.m in Sources */,
 				3B5231F81E8B8E0600E2E016 /* WMExamPracticeViewController.m in Sources */,
 				0F0872611DD31B3800DDE159 /* WMBBXButtonViewCell.m in Sources */,

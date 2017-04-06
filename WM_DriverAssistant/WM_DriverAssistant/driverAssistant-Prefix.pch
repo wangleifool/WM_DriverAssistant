@@ -16,6 +16,7 @@
 #import "WMGlobal.h"
 #import "YCXMenu.h"
 #import "AFNetworking.h"
+#import "MJExtension.h"
 #import "WMTools.h"
 
 #endif /* driverAssistant_Prefix_pch */

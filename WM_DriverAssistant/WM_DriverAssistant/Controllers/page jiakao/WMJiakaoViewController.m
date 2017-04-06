@@ -42,7 +42,7 @@
     
     //添加内容视图
     NSArray *arrayTitles = [NSArray arrayWithObjects:@"科一",@"科二",@"科三",@"科四",@"拿本", nil];
-    NSArray *arrayControllers = [NSArray arrayWithObjects:@"WMSubjectOneViewController",@"WMSubjectTwoViewController",@"WMSubjectThreeViewController",@"WMSubjectFourViewController",@"WMGetDiverLicenseViewController", nil];
+    NSArray *arrayControllers = [NSArray arrayWithObjects:@"WMSubjectOneViewController",@"WMSubjectTwoViewController",@"WMSubjectTwoViewController",@"WMSubjectTwoViewController",@"WMSubjectTwoViewController", nil];
     WMscrollView = [[WMPagesScrollView alloc] initWithFrame:CGRectMake(0, NavBarHeight7, ScreenWidth, ScreenHeight) withTitles:arrayTitles withViewControllers:arrayControllers];
     
     WMscrollView.rootVC = self;

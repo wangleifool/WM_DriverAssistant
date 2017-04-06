@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WMMySchool.h"
 
 @interface WMMySchoolTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *labelSchoolRate;
+
+@property (strong, nonatomic) WMMySchool *mySchool;
+
++ (instancetype)mySchoolCellWithTableView:(UITableView *)tableView;
+
 @end

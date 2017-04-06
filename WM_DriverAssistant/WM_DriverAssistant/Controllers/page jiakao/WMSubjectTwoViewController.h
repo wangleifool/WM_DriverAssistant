@@ -10,4 +10,6 @@
 
 @interface WMSubjectTwoViewController : UIViewController
 
+- (void)getSubject2ItemsData;
+
 @end

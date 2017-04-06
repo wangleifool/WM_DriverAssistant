@@ -10,6 +10,9 @@
 #import "WMMyDriverMasterView.h"
 
 #import "WMSubjectTwoPracticeTableViewCell.h"
+#import "WMMySchoolTableViewCell.h"
+#import "WMModelOfExamItem.h"
+#import "WMSubjectTwoThreeExamItemTableViewCell.h"
 
 #define Section_Practice 0
 #define Section_MySchool 1
@@ -21,17 +24,26 @@
 @interface WMSubjectTwoViewController () <WMMyDriverMasterViewDelegate,UITableViewDelegate,UITableViewDataSource,WMSubjectTwoPracticeTableViewCellDelegate>
 {
     WMMyDriverMasterView *driverMasterView;
+    
+    NSArray *examItems;
 }
 
 @end
 
 @implementation WMSubjectTwoViewController
 
+//- (void)loadView
+//{
+//    [super loadView];
+//    
+//    [self getSubject2ItemsData];
+//}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
     
     [self getSubject2ItemsData];
+    
+    [super viewDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,6 +64,14 @@
 - (void)actionOfTapMyDriverMasterView:(WMMyDriverMasterView *)MyDvierMasterview
 {
 
+}
+
+- (void)reloadData
+{
+    if ([self.view isKindOfClass:[UITableView class]]) {
+        UITableView *tableView = (UITableView *)self.view;
+        [tableView reloadData];
+    }
 }
 
 #pragma mark - 获取数据
@@ -122,9 +142,21 @@
         NSLog(@"AFnetworking get succ!");
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //json解析
-//        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:responseObject];
+        } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSArray *arrayOfItemList = [[responseObject objectForKey:@"data"] objectForKey:@"itemList"];
+            examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:arrayOfItemList];
+            
+            [self reloadData];
+            
+        } else if ([responseObject isKindOfClass:[NSString class]]) {
         
-//        NSLog(@"---获取到的json格式的字典---%@",resultDic);
+        } else {
+            
+        }
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"AFnetworking get fail!  %@",error);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -149,7 +181,10 @@
             rows = 1;
             break;
         case Section_ExamItems:
-            rows = 10;
+        {
+            if (examItems)
+                rows = [examItems count];
+        }
             break;
         case Section_ExamSkills:
             rows = 1;
@@ -179,10 +214,18 @@
         }
             break;
         case Section_MySchool:
-            
+        {
+            WMMySchoolTableViewCell *cell = [WMMySchoolTableViewCell mySchoolCellWithTableView:tableView];
+            return cell;
+        }
             break;
         case Section_ExamItems:
+        {
+            WMSubjectTwoThreeExamItemTableViewCell *cell = [WMSubjectTwoThreeExamItemTableViewCell examItemCellWithTableView:tableView];
+            cell.modelExamItem = [examItems objectAtIndex:indexPath.row];
             
+            return cell;
+        }
             break;
         case Section_ExamSkills:
             
@@ -208,6 +251,8 @@
     return cell;
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height = 44.0;
@@ -215,7 +260,9 @@
         case Section_Practice:
             height = 154;
             break;
-            
+        case Section_ExamItems:
+            height = 84;
+            break;
         default:
             break;
     }
@@ -225,13 +272,45 @@
 //section头部间距
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 0.01f;//section头部高度
+    
+    CGFloat headerViewHeight = 0.01;
+    switch (section) {
+        case Section_ExamItems:
+            headerViewHeight = 20;
+            break;
+            
+        default:
+            break;
+    }
+    return headerViewHeight;//section头部高度
 }
 //section头部视图
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
-    view.backgroundColor = [UIColor clearColor];
+    UIView *view = [[UIView alloc] init];
+    CGFloat headerViewHeight = 1;
+    switch (section) {
+        case Section_ExamItems:
+        {
+            headerViewHeight = 20;
+            view.frame = CGRectMake(0, 0, ScreenWidth, headerViewHeight);
+            view.backgroundColor = [UIColor whiteColor];
+            UILabel *labelOfSectionTitle = [[UILabel alloc] initWithFrame:CGRectMake(8, 4, view.frame.size.width - 8, 16)];
+            labelOfSectionTitle.textAlignment = NSTextAlignmentLeft;
+            [labelOfSectionTitle setText:@"考试项目详解"];
+            [view addSubview:labelOfSectionTitle];
+        }
+            break;
+            
+        default:
+        {
+            view.frame = CGRectMake(0, 0, ScreenWidth, headerViewHeight);
+            view.backgroundColor = [UIColor clearColor];
+        }
+            break;
+    }
+    
+    
     return view;
 }
 //section底部间距
@@ -242,7 +321,7 @@
 //section底部视图
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 1)];
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
