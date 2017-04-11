@@ -101,6 +101,7 @@
 #define AnimationSecond     1.0
 #define NavBarHeight        44
 #define NavBarHeight7       64
+#define TabBarHeight        49
 #define LocationDistance    100
 
 // 消息通知Key

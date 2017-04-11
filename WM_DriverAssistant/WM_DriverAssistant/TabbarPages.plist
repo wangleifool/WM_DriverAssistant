@@ -8,7 +8,7 @@
 		<key>title</key>
 		<string>报名</string>
 		<key>tabIcon</key>
-		<string></string>
+		<string>baomingIcon</string>
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>
@@ -18,7 +18,7 @@
 		<key>title</key>
 		<string>驾考</string>
 		<key>tabIcon</key>
-		<string></string>
+		<string>jiakaoIcon</string>
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>
@@ -28,7 +28,7 @@
 		<key>title</key>
 		<string>发现</string>
 		<key>tabIcon</key>
-		<string></string>
+		<string>faxianIcon</string>
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>title</key>
 		<string>买车</string>
 		<key>tabIcon</key>
-		<string></string>
+		<string>maicheIcon</string>
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>
@@ -48,7 +48,7 @@
 		<key>title</key>
 		<string>百宝箱</string>
 		<key>tabIcon</key>
-		<string></string>
+		<string>shequIcon</string>
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>

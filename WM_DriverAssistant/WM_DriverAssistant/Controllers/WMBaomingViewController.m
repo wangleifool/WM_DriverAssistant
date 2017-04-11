@@ -87,6 +87,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     self.navView.locationBtn.hidden = NO;
     self.navView.title.text = @"报名";
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
