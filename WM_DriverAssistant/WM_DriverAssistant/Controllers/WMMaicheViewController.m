@@ -7,79 +7,114 @@
 //
 
 #import "WMMaicheViewController.h"
-#import "MJNIndexView.h"
+#import "WMAllTypeCarViewController.h"
+#import "WMSelectCarViewController.h"
+#import "WMSecondHandCarViewController.h"
 
-@interface WMMaicheViewController () <UITableViewDelegate,UITableViewDataSource,MJNIndexViewDataSource>
+#define WidthPerNavigationTitle 64
+#define NavigationTitleTopSpace 2
+#define NavigationTitleBottomSpace 2
+
+@interface WMMaicheViewController () <UIScrollViewDelegate>
 {
- 
+    
 }
 
-@property (nonatomic, strong) NSArray *allTableData;
-@property (nonatomic, strong) NSMutableArray *allSectionData;
-@property (nonatomic, strong) NSString *alphaString;
-@property (nonatomic, strong) UITableView *allBrandCarTableView;
-// MJNIndexView
-@property (nonatomic, strong) MJNIndexView *indexView;
+@property (copy, nonatomic) NSDictionary *dicOfSubVC;
+@property (copy, nonatomic) NSMutableArray *arrayOfTitleButtons;
+@property (strong, nonatomic) UIScrollView *mainScrollView;
+@property (strong, nonatomic) UIView       *navTitleView;
+@property (strong, nonatomic) UIView       *bottomLine;
 
 @end
 
 @implementation WMMaicheViewController
 
-- (NSArray *)allTableData
+#pragma mark - 懒加载
+- (NSMutableArray *)arrayOfTitleButtons
 {
-    if (nil == _allTableData) {
-        
-        NSString *pathname = [[NSBundle mainBundle]  pathForResource:@"tableViewData" ofType:@"txt"];
-        _allTableData = [[NSString stringWithContentsOfFile:pathname encoding:NSUTF8StringEncoding error:nil] componentsSeparatedByString:@"\n"];
-        self.alphaString = @"";
+    if (nil == _arrayOfTitleButtons) {
+        _arrayOfTitleButtons = [NSMutableArray array];
     }
-    return _allTableData;
+    return _arrayOfTitleButtons;
+}
+- (NSDictionary *)dicOfSubVC
+{
+    if (nil == _dicOfSubVC) {
+        _dicOfSubVC = @{@"title":@[@"车型",@"选车",@"二手车"],
+                        @"className":@[@"WMAllTypeCarViewController",@"WMSelectCarViewController",@"WMSecondHandCarViewController"]};
+    }
+    return _dicOfSubVC;
 }
 
-- (NSMutableArray *)allSectionData
+- (UIScrollView *)mainScrollView
 {
-    if (nil == _allSectionData) {
-        _allSectionData = [NSMutableArray array];
+    if (nil == _mainScrollView) {
+        NSArray *allSubVCClassName = [self.dicOfSubVC objectForKey:@"className"];
+        _mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width*allSubVCClassName.count, 0);
+        _mainScrollView.delegate = self;
+        _mainScrollView.pagingEnabled = YES;
+        _mainScrollView.showsHorizontalScrollIndicator = NO;
         
-        NSUInteger numberOfFirstLetters = [self countFirstLettersInArray:self.allTableData];
-        
-        for (int i = 0; i< numberOfFirstLetters; i++) {
-            [_allSectionData addObject:[self itemsInSection:i]];
+        CGRect frame;
+        for (NSInteger i = 0; i < allSubVCClassName.count; i++) {
+            frame = CGRectMake(i*_mainScrollView.frame.size.width, 0, _mainScrollView.frame.size.width, _mainScrollView.bounds.size.height-NavBarHeight7-TabBarHeight);
+            
+            UIViewController *vc = [[NSClassFromString(allSubVCClassName[i]) alloc] init];
+            vc.view.frame = frame;
+            [_mainScrollView addSubview:vc.view];
+            [self addChildViewController:vc];
         }
-        
     }
-    return _allSectionData;
+    return _mainScrollView;
 }
 
+- (UIView *)navTitleView
+{
+    if (nil == _navTitleView) {
+        
+        NSArray *allNavigationTitle = [self.dicOfSubVC objectForKey:@"title"];
+        _navTitleView = [[UIView alloc] init];
+        CGFloat sizeW = WidthPerNavigationTitle * allNavigationTitle.count;
+        CGFloat sizeH = NavBarHeight - NavigationTitleTopSpace - NavigationTitleBottomSpace;
+        CGFloat originY = NavigationTitleTopSpace;
+//        CGFloat originX = (self.navigationController.navigationBar.bounds.size.width - sizeW)/2;
+        _navTitleView.frame = CGRectMake(0, originY, sizeW, sizeH);
+//        [_navTitleView setBackgroundColor:[UIColor redColor]];
+        
+        for (int i = 0; i < allNavigationTitle.count ; i++) {
+            UIButton *btTitle = [[UIButton alloc] init];
+            btTitle.frame = CGRectMake(i*WidthPerNavigationTitle, 0, WidthPerNavigationTitle, sizeH-4-2); //height 是 减去 下划线的高度 和 间隔距离
+            [btTitle setTitle:allNavigationTitle[i] forState:UIControlStateNormal];
+            [btTitle setTitleColor:UNSELECTED_COLOR forState:UIControlStateNormal];
+            btTitle.tag = i;
+            [btTitle addTarget:self action:@selector(actionOfNavigationTitle:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [_navTitleView addSubview:btTitle];
+            [self.arrayOfTitleButtons addObject:btTitle];
+        }
+        [self updateSelectedPage:0];
+        
+        self.bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, sizeH - 4, WidthPerNavigationTitle, 2)];
+        [self.bottomLine setBackgroundColor:SELECTED_COLOR];
+        [_navTitleView addSubview:self.bottomLine];
+        
+    }
+    return _navTitleView;
+}
+
+#pragma mark - vc 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.        
     
-    
+    self.navigationItem.titleView = self.navTitleView;
 }
 
 - (void)viewDidLayoutSubviews
 {
-    NSLog(@"self.view.frame : %@",NSStringFromCGRect(self.view.frame));
-    
-    if (nil == self.allBrandCarTableView) {
-        self.allBrandCarTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        self.allBrandCarTableView.dataSource = self;
-        self.allBrandCarTableView.delegate   = self;
-        [self.view addSubview:self.allBrandCarTableView];
-    }
-    
-    if (nil == self.indexView) {
-        // initialise MJNIndexView
-        CGRect frameOfIndexView = self.allBrandCarTableView.frame;
-        frameOfIndexView.origin.y = NavBarHeight7;
-        frameOfIndexView.size.height -= (NavBarHeight7 + TabBarHeight);
-        self.indexView = [[MJNIndexView alloc]initWithFrame:frameOfIndexView];
-        self.indexView.dataSource = self;
-        [self firstAttributesForMJNIndexView];
-        [self.view addSubview:self.indexView];
-    }
-    
+    [self.view addSubview:self.mainScrollView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,117 +127,62 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - index view
-- (void)firstAttributesForMJNIndexView
+#pragma mark - 设置navigation title view
+- (void)actionOfNavigationTitle:(id)sender
 {
+    UIButton *btTitle = (UIButton *)sender;
     
-    self.indexView.getSelectedItemsAfterPanGestureIsFinished = NO;
-    self.indexView.font = [UIFont fontWithName:@"HelveticaNeue" size:13.0];
-    self.indexView.selectedItemFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:40.0];
-    self.indexView.backgroundColor = [UIColor clearColor];
-    self.indexView.curtainColor = nil;
-    self.indexView.curtainFade = 0.0;
-    self.indexView.curtainStays = NO;
-    self.indexView.curtainMoves = YES;
-    self.indexView.curtainMargins = NO;
-    self.indexView.ergonomicHeight = NO;
-    self.indexView.upperMargin = 22.0;
-    self.indexView.lowerMargin = 22.0;
-    self.indexView.rightMargin = 10.0;
-    self.indexView.itemsAligment = NSTextAlignmentCenter;
-    self.indexView.maxItemDeflection = 100.0;
-    self.indexView.rangeOfDeflection = 5;
-    self.indexView.fontColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
-    self.indexView.selectedItemFontColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-    self.indexView.darkening = NO;
-    self.indexView.fading = YES;
-    
+    CGPoint contentOffset = self.mainScrollView.contentOffset;
+    contentOffset.x = btTitle.tag * self.mainScrollView.bounds.size.width;
+    [self.mainScrollView setContentOffset:contentOffset animated:NO];
 }
 
-- (NSArray *)sectionIndexTitlesForMJNIndexView:(MJNIndexView *)indexView
-{    
-    NSMutableArray *results = [NSMutableArray array];
-    
-    if (nil == self.alphaString || [@"" isEqualToString:self.alphaString]) {
-        NSLog(@"%@", self.allSectionData);
-    }
-    
-    for (int i = 0; i < [self.alphaString length]; i++)
-    {
-        NSString *substr = [self.alphaString substringWithRange:NSMakeRange(i,1)];
-        [results addObject:substr];
-    }
-    
-    return results;
-}
-
-
-- (void)sectionForSectionMJNIndexTitle:(NSString *)title atIndex:(NSInteger)index
+- (void)updateSelectedPage:(NSInteger)index
 {
-    [self.allBrandCarTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition: UITableViewScrollPositionTop animated:NO];
-}
-
-
-#pragma mark - table view
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [self.allSectionData count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.allSectionData[section] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"brandOfCarCell"];
-    if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"brandOfCarCell"];
-    }
-    
-    cell.textLabel.font = [UIFont fontWithName:self.indexView.font.fontName size:20.0];
-    cell.textLabel.text = [NSString stringWithFormat:@"     %@",[self categoryNameAtIndexPath:indexPath]];
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    
-    return cell;
-}
-
-#pragma mark - help
-- (NSUInteger) countFirstLettersInArray:(NSArray *)categoryArray
-{
-    NSMutableArray *existingLetters = [NSMutableArray array];
-    for (NSString *name in categoryArray){
-        NSString *firstLetterInName = [name substringToIndex:1];
-        NSCharacterSet *notAllowed = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ"] invertedSet];
-        NSRange range = [firstLetterInName rangeOfCharacterFromSet:notAllowed];
-        
-        if (![existingLetters containsObject:firstLetterInName] && range.location == NSNotFound ) {
-            [existingLetters addObject:firstLetterInName];
-            self.alphaString = [self.alphaString stringByAppendingString:firstLetterInName];
+    for (UIButton *btTitle in self.arrayOfTitleButtons) {
+        if (btTitle.tag == index) {
+            [btTitle setTitleColor:SELECTED_COLOR forState:UIControlStateNormal];
+        } else {
+            [btTitle setTitleColor:UNSELECTED_COLOR forState:UIControlStateNormal];
         }
     }
-    return [existingLetters count];
+ 
 }
 
-- (NSArray *) itemsInSection: (NSInteger)section
+
+#pragma mark - scrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[cd] %@",[self firstLetter:section]];
-    return [self.allTableData filteredArrayUsingPredicate:predicate];
+    
+    CGFloat offsetX = scrollView.contentOffset.x;
+    
+    //不需要处理的位置
+    if (offsetX < 0 || offsetX > self.arrayOfTitleButtons.count*scrollView.bounds.size.width) {
+        return ;
+    }
+    
+    CGFloat offsetOfBottomLine = offsetX * self.bottomLine.bounds.size.width / scrollView.bounds.size.width;
+    CGPoint centerOfBottomLine = self.bottomLine.center;
+    centerOfBottomLine.x = offsetOfBottomLine + self.bottomLine.bounds.size.width/2;
+    self.bottomLine.center = centerOfBottomLine;
+    
+    NSInteger pageIndex = (offsetX + scrollView.bounds.size.width/2) / scrollView.bounds.size.width;
+    [self updateSelectedPage:pageIndex];
+    
 }
 
-- (NSString *) firstLetter: (NSInteger) section
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    return [[self.alphaString substringFromIndex:section] substringToIndex:1];
-}
-
-- (NSString *)categoryNameAtIndexPath: (NSIndexPath *)path
-{
-    NSArray *currentItems = self.allSectionData[path.section];
-    NSString *category = currentItems[path.row];
-    return category;
+    CGFloat offsetX = scrollView.contentOffset.x;
+    
+    //不需要处理的位置
+    if (offsetX < 0 || offsetX > self.arrayOfTitleButtons.count*scrollView.bounds.size.width) {
+        return ;
+    }
+    
+    NSInteger pageIndex = (offsetX + scrollView.bounds.size.width/2) / scrollView.bounds.size.width;
+    [self updateSelectedPage:pageIndex];
+    
 }
 
 @end

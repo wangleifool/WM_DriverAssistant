@@ -12,11 +12,9 @@
 #define MIN_SPACE 10
 #define TOP_SPACE 0
 #define TOP_SCROLL_VIEW_HEIGHT 40
-#define LINE_BOTTOM_HEIGHT      3
+#define LINE_BOTTOM_HEIGHT      2
 
-#define SELECTED_COLOR   [UIColor colorWithRed:65/255.0 green:105/255.0 blue:225/255.0 alpha:1.0] //blue
-#define UNSELECTED_COLOR [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]     //black
-#define BACKGROUND_COLOR [UIColor colorWithRed:216/255.0 green:216/255.0 blue:216/255.0 alpha:1.0]
+
 
 
 @interface WMPagesScrollView : UIScrollView

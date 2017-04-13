@@ -8,7 +8,7 @@
 
 #import "WMPurchaseNavViewController.h"
 
-#define CRAYON_NAME(CRAYON)	[[CRAYON componentsSeparatedByString:@"#"] objectAtIndex:0]
+
 
 @interface WMMaicheViewController : WMPurchaseNavViewController
 

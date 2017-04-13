@@ -152,6 +152,11 @@
 #define IsChoiceQuestion 1
 #define IsTrueOrFalseQuestion 2
 
+//标签页参数
+#define UNSELECTED_COLOR   [UIColor colorWithRed:151/255.0 green:151/255.0 blue:151/255.0 alpha:1.0] //gray
+#define SELECTED_COLOR     [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]     //black
+#define BACKGROUND_COLOR   [UIColor colorWithRed:216/255.0 green:216/255.0 blue:216/255.0 alpha:1.0]
+
 // page question practice
 #define HEIGHT_OF_PRACTICE_TOP_TOOLBAR 48
 #define HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR 256

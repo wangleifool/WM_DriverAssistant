@@ -150,6 +150,12 @@
 		3B5232F61E8BA4CD00E2E016 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232E91E8BA4CD00E2E016 /* NSObject+MJKeyValue.m */; };
 		3B5232F71E8BA4CD00E2E016 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232EB1E8BA4CD00E2E016 /* NSObject+MJProperty.m */; };
 		3B5232F81E8BA4CD00E2E016 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232ED1E8BA4CD00E2E016 /* NSString+MJExtension.m */; };
+		3B7EC6C91E9DCD4D008EE00D /* WMAllTypeCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6C71E9DCD4D008EE00D /* WMAllTypeCarViewController.m */; };
+		3B7EC6CA1E9DCD4D008EE00D /* WMAllTypeCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6C81E9DCD4D008EE00D /* WMAllTypeCarViewController.xib */; };
+		3B7EC6CE1E9DCD64008EE00D /* WMSelectCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6CC1E9DCD64008EE00D /* WMSelectCarViewController.m */; };
+		3B7EC6CF1E9DCD64008EE00D /* WMSelectCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6CD1E9DCD64008EE00D /* WMSelectCarViewController.xib */; };
+		3B7EC6D31E9DCD8A008EE00D /* WMSecondHandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */; };
+		3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */; };
 		3BC3994C1E9CB02000CD9414 /* tableViewData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3994B1E9CB02000CD9414 /* tableViewData.txt */; };
 		3BC399501E9CB3F300CD9414 /* MJNIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
@@ -450,6 +456,15 @@
 		3B5232EB1E8BA4CD00E2E016 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3B5232EC1E8BA4CD00E2E016 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3B5232ED1E8BA4CD00E2E016 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3B7EC6C61E9DCD4D008EE00D /* WMAllTypeCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMAllTypeCarViewController.h; path = Controllers/pageMaiche/WMAllTypeCarViewController.h; sourceTree = "<group>"; };
+		3B7EC6C71E9DCD4D008EE00D /* WMAllTypeCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMAllTypeCarViewController.m; path = Controllers/pageMaiche/WMAllTypeCarViewController.m; sourceTree = "<group>"; };
+		3B7EC6C81E9DCD4D008EE00D /* WMAllTypeCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMAllTypeCarViewController.xib; path = Controllers/pageMaiche/WMAllTypeCarViewController.xib; sourceTree = "<group>"; };
+		3B7EC6CB1E9DCD64008EE00D /* WMSelectCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSelectCarViewController.h; path = Controllers/pageMaiche/WMSelectCarViewController.h; sourceTree = "<group>"; };
+		3B7EC6CC1E9DCD64008EE00D /* WMSelectCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSelectCarViewController.m; path = Controllers/pageMaiche/WMSelectCarViewController.m; sourceTree = "<group>"; };
+		3B7EC6CD1E9DCD64008EE00D /* WMSelectCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSelectCarViewController.xib; path = Controllers/pageMaiche/WMSelectCarViewController.xib; sourceTree = "<group>"; };
+		3B7EC6D01E9DCD8A008EE00D /* WMSecondHandCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSecondHandCarViewController.h; path = Controllers/pageMaiche/WMSecondHandCarViewController.h; sourceTree = "<group>"; };
+		3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSecondHandCarViewController.m; path = Controllers/pageMaiche/WMSecondHandCarViewController.m; sourceTree = "<group>"; };
+		3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSecondHandCarViewController.xib; path = Controllers/pageMaiche/WMSecondHandCarViewController.xib; sourceTree = "<group>"; };
 		3BC3994B1E9CB02000CD9414 /* tableViewData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tableViewData.txt; sourceTree = "<group>"; };
 		3BC3994E1E9CB3F300CD9414 /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
 		3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
@@ -910,6 +925,15 @@
 				9B0650601DC33CE800A7ACE3 /* WMMaicheViewController.h */,
 				9B0650611DC33CE800A7ACE3 /* WMMaicheViewController.m */,
 				9B0650621DC33CE800A7ACE3 /* WMMaicheViewController.xib */,
+				3B7EC6C61E9DCD4D008EE00D /* WMAllTypeCarViewController.h */,
+				3B7EC6C71E9DCD4D008EE00D /* WMAllTypeCarViewController.m */,
+				3B7EC6C81E9DCD4D008EE00D /* WMAllTypeCarViewController.xib */,
+				3B7EC6CB1E9DCD64008EE00D /* WMSelectCarViewController.h */,
+				3B7EC6CC1E9DCD64008EE00D /* WMSelectCarViewController.m */,
+				3B7EC6CD1E9DCD64008EE00D /* WMSelectCarViewController.xib */,
+				3B7EC6D01E9DCD8A008EE00D /* WMSecondHandCarViewController.h */,
+				3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */,
+				3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */,
 			);
 			name = "page purchase";
 			sourceTree = "<group>";
@@ -1216,11 +1240,14 @@
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
 				3B52323F1E8B90D400E2E016 /* WMquestionIndexCollectionViewCell.xib in Resources */,
 				3B5232051E8B8E8B00E2E016 /* WMSubjectFourViewController.xib in Resources */,
+				3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */,
 				3B0F8BFB1E94EB5000093EB8 /* WMMySchoolTableViewCell.xib in Resources */,
 				3B5232101E8B8F0A00E2E016 /* WMJiakaoViewController.xib in Resources */,
 				3B52323E1E8B90D400E2E016 /* WMMyDriverMasterView.xib in Resources */,
 				0F0872571DD31AF600DDE159 /* JiaXiaoCell.xib in Resources */,
+				3B7EC6CF1E9DCD64008EE00D /* WMSelectCarViewController.xib in Resources */,
 				3B5232D41E8B9A5100E2E016 /* HDButton.xib in Resources */,
+				3B7EC6CA1E9DCD4D008EE00D /* WMAllTypeCarViewController.xib in Resources */,
 				3B5232BC1E8B955300E2E016 /* WMGetDiverLicenseViewController.xib in Resources */,
 				3B52323C1E8B90D400E2E016 /* WMImageAndTwoLineTextView.xib in Resources */,
 				3B52329E1E8B91B400E2E016 /* MJRefresh.bundle in Resources */,
@@ -1317,6 +1344,7 @@
 				3B5232B01E8B91B400E2E016 /* UIScrollView+MJRefresh.m in Sources */,
 				3B52324C1E8B90D400E2E016 /* WMPagesScrollView.m in Sources */,
 				3B0F8C031E95EB8400093EB8 /* WMModelOfExamItem.m in Sources */,
+				3B7EC6CE1E9DCD64008EE00D /* WMSelectCarViewController.m in Sources */,
 				3B52325D1E8B911E00E2E016 /* WMmodelOfExamQuestion.m in Sources */,
 				3B5232D31E8B9A5100E2E016 /* HDButton.m in Sources */,
 				3B52320C1E8B8E8B00E2E016 /* WMSubjectTwoViewController.m in Sources */,
@@ -1348,6 +1376,7 @@
 				3B5231F11E8B8DCC00E2E016 /* UIImageView+AFNetworking.m in Sources */,
 				3B5232CE1E8B9A1F00E2E016 /* FMDatabaseQueue.m in Sources */,
 				3B5232A21E8B91B400E2E016 /* MJRefreshAutoStateFooter.m in Sources */,
+				3B7EC6D31E9DCD8A008EE00D /* WMSecondHandCarViewController.m in Sources */,
 				3B5231F21E8B8DCC00E2E016 /* UIProgressView+AFNetworking.m in Sources */,
 				0F750CC21E6128F4008F5445 /* WMCoachModel.m in Sources */,
 				9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */,
@@ -1380,6 +1409,7 @@
 				0F0872531DD31A8C00DDE159 /* FxButtonHelper.m in Sources */,
 				0F0872651DD31B7700DDE159 /* WMBasicNavViewController.m in Sources */,
 				3B5232A91E8B91B400E2E016 /* MJRefreshFooter.m in Sources */,
+				3B7EC6C91E9DCD4D008EE00D /* WMAllTypeCarViewController.m in Sources */,
 				3B5231EF1E8B8DCC00E2E016 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3B52325B1E8B911E00E2E016 /* WMappDatabase.m in Sources */,
 				3B5232A81E8B91B400E2E016 /* MJRefreshConst.m in Sources */,
