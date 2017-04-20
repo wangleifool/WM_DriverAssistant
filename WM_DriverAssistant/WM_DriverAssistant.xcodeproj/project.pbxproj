@@ -156,6 +156,11 @@
 		3B7EC6CF1E9DCD64008EE00D /* WMSelectCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6CD1E9DCD64008EE00D /* WMSelectCarViewController.xib */; };
 		3B7EC6D31E9DCD8A008EE00D /* WMSecondHandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */; };
 		3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */; };
+		3B968C261EA88C57000B5901 /* WMcarOfSomeBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */; };
+		3B968C271EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */; };
+		3B968C2A1EA88E76000B5901 /* RGCardViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C291EA88E76000B5901 /* RGCardViewLayout.m */; };
+		3B968C311EA8905B000B5901 /* WMCarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C2F1EA8905B000B5901 /* WMCarCollectionViewCell.m */; };
+		3B968C321EA8905B000B5901 /* WMCarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B968C301EA8905B000B5901 /* WMCarCollectionViewCell.xib */; };
 		3BC3994C1E9CB02000CD9414 /* tableViewData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3994B1E9CB02000CD9414 /* tableViewData.txt */; };
 		3BC399501E9CB3F300CD9414 /* MJNIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
@@ -465,6 +470,14 @@
 		3B7EC6D01E9DCD8A008EE00D /* WMSecondHandCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSecondHandCarViewController.h; path = Controllers/pageMaiche/WMSecondHandCarViewController.h; sourceTree = "<group>"; };
 		3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSecondHandCarViewController.m; path = Controllers/pageMaiche/WMSecondHandCarViewController.m; sourceTree = "<group>"; };
 		3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSecondHandCarViewController.xib; path = Controllers/pageMaiche/WMSecondHandCarViewController.xib; sourceTree = "<group>"; };
+		3B968C231EA88C57000B5901 /* WMcarOfSomeBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMcarOfSomeBrandViewController.h; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.h; sourceTree = "<group>"; };
+		3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMcarOfSomeBrandViewController.m; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.m; sourceTree = "<group>"; };
+		3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMcarOfSomeBrandViewController.xib; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.xib; sourceTree = "<group>"; };
+		3B968C281EA88E76000B5901 /* RGCardViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGCardViewLayout.h; sourceTree = "<group>"; };
+		3B968C291EA88E76000B5901 /* RGCardViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardViewLayout.m; sourceTree = "<group>"; };
+		3B968C2E1EA8905B000B5901 /* WMCarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMCarCollectionViewCell.h; path = "Views/page maiche/WMCarCollectionViewCell.h"; sourceTree = "<group>"; };
+		3B968C2F1EA8905B000B5901 /* WMCarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMCarCollectionViewCell.m; path = "Views/page maiche/WMCarCollectionViewCell.m"; sourceTree = "<group>"; };
+		3B968C301EA8905B000B5901 /* WMCarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMCarCollectionViewCell.xib; path = "Views/page maiche/WMCarCollectionViewCell.xib"; sourceTree = "<group>"; };
 		3BC3994B1E9CB02000CD9414 /* tableViewData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tableViewData.txt; sourceTree = "<group>"; };
 		3BC3994E1E9CB3F300CD9414 /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
 		3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
@@ -916,9 +929,20 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		3B968C221EA88B6E000B5901 /* introduceViewForCar */ = {
+			isa = PBXGroup;
+			children = (
+				3B968C231EA88C57000B5901 /* WMcarOfSomeBrandViewController.h */,
+				3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */,
+				3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */,
+			);
+			name = introduceViewForCar;
+			sourceTree = "<group>";
+		};
 		3BC3994A1E9CADF200CD9414 /* page purchase */ = {
 			isa = PBXGroup;
 			children = (
+				3B968C221EA88B6E000B5901 /* introduceViewForCar */,
 				3BC3994B1E9CB02000CD9414 /* tableViewData.txt */,
 				9B0650461DC3285600A7ACE3 /* WMPurchaseNavViewController.h */,
 				9B0650471DC3285600A7ACE3 /* WMPurchaseNavViewController.m */,
@@ -943,6 +967,11 @@
 			children = (
 				3BC3994E1E9CB3F300CD9414 /* MJNIndexView.h */,
 				3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */,
+				3B968C281EA88E76000B5901 /* RGCardViewLayout.h */,
+				3B968C291EA88E76000B5901 /* RGCardViewLayout.m */,
+				3B968C2E1EA8905B000B5901 /* WMCarCollectionViewCell.h */,
+				3B968C2F1EA8905B000B5901 /* WMCarCollectionViewCell.m */,
+				3B968C301EA8905B000B5901 /* WMCarCollectionViewCell.xib */,
 			);
 			name = pagePurchase;
 			sourceTree = "<group>";
@@ -1233,11 +1262,13 @@
 				9B064FC81DC1FEC100A7ACE3 /* LaunchScreen.storyboard in Resources */,
 				9B0650641DC33CE800A7ACE3 /* WMMaicheViewController.xib in Resources */,
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
+				3B968C321EA8905B000B5901 /* WMCarCollectionViewCell.xib in Resources */,
 				3B5232EE1E8BA4CD00E2E016 /* Info.plist in Resources */,
 				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
 				0F0872561DD31AF600DDE159 /* ClassCell.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
+				3B968C271EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib in Resources */,
 				3B52323F1E8B90D400E2E016 /* WMquestionIndexCollectionViewCell.xib in Resources */,
 				3B5232051E8B8E8B00E2E016 /* WMSubjectFourViewController.xib in Resources */,
 				3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */,
@@ -1352,6 +1383,7 @@
 				0F08725F1DD31B3800DDE159 /* JiaXiaoCell.m in Sources */,
 				3B5232481E8B90D400E2E016 /* WMHeaderCollectionReusableView.m in Sources */,
 				3B5232F31E8BA4CD00E2E016 /* MJPropertyType.m in Sources */,
+				3B968C2A1EA88E76000B5901 /* RGCardViewLayout.m in Sources */,
 				3B5231E91E8B8DCC00E2E016 /* AFURLRequestSerialization.m in Sources */,
 				3B5232A41E8B91B400E2E016 /* MJRefreshBackGifFooter.m in Sources */,
 				3B5232A11E8B91B400E2E016 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1373,6 +1405,7 @@
 				0F0872611DD31B3800DDE159 /* WMBBXButtonViewCell.m in Sources */,
 				3B5232AF1E8B91B400E2E016 /* UIScrollView+MJExtension.m in Sources */,
 				3B5232BD1E8B955300E2E016 /* WMShowAdvertiseContentViewController.m in Sources */,
+				3B968C311EA8905B000B5901 /* WMCarCollectionViewCell.m in Sources */,
 				3B5231F11E8B8DCC00E2E016 /* UIImageView+AFNetworking.m in Sources */,
 				3B5232CE1E8B9A1F00E2E016 /* FMDatabaseQueue.m in Sources */,
 				3B5232A21E8B91B400E2E016 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1407,6 +1440,7 @@
 				9B06501C1DC2ED6600A7ACE3 /* WMRootTabBarController.m in Sources */,
 				9B0650591DC33CB300A7ACE3 /* WMFaxianViewController.m in Sources */,
 				0F0872531DD31A8C00DDE159 /* FxButtonHelper.m in Sources */,
+				3B968C261EA88C57000B5901 /* WMcarOfSomeBrandViewController.m in Sources */,
 				0F0872651DD31B7700DDE159 /* WMBasicNavViewController.m in Sources */,
 				3B5232A91E8B91B400E2E016 /* MJRefreshFooter.m in Sources */,
 				3B7EC6C91E9DCD4D008EE00D /* WMAllTypeCarViewController.m in Sources */,

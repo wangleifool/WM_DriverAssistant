@@ -8,6 +8,8 @@
 
 #import "WMAllTypeCarViewController.h"
 #import "MJNIndexView.h"
+#import "WMMaicheViewController.h"
+#import "WMcarOfSomeBrandViewController.h"
 
 @interface WMAllTypeCarViewController () <MJNIndexViewDataSource>
 {
@@ -156,6 +158,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    WMMaicheViewController *parentVC = (WMMaicheViewController *)self.parentViewController;
+    
+    WMcarOfSomeBrandViewController *vc = [[WMcarOfSomeBrandViewController alloc] init];
+    [parentVC.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - help
 - (NSUInteger) countFirstLettersInArray:(NSArray *)categoryArray

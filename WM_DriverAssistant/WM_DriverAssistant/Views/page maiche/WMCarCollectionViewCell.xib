@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WMCarCollectionViewCell" id="gTV-IL-0wX" customClass="WMCarCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="378"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="378"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c3L-Wd-uMn">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="173"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxL-OC-93X">
+                        <rect key="frame" x="0.0" y="173" width="260" height="205"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-Qc-7Am">
+                                <rect key="frame" x="65" y="33" width="130" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Q7q-uB-NMT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5F-qq-lWi">
+                                <rect key="frame" x="65" y="75" width="130" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9yl-aC-fU0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-L9-YcP">
+                                <rect key="frame" x="65" y="87" width="65" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHE-9q-B2n">
+                                        <rect key="frame" x="8" y="-5" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="rmb"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 万" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-SF-Bkn">
+                                        <rect key="frame" x="0.0" y="46" width="65" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hca-UD-Spt">
+                                <rect key="frame" x="130" y="87" width="65" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e89-5I-HMz">
+                                        <rect key="frame" x="8" y="-5" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="car"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xf-JT-QC6">
+                                        <rect key="frame" x="0.0" y="46" width="65" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx6-Kr-kLN">
+                                <rect key="frame" x="65" y="166" width="130" height="30"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="查看详情">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyc-ZZ-Oaz">
+                                <rect key="frame" x="65" y="76" width="130" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="yUO-ZH-GoU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hx6-Kr-kLN" firstAttribute="leading" secondItem="uRd-Qc-7Am" secondAttribute="leading" id="0n5-VQ-gea"/>
+                            <constraint firstItem="Hca-UD-Spt" firstAttribute="trailing" secondItem="uRd-Qc-7Am" secondAttribute="trailing" id="DXh-Vg-eTj"/>
+                            <constraint firstItem="uRd-Qc-7Am" firstAttribute="top" secondItem="KxL-OC-93X" secondAttribute="top" constant="33" id="DXv-7w-gtP"/>
+                            <constraint firstItem="e5F-qq-lWi" firstAttribute="trailing" secondItem="Hca-UD-Spt" secondAttribute="trailing" id="FKj-GI-Wds"/>
+                            <constraint firstItem="Hca-UD-Spt" firstAttribute="top" secondItem="Iyc-ZZ-Oaz" secondAttribute="bottom" constant="10" id="Jya-Fi-LED"/>
+                            <constraint firstItem="Iyc-ZZ-Oaz" firstAttribute="top" secondItem="e5F-qq-lWi" secondAttribute="bottom" id="JzE-xu-I74"/>
+                            <constraint firstItem="e5F-qq-lWi" firstAttribute="trailing" secondItem="uRd-Qc-7Am" secondAttribute="trailing" id="L7y-3W-H9O"/>
+                            <constraint firstItem="uRd-Qc-7Am" firstAttribute="centerX" secondItem="KxL-OC-93X" secondAttribute="centerX" id="NDZ-Hc-Trm"/>
+                            <constraint firstItem="Iyc-ZZ-Oaz" firstAttribute="leading" secondItem="uRd-Qc-7Am" secondAttribute="leading" id="O8t-6f-ouu"/>
+                            <constraint firstAttribute="height" constant="205" id="Sxm-6b-XxX"/>
+                            <constraint firstItem="BTh-L9-YcP" firstAttribute="top" secondItem="Iyc-ZZ-Oaz" secondAttribute="bottom" constant="10" id="SyJ-Ds-l1D"/>
+                            <constraint firstItem="Iyc-ZZ-Oaz" firstAttribute="trailing" secondItem="uRd-Qc-7Am" secondAttribute="trailing" id="UAg-jf-JfK"/>
+                            <constraint firstItem="BTh-L9-YcP" firstAttribute="leading" secondItem="uRd-Qc-7Am" secondAttribute="leading" id="UDc-iV-uG7"/>
+                            <constraint firstItem="e5F-qq-lWi" firstAttribute="leading" secondItem="uRd-Qc-7Am" secondAttribute="leading" id="Yy8-ng-aCt"/>
+                            <constraint firstItem="Hx6-Kr-kLN" firstAttribute="trailing" secondItem="uRd-Qc-7Am" secondAttribute="trailing" id="cRZ-a2-PpI"/>
+                            <constraint firstItem="Hx6-Kr-kLN" firstAttribute="top" secondItem="Hca-UD-Spt" secondAttribute="bottom" constant="9" id="d1n-ZB-jdH"/>
+                            <constraint firstItem="Hx6-Kr-kLN" firstAttribute="top" secondItem="BTh-L9-YcP" secondAttribute="bottom" constant="9" id="hYe-RI-hJt"/>
+                            <constraint firstItem="Hca-UD-Spt" firstAttribute="leading" secondItem="BTh-L9-YcP" secondAttribute="trailing" id="kx8-6b-AE6"/>
+                            <constraint firstItem="BTh-L9-YcP" firstAttribute="width" secondItem="Hca-UD-Spt" secondAttribute="width" id="l1k-Bv-8de"/>
+                            <constraint firstAttribute="bottom" secondItem="Hx6-Kr-kLN" secondAttribute="bottom" constant="9" id="ozU-9h-M0k"/>
+                            <constraint firstItem="e5F-qq-lWi" firstAttribute="top" secondItem="uRd-Qc-7Am" secondAttribute="bottom" constant="21" id="p9p-Q0-RqG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="c3L-Wd-uMn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0MY-aX-zNa"/>
+                <constraint firstAttribute="trailing" secondItem="KxL-OC-93X" secondAttribute="trailing" id="5uF-G0-QLY"/>
+                <constraint firstItem="KxL-OC-93X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HBe-Ra-LDG"/>
+                <constraint firstItem="KxL-OC-93X" firstAttribute="top" secondItem="c3L-Wd-uMn" secondAttribute="bottom" id="kEV-4v-ZuJ"/>
+                <constraint firstItem="c3L-Wd-uMn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oVx-2g-I88"/>
+                <constraint firstAttribute="bottom" secondItem="KxL-OC-93X" secondAttribute="bottom" id="uWT-pl-goG"/>
+                <constraint firstAttribute="trailing" secondItem="c3L-Wd-uMn" secondAttribute="trailing" id="yt8-or-dbn"/>
+            </constraints>
+            <size key="customSize" width="136" height="353"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="carImageView" destination="c3L-Wd-uMn" id="emU-j7-hZx"/>
+                <outlet property="carNameLabel" destination="uRd-Qc-7Am" id="EMj-ph-Mgd"/>
+                <outlet property="carTypeLabel" destination="0Xf-JT-QC6" id="5Ma-c4-x1v"/>
+                <outlet property="priceLabel" destination="JMy-SF-Bkn" id="nve-Pl-CBr"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="203"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="car" width="48" height="48"/>
+        <image name="rmb" width="48" height="48"/>
+    </resources>
+</document>
