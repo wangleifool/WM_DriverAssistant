@@ -8,8 +8,13 @@
 
 #import "WMRootTabBarController.h"
 #import "WMpageControllersInfo.h"
+#import "URBMediaFocusViewController.h"
 
-@interface WMRootTabBarController ()
+@interface WMRootTabBarController () <UIGestureRecognizerDelegate,URBMediaFocusViewControllerDelegate>
+
+
+@property (strong, nonatomic) UIImageView *tappedImageView;
+@property (strong, nonatomic) URBMediaFocusViewController *mediaFocusViewController;
 
 @end
 
@@ -30,6 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    UITapGestureRecognizer *tapGestureRecog = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+//    tapGestureRecog.delegate = self;
+//    [self.view addGestureRecognizer:tapGestureRecog];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,4 +47,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 全局tap手势
+//- (void)tapGestureAction:(UITapGestureRecognizer *)recognizer
+//{
+//    URBMediaFocusViewController *controller = [[URBMediaFocusViewController alloc] init];
+//    [controller showImage:self.tappedImageView.image fromView:self.view inViewController:self];
+//    controller.delegate = self;
+//    self.mediaFocusViewController = controller;
+//}
+//
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+//{
+//    if ([touch.view isKindOfClass:[UIImageView class]]) {
+//        self.tappedImageView = (UIImageView *)touch.view;
+//        return YES;
+//    }
+//    return NO;
+//}
+//
+//#pragma mark URBMediaFocusViewControllerDelegate
+//
+//- (void)mediaFocusViewControllerDidDisappear:(URBMediaFocusViewController *)mediaFocusViewController {
+//    self.mediaFocusViewController = nil;
+//}
 @end

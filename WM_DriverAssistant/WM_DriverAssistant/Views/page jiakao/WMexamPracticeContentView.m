@@ -416,6 +416,11 @@
 
             UIImageView *imgView = [[UIImageView alloc] init];
             
+            //添加点击手势
+            UITapGestureRecognizer *tapGesReg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapGesAction:)];
+            [imgView addGestureRecognizer:tapGesReg];
+            imgView.userInteractionEnabled = YES;
+            
             UIImage *image = [UIImage imageNamed:[model.mImage stringByDeletingPathExtension]];
             
             frameOfImage.size.height = image.size.height;
@@ -542,6 +547,12 @@
         
     }
     
+}
+
+- (void)imageTapGesAction:(UIGestureRecognizer *)sender {        
+    if ([sender.view isKindOfClass:[UIImageView class]]) {
+        [self.delegate cellImageTapped:sender.view];
+    }
 }
 
 #pragma mark - tool bar

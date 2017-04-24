@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class WMexamPracticeContentView;
+
+@protocol WMexamPracticeContentViewDelegate <NSObject>
+
+- (void)cellImageTapped:(UIImageView *)imageView;
+
+@end
+
 @interface WMexamPracticeContentView : UIView
 
 @property (nonatomic, assign) NSInteger currentQuestionIndex;
 @property (nonatomic, copy)   NSArray   *dataArray;  //question and user comment
-
+@property (strong, nonatomic) id <WMexamPracticeContentViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)allQuestionArray;
 

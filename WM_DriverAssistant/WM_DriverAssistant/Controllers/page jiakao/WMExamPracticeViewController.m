@@ -10,14 +10,15 @@
 //#import "WMexamPracticeToolBarView.h"
 #import "WMexamPracticeContentView.h"
 #import "WMappDatabase.h"
+#import "URBMediaFocusViewController.h"
 
-@interface WMExamPracticeViewController ()
+@interface WMExamPracticeViewController () <WMexamPracticeContentViewDelegate,URBMediaFocusViewControllerDelegate>
 {
 //    WMexamPracticeToolBarView *bottomIndicateToolBar;
     WMexamPracticeContentView *topMainContentView;
 }
 
-
+@property (strong, nonatomic) URBMediaFocusViewController *mediaFocusViewController;
 @end
 
 @implementation WMExamPracticeViewController
@@ -38,6 +39,7 @@
     CGRect frameOfMainContent = CGRectMake(0, NavBarHeight7, self.view.frame.size.width, self.view.frame.size.height - NavBarHeight7);
     NSArray *allQuestion = [WMappDatabase getAllExamQuestion];
     topMainContentView = [[WMexamPracticeContentView alloc] initWithFrame:frameOfMainContent withData:allQuestion]; //暂时没有提供数据
+    topMainContentView.delegate = self;
     [self.view addSubview:topMainContentView];
     [self.view sendSubviewToBack:topMainContentView];
     
@@ -84,5 +86,18 @@
     self.navigationItem.titleView = segMent;
 }
 
+#pragma mark - 考试页面的图片点击事件
+- (void)cellImageTapped:(UIImageView *)imageView
+{
+    URBMediaFocusViewController *controller = [[URBMediaFocusViewController alloc] init];
+    [controller showImage:imageView.image fromView:self.view inViewController:self];
+    controller.delegate = self;
+    self.mediaFocusViewController = controller;
+}
+
+- (void)mediaFocusViewControllerDidDisappear:(URBMediaFocusViewController *)mediaFocusViewController
+{
+    self.mediaFocusViewController = nil;
+}
 
 @end

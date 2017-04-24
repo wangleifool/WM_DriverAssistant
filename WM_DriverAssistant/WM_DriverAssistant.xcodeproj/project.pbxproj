@@ -156,6 +156,7 @@
 		3B7EC6CF1E9DCD64008EE00D /* WMSelectCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6CD1E9DCD64008EE00D /* WMSelectCarViewController.xib */; };
 		3B7EC6D31E9DCD8A008EE00D /* WMSecondHandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */; };
 		3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */; };
+		3B8B25EA1EAD9B6500D3A58B /* URBMediaFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B25E91EAD9B6500D3A58B /* URBMediaFocusViewController.m */; };
 		3B968C261EA88C57000B5901 /* WMcarOfSomeBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */; };
 		3B968C271EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */; };
 		3B968C2A1EA88E76000B5901 /* RGCardViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C291EA88E76000B5901 /* RGCardViewLayout.m */; };
@@ -470,6 +471,8 @@
 		3B7EC6D01E9DCD8A008EE00D /* WMSecondHandCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMSecondHandCarViewController.h; path = Controllers/pageMaiche/WMSecondHandCarViewController.h; sourceTree = "<group>"; };
 		3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMSecondHandCarViewController.m; path = Controllers/pageMaiche/WMSecondHandCarViewController.m; sourceTree = "<group>"; };
 		3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSecondHandCarViewController.xib; path = Controllers/pageMaiche/WMSecondHandCarViewController.xib; sourceTree = "<group>"; };
+		3B8B25E81EAD9B6500D3A58B /* URBMediaFocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBMediaFocusViewController.h; sourceTree = "<group>"; };
+		3B8B25E91EAD9B6500D3A58B /* URBMediaFocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBMediaFocusViewController.m; sourceTree = "<group>"; };
 		3B968C231EA88C57000B5901 /* WMcarOfSomeBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMcarOfSomeBrandViewController.h; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.h; sourceTree = "<group>"; };
 		3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMcarOfSomeBrandViewController.m; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.m; sourceTree = "<group>"; };
 		3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMcarOfSomeBrandViewController.xib; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.xib; sourceTree = "<group>"; };
@@ -638,6 +641,7 @@
 		0F750C871E6123F6008F5445 /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3B8B25E71EAD9B4300D3A58B /* MediaFoucusView */,
 				3B5232D71E8BA4CD00E2E016 /* MJExtension */,
 				3B5232631E8B91B400E2E016 /* MJRefresh */,
 				0F750CAE1E612454008F5445 /* AFN */,
@@ -927,6 +931,15 @@
 				3B5232ED1E8BA4CD00E2E016 /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		3B8B25E71EAD9B4300D3A58B /* MediaFoucusView */ = {
+			isa = PBXGroup;
+			children = (
+				3B8B25E81EAD9B6500D3A58B /* URBMediaFocusViewController.h */,
+				3B8B25E91EAD9B6500D3A58B /* URBMediaFocusViewController.m */,
+			);
+			name = MediaFoucusView;
 			sourceTree = "<group>";
 		};
 		3B968C221EA88B6E000B5901 /* introduceViewForCar */ = {
@@ -1379,6 +1392,7 @@
 				3B52325D1E8B911E00E2E016 /* WMmodelOfExamQuestion.m in Sources */,
 				3B5232D31E8B9A5100E2E016 /* HDButton.m in Sources */,
 				3B52320C1E8B8E8B00E2E016 /* WMSubjectTwoViewController.m in Sources */,
+				3B8B25EA1EAD9B6500D3A58B /* URBMediaFocusViewController.m in Sources */,
 				3B5232981E8B91B400E2E016 /* MJChiBaoZiFooter.m in Sources */,
 				0F08725F1DD31B3800DDE159 /* JiaXiaoCell.m in Sources */,
 				3B5232481E8B90D400E2E016 /* WMHeaderCollectionReusableView.m in Sources */,

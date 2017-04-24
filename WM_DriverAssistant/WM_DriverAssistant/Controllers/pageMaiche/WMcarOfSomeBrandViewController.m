@@ -8,10 +8,12 @@
 
 #import "WMcarOfSomeBrandViewController.h"
 #import "WMCarCollectionViewCell.h"
+#import "URBMediaFocusViewController.h"
 
-@interface WMcarOfSomeBrandViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface WMcarOfSomeBrandViewController () <UICollectionViewDelegate,UICollectionViewDataSource,WMCarCollectionViewCellDelegate,URBMediaFocusViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
+@property (strong, nonatomic) URBMediaFocusViewController *mediaFocusViewController;
 
 @end
 
@@ -44,6 +46,7 @@
 {
     WMCarCollectionViewCell *cell = (WMCarCollectionViewCell  *)[collectionView dequeueReusableCellWithReuseIdentifier:@"WMCarCollectionViewCell" forIndexPath:indexPath];
     [self configureCell:cell withIndexPath:indexPath];
+    cell.delegate = self;
     return cell;
 }
 
@@ -51,6 +54,8 @@
 {
 //    UIView  *subview = [cell.contentView viewWithTag:TAG];
 //    [subview removeFromSuperview];
+    
+    
     
     switch (indexPath.section) {
         case 0:
@@ -76,6 +81,20 @@
         default:
             break;
     }
+}
+
+- (void)cellImageTapped:(UIImageView *)imageView
+{
+    URBMediaFocusViewController *controller = [[URBMediaFocusViewController alloc] init];
+    [controller showImage:imageView.image fromView:self.mainCollectionView inViewController:self];
+    controller.delegate = self;
+    self.mediaFocusViewController = controller;
+}
+
+#pragma mark URBMediaFocusViewControllerDelegate
+
+- (void)mediaFocusViewControllerDidDisappear:(URBMediaFocusViewController *)mediaFocusViewController {
+    self.mediaFocusViewController = nil;
 }
 
 @end

@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class WMCarCollectionViewCell;
+
+@protocol WMCarCollectionViewCellDelegate <NSObject>
+
+- (void)cellImageTapped:(UIImageView *)imageView;
+
+@end
+
 @interface WMCarCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *carImageView;
 @property (weak, nonatomic) IBOutlet UILabel *carNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *carTypeLabel;
 
+@property (strong, nonatomic) id <WMCarCollectionViewCellDelegate> delegate;
 @end
