@@ -162,7 +162,7 @@
     static BOOL showOncePerTime = YES;
     if (scrollView.contentOffset.x < 0 && showOncePerTime) {
         showOncePerTime = NO;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"showLeftViewInPageJiakao" object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"showLeftViewInPageJiakao" object:nil];
     } else if (scrollView.contentOffset.x >= 0){
         showOncePerTime = YES;
     }

@@ -157,6 +157,7 @@
 		3B7EC6D31E9DCD8A008EE00D /* WMSecondHandCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D11E9DCD8A008EE00D /* WMSecondHandCarViewController.m */; };
 		3B7EC6D41E9DCD8A008EE00D /* WMSecondHandCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */; };
 		3B8B25EA1EAD9B6500D3A58B /* URBMediaFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B25E91EAD9B6500D3A58B /* URBMediaFocusViewController.m */; };
+		3B8B25F41EAEEBD400D3A58B /* WMPresentTransitionAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8B25F31EAEEBD400D3A58B /* WMPresentTransitionAnimated.m */; };
 		3B968C261EA88C57000B5901 /* WMcarOfSomeBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */; };
 		3B968C271EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */; };
 		3B968C2A1EA88E76000B5901 /* RGCardViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C291EA88E76000B5901 /* RGCardViewLayout.m */; };
@@ -473,6 +474,8 @@
 		3B7EC6D21E9DCD8A008EE00D /* WMSecondHandCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMSecondHandCarViewController.xib; path = Controllers/pageMaiche/WMSecondHandCarViewController.xib; sourceTree = "<group>"; };
 		3B8B25E81EAD9B6500D3A58B /* URBMediaFocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBMediaFocusViewController.h; sourceTree = "<group>"; };
 		3B8B25E91EAD9B6500D3A58B /* URBMediaFocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBMediaFocusViewController.m; sourceTree = "<group>"; };
+		3B8B25F21EAEEBD400D3A58B /* WMPresentTransitionAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMPresentTransitionAnimated.h; path = Controllers/WMPresentTransitionAnimated.h; sourceTree = "<group>"; };
+		3B8B25F31EAEEBD400D3A58B /* WMPresentTransitionAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMPresentTransitionAnimated.m; path = Controllers/WMPresentTransitionAnimated.m; sourceTree = "<group>"; };
 		3B968C231EA88C57000B5901 /* WMcarOfSomeBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMcarOfSomeBrandViewController.h; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.h; sourceTree = "<group>"; };
 		3B968C241EA88C57000B5901 /* WMcarOfSomeBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMcarOfSomeBrandViewController.m; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.m; sourceTree = "<group>"; };
 		3B968C251EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMcarOfSomeBrandViewController.xib; path = Controllers/pageMaiche/WMcarOfSomeBrandViewController.xib; sourceTree = "<group>"; };
@@ -641,6 +644,7 @@
 		0F750C871E6123F6008F5445 /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3B8B25EB1EADC77A00D3A58B /* FDFullscreenPopGesture */,
 				3B8B25E71EAD9B4300D3A58B /* MediaFoucusView */,
 				3B5232D71E8BA4CD00E2E016 /* MJExtension */,
 				3B5232631E8B91B400E2E016 /* MJRefresh */,
@@ -942,6 +946,13 @@
 			name = MediaFoucusView;
 			sourceTree = "<group>";
 		};
+		3B8B25EB1EADC77A00D3A58B /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		3B968C221EA88B6E000B5901 /* introduceViewForCar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1083,6 +1094,8 @@
 				9B06504D1DC33C3F00A7ACE3 /* WMBaomingViewController.m */,
 				9B0650561DC33CB300A7ACE3 /* WMFaxianViewController.h */,
 				9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */,
+				3B8B25F21EAEEBD400D3A58B /* WMPresentTransitionAnimated.h */,
+				3B8B25F31EAEEBD400D3A58B /* WMPresentTransitionAnimated.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1350,6 +1363,7 @@
 				3B52329C1E8B91B400E2E016 /* MJDIYBackFooter.m in Sources */,
 				3B5232CF1E8B9A1F00E2E016 /* FMResultSet.m in Sources */,
 				3B5232451E8B90D400E2E016 /* WMexamAnswerCellTableViewCell.m in Sources */,
+				3B8B25F41EAEEBD400D3A58B /* WMPresentTransitionAnimated.m in Sources */,
 				3B5231F01E8B8DCC00E2E016 /* UIButton+AFNetworking.m in Sources */,
 				9B06504B1DC3356800A7ACE3 /* WMpageControllersInfo.m in Sources */,
 				3B0F8BF61E94EA2700093EB8 /* WMMySchool.m in Sources */,

@@ -13,6 +13,7 @@
 @protocol WMexamPracticeContentViewDelegate <NSObject>
 
 - (void)cellImageTapped:(UIImageView *)imageView;
+- (void)dismissExamPracticeContentView;
 
 @end
 

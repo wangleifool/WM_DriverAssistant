@@ -11,6 +11,8 @@
 #import "WMexamPracticeContentView.h"
 #import "WMappDatabase.h"
 #import "URBMediaFocusViewController.h"
+//#import "WMPresentTransitionAnimated.h"
+#import "UIView+DMYExtension.h"
 
 @interface WMExamPracticeViewController () <WMexamPracticeContentViewDelegate,URBMediaFocusViewControllerDelegate>
 {
@@ -26,6 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    if (self.navigationController.navigationBar.hidden) {
+//        self.navigationController.navigationBar.hidden = NO;
+//    }
     
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
     
@@ -73,7 +79,16 @@
 
 - (void)leftBarButtonPressed:(id)sender
 {
+    [self setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    [self dismissViewControllerAnimated:NO completion:^{
+//        [UIView animateWithDuration:0.5 animations:^{
+//            self.view.dmy_x = self.view.dmy_width;
+//        }];
+//    }];
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -86,7 +101,7 @@
     self.navigationItem.titleView = segMent;
 }
 
-#pragma mark - 考试页面的图片点击事件
+#pragma mark - 考试页面的图片点击事件代理
 - (void)cellImageTapped:(UIImageView *)imageView
 {
     URBMediaFocusViewController *controller = [[URBMediaFocusViewController alloc] init];
@@ -100,4 +115,15 @@
     self.mediaFocusViewController = nil;
 }
 
+#pragma mark - 退出考试页面代理
+- (void)dismissExamPracticeContentView
+{
+    [self leftBarButtonPressed:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma Mark - UIViewControllerTransitioningDelegate
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+//    return [[WMPresentTransitionAnimated alloc] init];
+//}
 @end

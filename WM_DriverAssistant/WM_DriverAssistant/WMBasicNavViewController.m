@@ -111,6 +111,7 @@
     self.navigationController.navigationBarHidden = YES;
     [self.view addSubview:self.leftView];
     [self.view addSubview:self.contentView];
+    
     //[self configureNavigaitonBar];
     UIPanGestureRecognizer *swip = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView:)];
     //swip.direction = UISwipeGestureRecognizerDirectionRight;

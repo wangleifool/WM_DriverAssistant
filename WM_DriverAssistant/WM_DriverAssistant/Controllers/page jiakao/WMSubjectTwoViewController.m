@@ -46,14 +46,18 @@
     [super viewDidLoad];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.parentViewController.navigationController.navigationBarHidden = YES;
+    [super viewWillAppear:animated];
     NSLog(@"subject 2 view will appear");
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"subject 2 view did appear");
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -343,5 +347,11 @@
     } else if ([sender isEqual:cell.btStudentWelfare]) {
         NSLog(@"你点击了 学员福利");
     }
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    [vc.view setBackgroundColor:[UIColor greenColor]];
+    
+    [self.parentViewController.navigationController pushViewController:vc animated:YES];
+    self.parentViewController.navigationController.navigationBarHidden = NO;
 }
 @end

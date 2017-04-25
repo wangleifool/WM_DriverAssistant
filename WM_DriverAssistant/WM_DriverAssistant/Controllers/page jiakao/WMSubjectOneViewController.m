@@ -16,8 +16,10 @@
 #import "WMShowAdvertiseContentViewController.h"
 #import "AppDelegate.h"
 #import "WMExamPracticeViewController.h"
+#import "WMJiakaoViewController.h"
+#import "WMPresentTransitionAnimated.h"
 
-@interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate,WMAdvertisementPagingScrollViewDelegate>
+@interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate,WMAdvertisementPagingScrollViewDelegate,UIViewControllerTransitioningDelegate>
 {    
     AppDelegate *appDelegate;
 }
@@ -75,21 +77,21 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.mainScrollView.hidden = YES;
-    self.activityOfViewAppear.hidden = NO;
-    [self.activityOfViewAppear startAnimating];
-    
-    [self performSelector:@selector(viewDidAppear:) withObject:nil afterDelay:0.8];
+//    self.mainScrollView.hidden = YES;
+//    self.activityOfViewAppear.hidden = NO;
+//    [self.activityOfViewAppear startAnimating];
+//    
+//    [self performSelector:@selector(viewDidAppear:) withObject:nil afterDelay:0.8];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]; //不知道什么原因，从其他控制器dismiss回来，根视图的frame的y值总要变化。
-    self.mainScrollView.hidden = NO;
-    self.activityOfViewAppear.hidden = YES;
-    [self.activityOfViewAppear stopAnimating];
+//    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]; //不知道什么原因，从其他控制器dismiss回来，根视图的frame的y值总要变化。
+//    self.mainScrollView.hidden = NO;
+//    self.activityOfViewAppear.hidden = YES;
+//    [self.activityOfViewAppear stopAnimating];
     
 //    self.mainScrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height*2);
     CGFloat contentHeight = self.driverMasterView.bounds.size.height + 8 + self.advertisementView.bounds.size.height + 8 + self.theoryLearnView.bounds.size.height + 8 + self.circleOfFriendsPreview.bounds.size.height + 8 + self.beginnerBuyCarView.bounds.size.height; // 计算有问题
@@ -146,8 +148,15 @@
     
     WMExamPracticeViewController *vc = [[WMExamPracticeViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//    [self addTransitionAnimationWithType:nil subType:nil];
+    nav.transitioningDelegate = self;
     [self presentViewController:nav animated:YES completion:nil];
-//    [appDelegate.jiakaoViewController.navigationController pushViewController:vc animated:YES];
+
+    
+//    if ([self.parentViewController isKindOfClass:[WMJiakaoViewController class]]) {
+//        WMJiakaoViewController *parentVC = (WMJiakaoViewController *)self.parentViewController;
+//        [parentVC.navigationController pushViewController:vc animated:YES];
+//    }
 }
 
 
@@ -212,7 +221,13 @@
      */
     animation.subtype = kCATransitionFromRight;
     
-    [self.view.window.layer addAnimation:animation forKey:nil];
+    WMJiakaoViewController *vc = (WMJiakaoViewController *)self.parentViewController;
+    [vc.view.window.layer addAnimation:animation forKey:nil];
+}
+
+#pragma Mark - UIViewControllerTransitioningDelegate
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    return [[WMPresentTransitionAnimated alloc] init];
 }
 
 @end

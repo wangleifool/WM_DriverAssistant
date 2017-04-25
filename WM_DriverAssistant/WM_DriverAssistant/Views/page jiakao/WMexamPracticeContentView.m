@@ -175,7 +175,8 @@
             CGFloat lenth = point.x - self.start.x;
 //            NSLog(@"changing :%f",lenth);
             if (lenth > 0) {
-                if (self.currentQuestionIndex == 0) {
+                if (self.currentQuestionIndex == 0) { //当前是第一页，右滑pop当前视图控制器
+                    [self.delegate dismissExamPracticeContentView];
                     return;
                 }
                 if (!self.isLeftViewShadow) {
@@ -198,7 +199,8 @@
         case UIGestureRecognizerStateEnded:{
             CGFloat lenth = point.x - self.start.x;
             if (lenth > 0 ) { //右滑
-                if (self.currentQuestionIndex == 0) {
+                if (self.currentQuestionIndex == 0) { //当前是第一页，右滑无效
+                    [self.delegate dismissExamPracticeContentView];
                     return;
                 }
                 if (lenth > SelfSize.width/3) {
