@@ -17,4 +17,7 @@
 + (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize;
 + (CGSize)getSizeWithLabelText:(NSString *)text withFontSize:(CGFloat)fontSize withLabelWidth:(CGFloat)width;
 + (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
+
++ (void)GetHttpData:(NSString *)url success:(void (^)(id response))suc failed:(void (^)(NSError* error))faield;
++ (void)GetHTTPData:(NSString *)urlString success:(void (^)(id responseData))success failed:(void (^)(NSString *erorr))failed;
 @end

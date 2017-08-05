@@ -14,6 +14,8 @@
 
 
 #import "WMJiakaoViewController.h"
+#import "WMSubjectTwoViewController.h"
+#import "WMModelOfExamItem.h"
 #import "WMPagesScrollView.h"
 #import "AppDelegate.h"
 
@@ -276,9 +278,44 @@
                     //                    [labelTest setText:[NSString stringWithFormat:@"This is %dst viewController",i+1]];
                     //                    [VC.view addSubview:labelTest];
                     
-                    [self.mainContentScrollView addSubview:VC.view];
-                    [self addChildViewController:VC];
-                    self.arrayOfViewControllers[i] = @"VC_Already_Created";
+                    
+                    
+                    if ([VC isMemberOfClass:NSClassFromString(@"WMSubjectTwoViewController")]) {
+                        [WMTools GetHttpData:JiaKaoPageTwoDataUrl success:^(id response) {
+                            
+                            WMSubjectTwoViewController *sj2VC = (WMSubjectTwoViewController *)VC;
+                            //json解析
+                            if ([response isKindOfClass:[NSArray class]]) {
+                                sj2VC.examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:response];
+                                
+                            } else if ([response isKindOfClass:[NSDictionary class]]) {
+                                NSArray *arrayOfItemList = [[response objectForKey:@"data"] objectForKey:@"itemList"];
+                                sj2VC.examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:arrayOfItemList];
+                                
+                                
+                                
+                            } else if ([response isKindOfClass:[NSString class]]) {
+                                
+                            } else {
+                                
+                            }
+                            
+                            [self.mainContentScrollView addSubview:VC.view];
+                            [self addChildViewController:VC];
+                            self.arrayOfViewControllers[i] = @"VC_Already_Created";
+                        } failed:^(NSError *error) {
+                            [self.mainContentScrollView addSubview:VC.view];
+                            [self addChildViewController:VC];
+                            self.arrayOfViewControllers[i] = @"VC_Already_Created";
+                        }];
+                    } else {
+                        [self.mainContentScrollView addSubview:VC.view];
+                        [self addChildViewController:VC];
+                        self.arrayOfViewControllers[i] = @"VC_Already_Created";
+                    }
+                    
+                    
+                    
                 }
             }
         }

@@ -10,7 +10,7 @@
 
 @implementation WM_MyButton
 
--(void)layoutSubviews
+- (void)layoutSubviews
 {
     [super layoutSubviews];
     CGFloat midX = self.frame.size.width / 2;

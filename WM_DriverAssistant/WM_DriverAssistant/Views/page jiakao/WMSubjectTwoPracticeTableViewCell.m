@@ -47,7 +47,7 @@
                 
                 cell.btExamSecret.delegate = cell;
                 [cell.btExamSecret.titleLabel setText:@"考试秘籍"];
-                [cell.btExamSecret.iconImage setImage:[UIImage imageNamed:@"icon_zixue"]];
+                [cell.btExamSecret.iconImage setImage:[UIImage imageNamed:@"15"]];
                 
                 cell.btAwardDrive.delegate = cell;
                 [cell.btAwardDrive.titleLabel setText:@"有奖试驾"];

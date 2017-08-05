@@ -42,15 +42,5 @@
 		<key>selectedTabIcon</key>
 		<string></string>
 	</dict>
-	<dict>
-		<key>className</key>
-		<string>WMBaibaoxiangViewController</string>
-		<key>title</key>
-		<string>百宝箱</string>
-		<key>tabIcon</key>
-		<string>shequIcon</string>
-		<key>selectedTabIcon</key>
-		<string></string>
-	</dict>
 </array>
 </plist>

@@ -24,24 +24,24 @@
 @interface WMSubjectTwoViewController () <WMMyDriverMasterViewDelegate,UITableViewDelegate,UITableViewDataSource,WMSubjectTwoPracticeTableViewCellDelegate>
 {
     WMMyDriverMasterView *driverMasterView;
-    
-    NSArray *examItems;
 }
 
 @end
 
 @implementation WMSubjectTwoViewController
 
-//- (void)loadView
-//{
-//    [super loadView];
-//    
-//    [self getSubject2ItemsData];
-//}
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self getSubject2ItemsData];
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     
-    [self getSubject2ItemsData];
+    
     
     [super viewDidLoad];
 }
@@ -86,52 +86,7 @@
     
     //前面写服务器给的域名，后面拼接上需要提交的参数，假如参数是key=1
     NSString *domainStr = @"https://sirius.kakamobi.cn/api/open/exam-project/list.htm?_a=2wy9wAxvVAwy7Vz404V635zVw5z3z6790322&_appName=jiakaobaodianxingui&_appUser=03fbeaeb4f65146bf6cea851f45841ca&_cityCode=510100&_cityName=%E6%88%90%E9%83%BD%E5%B8%82&_device=KOBE%20use%20iPad&_firstTime=2017-03-31%2008%3A49%3A30&_gpsCity=510100&_gpsType=baidu&_html5=false&_imei=549af8c6669249e19516b3303d5cdd284ec672ca&_j=1.0&_jail=false&_latitude=30.67943289807245&_launch=5&_longitude=103.797371602262&_mac=549af8c6669249e19516b3303d5cdd284ec672ca&_manufacturer=Apple&_network=wifi&_operator=N&_pkgName=cn.mucang.ios.jiakaobaodianPromise&_platform=iphone&_product=%E9%A9%BE%E8%80%83%E5%AE%9D%E5%85%B8%E6%96%B0%E8%A7%84&_productCategory=jiakaobaodian&_r=a64a03026aaff90f16f3e227ecaa1b34&_renyuan=mucang&_screenDip=1&_screenHeight=1024&_screenWidth=768&_system=iPhone%20OS&_systemVersion=9.3.5&_u=w9x69536V0A0xVz483V4w3zV94x7x9v62234&_userCity=510100&_vendor=appstore&_version=6.6.10&_webviewVersion=4.7&cursor=0&kemu=2&pageSize=100&schoolCode=510100030&schoolName=%E6%88%90%E9%91%AB%E9%A9%BE%E6%A0%A1&tiku=car&sign=941ac9e184b0701830316848fe33e7c3";
-//    domainStr = [domainStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSString *domainStr = @"https://sirius.kakamobi.cn/api/open/exam-project/list.htm";
-    
-//    NSDictionary *parameters = @{@"_a":@"2wy9wAxvVAwy7Vz404V635zVw5z3z6790322",
-//                                 @"_appName":@"jiakaobaodianxingui",
-//                                 @"_appUser":@"03fbeaeb4f65146bf6cea851f45841ca",
-//                                 @"_cityCode":@"510100",
-//                                 @"_cityName":@"成都市",
-//                                 @"_device":@"KOBE use iPad",
-//                                 @"_firstTime":@"2017-03-31 08:49:30",
-//                                 @"_gpsCity":@"510100",
-//                                 @"_gpsType":@"baidu",
-//                                 @"_html5":@"false",
-//                                 @"_imei":@"549af8c6669249e19516b3303d5cdd284ec672ca",
-//                                 @"_j":@"1.0",
-//                                 @"_jail":@"false",
-//                                 @"_latitude":@"30.67943289807245",
-//                                 @"_launch":@"5",
-//                                 @"_longitude":@"103.797371602262",
-//                                 @"_mac":@"549af8c6669249e19516b3303d5cdd284ec672ca",
-//                                 @"_manufacturer":@"Apple",
-//                                 @"_network":@"wifi",
-//                                 @"_operator":@"N",
-//                                 @"_pkgName":@"cn.mucang.ios.jiakaobaodianPromise",
-//                                 @"_platform":@"iphone",
-//                                 @"_product":@"驾考宝典新规",
-//                                 @"_productCategory":@"jiakaobaodian",
-//                                 @"_r":@"a64a03026aaff90f16f3e227ecaa1b34",
-//                                 @"_renyuan":@"mucang",
-//                                 @"_screenDip":@"1",
-//                                 @"_screenHeight":@"1024",
-//                                 @"_screenWidth":@"768",
-//                                 @"_system":@"iPhone OS",
-//                                 @"_systemVersion":@"9.3.5",
-//                                 @"_u":@"w9x69536V0A0xVz483V4w3zV94x7x9v62234",
-//                                 @"_userCity":@"510100",
-//                                 @"_vendor":@"appstore",
-//                                 @"_version":@"6.6.10",
-//                                 @"_webviewVersion":@"4.7",
-//                                 @"cursor":@"0",
-//                                 @"kemu":@"2",
-//                                 @"pageSize":@"100",
-//                                 @"schoolCode":@"510100030",
-//                                 @"schoolName":@"成鑫驾校",
-//                                 @"tiku":@"car",
-//                                 @"sign":@"941ac9e184b0701830316848fe33e7c3"};
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //申明请求的数据是json类型
 //    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
@@ -147,10 +102,11 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //json解析
         if ([responseObject isKindOfClass:[NSArray class]]) {
-            examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:responseObject];
+            _examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:responseObject];
+            [self reloadData];
         } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSArray *arrayOfItemList = [[responseObject objectForKey:@"data"] objectForKey:@"itemList"];
-            examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:arrayOfItemList];
+            _examItems = [WMModelOfExamItem mj_objectArrayWithKeyValuesArray:arrayOfItemList];
             
             [self reloadData];
             
@@ -171,7 +127,7 @@
 #pragma mark - 考试项目详解 表视图
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -186,8 +142,8 @@
             break;
         case Section_ExamItems:
         {
-            if (examItems)
-                rows = [examItems count];
+            if (_examItems)
+                rows = [_examItems count];
         }
             break;
         case Section_ExamSkills:
@@ -226,7 +182,7 @@
         case Section_ExamItems:
         {
             WMSubjectTwoThreeExamItemTableViewCell *cell = [WMSubjectTwoThreeExamItemTableViewCell examItemCellWithTableView:tableView];
-            cell.modelExamItem = [examItems objectAtIndex:indexPath.row];
+            cell.modelExamItem = [_examItems objectAtIndex:indexPath.row];
             
             return cell;
         }

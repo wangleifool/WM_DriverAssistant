@@ -149,6 +149,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navView.title.text = @"百宝箱";
+    
     [self initData];
     [self initUI];
     [self addTimer];
@@ -163,8 +164,8 @@
 #pragma mark - 初始化数据
 -(void)initData
 {
-    _btnTitles = @[@"精品二手车",@"短期理财",@"我要贷款",@"办信用卡"];
-    _btnImages = @[@"xiaoche.png",@"icon_bm_school.png",@"icon_bm_top.png",@"icon_bm_zixue.png"];
+    _btnTitles = @[@"二手车",@"短期理财",@"我要贷款",@"办信用卡"];
+    _btnImages = @[@"icon_m_jiaolian.png",@"icon_bm_school.png",@"icon_bm_top.png",@"icon_bm_zixue.png"];
     _btnTitles1 = @[@"大牌车品",@"金银猫理财",@"真心话",@"买车狂欢惠",@"享7亿红包",@"玩转双十一",@"眼力大比评",@"免费约驾",@"测星座福地",@"手机借款",@"办理信用卡"];
     _btnTitles2 = @[@"测星座福地",@"砸金蛋",@"解锁星座",@"手机借款",@"办理信用卡",@"车险资讯",@"汽车头条",@"免费测保费",@"二手车",@"聊聊学车",@"帮选车",@"更多"];
 }

@@ -817,8 +817,6 @@
 				3B5232511E8B911E00E2E016 /* WMModelOfAdvertisement.h */,
 				3B5232521E8B911E00E2E016 /* WMmodelOfExamQuestion.h */,
 				3B5232531E8B911E00E2E016 /* WMModelOfUserComment.h */,
-				3B5232541E8B911E00E2E016 /* WMTools.h */,
-				3B5232591E8B911E00E2E016 /* WMTools.m */,
 				3B5232561E8B911E00E2E016 /* WMModelOfAdvertisement.m */,
 				3B5232571E8B911E00E2E016 /* WMmodelOfExamQuestion.m */,
 				3B5232581E8B911E00E2E016 /* WMModelOfUserComment.m */,
@@ -1064,6 +1062,8 @@
 		9B064FEB1DC2D5A700A7ACE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3B5232541E8B911E00E2E016 /* WMTools.h */,
+				3B5232591E8B911E00E2E016 /* WMTools.m */,
 				3B5232BF1E8B9A1E00E2E016 /* fmdb */,
 				3B52324F1E8B910D00E2E016 /* pageOfJiaKao */,
 				9B0650491DC3356800A7ACE3 /* WMpageControllersInfo.h */,

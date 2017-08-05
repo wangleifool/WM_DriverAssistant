@@ -10,6 +10,8 @@
 
 @interface WMSubjectTwoViewController : UIViewController
 
+@property (nonatomic, copy) NSArray *examItems;
+
 - (void)getSubject2ItemsData;
 
 @end

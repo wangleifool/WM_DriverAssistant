@@ -56,4 +56,37 @@
     return scaledImage;
 }
 
+
+
++ (void)GetHttpData:(NSString *)url success:(void (^)(id response))suc failed:(void (^)(NSError *error))faield {
+    
+    //启动系统风火轮
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //申明请求的数据是json类型
+    //    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    
+    //以GET的形式提交，只需要将上面的请求地址给GET做参数就可以
+    [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"AFnetworking get succ!");
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        suc(responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"AFnetworking get fail!  %@",error);
+        faield(error);
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
+    
+    
+}
+
 @end
