@@ -51,9 +51,12 @@
     lab.textColor = [UIColor redColor];
     lab.textAlignment = NSTextAlignmentLeft;
     [_headerView addSubview:lab];
+    
+    CGFloat width = 80;
+    CGFloat spaceInterval = (kScreenWidth - (3*width))/4;
     for (int i = 0; i < 9; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(21+i%3*(110+21), 37.5+i/3*37.5, 110, 30);
+        btn.frame = CGRectMake(spaceInterval+i%3*(width+spaceInterval), 37.5+i/3*37.5, width, 30);
         btn.backgroundColor = [UIColor whiteColor];
         btn.titleLabel.font = [UIFont systemFontOfSize:15];
         [btn setTitle:[self.hotCities objectAtIndex:i] forState:UIControlStateNormal];

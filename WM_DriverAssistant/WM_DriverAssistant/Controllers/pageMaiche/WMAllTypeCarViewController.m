@@ -164,6 +164,7 @@
     WMMaicheViewController *parentVC = (WMMaicheViewController *)self.parentViewController;
     
     WMcarOfSomeBrandViewController *vc = [[WMcarOfSomeBrandViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
     [parentVC.navigationController pushViewController:vc animated:YES];
 }
 
@@ -172,6 +173,8 @@
 {
     NSMutableArray *existingLetters = [NSMutableArray array];
     for (NSString *name in categoryArray){
+        if (name == nil || [name isEqualToString:@""])
+            continue;
         NSString *firstLetterInName = [name substringToIndex:1];
         NSCharacterSet *notAllowed = [[NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ"] invertedSet];
         NSRange range = [firstLetterInName rangeOfCharacterFromSet:notAllowed];
@@ -199,6 +202,7 @@
 {
     NSArray *currentItems = self.allSectionData[path.section];
     NSString *category = currentItems[path.row];
+    category = [category substringFromIndex:1];
     return category;
 }
 

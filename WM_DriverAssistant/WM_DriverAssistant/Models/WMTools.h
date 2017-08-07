@@ -19,5 +19,9 @@
 + (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
 
 + (void)GetHttpData:(NSString *)url success:(void (^)(id response))suc failed:(void (^)(NSError* error))faield;
-+ (void)GetHTTPData:(NSString *)urlString success:(void (^)(id responseData))success failed:(void (^)(NSString *erorr))failed;
+
+/**
+ *  用颜色返回一张图片
+ */
++ (UIImage *)createImageWithColor:(UIColor*) color;
 @end

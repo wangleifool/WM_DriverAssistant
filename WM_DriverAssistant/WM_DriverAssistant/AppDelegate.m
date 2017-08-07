@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WMRootTabBarController.h"
-
+#import "SXTAdvertiseView.h"
 
 @interface AppDelegate ()
 {
@@ -27,6 +27,10 @@
     self.window.rootViewController = [[WMRootTabBarController alloc] init];
     
     [self.window makeKeyAndVisible];
+    
+    //载入广告
+    SXTAdvertiseView * adverVC = [SXTAdvertiseView loadAdvertiseView];
+    [self.window addSubview:adverVC];
     
     return YES;
 }

@@ -71,9 +71,9 @@
 {
     if (!_headerView) {
         _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-        _headerView.backgroundColor = [UIColor whiteColor];
-        UILabel *loginL = [[UILabel alloc] initWithFrame:CGRectMake(60, 30, 80, 30)];
-        loginL.textColor = [UIColor blueColor];
+        _headerView.backgroundColor = [UIColor clearColor];
+        UILabel *loginL = [[UILabel alloc] initWithFrame:CGRectMake(16, 30, 80, 30)];
+        loginL.textColor = [UIColor whiteColor];
         loginL.text = @"立即登陆";
         [_headerView addSubview:loginL];
     }
@@ -123,9 +123,9 @@
 //    [self.view addGestureRecognizer:gs];
     showLeftView = true;
     
-    self.navView.userBtn.layer.cornerRadius = 23;
-    self.navView.userBtn.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.navView.userBtn.layer.borderWidth = 2;
+    self.navView.userBtn.layer.cornerRadius = self.navView.userBtn.frame.size.width/2;
+    self.navView.userBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    self.navView.userBtn.layer.borderWidth = 1;
     self.navView.userBtn.layer.masksToBounds = YES;
     self.navView.locationBtn.hidden = YES;
 }
@@ -171,8 +171,8 @@
 -(void)popView:(id)sender
 {
     if (sender != self.navigationItem.rightBarButtonItem) {
-        [YCXMenu setTintColor:[UIColor lightGrayColor]];
-        [YCXMenu setSelectedColor:[UIColor blueColor]];
+        [YCXMenu setTintColor:[UIColor groupTableViewBackgroundColor]];
+        [YCXMenu setSelectedColor:[UIColor whiteColor]];
         if ([YCXMenu isShow]) {
             [YCXMenu dismissMenu];
         }
@@ -196,7 +196,7 @@
         }
     }
 }
-#pragma mark - WMNavigationBarDelegate
+#pragma mark - WMNavigationBar Delegate
 -(void)WMNavigationBar:(WMNavigationView *)navigationView showLeftViewWith:(UIButton *)button
 {
     [self openLeftView];
@@ -211,6 +211,7 @@
     citySelectVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:citySelectVC animated:YES];
 }
+
 #pragma mark 左边按钮按下
 -(void)openLeftView
 {
@@ -254,6 +255,7 @@
     }
     
 }
+
 #pragma mark 隐藏左边视图
 -(void)hideLeftView
 {
@@ -354,13 +356,20 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.backgroundColor = [UIColor blueColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = [self.userColum objectAtIndex:indexPath.row];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - 系统级别设置
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 @end

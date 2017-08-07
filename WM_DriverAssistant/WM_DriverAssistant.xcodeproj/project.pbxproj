@@ -36,6 +36,7 @@
 		0F7B12D61E601BDF006BBEB3 /* WM_BaoMingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B12D51E601BDF006BBEB3 /* WM_BaoMingView.m */; };
 		0F83B6A61E7150BE00C801C5 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F83B6A51E7150BE00C801C5 /* WMScrollView.m */; };
 		0FA032A31E727B9100D25BB9 /* WMLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA032A21E727B9100D25BB9 /* WMLeftView.m */; };
+		330174B62B70166C1E74F5CB /* libPods-WM_DriverAssistant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A349D562C0D8D3458245CB4A /* libPods-WM_DriverAssistant.a */; };
 		3B0F8BF21E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF01E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.m */; };
 		3B0F8BF31E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF11E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.xib */; };
 		3B0F8BF61E94EA2700093EB8 /* WMMySchool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8BF51E94EA2700093EB8 /* WMMySchool.m */; };
@@ -150,6 +151,14 @@
 		3B5232F61E8BA4CD00E2E016 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232E91E8BA4CD00E2E016 /* NSObject+MJKeyValue.m */; };
 		3B5232F71E8BA4CD00E2E016 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232EB1E8BA4CD00E2E016 /* NSObject+MJProperty.m */; };
 		3B5232F81E8BA4CD00E2E016 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5232ED1E8BA4CD00E2E016 /* NSString+MJExtension.m */; };
+		3B6A50101F3831FD0048D5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A500F1F3831FD0048D5FC /* Assets.xcassets */; };
+		3B6A50181F385A6A0048D5FC /* SXTCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A50171F385A6A0048D5FC /* SXTCacheHelper.m */; };
+		3B6A501C1F385A8B0048D5FC /* SXTAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A501A1F385A8B0048D5FC /* SXTAdvertiseView.m */; };
+		3B6A501D1F385A8B0048D5FC /* SXTAdvertiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A501B1F385A8B0048D5FC /* SXTAdvertiseView.xib */; };
+		3B6A50211F385BEA0048D5FC /* NSString+CachePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A50201F385BEA0048D5FC /* NSString+CachePath.m */; };
+		3B6A50261F385F540048D5FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A50251F385F540048D5FC /* ImageIO.framework */; };
+		3B6A50281F385F5E0048D5FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A50271F385F5E0048D5FC /* Foundation.framework */; };
+		3B6A502A1F3860260048D5FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6A50291F3860260048D5FC /* MapKit.framework */; };
 		3B7EC6C91E9DCD4D008EE00D /* WMAllTypeCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6C71E9DCD4D008EE00D /* WMAllTypeCarViewController.m */; };
 		3B7EC6CA1E9DCD4D008EE00D /* WMAllTypeCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7EC6C81E9DCD4D008EE00D /* WMAllTypeCarViewController.xib */; };
 		3B7EC6CE1E9DCD64008EE00D /* WMSelectCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EC6CC1E9DCD64008EE00D /* WMSelectCarViewController.m */; };
@@ -168,7 +177,6 @@
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
 		9B064FBD1DC1FEC100A7ACE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */; };
 		9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC11DC1FEC100A7ACE3 /* Main.storyboard */; };
-		9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC41DC1FEC100A7ACE3 /* Assets.xcassets */; };
 		9B064FC81DC1FEC100A7ACE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B064FC61DC1FEC100A7ACE3 /* LaunchScreen.storyboard */; };
 		9B064FD31DC1FEC200A7ACE3 /* WM_DriverAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FD21DC1FEC200A7ACE3 /* WM_DriverAssistantTests.m */; };
 		9B064FDE1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FDD1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests.m */; };
@@ -205,6 +213,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0C3F80CD69B672F41963AB /* Pods-WM_DriverAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WM_DriverAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-WM_DriverAssistant/Pods-WM_DriverAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		0F0872511DD31A8C00DDE159 /* FxButtonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxButtonHelper.h; sourceTree = "<group>"; };
 		0F0872521DD31A8C00DDE159 /* FxButtonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FxButtonHelper.m; sourceTree = "<group>"; };
 		0F0872541DD31AF600DDE159 /* ClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
@@ -463,6 +472,17 @@
 		3B5232EB1E8BA4CD00E2E016 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3B5232EC1E8BA4CD00E2E016 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3B5232ED1E8BA4CD00E2E016 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3B6A500F1F3831FD0048D5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B6A50161F385A6A0048D5FC /* SXTCacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTCacheHelper.h; sourceTree = "<group>"; };
+		3B6A50171F385A6A0048D5FC /* SXTCacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTCacheHelper.m; sourceTree = "<group>"; };
+		3B6A50191F385A8B0048D5FC /* SXTAdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTAdvertiseView.h; sourceTree = "<group>"; };
+		3B6A501A1F385A8B0048D5FC /* SXTAdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTAdvertiseView.m; sourceTree = "<group>"; };
+		3B6A501B1F385A8B0048D5FC /* SXTAdvertiseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXTAdvertiseView.xib; sourceTree = "<group>"; };
+		3B6A501F1F385BEA0048D5FC /* NSString+CachePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CachePath.h"; sourceTree = "<group>"; };
+		3B6A50201F385BEA0048D5FC /* NSString+CachePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CachePath.m"; sourceTree = "<group>"; };
+		3B6A50251F385F540048D5FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3B6A50271F385F5E0048D5FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B6A50291F3860260048D5FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3B7EC6C61E9DCD4D008EE00D /* WMAllTypeCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMAllTypeCarViewController.h; path = Controllers/pageMaiche/WMAllTypeCarViewController.h; sourceTree = "<group>"; };
 		3B7EC6C71E9DCD4D008EE00D /* WMAllTypeCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMAllTypeCarViewController.m; path = Controllers/pageMaiche/WMAllTypeCarViewController.m; sourceTree = "<group>"; };
 		3B7EC6C81E9DCD4D008EE00D /* WMAllTypeCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMAllTypeCarViewController.xib; path = Controllers/pageMaiche/WMAllTypeCarViewController.xib; sourceTree = "<group>"; };
@@ -487,12 +507,13 @@
 		3BC3994B1E9CB02000CD9414 /* tableViewData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tableViewData.txt; sourceTree = "<group>"; };
 		3BC3994E1E9CB3F300CD9414 /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
 		3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
+		6BC64478EB59645996EA451C /* libPods-WM_DriverAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WM_DriverAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8887029F5D1100C481EE1298 /* Pods-WM_DriverAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WM_DriverAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WM_DriverAssistant/Pods-WM_DriverAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		9B064FB51DC1FEC100A7ACE3 /* WM_DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WM_DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B064FB91DC1FEC100A7ACE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9B064FC21DC1FEC100A7ACE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B064FC41DC1FEC100A7ACE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B064FC71DC1FEC100A7ACE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B064FC91DC1FEC100A7ACE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B064FCE1DC1FEC200A7ACE3 /* WM_DriverAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WM_DriverAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -524,6 +545,8 @@
 		9BFF9F281DC34A5F004BCACD /* WMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMGlobal.m; path = Others/WMGlobal.m; sourceTree = "<group>"; };
 		9BFF9F2A1DC34B35004BCACD /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		9BFF9F2B1DC34B78004BCACD /* driverAssistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "driverAssistant-Prefix.pch"; sourceTree = "<group>"; };
+		A349D562C0D8D3458245CB4A /* libPods-WM_DriverAssistant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WM_DriverAssistant.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B354FCFE7FEB2A92861D74 /* libPods-WM_DriverAssistantUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WM_DriverAssistantUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,8 +554,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6A502A1F3860260048D5FC /* MapKit.framework in Frameworks */,
+				3B6A50281F385F5E0048D5FC /* Foundation.framework in Frameworks */,
+				3B6A50261F385F540048D5FC /* ImageIO.framework in Frameworks */,
 				3B5232D61E8B9B5800E2E016 /* libsqlite3.tbd in Frameworks */,
 				0F2A0A421E76718200D94928 /* CoreLocation.framework in Frameworks */,
+				330174B62B70166C1E74F5CB /* libPods-WM_DriverAssistant.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,8 +653,14 @@
 		0F2A0A401E76718100D94928 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B6A50291F3860260048D5FC /* MapKit.framework */,
+				3B6A50271F385F5E0048D5FC /* Foundation.framework */,
+				3B6A50251F385F540048D5FC /* ImageIO.framework */,
 				3B5232D51E8B9B5800E2E016 /* libsqlite3.tbd */,
 				0F2A0A411E76718200D94928 /* CoreLocation.framework */,
+				A349D562C0D8D3458245CB4A /* libPods-WM_DriverAssistant.a */,
+				6BC64478EB59645996EA451C /* libPods-WM_DriverAssistantTests.a */,
+				D5B354FCFE7FEB2A92861D74 /* libPods-WM_DriverAssistantUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -935,6 +968,28 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		3B6A50151F385A410048D5FC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A501E1F385BD80048D5FC /* category */,
+				3B6A50161F385A6A0048D5FC /* SXTCacheHelper.h */,
+				3B6A50171F385A6A0048D5FC /* SXTCacheHelper.m */,
+				3B6A50191F385A8B0048D5FC /* SXTAdvertiseView.h */,
+				3B6A501A1F385A8B0048D5FC /* SXTAdvertiseView.m */,
+				3B6A501B1F385A8B0048D5FC /* SXTAdvertiseView.xib */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		3B6A501E1F385BD80048D5FC /* category */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A501F1F385BEA0048D5FC /* NSString+CachePath.h */,
+				3B6A50201F385BEA0048D5FC /* NSString+CachePath.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
 		3B8B25E71EAD9B4300D3A58B /* MediaFoucusView */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1053,15 @@
 			name = pagePurchase;
 			sourceTree = "<group>";
 		};
+		5D5C8AB40349B7C4D6A663A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8887029F5D1100C481EE1298 /* Pods-WM_DriverAssistant.debug.xcconfig */,
+				0C0C3F80CD69B672F41963AB /* Pods-WM_DriverAssistant.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9B064FAC1DC1FEC000A7ACE3 = {
 			isa = PBXGroup;
 			children = (
@@ -1007,6 +1071,7 @@
 				9B064FDC1DC1FEC200A7ACE3 /* WM_DriverAssistantUITests */,
 				9B064FB61DC1FEC100A7ACE3 /* Products */,
 				0F2A0A401E76718100D94928 /* Frameworks */,
+				5D5C8AB40349B7C4D6A663A5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1023,6 +1088,7 @@
 		9B064FB71DC1FEC100A7ACE3 /* WM_DriverAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				3B6A50151F385A410048D5FC /* Tools */,
 				9B064FEE1DC2D5C100A7ACE3 /* Others */,
 				9B064FED1DC2D5BA00A7ACE3 /* Views */,
 				9B064FEC1DC2D5B100A7ACE3 /* Controllers */,
@@ -1129,11 +1195,11 @@
 		9B064FEE1DC2D5C100A7ACE3 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				3B6A500F1F3831FD0048D5FC /* Assets.xcassets */,
 				0F2A0A3C1E7669E900D94928 /* Utility */,
 				9BFF9F261DC349DE004BCACD /* Global */,
 				9B064FBB1DC1FEC100A7ACE3 /* AppDelegate.h */,
 				9B064FBC1DC1FEC100A7ACE3 /* AppDelegate.m */,
-				9B064FC41DC1FEC100A7ACE3 /* Assets.xcassets */,
 				9B064FC91DC1FEC100A7ACE3 /* Info.plist */,
 				9B064FB81DC1FEC100A7ACE3 /* Supporting Files */,
 				9B064FF21DC2E06E00A7ACE3 /* TabbarPages.plist */,
@@ -1161,10 +1227,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B064FE21DC1FEC200A7ACE3 /* Build configuration list for PBXNativeTarget "WM_DriverAssistant" */;
 			buildPhases = (
+				D9C3E20D961DEB97C944A86E /* [CP] Check Pods Manifest.lock */,
 				9B064FB11DC1FEC100A7ACE3 /* Sources */,
 				9B064FB21DC1FEC100A7ACE3 /* Frameworks */,
 				9B064FB31DC1FEC100A7ACE3 /* Resources */,
 				3B0F8BED1E94C2FA00093EB8 /* Run Script */,
+				0A49B83EACBC7AB5E070208D /* [CP] Embed Pods Frameworks */,
+				098895D3953809C419B83FEF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1266,9 +1335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5232401E8B90D400E2E016 /* WMTheoryLearnModelView.xib in Resources */,
+				3B6A501D1F385A8B0048D5FC /* SXTAdvertiseView.xib in Resources */,
 				0F08726B1DD31DA200DDE159 /* 0.jpg in Resources */,
 				3B0F8BF31E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.xib in Resources */,
 				3B5232601E8B911E00E2E016 /* dataOfAdvertisement.plist in Resources */,
+				3B6A50101F3831FD0048D5FC /* Assets.xcassets in Resources */,
 				3B52323D1E8B90D400E2E016 /* WMImgTextCollectionViewCell.xib in Resources */,
 				0F08726C1DD31DA200DDE159 /* 1.jpg in Resources */,
 				3B5232621E8B918900E2E016 /* data.sqlite in Resources */,
@@ -1290,7 +1361,6 @@
 				9B06505A1DC33CB300A7ACE3 /* WMFaxianViewController.xib in Resources */,
 				3B968C321EA8905B000B5901 /* WMCarCollectionViewCell.xib in Resources */,
 				3B5232EE1E8BA4CD00E2E016 /* Info.plist in Resources */,
-				9B064FC51DC1FEC100A7ACE3 /* Assets.xcassets in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
 				0F0872561DD31AF600DDE159 /* ClassCell.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
@@ -1331,6 +1401,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		098895D3953809C419B83FEF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WM_DriverAssistant/Pods-WM_DriverAssistant-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A49B83EACBC7AB5E070208D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WM_DriverAssistant/Pods-WM_DriverAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B0F8BED1E94C2FA00093EB8 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1345,6 +1445,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Reveal Server not loaded: RevealServer.framework could not be found.\"\nfi";
 		};
+		D9C3E20D961DEB97C944A86E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1358,6 +1473,7 @@
 				3B5232411E8B90D400E2E016 /* WMAdvertisementPagingScrollView.m in Sources */,
 				3B5232111E8B8F0A00E2E016 /* WMJiakaoViewController.m in Sources */,
 				3B52325F1E8B911E00E2E016 /* WMTools.m in Sources */,
+				3B6A50181F385A6A0048D5FC /* SXTCacheHelper.m in Sources */,
 				3B5232A31E8B91B400E2E016 /* MJRefreshBackFooter.m in Sources */,
 				9B06504F1DC33C3F00A7ACE3 /* WMBaomingViewController.m in Sources */,
 				3B52329C1E8B91B400E2E016 /* MJDIYBackFooter.m in Sources */,
@@ -1397,6 +1513,7 @@
 				9B0650631DC33CE800A7ACE3 /* WMMaicheViewController.m in Sources */,
 				3B5231F41E8B8DCC00E2E016 /* UIWebView+AFNetworking.m in Sources */,
 				3B5232491E8B90D400E2E016 /* WMImageAndTwoLineTextView.m in Sources */,
+				3B6A50211F385BEA0048D5FC /* NSString+CachePath.m in Sources */,
 				3B5232AC1E8B91B400E2E016 /* MJRefreshNormalHeader.m in Sources */,
 				3B52324B1E8B90D400E2E016 /* WMMyDriverMasterView.m in Sources */,
 				3B5232B01E8B91B400E2E016 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1461,6 +1578,7 @@
 				9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */,
 				3B5231E81E8B8DCC00E2E016 /* AFSecurityPolicy.m in Sources */,
 				3B5232F51E8BA4CD00E2E016 /* NSObject+MJCoding.m in Sources */,
+				3B6A501C1F385A8B0048D5FC /* SXTAdvertiseView.m in Sources */,
 				3B5232091E8B8E8B00E2E016 /* WMSubjectFourViewController.m in Sources */,
 				3B0F8BF21E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.m in Sources */,
 				3BC399501E9CB3F300CD9414 /* MJNIndexView.m in Sources */,
@@ -1628,9 +1746,12 @@
 		};
 		9B064FE31DC1FEC200A7ACE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8887029F5D1100C481EE1298 /* Pods-WM_DriverAssistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1643,6 +1764,9 @@
 					"-ObjC",
 					"-weak_framework",
 					RevealServer,
+					"-l\"SDWebImage\"",
+					"-framework",
+					"\"ImageIO\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1652,9 +1776,12 @@
 		};
 		9B064FE41DC1FEC200A7ACE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C0C3F80CD69B672F41963AB /* Pods-WM_DriverAssistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
 				INFOPLIST_FILE = WM_DriverAssistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

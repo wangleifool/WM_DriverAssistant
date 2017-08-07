@@ -59,7 +59,7 @@
         
         CGRect frame;
         for (NSInteger i = 0; i < allSubVCClassName.count; i++) {
-            frame = CGRectMake(i*_mainScrollView.frame.size.width, 0, _mainScrollView.frame.size.width, _mainScrollView.bounds.size.height-NavBarHeight7-TabBarHeight);
+            frame = CGRectMake(i*_mainScrollView.frame.size.width, 0, _mainScrollView.frame.size.width, _mainScrollView.bounds.size.height-TabBarHeight);
             
             UIViewController *vc = [[NSClassFromString(allSubVCClassName[i]) alloc] init];
             vc.view.frame = frame;

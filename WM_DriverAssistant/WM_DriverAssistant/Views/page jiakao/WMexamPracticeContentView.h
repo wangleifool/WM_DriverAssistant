@@ -25,4 +25,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)allQuestionArray;
 
+- (void)practiceModeChange:(id)sender;
+
 @end

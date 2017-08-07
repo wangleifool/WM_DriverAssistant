@@ -24,16 +24,6 @@
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>WMFaxianViewController</string>
-		<key>title</key>
-		<string>发现</string>
-		<key>tabIcon</key>
-		<string>faxianIcon</string>
-		<key>selectedTabIcon</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>className</key>
 		<string>WMMaicheViewController</string>
 		<key>title</key>
 		<string>买车</string>

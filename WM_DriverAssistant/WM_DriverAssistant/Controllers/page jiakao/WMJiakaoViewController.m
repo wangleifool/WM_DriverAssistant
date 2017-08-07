@@ -192,7 +192,8 @@
 - (void)setNavigationTitleView:(UIView *)customView
 {
     NSLog(@"setNavigationTitleView in WMJiakaoViewController");
-    self.navigationItem.title = @"驾考";
+    self.navView.locationBtn.hidden = NO;
+    self.navView.title.text = @"驾考";
 }
 
 -(void)ShowLeftView

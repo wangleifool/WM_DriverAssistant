@@ -17,7 +17,7 @@
 @interface WMExamPracticeViewController () <WMexamPracticeContentViewDelegate,URBMediaFocusViewControllerDelegate>
 {
 //    WMexamPracticeToolBarView *bottomIndicateToolBar;
-    WMexamPracticeContentView *topMainContentView;
+    WMexamPracticeContentView *examContentView;
 }
 
 @property (strong, nonatomic) URBMediaFocusViewController *mediaFocusViewController;
@@ -44,10 +44,10 @@
     //题目显示区域,类似翻页卡片
     CGRect frameOfMainContent = CGRectMake(0, NavBarHeight7, self.view.frame.size.width, self.view.frame.size.height - NavBarHeight7);
     NSArray *allQuestion = [WMappDatabase getAllExamQuestion];
-    topMainContentView = [[WMexamPracticeContentView alloc] initWithFrame:frameOfMainContent withData:allQuestion]; //暂时没有提供数据
-    topMainContentView.delegate = self;
-    [self.view addSubview:topMainContentView];
-    [self.view sendSubviewToBack:topMainContentView];
+    examContentView = [[WMexamPracticeContentView alloc] initWithFrame:frameOfMainContent withData:allQuestion]; //暂时没有提供数据
+    examContentView.delegate = self;
+    [self.view addSubview:examContentView];
+    [self.view sendSubviewToBack:examContentView];
     
     [self configureNavigationBar];
     
@@ -61,14 +61,14 @@
 
 - (void)configureNavigationBar
 {
-    [self.navigationController.navigationBar setBarTintColor:[UIColor lightGrayColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self configureNavigationBarLeftView];
     [self configureNavigationCenterView];
 }
 
 - (void)configureNavigationBarLeftView
 {
-//    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonPressed:)];
+
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backArrow"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonPressed:)];
     
     UIBarButtonItem *fixedButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -96,7 +96,7 @@
 {
     UISegmentedControl *segMent = [[UISegmentedControl alloc] initWithItems:@[@"答题模式",@"背题模式"]];
     segMent.selectedSegmentIndex = 0;
-    [segMent addTarget:topMainContentView action:@selector(practiceModeChange:) forControlEvents:UIControlEventValueChanged];
+    [segMent addTarget:examContentView action:@selector(practiceModeChange:) forControlEvents:UIControlEventValueChanged];
     
     self.navigationItem.titleView = segMent;
 }

@@ -65,7 +65,7 @@
 {
     [super layoutSubviews];
     
-    [self setBackgroundColor:[UIColor lightGrayColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     
     
     if (nil == backgroundButton) {
@@ -82,11 +82,15 @@
     
     if (nil == progressOfWholeQuestion) {
         CGRect frameOfProgress = self.frame;
-        frameOfProgress.size.height = 2;
+        frameOfProgress.size.height = 1;
         frameOfProgress.origin.y = 0;
+        
         progressOfWholeQuestion = [[UIProgressView alloc] initWithFrame:frameOfProgress];
         [progressOfWholeQuestion setTintColor:[UIColor blueColor]];
         progressOfWholeQuestion.progress = 0;
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 0.5f);
+        progressOfWholeQuestion.transform = transform;
         
         [self addSubview:progressOfWholeQuestion];
     }
@@ -226,7 +230,7 @@
 {
     UICollectionReusableView *view = nil;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        WMHeaderCollectionReusableView *header = (WMHeaderCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER_VIEW" forIndexPath:indexPath];
+        WMHeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER_VIEW" forIndexPath:indexPath];
         
         NSString *sectionTitle = [self.sectionInfos[indexPath.section] objectForKey:@"sectionName"];
         sectionTitle = [NSString stringWithFormat:@"%ld. %@",indexPath.section+1,sectionTitle];
@@ -239,7 +243,7 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 10, 10, 5);
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
 
@@ -273,7 +277,7 @@
         frame.origin.y += HEIGHT_OF_PRACTICE_BOTTOM_TOOLBAR;
     }
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.frame = frame;
     }];
     

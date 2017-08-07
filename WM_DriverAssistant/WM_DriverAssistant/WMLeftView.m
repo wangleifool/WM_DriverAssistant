@@ -15,6 +15,10 @@
     if (self = [super initWithFrame:frame style:style]) {
         self.backgroundColor = [UIColor lightGrayColor];
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        [backImageView setImage:[UIImage imageNamed:@"settingBackgroundImage"]];
+        self.backgroundView = backImageView;
     }
     return self;
 }

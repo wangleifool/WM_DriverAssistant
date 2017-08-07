@@ -22,18 +22,18 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" misplaced="YES" id="iaa-2f-ySe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="iaa-2f-ySe">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Lx-eP-0FS">
-                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
                 </activityIndicatorView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmZ-FB-rLQ">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pia-C5-iJp" customClass="WMAdvertisementPagingScrollView">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="64" id="OXM-qA-T6U"/>
@@ -52,7 +52,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-3V-IUc" customClass="WMMyDriverMasterView">
-                            <rect key="frame" x="0.0" y="636" width="600" height="96"/>
+                            <rect key="frame" x="0.0" y="636" width="320" height="96"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="96" id="C5A-lo-PTI"/>
@@ -64,7 +64,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sv0-Jk-67c" customClass="WMTheoryLearnModelView">
-                            <rect key="frame" x="0.0" y="64" width="600" height="564"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="564"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="564" id="piL-Qe-9lE"/>
@@ -76,7 +76,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRr-UH-U9S" customClass="WMCircleOfFriendsPreview">
-                            <rect key="frame" x="0.0" y="740" width="600" height="132"/>
+                            <rect key="frame" x="0.0" y="740" width="320" height="132"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="132" id="YFe-gh-ss1"/>
@@ -88,7 +88,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8z-EM-s6b" customClass="WMBeginnerBuyCarView">
-                            <rect key="frame" x="0.0" y="880" width="600" height="347"/>
+                            <rect key="frame" x="0.0" y="880" width="320" height="347"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="347" id="JTe-QV-r4u"/>
@@ -100,7 +100,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.87578819510000006" green="0.87578819510000006" blue="0.87578819510000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="L8z-EM-s6b" secondAttribute="bottom" constant="-661" id="99y-Sf-Efi"/>
                         <constraint firstItem="wRr-UH-U9S" firstAttribute="top" secondItem="5b7-3V-IUc" secondAttribute="bottom" constant="8" id="Al6-Da-xm5"/>

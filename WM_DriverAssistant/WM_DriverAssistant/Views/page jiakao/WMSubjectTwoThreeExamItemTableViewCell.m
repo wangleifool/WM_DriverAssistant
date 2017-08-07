@@ -43,15 +43,18 @@
     [self.labelBtOfConversationCount setTitle:[NSString stringWithFormat:@"%ld",modelExamItem.questionCount] forState:UIControlStateNormal];
     [self.labelBtOfVideoCount setTitle:[NSString stringWithFormat:@"%ld",modelExamItem.videoCount] forState:UIControlStateNormal];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSURL *url = [NSURL URLWithString:modelExamItem.image];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.imageViewOfExamItem setImage:[UIImage imageWithData:data]];
-        });
-        
-    });
+    NSURL *url = [NSURL URLWithString:modelExamItem.image];
+    [self.imageViewOfExamItem setImageWithURL:url placeholderImage:[UIImage imageNamed:@"muc_photo_picker_default"]];
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSURL *url = [NSURL URLWithString:modelExamItem.image];
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.imageViewOfExamItem setImage:[UIImage imageWithData:data]];
+//        });
+//        
+//    });
 }
 
 @end
