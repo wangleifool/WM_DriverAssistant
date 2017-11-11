@@ -143,7 +143,7 @@
 #define JiaKaoPageTwoDataUrl @"https://sirius.kakamobi.cn/api/open/exam-project/list.htm?_a=2wy9wAxvVAwy7Vz404V635zVw5z3z6790322&_appName=jiakaobaodianxingui&_appUser=03fbeaeb4f65146bf6cea851f45841ca&_cityCode=510100&_cityName=%E6%88%90%E9%83%BD%E5%B8%82&_device=KOBE%20use%20iPad&_firstTime=2017-03-31%2008%3A49%3A30&_gpsCity=510100&_gpsType=baidu&_html5=false&_imei=549af8c6669249e19516b3303d5cdd284ec672ca&_j=1.0&_jail=false&_latitude=30.67943289807245&_launch=5&_longitude=103.797371602262&_mac=549af8c6669249e19516b3303d5cdd284ec672ca&_manufacturer=Apple&_network=wifi&_operator=N&_pkgName=cn.mucang.ios.jiakaobaodianPromise&_platform=iphone&_product=%E9%A9%BE%E8%80%83%E5%AE%9D%E5%85%B8%E6%96%B0%E8%A7%84&_productCategory=jiakaobaodian&_r=a64a03026aaff90f16f3e227ecaa1b34&_renyuan=mucang&_screenDip=1&_screenHeight=1024&_screenWidth=768&_system=iPhone%20OS&_systemVersion=9.3.5&_u=w9x69536V0A0xVz483V4w3zV94x7x9v62234&_userCity=510100&_vendor=appstore&_version=6.6.10&_webviewVersion=4.7&cursor=0&kemu=2&pageSize=100&schoolCode=510100030&schoolName=%E6%88%90%E9%91%AB%E9%A9%BE%E6%A0%A1&tiku=car&sign=941ac9e184b0701830316848fe33e7c3"
 
 
-#define AdvertisementImageUrl @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502103934931&di=e040e9d93d8299e9bdcd708bcd2c0145&imgtype=0&src=http%3A%2F%2Fimg.r1.market.hiapk.com%2Fdata%2Fupload%2F2013%2F12_10%2F10%2F201312101018580493.jpg"
+#define AdvertisementImageUrl @"http://pic.paopaoche.net/up/2014-6/201461992358.jpg"
 
 //database row name
 #define tableAllQuestion @"leaflevel"

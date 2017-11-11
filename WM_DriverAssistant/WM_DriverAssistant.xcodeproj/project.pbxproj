@@ -172,6 +172,12 @@
 		3B968C2A1EA88E76000B5901 /* RGCardViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C291EA88E76000B5901 /* RGCardViewLayout.m */; };
 		3B968C311EA8905B000B5901 /* WMCarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B968C2F1EA8905B000B5901 /* WMCarCollectionViewCell.m */; };
 		3B968C321EA8905B000B5901 /* WMCarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B968C301EA8905B000B5901 /* WMCarCollectionViewCell.xib */; };
+		3B9F29471FB6D682006BD15D /* daocheruku.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F29461FB6D682006BD15D /* daocheruku.PNG */; };
+		3B9F29491FB6D6C6006BD15D /* kaoshimiji.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F29481FB6D6C6006BD15D /* kaoshimiji.png */; };
+		3B9F294E1FB6D841006BD15D /* WMPracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F294D1FB6D841006BD15D /* WMPracticeViewController.m */; };
+		3B9F29521FB6DA97006BD15D /* WMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F29501FB6DA97006BD15D /* WMLoginViewController.m */; };
+		3B9F29531FB6DA97006BD15D /* WMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F29511FB6DA97006BD15D /* WMLoginViewController.xib */; };
+		3B9F29551FB6DABC006BD15D /* Login.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F29541FB6DABC006BD15D /* Login.PNG */; };
 		3BC3994C1E9CB02000CD9414 /* tableViewData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3994B1E9CB02000CD9414 /* tableViewData.txt */; };
 		3BC399501E9CB3F300CD9414 /* MJNIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */; };
 		9B064FBA1DC1FEC100A7ACE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B064FB91DC1FEC100A7ACE3 /* main.m */; };
@@ -504,6 +510,14 @@
 		3B968C2E1EA8905B000B5901 /* WMCarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WMCarCollectionViewCell.h; path = "Views/page maiche/WMCarCollectionViewCell.h"; sourceTree = "<group>"; };
 		3B968C2F1EA8905B000B5901 /* WMCarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WMCarCollectionViewCell.m; path = "Views/page maiche/WMCarCollectionViewCell.m"; sourceTree = "<group>"; };
 		3B968C301EA8905B000B5901 /* WMCarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WMCarCollectionViewCell.xib; path = "Views/page maiche/WMCarCollectionViewCell.xib"; sourceTree = "<group>"; };
+		3B9F29461FB6D682006BD15D /* daocheruku.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daocheruku.PNG; sourceTree = "<group>"; };
+		3B9F29481FB6D6C6006BD15D /* kaoshimiji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaoshimiji.png; sourceTree = "<group>"; };
+		3B9F294C1FB6D841006BD15D /* WMPracticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WMPracticeViewController.h; path = "Controllers/page jiakao/WMPracticeViewController.h"; sourceTree = "<group>"; };
+		3B9F294D1FB6D841006BD15D /* WMPracticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WMPracticeViewController.m; path = "Controllers/page jiakao/WMPracticeViewController.m"; sourceTree = "<group>"; };
+		3B9F294F1FB6DA97006BD15D /* WMLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WMLoginViewController.h; path = Controllers/WMLoginViewController.h; sourceTree = "<group>"; };
+		3B9F29501FB6DA97006BD15D /* WMLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WMLoginViewController.m; path = Controllers/WMLoginViewController.m; sourceTree = "<group>"; };
+		3B9F29511FB6DA97006BD15D /* WMLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WMLoginViewController.xib; path = Controllers/WMLoginViewController.xib; sourceTree = "<group>"; };
+		3B9F29541FB6DABC006BD15D /* Login.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.PNG; sourceTree = "<group>"; };
 		3BC3994B1E9CB02000CD9414 /* tableViewData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tableViewData.txt; sourceTree = "<group>"; };
 		3BC3994E1E9CB3F300CD9414 /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
 		3BC3994F1E9CB3F300CD9414 /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
@@ -626,6 +640,9 @@
 				0F0872681DD31DA200DDE159 /* 0.jpg */,
 				0F0872691DD31DA200DDE159 /* 1.jpg */,
 				0F08726A1DD31DA200DDE159 /* 2.jpg */,
+				3B9F29461FB6D682006BD15D /* daocheruku.PNG */,
+				3B9F29481FB6D6C6006BD15D /* kaoshimiji.png */,
+				3B9F29541FB6DABC006BD15D /* Login.PNG */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -781,6 +798,8 @@
 				3B5231FF1E8B8E8B00E2E016 /* WMSubjectThreeViewController.xib */,
 				3B5231F61E8B8E0600E2E016 /* WMExamPracticeViewController.h */,
 				3B5231F71E8B8E0600E2E016 /* WMExamPracticeViewController.m */,
+				3B9F294C1FB6D841006BD15D /* WMPracticeViewController.h */,
+				3B9F294D1FB6D841006BD15D /* WMPracticeViewController.m */,
 			);
 			name = pageJiaKao;
 			sourceTree = "<group>";
@@ -1162,6 +1181,9 @@
 				9B0650571DC33CB300A7ACE3 /* WMFaxianViewController.m */,
 				3B8B25F21EAEEBD400D3A58B /* WMPresentTransitionAnimated.h */,
 				3B8B25F31EAEEBD400D3A58B /* WMPresentTransitionAnimated.m */,
+				3B9F294F1FB6DA97006BD15D /* WMLoginViewController.h */,
+				3B9F29501FB6DA97006BD15D /* WMLoginViewController.m */,
+				3B9F29511FB6DA97006BD15D /* WMLoginViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1293,6 +1315,7 @@
 					9B064FB41DC1FEC100A7ACE3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = CG4F88GY6X;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					9B064FCD1DC1FEC200A7ACE3 = {
@@ -1336,6 +1359,7 @@
 			files = (
 				3B5232401E8B90D400E2E016 /* WMTheoryLearnModelView.xib in Resources */,
 				3B6A501D1F385A8B0048D5FC /* SXTAdvertiseView.xib in Resources */,
+				3B9F29531FB6DA97006BD15D /* WMLoginViewController.xib in Resources */,
 				0F08726B1DD31DA200DDE159 /* 0.jpg in Resources */,
 				3B0F8BF31E94D4BF00093EB8 /* WMSubjectTwoPracticeTableViewCell.xib in Resources */,
 				3B5232601E8B911E00E2E016 /* dataOfAdvertisement.plist in Resources */,
@@ -1362,6 +1386,7 @@
 				3B968C321EA8905B000B5901 /* WMCarCollectionViewCell.xib in Resources */,
 				3B5232EE1E8BA4CD00E2E016 /* Info.plist in Resources */,
 				9B064FC31DC1FEC100A7ACE3 /* Main.storyboard in Resources */,
+				3B9F29471FB6D682006BD15D /* daocheruku.PNG in Resources */,
 				0F0872561DD31AF600DDE159 /* ClassCell.xib in Resources */,
 				9B064FF31DC2E06E00A7ACE3 /* TabbarPages.plist in Resources */,
 				3B968C271EA88C57000B5901 /* WMcarOfSomeBrandViewController.xib in Resources */,
@@ -1375,6 +1400,8 @@
 				3B7EC6CF1E9DCD64008EE00D /* WMSelectCarViewController.xib in Resources */,
 				3B5232D41E8B9A5100E2E016 /* HDButton.xib in Resources */,
 				3B7EC6CA1E9DCD4D008EE00D /* WMAllTypeCarViewController.xib in Resources */,
+				3B9F29491FB6D6C6006BD15D /* kaoshimiji.png in Resources */,
+				3B9F29551FB6DABC006BD15D /* Login.PNG in Resources */,
 				3B5232BC1E8B955300E2E016 /* WMGetDiverLicenseViewController.xib in Resources */,
 				3B52323C1E8B90D400E2E016 /* WMImageAndTwoLineTextView.xib in Resources */,
 				3B52329E1E8B91B400E2E016 /* MJRefresh.bundle in Resources */,
@@ -1470,6 +1497,7 @@
 				3B5232461E8B90D400E2E016 /* WMexamPracticeContentView.m in Sources */,
 				3B52324D1E8B90D400E2E016 /* WMquestionIndexCollectionViewCell.m in Sources */,
 				0F0872601DD31B3800DDE159 /* ClassCell.m in Sources */,
+				3B9F29521FB6DA97006BD15D /* WMLoginViewController.m in Sources */,
 				3B5232411E8B90D400E2E016 /* WMAdvertisementPagingScrollView.m in Sources */,
 				3B5232111E8B8F0A00E2E016 /* WMJiakaoViewController.m in Sources */,
 				3B52325F1E8B911E00E2E016 /* WMTools.m in Sources */,
@@ -1498,6 +1526,7 @@
 				0F83B6A61E7150BE00C801C5 /* WMScrollView.m in Sources */,
 				0F2A0A3B1E7669DB00D94928 /* NSString+PinYin.m in Sources */,
 				3B52320B1E8B8E8B00E2E016 /* WMSubjectThreeViewController.m in Sources */,
+				3B9F294E1FB6D841006BD15D /* WMPracticeViewController.m in Sources */,
 				3B5231EB1E8B8DCC00E2E016 /* AFURLSessionManager.m in Sources */,
 				3B5232F71E8BA4CD00E2E016 /* NSObject+MJProperty.m in Sources */,
 				3B5232B41E8B925800E2E016 /* UIView+DMYExtension.m in Sources */,
@@ -1750,6 +1779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1770,6 +1800,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1780,6 +1812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CG4F88GY6X;
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "WM_DriverAssistant/driverAssistant-Prefix.pch";
@@ -1788,6 +1821,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.WM-DriverAssistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

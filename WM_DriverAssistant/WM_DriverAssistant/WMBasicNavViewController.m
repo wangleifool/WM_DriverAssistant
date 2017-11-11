@@ -11,6 +11,7 @@
 #import "WMLeftView.h"
 #import "WMCitySelectController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "WMLoginViewController.h"
 
 @interface WMBasicNavViewController ()<UITableViewDelegate,UITableViewDataSource,WMNavigationBarDelegate,CLLocationManagerDelegate>
 
@@ -109,11 +110,17 @@
     self.leftView.tableHeaderView = self.headerView;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBarHidden = YES;
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(leftViewPanGestureRecognizer:)];
+    [self.leftView addGestureRecognizer:pan];
+
+    
     [self.view addSubview:self.leftView];
     [self.view addSubview:self.contentView];
     
     //[self configureNavigaitonBar];
     UIPanGestureRecognizer *swip = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowLeftView:)];
+    
     //swip.direction = UISwipeGestureRecognizerDirectionRight;
     [self.contentView addGestureRecognizer:swip];
     UITapGestureRecognizer *swipL = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideLeftView)];
@@ -233,27 +240,94 @@
 -(void)ShowLeftView:(UIPanGestureRecognizer *)panGesture
 {
     CGPoint transation = [panGesture translationInView:self.view];
-    if (transation.x > 0) {
-        self.contentView.center = CGPointMake(self.view.center.x+transation.x, self.contentView.center.y);
-        self.UserView.alpha = self.contentView.center.x/kScreenWidth*0.8;
+    
+    static CGPoint originCenter;
+    if (panGesture.state == UIGestureRecognizerStateBegan) {
+        if (showLeftView) {
+            originCenter = self.view.center;
+        } else {
+            originCenter = self.contentView.center;
+        }
     }
+    
+    //这种情况的 不做反应
+    if (transation.x < 0 && showLeftView) {
+        return ;
+    }
+    
+//    if (transation.x > 0)
+    {
+        self.contentView.center = CGPointMake(originCenter.x+transation.x, self.contentView.center.y);
+//        self.UserView.alpha = self.contentView.center.x/kScreenWidth*0.8;
+    }
+    
+//    NSLog(@"--- %.4f -- %.4f",transation.x, self.contentView.center.x);
+    
     if (panGesture.state == UIGestureRecognizerStateEnded)
     {
+        
         [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            if (transation.x < kScreenWidth*0.8*0.5) {
-                showLeftView = YES;
-                self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
-            }
-            else
-            {
+            //向右滑
+            if (self.contentView.center.x >= self.contentView.bounds.size.width) {
                 self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.8, self.contentView.center.y);
                 showLeftView = NO;
+            } else { //回到左边
+                showLeftView = YES;
+                self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
             }
         } completion:nil];
         
         
     }
     
+}
+
+/**
+ *  实现拖动手势方法
+ *
+ *  @param panGestureRecognizer 手势本身
+ */
+- (void)leftViewPanGestureRecognizer:(UIPanGestureRecognizer *)panGesture{
+    CGPoint transation = [panGesture translationInView:self.view];
+    
+    static CGPoint originCenter;
+    if (panGesture.state == UIGestureRecognizerStateBegan) {
+        if (showLeftView) {
+            originCenter = self.view.center;
+        } else {
+            originCenter = self.contentView.center;
+        }
+    }
+    
+    //这种情况的 不做反应
+    if (transation.x > 0 && !showLeftView) {
+        return ;
+    }
+    
+    //    if (transation.x > 0)
+    {
+        self.contentView.center = CGPointMake(originCenter.x+transation.x, self.contentView.center.y);
+        //        self.UserView.alpha = self.contentView.center.x/kScreenWidth*0.8;
+    }
+    
+//    NSLog(@"--- %.4f -- %.4f",transation.x, self.contentView.center.x);
+    
+    if (panGesture.state == UIGestureRecognizerStateEnded)
+    {
+        
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            //向右滑
+            if (self.contentView.center.x >= self.contentView.bounds.size.width) {
+                self.contentView.center = CGPointMake(self.view.center.x+kScreenWidth*0.8, self.contentView.center.y);
+                showLeftView = NO;
+            } else { //回到左边
+                showLeftView = YES;
+                self.contentView.center = CGPointMake(self.view.center.x, self.contentView.center.y);
+            }
+        } completion:nil];
+        
+        
+    }
 }
 
 #pragma mark 隐藏左边视图
@@ -365,6 +439,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    WMLoginViewController *loginVC = [[WMLoginViewController alloc] initWithNibName:@"WMLoginViewController" bundle:[NSBundle mainBundle]];
+    
+    [self presentViewController:loginVC animated:YES completion:^{
+        [self hideLeftView];
+    }];
 }
 
 #pragma mark - 系统级别设置

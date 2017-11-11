@@ -18,6 +18,7 @@
 #import "WMExamPracticeViewController.h"
 #import "WMJiakaoViewController.h"
 #import "WMPresentTransitionAnimated.h"
+#import "WMLoginViewController.h"
 
 @interface WMSubjectOneViewController () <WMMyDriverMasterViewDelegate,WMTheoryLearnModelViewDelegate,WMAdvertisementPagingScrollViewDelegate,UIViewControllerTransitioningDelegate>
 {    
@@ -103,6 +104,9 @@
 - (void)actionOfTapMyDriverMasterView:(WMMyDriverMasterView *)MyDvierMasterview
 {
     NSLog(@"get view :%@",MyDvierMasterview);
+    WMLoginViewController *loginVC = [[WMLoginViewController alloc] initWithNibName:@"WMLoginViewController" bundle:[NSBundle mainBundle]];
+    
+    [self.parentViewController.navigationController presentViewController:loginVC animated:YES completion:nil];
 }
 
 #pragma mark - 理论学习视图代理

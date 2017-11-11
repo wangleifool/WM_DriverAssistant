@@ -13,6 +13,8 @@
 #import "WMMySchoolTableViewCell.h"
 #import "WMModelOfExamItem.h"
 #import "WMSubjectTwoThreeExamItemTableViewCell.h"
+#import "WMPracticeViewController.h"
+#import "WMLoginViewController.h"
 
 #define Section_Practice 0
 #define Section_MySchool 1
@@ -21,7 +23,7 @@
 #define Section_CycleOfFriends 4
 #define Section_BuyCar  5
 
-@interface WMSubjectTwoViewController () <WMMyDriverMasterViewDelegate,UITableViewDelegate,UITableViewDataSource,WMSubjectTwoPracticeTableViewCellDelegate>
+@interface WMSubjectTwoViewController () <WMMyDriverMasterViewDelegate,UITableViewDelegate,UITableViewDataSource,WMSubjectTwoPracticeTableViewCellDelegate,UIGestureRecognizerDelegate>
 {
     WMMyDriverMasterView *driverMasterView;
 }
@@ -176,6 +178,11 @@
         case Section_MySchool:
         {
             WMMySchoolTableViewCell *cell = [WMMySchoolTableViewCell mySchoolCellWithTableView:tableView];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myShcoolCellClicked)];
+            tap.delegate = self;
+            tap.numberOfTouchesRequired = 1;
+            [cell addGestureRecognizer:tap];
+            
             return cell;
         }
             break;
@@ -286,6 +293,23 @@
     return view;
 }
 
+#pragma mark - tableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == Section_MySchool) {
+        WMLoginViewController *loginVC = [[WMLoginViewController alloc] initWithNibName:@"WMLoginViewController" bundle:[NSBundle mainBundle]];
+        
+        [self.parentViewController.navigationController presentViewController:loginVC animated:YES completion:nil];
+    }
+}
+
+- (void)myShcoolCellClicked {
+    WMLoginViewController *loginVC = [[WMLoginViewController alloc] initWithNibName:@"WMLoginViewController" bundle:[NSBundle mainBundle]];
+    
+    [self.parentViewController.navigationController presentViewController:loginVC animated:YES completion:nil];
+}
+
 #pragma mark - WMsubject practice cell delegate
 - (void)touchUpActionOfPracticeTableViewCellOutlet:(id)sender
 {
@@ -304,8 +328,11 @@
         NSLog(@"你点击了 学员福利");
     }
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    [vc.view setBackgroundColor:[UIColor greenColor]];
+    WMPracticeViewController *vc = [[WMPracticeViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+//    UIViewController *vc = [[UIViewController alloc] init];
+    
+//    [vc.view setBackgroundColor:[UIColor greenColor]];    
     
     [self.parentViewController.navigationController pushViewController:vc animated:YES];
     self.parentViewController.navigationController.navigationBarHidden = NO;
